@@ -287,6 +287,8 @@ const Graphs = () => {
       },
     },
     maintainAspectRatio: false,
+    responsive: true,
+
   };
 
   const filteredChartData = {
@@ -306,7 +308,7 @@ const Graphs = () => {
 
   return (
     <>
-    <div className="flex items-center mt-8 mx-12 justify-center p-4">
+    <div className="flex items-center flex-wrap mt-8 md:mx-12 justify-center md:p-4">
       <div className="w-full px-10">
         <h2 className="font-['Poppins'] text-2xl font-semibold text-gray-800 mb-4">
           Property Market Insights
@@ -324,7 +326,7 @@ const Graphs = () => {
             ))}
           </select>
         </div>
-        <div className="rounded-lg bg-white-300 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 p-5 shadow-lg">
+        <div className="rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-1 border border-gray-100 md:p-5 shadow-lg">
           <div className="flex justify-between items-center mb-4 font-['Poppins']">
             <select
               value={propertyType}
@@ -338,8 +340,8 @@ const Graphs = () => {
               ))}
             </select>
           </div>
-          <div className="flex pr-5">
-            <div className="w-full h-[500px] pr-5">
+          <div className="flex pr-5 flex-wrap">
+            <div className="w-full h-full pr-5">
               <Line ref={chartRef} data={filteredChartData} options={chartOptions} />
             </div>
             <div className="w-2/5 pl-10">
@@ -358,7 +360,7 @@ const Graphs = () => {
                     className="w-3 h-3 rounded-full mr-2"
                     style={{ backgroundColor: location.color }}
                   ></span>
-                  <div className='flex justify-between items-center w-full'>
+                  <div className='flex flex-wrap justify-between items-center w-full'>
                     <span className="text-black text-sm font-['Poppins']">
                       {location.name}
                     </span>

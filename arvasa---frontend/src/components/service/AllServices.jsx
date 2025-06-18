@@ -1,11 +1,11 @@
 // src/components/AllServices.jsx
 import React from "react";
-import ServicesAI from "../../assets/Services AI.png";
-import ServicesAR from "../../assets/Services AR VR.png";
-import ServicesBlockchain from "../../assets/Services Blockchain.png";
-import ServicesConsultancy from "../../assets/Services Consultancy.png";
-import ServicesMonetization from "../../assets/Services Monetization.png";
-import ServicesPayment from "../../assets/Services Payment.png";
+import ServicesAI from "../../assets/ServicesAI.png";
+import ServicesAR from "../../assets/ServicesARVR.png";
+import ServicesBlockchain from "../../assets/ServicesBlockchain.png";
+import ServicesConsultancy from "../../assets/ServicesConsultancy.png";
+import ServicesMonetization from "../../assets/ServicesMonetization.png";
+import ServicesPayment from "../../assets/ServicesPayment.png";
 import { Heading } from "../Utils/Heading";
 import { motion, useInView } from 'framer-motion';
 

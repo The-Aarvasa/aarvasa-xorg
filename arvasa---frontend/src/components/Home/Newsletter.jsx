@@ -4,7 +4,7 @@ export function Newsletter() {
     return (
         <div className="mx-2 mt-8 mb-8 md:mx-4 relative">
             <div className="bg-gradient-to-r h-auto from-pink-500 to-rose-800 md:rounded-2xl p-5 sm:p-16 shadow-xl text-white relative overflow-hidden h-[457px] ">
-                <div className="absolute inset-0 bg-[url('./newsletter.png')] bg-cover bg-center opacity-30"></div>
+                <div className="absolute inset-0 bg-[url('/newsletter.png')] bg-cover bg-center opacity-30"></div>
                 <div className="flex flex-col -mt-18 flex-wrap md:flex-row items-center justify-between">
                     <div className="flex-1">
                         <div className="justify-start text-lime-50 text-5xl font-semibold font-['Poppins'] pb-5">Subscribe Our Newsletter</div>

@@ -1,5 +1,5 @@
 import React from "react";
-import teacherImg from "../../assets/profile guides teacher.png";
+import teacherImg from "../../assets/profileguidesteacher.png";
 import { PlusSquare, MapPin, Camera, Home } from 'lucide-react';
 
 const steps = [

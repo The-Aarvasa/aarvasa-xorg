@@ -28,14 +28,14 @@ const Nearby = () => {
     ]
 
     return (
-        <div className="px-8 mx-2 mt-8 mb-8 md:mx-8 py-10 font-[poppins]">
+        <div className="px-2 md:px-8 mx-2 mt-8 mb-8 md:mx-8 py-10 font-[poppins]">
             <Heading label="Other Properties in this Project and Nearby:" />
-            <div className="flex bg-white w-full p-4 rounded-xl gap-4 h-[450px]">
+            <div className="flex flex-wrap bg-white w-full xl:flex-nowrap p-4 rounded-xl gap-4 h-full">
                 <div className="flex-1 h-full">
                     <img src="/villa3.jpg" alt="House Image" className="w-full h-full rounded-xl object-cover" />
                 </div>
                 
-                <div className="flex-1 flex flex-col justify-between h-full">
+                <div className="flex-1 flex flex-col flex-wrap xl:flex-nowrap justify-between h-full">
                     <div className="flex flex-col gap-4 bg-pink-50 rounded-xl p-2">
                         <div className="flex items-center justify-between scale-95">
                             <div className="flex items-baseline gap-3">
@@ -44,7 +44,7 @@ const Nearby = () => {
                             </div>
                         </div>
                         
-                        <div className="flex gap-4 overflow-x-auto pb-3 scale-95">
+                        <div className="flex flex-wrap gap-4 xl:flex-nowrap overflow-x-auto pb-3 scale-95">
                             {videos.map((video, index) => (
                                 <div key={index} className="min-w-[200px] cursor-pointer">
                                     <div className="relative rounded-lg overflow-hidden">
@@ -73,7 +73,7 @@ const Nearby = () => {
                         </div>
                     </div>
                     
-                    <div className="flex justify-start gap-4 w-full mt-auto">
+                    <div className="flex flex-wrap xl:flex-nowrap justify-start gap-4 w-full mt-auto">
                    
                         <div className="bg-amber-50 rounded-xl p-5 flex-1 flex flex-col justify-center">
                             <div className="bg-yellow-300 top-0 left-0 text-black text-lg w-[120px] rounded-lg text-center">RERA Report</div>
