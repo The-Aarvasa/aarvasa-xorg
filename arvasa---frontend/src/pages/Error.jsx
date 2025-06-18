@@ -1,7 +1,7 @@
 export const Error = () => {
   return (
     <div className="relative min-h-screen bg-[#8B1E3F] text-white p-6 overflow-hidden">
-      <div className="absolute inset-0 bg-[url('./broken_house.png')] bg-cover bg-center opacity-50"></div>
+      <div className="absolute inset-0 bg-[url('/broken_house.png')] bg-cover bg-center opacity-50"></div>
       <div className="relative z-10 pt-5">
         <div className="flex items-center mb-10">
           <img src="../images/logo_shape.png" alt="Logo" className="h-[58px] w-[112px]" />

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { MapPin, Search, Home, IndianRupee, Earth } from 'lucide-react'
 const Landing = () => {
     return (
-        <div className='md:mx-8 flex flex-wrap lg:flex-nowrap h-auto items-center justify-between px-4 md:px-8 rounded-lg lg:h-[80vh]' style={{
+        <div className='md:mx-4 flex w-auto flex-wrap lg:flex-nowrap h-auto items-center justify-between px-4 md:px-4 rounded-lg lg:h-[80vh]' style={{
             background: "linear-gradient(to right, #F9EAF1, #8C2841)",
         }} >
             <div className='content py-8 md:py-auto'>

@@ -1,5 +1,5 @@
 import React from "react";
-import whoWeAreImage from "../../assets/Who We Are in Services page.png"; // Replace with your actual image path
+import whoWeAreImage from "../../assets/services_hero.png"; // Replace with your actual image path
 import { Heading } from "../Utils/Heading";
 const WhoWeAre = () => {
   return (
