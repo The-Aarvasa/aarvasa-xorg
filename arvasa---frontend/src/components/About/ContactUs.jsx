@@ -5,7 +5,7 @@ import { Heading } from '../Utils/Heading'
 const ContactUs = () => {
     return (
         <>
-            <div className="md:max-w-[1920px] mx-8 mt-8 mb-8">
+            <div className="mx-2 mt-8 mb-8">
             <Heading label="Contact Us" />
                 <div className="flex items-center relative justify-between w-full h-auto relative bg-gradient-to-b from-[#C9B391] to-[#A79475] rounded-2xl p-2 gap-10">
 
@@ -40,7 +40,7 @@ const ContactUs = () => {
                                 <label className="text-pink-900  text-md md:text-xl font-['Poppins']">Date</label>
                                 <input
                                     type="date"
-                                    className="h-12 px-4 bg-white/80 rounded-lg border border-pink-900/30 focus:outline-none focus:border-pink-900"
+                                    className="h-12 px-4 bg-white/80 w-full rounded-lg border border-pink-900/30 focus:outline-none focus:border-pink-900"
                                 />
                             </div>
 

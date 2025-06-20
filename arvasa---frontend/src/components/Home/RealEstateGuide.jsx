@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import { Heading } from "../Utils/Heading";
 import { Navigation, Pagination, Autoplay } from "swiper/modules";
 
-import locality1 from "../../assets/Your Real Estate Guide 1.jpg";
+import locality1 from "../../assets/YourRealEstateGuide1.jpg";
 
 const cards = [
     { id: 1, title: "Locality Review – Lajpat Magar, New...", image: locality1 },
