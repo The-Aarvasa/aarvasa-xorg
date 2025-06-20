@@ -8,7 +8,9 @@ const Navbar = () => {
     const ref = useRef(null);
     const menu = useRef(null);
     const [Menu, setMenu] = useState(false);
-    document.addEventListener("scroll", () => {
+   useEffect(() => {
+     document.addEventListener("scroll", () => {
+        if (!ref.current) return;
         let scrollTop = window.scrollY;
         if (scrollTop > 130) {
             ref.current.classList.add("fixed-nav");
@@ -22,6 +24,7 @@ const Navbar = () => {
             ref.current.classList.add('relative-nav');
         }
     })
+   }, [])
 
     useEffect(() => {
         const handleClickOutside = (event) => {

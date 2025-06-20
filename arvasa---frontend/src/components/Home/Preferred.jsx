@@ -149,9 +149,9 @@ const Preferred = () => {
 
                                     <div className="details flex items-center gap-2 m-2">
                                         <div className="star flex items-center gap-2">
-                                            {[1, 2, 3, 4, -1].map((currElem) => {
+                                            {[1, 2, 3, 4, -1].map((currElem, index) => {
                                                    return(
-                                                     <Star size={16} color='orange' fill={currElem > 0 ? 'orange' : 'white'}></Star>
+                                                     <Star key={index} size={16} color='orange' fill={currElem > 0 ? 'orange' : 'white'}></Star>
                                                    )
                                             })}
                                         </div>

@@ -5,14 +5,14 @@ const Newscards = () => {
         <div className="relative max-w-[1920px] mx-auto px-2 sm:px-4 md:px-8 py-4 sm:py-8">
             {/* Responsive Tabs */}
             <div className="max-w-4xl mx-auto">
-                <ul className="flex overflow-x-auto scrollbar-hide font-[poppins] justify-start sm:justify-between items-center cursor-pointer text-black p-2 sm:p-4 font-medium text-sm sm:text-md gap-6 sm:gap-0 whitespace-nowrap">
-                    <li className="hover:text-[#6D1E3D] border-b-2 border-[#6D1E3D] pb-1 min-w-max">All</li>
-                    <li className="hover:text-[#6D1E3D] min-w-max">Infrastructure</li>
-                    <li className="hover:text-[#6D1E3D] min-w-max">Commercial</li>
-                    <li className="hover:text-[#6D1E3D] min-w-max">Home Loan</li>
-                    <li className="hover:text-[#6D1E3D] min-w-max">Rented</li>
-                    <li className="hover:text-[#6D1E3D] min-w-max">Investment</li>
-                    <li className="hover:text-[#6D1E3D] min-w-max">Taxation</li>
+                <ul className="flex font-[poppins] justify-start sm:justify-between items-center cursor-pointer text-black p-2 sm:p-4 font-medium text-sm sm:text-md gap-6 sm:gap-14 whitespace-nowrap">
+                    <li className="hover:text-[#6D1E3D] text-xl border-b-2 border-[#6D1E3D] pb-1 min-w-max">All</li>
+                    <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Infrastructure</li>
+                    <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Commercial</li>
+                    <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Home Loan</li>
+                    <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Rented</li>
+                    <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Investment</li>
+                    <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Taxation</li>
                 </ul>
                 {/* Search Bar */}
                 <div className="flex justify-center mt-2 mb-8">
@@ -71,7 +71,7 @@ const Newscards = () => {
                         <div className="flex-1 flex flex-col justify-between p-6 sm:p-6">
                             <div>
                                 <h3 className="text-lg sm:text-xl font-bold font-poppins mb-2">The Mumbai Property</h3>
-                                <p className="text-neutral-700 text-base sm:text-lg font-normal leading-6 sm:leading-7 font-lato">
+                                <p className="text-neutral-700 text-sm font-normal leading-6 sm:leading-7 ">
                                     Impact of Infrastructure Development — Mumbai's property market has been heavily influenced by infrastructure development.
                                 </p>
                             </div>

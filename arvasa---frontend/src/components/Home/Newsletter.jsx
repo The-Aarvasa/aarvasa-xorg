@@ -7,8 +7,8 @@ export function Newsletter() {
                 <div className="absolute inset-0 bg-[url('/newsletter.png')] bg-cover bg-center opacity-30"></div>
                 <div className="flex flex-col -mt-18 flex-wrap md:flex-row items-center justify-between">
                     <div className="flex-1">
-                        <div className="justify-start text-lime-50 text-5xl font-semibold font-['Poppins'] pb-5">Subscribe Our Newsletter</div>
-                        <div className="justify-start text-lime-50 text-base font-['Poppins'] mb-10">
+                        <div className="justify-start text-lime-50 text-2xl text-center md:text-left md:text-5xl font-semibold font-['Poppins'] pb-5">Subscribe Our Newsletter</div>
+                        <div className="justify-start text-lime-50 tex-sm md:text-base font-['Poppins'] mb-10">
                             Stay connected and never miss an update! By subscribing to our newsletter, you’ll receive the latest news, exclusive content, helpful resources, and special offers directly in your inbox. Whether you're looking for inspiration, updates, or insider tips, we've got something valuable for you every time. Join our community today!
                         </div>
 
