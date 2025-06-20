@@ -26,12 +26,19 @@ import MainProfile from './components/profile/MainProfile';
 import Guides from './components/profile/Guides';
 import Transactions from './pages/Transactions';
 import FilterPage from './components/Chatbot/FilterPage';
+import Tools from './pages/Tools';
+import Budget from './components/tools/Budget';
+import Emi from './components/tools/Emi';
+import Loan from './components/tools/Loan';
+import Area from './components/tools/Area';
+import InsideArticle from './components/News/InsideArticle';
+import LandingPageofAi from './components/Chatbot/LandingPageOfAi';
 function AppLayout() {
   const location = useLocation();
   const hideNavAndFooter = location.pathname === '/otp';
 
   return (
-    <div className="min-h-screen flex flex-col ">
+    <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
@@ -60,21 +67,39 @@ function AppLayout() {
           <Route path="/profile" element={<Profile />}>
             <Route index element={<MainProfile />} />
             <Route path="guides" element={
-                <Guides />
+              <Guides />
             } />
 
-             <Route path="transaction" element={
-                <Transactions />
+
+            <Route path="transaction" element={
+              <Transactions />
             } />
+
+
+
+
 
             <Route path="propertydetails/:id" element={<PropertyBrief />} />
           </Route>
 
-            <Route path="/otp" element={<Otp />} />
-            <Route path="/chat" element={<FilterPage />} />
-            <Route path="/chating" element={<ConversationPage />} />
-            <Route path="/AddListing" element={<AddListings />} />
-            <Route path="/subscription" element={<Subscription />} />
+          <Route path="/otp" element={<Otp />} />
+          <Route path="/chat" element={<ConversationPage />} />
+          <Route path="/AddListing" element={<AddListings />} />
+          <Route path="/subscription" element={<Subscription />} />
+
+
+          <Route path="/tools" element={<Tools />}>
+            <Route path='budgetcalculator' index element={<Budget />} />
+            <Route path="EMIcalculator" element={
+              <Emi />
+            } />
+
+            <Route path="homeloaneligibility" element={<Loan />} />
+            <Route path="areaconverter" element={<Area />} />
+          </Route>
+
+            <Route path="article" element={<InsideArticle />} />
+
 
         </Routes>
       </main>

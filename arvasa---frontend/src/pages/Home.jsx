@@ -22,7 +22,7 @@ export const Home = () => {
         <>
             <Navbar />
 
-        <div className="bg-orange-50">
+        <div className="bg-orange-50 overflow-x-hidden">
             <Landing />
             <ViewAnimate />
             <ServicesCards />

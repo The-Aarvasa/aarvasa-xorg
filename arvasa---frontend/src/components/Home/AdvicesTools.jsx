@@ -157,21 +157,25 @@ const AdvicesTools = () => {
             icon: EmiIcon,
             title: "EMI calculator",
             description: "Quickly estimate your monthly home loan payments.",
+            path : "/tools/EMIcalculator"
         },
         {
             icon: BudgetIcon,
             title: "Budget calculator",
             description: "Plan your property budget based on your finances.",
+            path : "/tools/budgetcalculator"
         },
         {
             icon: AreaIcon,
             title: "Area predictor",
             description: "Find the best locality that meets your needs.",
+            path : "tools/areaconverter"
         },
         {
             icon: HomeLoanIcon,
             title: "Home loan eligibility",
             description: "Check the eligibility and how much instantly.",
+            path : "tools/homeloaneligibility"
         },
     ];
 

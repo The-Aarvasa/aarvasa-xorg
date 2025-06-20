@@ -11,8 +11,9 @@ import Navbar from "../components/Navbar";
 const Services=()=>{
     return(
         <>
+        <section className="bg-orange-50 overflow-x-hidden">
           <Navbar></Navbar>
-        <section className="bg-orange-50">
+
           <Page></Page>
             <WhoWeAre/>
             <WhyAarvasa/>

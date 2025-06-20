@@ -35,7 +35,7 @@ const Services = () => {
                     })}
                 </div>
                 <div className="right_col hidden lg:block">
-                    <img src="/man.svg" className='absolute md:top-[240px] right-0 xl:top-[-40px] z-[999]' alt="" />
+                    <img src="/man.svg" className='absolute w-[500px] md:top-[240px] right-0 xl:top-[-40px] z-[999]' alt="" />
                       <svg viewBox="0 0 200 200" className='absolute z-[99] xl:top-[-80px] md:top-[120px] right-0 w-[400px]' xmlns="http://www.w3.org/2000/svg">
                         <defs>
                             <linearGradient id="myGradient" x1="0%" y1="0%" x2="100%" y2="100%">

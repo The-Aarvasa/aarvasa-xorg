@@ -21,7 +21,7 @@ export function Agents() {
   return (
     <>
     <Navbar></Navbar>
-   <div className='bg-orange-50'>
+   <div className='bg-orange-50 mb-[20px]'>
     <Page></Page>
 
 
@@ -39,7 +39,7 @@ export function Agents() {
         <p className="text-gray-600 font-['Poppins'] pt-5 text-md md:text-2xl">Work with a local expert backed by top brokerages to smoothly navigate your home <br /> journey from start to finish</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center mt-20">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 place-items-center mt-20">
         {dummyAgents.slice(0, visible).map((agent, i) => (
           <div key={i} onClick={() => navigate(`/agent/${i}`)} className="cursor-pointer w-[279px] bg-white rounded-[20px] shadow-md hover:shadow-2xl transition">
             <img src={agent.image} className="rounded-[20px] h-[323px] w-[279px] object-cover mb-4" />

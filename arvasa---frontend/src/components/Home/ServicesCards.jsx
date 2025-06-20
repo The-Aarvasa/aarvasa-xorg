@@ -1,8 +1,8 @@
 
 export const ServicesCards = () => {
     return (
-    <div className="py-10 px-6">
-        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-[100px]">
+    <div className="px-6">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-[30px]">
         <div className="bg-pink-800 text-white p-6 rounded-lg flex flex-col items-center justify-center text-center">
             <div className="">
                 <img src="./buyHome.png" alt="List Icon" className="h-[190px] w-[190px]" />

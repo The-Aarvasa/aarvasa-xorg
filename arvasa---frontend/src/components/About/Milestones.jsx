@@ -17,7 +17,7 @@ const Milestones = () => {
 
 
     return (
-        <div className="relative px-8 mx-2 mt-8 mb-8 md:mx-8 py-10 font-[poppins]" >
+        <div className="relative px-2 mx-2 mt-8 mb-8 md:mx-8 py-10 font-[poppins]" >
             <Heading label="Milestones and Future Plans" />
             <div className="relative w-auto">
 

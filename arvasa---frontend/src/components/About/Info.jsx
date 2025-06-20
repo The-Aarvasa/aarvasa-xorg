@@ -38,7 +38,7 @@ const Info = () => {
             </div>
 
             {/* Mission / Vision / Contact */}
-            <div className="flex h-auto md:h-[80vh] flex-wrap lg:flex-nowrap gap-4 lg:gap-[1.875rem] items-stretch mx-4 lg:mx-8">
+            <div className="flex h-auto md:h-[80vh] flex-wrap lg:flex-nowrap gap-4 lg:gap-[1.875rem] items-stretch mx-2 lg:mx-8">
                 
                 {/* LEFT SIDE */}
                 <div className="flex flex-col gap-4 w-full lg:w-1/2 h-full">
