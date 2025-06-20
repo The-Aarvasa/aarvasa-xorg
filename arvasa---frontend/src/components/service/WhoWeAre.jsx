@@ -3,9 +3,9 @@ import whoWeAreImage from "../../assets/services_hero.png"; // Replace with your
 import { Heading } from "../Utils/Heading";
 const WhoWeAre = () => {
   return (
-    <section className="font-[poppins] px-8 md:px-24 py-10 pt-16 flex flex-col lg:flex-row items-center justify-between">
+    <section className="font-[poppins] px-8 md:px-24 flex flex-col lg:flex-row flex-wrap items-center justify-center md:justify-between">
       {/* Left Content */}
-      <div className="lg:w-1/2 w-full mb-10 lg:mb-0">
+      <div className="lg:w-1/2  mb-10 lg:mb-0">
         <Heading label="Who We Are"/>
 
         <div className="inline-block bg-[#FEEEB3] px-4 py-2 rounded-md text-sm font-semibold mb-4 animate-bounce duration-700">

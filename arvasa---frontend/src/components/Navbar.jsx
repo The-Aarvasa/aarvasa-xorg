@@ -10,7 +10,6 @@ const Navbar = () => {
     const [Menu, setMenu] = useState(false);
     document.addEventListener("scroll", () => {
         let scrollTop = window.scrollY;
-        console.log(scrollTop);
         if (scrollTop > 130) {
             ref.current.classList.add("fixed-nav");
             ref.current.classList.add("shadow-lg");
@@ -42,7 +41,7 @@ const Navbar = () => {
 
 
     return (
-        <nav ref={ref} className="relative-nav  transition-all duration-300 ease-in-out bg-orange-50 w-full z-20 top-0 start-0 z-[9999] px-2 md:px-0 lg:px-2 py-4">
+        <nav ref={ref} className="relative-nav transition-all duration-300 ease-in-out bg-orange-50 z-20 top-0 start-0 z-[9999] px-2 md:px-0 lg:px-2 py-4">
             <div className="lg:mx-8 flex items-center justify-between mx-auto">
                 {/* mx-2 */}
                 <div className="logo relative z-[999]">
@@ -137,7 +136,7 @@ const Navbar = () => {
 
                         <div>
                             <button className="flex items-center gap-2">
-                                Login
+                                <Link to={"/signup"}>Signup</Link>
                                 <LogIn />
                             </button>
                         </div>}

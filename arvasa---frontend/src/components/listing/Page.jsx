@@ -10,7 +10,7 @@ const Page = () => {
     .filter(x => x);
 
   return (
-    <div className="routes flex flex-wrap items-center gap-2 mx-8 pt-4">
+    <div className="routes flex flex-wrap items-center mx-10 pt-4 pb-4">
       {/* Home Link */}
       <Link to="/" className="text-gray-500 font-semibold flex items-center gap-2">
         Home {pathnames.length > 0 && <ChevronRight />}

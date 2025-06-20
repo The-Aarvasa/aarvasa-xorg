@@ -150,10 +150,7 @@ export default function SignUp() {
 
 
             </div>
-            <p className='bg-[#6C1E3C] py-4 p-2 w-full absolute bottom-0 md:relative'>
-                <p className='text-center text-white'>© 2025 Arvasa Pvt Ltd. All rights reserved.
-                </p>
-            </p>
+       
         </motion.div>
     );
 }

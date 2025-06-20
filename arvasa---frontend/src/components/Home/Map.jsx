@@ -30,9 +30,6 @@ const Map = () => {
         }
     }, []);
 
-    useEffect(() => {
-       console.log(location);
-    }, [location])
 
     return (
         <div className="mx-2 mt-8 mb-8 md:mx-4 relative">

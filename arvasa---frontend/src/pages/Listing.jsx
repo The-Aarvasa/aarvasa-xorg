@@ -17,7 +17,7 @@ export const Listing = () => {
     const [page, setPage] = useState(1);
     return (
         <>
-            <div className="bg-orange-50">
+            <div className="bg-orange-50 mb-[20px]">
                 <Navbar color={"gray"}></Navbar>
 
                     <Page></Page>

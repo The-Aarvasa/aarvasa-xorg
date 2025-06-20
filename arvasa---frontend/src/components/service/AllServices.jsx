@@ -56,7 +56,7 @@ const services = [
 const AllServices = () => {
     const ref = useRef(null);
 
-    const isInView = useInView(ref, { once: false, amount: 0.3 });
+    const isInView = useInView(ref, { once: true });
 
     // Ref for the container holding circle and image
 
@@ -64,7 +64,7 @@ const AllServices = () => {
 
 
     return (
-        <section className="px-2 py-10 mx-2 md:mx-8 font-[poppins]">
+        <section className="px-2 py-10 mx- md:mx-8 font-[poppins] overflow-x-hidden">
             <Heading label="Your Real Estate Guide" />
             <h2 className="font-semibold text-left text-md text-gray-600 mb-10 md:text-xl">
                 Aarvasa Simplifies Real Estate with Seamless Transactions, Investments, and
@@ -89,12 +89,22 @@ const AllServices = () => {
                             key={index}
                             initial="hidden"
                             whileInView="visible"
-                            exit="hidden"
-                            viewport={{ amount: 0.3 }}
-                            variants={fadeVariants}
+                            viewport={{ once: false, amount: 0.1 }} // triggers sooner
+                            variants={{
+                                hidden: {
+                                    opacity: 0,
+                                    x: typeof window !== 'undefined' && window.innerWidth < 768 ? 80 : (index % 2 === 0 ? -250 : 250),
+                                },
+                                visible: {
+                                    opacity: 1,
+                                    x: 0,
+                                    transition: { duration: 0.6, ease: "easeOut" },
+                                },
+                            }}
                             className={`flex w-[100%] md:w-[80%] mx-auto flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
                                 } items-center gap-12 md:gap-28`}
                         >
+
                             <img
                                 src={service.img}
                                 alt={service.title}
