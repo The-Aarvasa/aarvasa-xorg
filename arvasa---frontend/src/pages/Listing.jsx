@@ -23,7 +23,7 @@ export const Listing = () => {
                     <Page></Page>
 
 
-                <div className="md:mx-8 md:px-8 mt-2 mb-2 rounded-full items-center justify-center flex flex-col p-2 gap-4">
+                {/* <div className="md:mx-8 md:px-8 mt-2 mb-2 rounded-full items-center justify-center flex flex-col p-2 gap-4">
                     <div className="rounded-lg">
                         <ul className="flex items-center gap-4 md:gap-8">
                             <li><Link to={"/listings"}>Property</Link></li>
@@ -32,7 +32,7 @@ export const Listing = () => {
                         </ul>
                     </div>
 
-                </div>
+                </div> */}
 
 
 
