@@ -25,7 +25,7 @@ export function Agents() {
     <Page></Page>
 
 
-      <div className="mx-auto mt-8 md:px-[30px]">
+      <div className="mx-auto md:px-[30px]">
       <section className="rounded-xl overflow-hidden mb-12">
         <div className="h-[800px] bg-cover bg-center bg-[url('/agentPage.png')] flex flex-col justify-center items-center text-white text-center">
           <h2 className="text-2xl md:text-4xl font-['Poppins'] font-semibold mb-2 -mt-5">MEET OUR AGENTS</h2>

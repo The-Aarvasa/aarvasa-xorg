@@ -3,7 +3,7 @@ import { FiMapPin, FiSearch } from "react-icons/fi";
 export function ShowTrends() {
   return (
     <div className="flex items-center flex-wrap justify-center md:justify-between mt-10">
-      <div className="flex items-center flex-wrap bg-yellow-300 py-2 gap-4 rounded-3xl md:p-2 w-full md:max-w-3xl mx-2 md:ml-10 shadow-sm">
+      <div className="flex items-center flex-wrap bg-yellow-300 p-2 md:p-auto gap-4 rounded-3xl md:p-2 w-full md:max-w-3xl mx-2 md:ml-10 shadow-sm">
         <FiMapPin className="text-lg text-black ml-4 mr-3" />
         <input
           type="text"

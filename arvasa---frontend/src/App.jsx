@@ -33,6 +33,7 @@ import Loan from './components/tools/Loan';
 import Area from './components/tools/Area';
 import InsideArticle from './components/News/InsideArticle';
 import LandingPageofAi from './components/Chatbot/LandingPageOfAi';
+import ContactedAgents from "./components/profile/ContactedAgents"
 function AppLayout() {
   const location = useLocation();
   const hideNavAndFooter = location.pathname === '/otp';
@@ -68,18 +69,18 @@ function AppLayout() {
             <Route index element={<MainProfile />} />
             <Route path="guides" element={
               <Guides />
-            } />
+            }
+            />
 
 
             <Route path="transaction" element={
               <Transactions />
             } />
 
-
-
-
-
-            <Route path="propertydetails/:id" element={<PropertyBrief />} />
+            <Route path="Contactagents" element={
+              <ContactedAgents />
+            }
+            />
           </Route>
 
           <Route path="/otp" element={<Otp />} />
@@ -98,7 +99,7 @@ function AppLayout() {
             <Route path="areaconverter" element={<Area />} />
           </Route>
 
-            <Route path="article" element={<InsideArticle />} />
+          {/* <Route path="article" element={<InsideArticle />} /> */}
 
 
         </Routes>

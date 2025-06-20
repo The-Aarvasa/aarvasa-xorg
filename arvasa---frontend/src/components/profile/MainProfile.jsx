@@ -52,20 +52,22 @@ const MainProfile = () => {
                     <p>Favourite</p>
                     </div>
 
+                    <Link to={"/profile/contactagents"}>
                       <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
                     <Mic  size={32} className='text-gray-700 group-hover:text-white' />
                     <p>Agents</p>
-                    </div>
+                    </div></Link>
 
                      <Link to={"/profile/guides"}> <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
                     <Book  size={32} className='text-gray-700 group-hover:text-white' />
                     <p>Guides</p>
                     </div> </Link>
 
+                      <Link to={"/news"}>
                       <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
                     <FileText  size={32} className='text-gray-700 group-hover:text-white' />
                     <p>News / Articles</p>
-                    </div>
+                    </div></Link>
 
                       <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
                     <Calculator  size={32} className='text-gray-700 group-hover:text-white' />

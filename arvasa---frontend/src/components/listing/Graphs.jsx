@@ -309,7 +309,7 @@ const Graphs = () => {
   return (
     <>
     <div className="flex items-center flex-wrap mt-8 md:mx-12 justify-center md:p-4">
-      <div className="w-full px-10">
+      <div className="w-full scrollbar-hidden px-2 md:px-10">
         <h2 className="font-['Poppins'] text-2xl font-semibold text-gray-800 mb-4">
           Property Market Insights
         </h2>
@@ -317,21 +317,21 @@ const Graphs = () => {
           <select
             value={selectedMetric}
             onChange={(e) => setSelectedMetric(e.target.value)}
-            className="px-2 py-2 bg-white-300 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 shadow-lg text-gray-800 font-semibold focus:outline-none focus:ring-2 focus:ring-gray-200"
+            className="md:px-2 w-full md:w-fit p-2 py-2 bg-white-300 rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-10 border border-gray-100 shadow-lg text-gray-800 font-semibold focus:outline-none focus:ring-2 focus:ring-gray-200"
           >
             {metricOptions.map((option) => (
-              <option key={option} value={option}>
+              <option key={option} className='p-2' value={option}>
                 {option}
               </option>
             ))}
           </select>
         </div>
-        <div className="rounded-lg bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-1 border border-gray-100 md:p-5 shadow-lg">
+        <div className="rounded-lg bg-clip-padding backdrop-filter shadow-lg bg-opacity-1 overflow-auto border border-gray-100 md:p-5 shadow-lg">
           <div className="flex justify-between items-center mb-4 font-['Poppins']">
             <select
               value={propertyType}
               onChange={(e) => setPropertyType(e.target.value)}
-              className="px-3 py-1 bg-white rounded-md text-gray-800 font-['Poppins'] font-semibold border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
+              className="md:px-3 p-2 py-2 w-full md:w-fit bg-white rounded-md text-gray-800 font-['Poppins'] font-semibold border border-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200"
             >
               {propertyTypes.map((type) => (
                 <option key={type} value={type}>
@@ -340,11 +340,14 @@ const Graphs = () => {
               ))}
             </select>
           </div>
-          <div className="flex pr-5 flex-wrap">
-            <div className="w-full h-full pr-5">
+          <div className="flex md:pr-5 items-center justify-center flex-wrap lg:flex-nowrap">
+
+            {/* graph control */}
+            
+            <div className="w-[700px] h-[360px] pr-5">     
               <Line ref={chartRef} data={filteredChartData} options={chartOptions} />
             </div>
-            <div className="w-2/5 pl-10">
+            <div className="w-full md:w-2/5 pl-10">
               <h4 className="text-md font-semibold text-gray-800 mb-10 font-['Poppins']">
                 Top 5 Localities
               </h4>

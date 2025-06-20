@@ -62,7 +62,7 @@ const ConversationPage = () => {
             </div>
 
             {/* Page Content */}
-            <div className="px-6 pt-24 md:pt-28">
+            <div className="pt-24 md:pt-28">
                 {/* Top right flex container */}
                 <div className="flex justify-between items-center mb-4 gap-10 p-4">
                     <button onClick={() => setSidebarOpen(!isSidebarOpen)}>
@@ -82,7 +82,7 @@ const ConversationPage = () => {
                 </div>
 
                 {/* Conversation Messages */}
-                <div className="flex flex-col space-y-8 mb-10 px-2 sm:px-10">
+                <div className="flex flex-col space-y-8 mx-28 mb-10 px-2 sm:px-10">
                     {messages.map((msg, idx) => (
                         <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                             <div className={`rounded-3xl px-6 py-4 border border-[#613A4A] max-w-[80%] text-sm font-semibold

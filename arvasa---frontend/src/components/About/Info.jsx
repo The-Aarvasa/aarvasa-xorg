@@ -12,11 +12,11 @@ const Info = () => {
             </div>
 
             {/* Who We Are Block */}
-            <div className="flex relative flex-col md:px-8 lg:flex-row items-center justify-center gap-28">
-                <div className="md:block hidden lg:relative top-0 left-0 mb-4 lg:mb-0">
+            <div className="flex relative flex-col md:px-8 lg:flex-row items-center justify-center gap-8">
+                <div className="lg:block hidden w-[900px] lg:relative top-0 left-0 mb-4 lg:mb-0">
                     <img className="w-full lg:relative" src="righthooman.png" alt="Person" />
                 </div>
-                <div className="w-full md:w-auto p-2 bg-gradient-to-l from-pink-900 to-pink-800 md:rounded-[32px] md:p-6 lg:p-12">
+                <div className="w-full bg-red-500 md:w-auto p-4 bg-gradient-to-l from-pink-900 to-pink-800 md:rounded-[20px] md:rounded-[32px] md:p-6 lg:p-12">
                     <p className="text-white text-xl leading-relaxed">
                         <span className="font-bold">So We Are Aarvasa, </span>
                         <span className="font-normal text-sm">

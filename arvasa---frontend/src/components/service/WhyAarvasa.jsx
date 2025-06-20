@@ -3,17 +3,17 @@ import whyImage from "../../assets/WhyAarvasapersonwithquestionmark.png"; // Com
 
 const WhyAarvasa = () => {
   return (
-    <section className="font-[poppins] mx-2 md:mx-8 flex justify-center items-center py-10">
+    <section className="font-[poppins] mx-2 md:mx- flex justify-center items-center py-10">
 
       <div className="relative w-full bg-gradient-to-r from-[#d16283] to-[#82213a] rounded-3xl px-6 py-8 flex flex-col md:flex-row items-center justify-around gap-8 text-white text-center md:text-left">
 
 
         {/* Left: Image with "Why Aarvasa" text over it */}
-        <div className="w-[400px] min-w-[200px]">
+        <div className="w-[200px] md:min-w-[400px]">
           <img
             src={whyImage}
             alt="Why Aarvasa"
-            className="w-[900px] top-0 left-0 object-contain"
+            className="w-[900px] relative top-10 md:top-0 left-0 object-contain"
           />
           <h2 className="top-0 absolute left-[100px] xl:left-52 top-[80px] text-2xl lg:text-5xl font-bold">
             Why Aarvasa
