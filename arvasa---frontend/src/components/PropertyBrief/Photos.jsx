@@ -3,12 +3,12 @@ import React from 'react'
 const Photos = () => {
     return (
 
-        <div className="m-5 p-8">
+        <div className="mx-2 md:m-5 md:p-8">
             
             <h1 className="text-3xl md:text-5xl font-bold text-[#3D3D3D] mb-8">Big city Residential Project</h1>
             <p className="text-lg md:text-2xl font-semibold text-[#3D3D3D] mt-8">3 BHK Flat For Sale in Omkar Signet, Malad East, New Delhi</p>
-            <div className="flex flex-col md:flex-row gap-4 mt-6 mb-6 w-full md:w-3/4 mx-auto">
-                <div className="w-full md:w-2/3 rounded-3xl overflow-hidden h-48 md:h-68">
+            <div className="flex flex-col md:flex-row gap-4 mt-6 mb-6 w-full h-[280px] md:w-3/4 mx-auto">
+                <div className="w-full md:w-2/3 rounded-3xl overflow-hidden h-full">
                     <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQIg67ppTVP1Zt6tIikFl-as56RhrWoDx_nMg&s" alt="Residential Project" className="w-full h-full object-cover transition-transform duration-300 hover:scale-105" />
                 </div>
 

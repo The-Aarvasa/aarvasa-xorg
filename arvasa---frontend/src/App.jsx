@@ -36,6 +36,7 @@ import LandingPageofAi from './components/Chatbot/LandingPageOfAi';
 import ContactedAgents from "./components/profile/ContactedAgents"
 import ApplicationStatus from './components/profile/ApplicationStatus';
 import PropertyDetails from './pages/PropertyDetails';
+import Favourites from "./components/profile/Favourites";
 function AppLayout() {
   const location = useLocation();
   const hideNavAndFooter = location.pathname === '/otp';
@@ -77,6 +78,10 @@ function AppLayout() {
               <ApplicationStatus />
             }
             />
+            <Route path="favourites" element={
+              <Favourites />
+            }
+            />
             <Route path="transaction" element={
               <Transactions />
             } />
@@ -85,7 +90,16 @@ function AppLayout() {
               <ContactedAgents />
             }
             />
+
+             <Route path="activity" element={<ApplicationStatus />}>
+
           </Route>
+
+          </Route>
+
+         
+
+
 
           <Route path="/otp" element={<Otp />} />
           <Route path="/chat" element={<ConversationPage />} />
