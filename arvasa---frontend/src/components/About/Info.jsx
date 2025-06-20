@@ -1,5 +1,5 @@
 import React from 'react';
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 const slideFromRight = {
     hidden: {
         opacity: 0,
@@ -9,11 +9,15 @@ const slideFromRight = {
         opacity: 1,
         x: 0,
         transition: {
-            duration: 0.6,       // same for both
-            ease: "easeInOut",   // smoother easing
+            duration: 0.6,
+            ease: "easeInOut",
+            delay: 0.3,
         },
     },
 };
+
+
+
 
 
 const Info = () => {
@@ -55,7 +59,7 @@ const Info = () => {
 
             {/* Mission / Vision / Contact */}
             <div className="flex h-auto md:h-[80vh] flex-wrap lg:flex-nowrap gap-4 lg:gap-[1.875rem] items-stretch mx-2 lg:mx-8">
-                
+
                 {/* LEFT SIDE */}
                 <div className="flex flex-col gap-4 w-full lg:w-1/2 h-full">
                     <div className="bg-pink-800 p-6 rounded-2xl flex flex-col gap-4 h-full">
@@ -82,8 +86,7 @@ const Info = () => {
                     variants={slideFromRight}
                     initial="hidden"
                     whileInView="visible"
-                    exit="hidden"
-                    viewport={{ amount: 0.3 }} // Removed "once: true"
+                    viewport={{ amount: 0.3, once: true }}
                     className="flex flex-col justify-around p-6 gap-8 md:gap-1 bg-pink-800 rounded-2xl w-full lg:w-1/2 h-full"
                 >
                     <div className="flex flex-col justify-start items-start gap-4">
