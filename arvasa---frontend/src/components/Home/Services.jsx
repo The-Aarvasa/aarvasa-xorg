@@ -24,14 +24,15 @@ const Services = () => {
         <div className='mx-2 mt-8 mb-8 md:mx-4 relative'>
             <Heading label={"Services"}></Heading>
             <div className="cols flex md:w-[98%] mx-auto flex-wrap items-center justify-center lg:justify-between">
-                <div className="left_col md:w-[60%] py-8 rounded-lg flex-wrap bg-gradient-to-br gap-8 from-[#3A3A3A] to-[#A0A0A0] flex items-center justify-center">
+                <div className="left_col w-[100%] bg-red-500 md:w-[60%] py-8 rounded-lg flex-wrap bg-gradient-to-br gap-8 from-[#3A3A3A] to-[#A0A0A0] flex items-center justify-center">
                     {data.map((currElem, index) => {
                         return (
-                            <div key={index} className="w-full card md:w-[380px] p-4 m-2 h-[130px] bg-[#D9D9D9] flex items-center justify-center gap-2">
+                            <Link to={"/services"}>
+                            <div key={index} className="w-[380px] p-4 m-2 h-[130px] bg-[#D9D9D9] flex items-center justify-center gap-2">
                                 <img className='w-20 rounded-lg' src={currElem.img} alt="" />
                                 <h1>{currElem.text}</h1>
                                 <MoveRight></MoveRight>
-                            </div>
+                            </div></Link>
                         )
                     })}
                 </div>
