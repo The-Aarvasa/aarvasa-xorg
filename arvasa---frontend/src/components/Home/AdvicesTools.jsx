@@ -122,11 +122,11 @@
 
 
 import React from "react";
-import RatesTrendsIcon from "../../assets/Advices Rates and Trends.png";
-import EmiIcon from "../../assets/Advices EMI.png";
-import BudgetIcon from "../../assets/Advices Budget.png";
-import AreaIcon from "../../assets/Advices Area.png";
-import HomeLoanIcon from "../../assets/Advices Home Loan.png";
+import RatesTrendsIcon from "../../assets/AdvicesRatesandTrends.png";
+import EmiIcon from "../../assets/AdvicesEMI.png";
+import BudgetIcon from "../../assets/AdvicesBudget.png";
+import AreaIcon from "../../assets/AdvicesArea.png";
+import HomeLoanIcon from "../../assets/AdvicesHomeLoan.png";
 import { Heading } from "../Utils/Heading";
 import { Link } from "react-router-dom";
 
@@ -157,21 +157,25 @@ const AdvicesTools = () => {
             icon: EmiIcon,
             title: "EMI calculator",
             description: "Quickly estimate your monthly home loan payments.",
+            path : "/tools/EMIcalculator"
         },
         {
             icon: BudgetIcon,
             title: "Budget calculator",
             description: "Plan your property budget based on your finances.",
+            path : "/tools/budgetcalculator"
         },
         {
             icon: AreaIcon,
             title: "Area predictor",
             description: "Find the best locality that meets your needs.",
+            path : "tools/areaconverter"
         },
         {
             icon: HomeLoanIcon,
             title: "Home loan eligibility",
             description: "Check the eligibility and how much instantly.",
+            path : "tools/homeloaneligibility"
         },
     ];
 

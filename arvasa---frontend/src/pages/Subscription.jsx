@@ -8,7 +8,7 @@ const Subscription = () => {
   return (
     <>
     <Navbar></Navbar>
-    <div className="bg-orange-50">
+    <div className="bg-orange-50 mb-[20px]">
        <Page></Page>
         <Content />
     </div>

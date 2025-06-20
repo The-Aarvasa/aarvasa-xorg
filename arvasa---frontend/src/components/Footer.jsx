@@ -3,7 +3,7 @@ import React from 'react';
 const Footer = () => {
   return (
     <div
-      className="w-full px-4 pb-12 flex flex-col gap-12 items-center"
+      className="hidden md:block w-full px-4 pb-12 flex flex-col gap-12 items-center"
       style={{
         background: 'linear-gradient(to right, #A82E4F, #8C2841)',
       }}

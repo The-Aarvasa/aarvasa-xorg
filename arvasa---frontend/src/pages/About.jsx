@@ -16,7 +16,7 @@ const About = () => {
     <>
            <Navbar></Navbar>
 
-        <div className='bg-orange-50 pt-[10px]'>
+        <div className='bg-orange-50 pt-[10px] mb-[20px]'>
 <Page></Page>
           <Info/>
         <Milestones/>

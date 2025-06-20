@@ -21,11 +21,11 @@ export function Agents() {
   return (
     <>
     <Navbar></Navbar>
-   <div className='bg-orange-50'>
+   <div className='bg-orange-50 mb-[20px]'>
     <Page></Page>
 
 
-      <div className="mx-auto mt-8 md:px-[30px]">
+      <div className="mx-auto md:px-[30px]">
       <section className="rounded-xl overflow-hidden mb-12">
         <div className="h-[800px] bg-cover bg-center bg-[url('/agentPage.png')] flex flex-col justify-center items-center text-white text-center">
           <h2 className="text-2xl md:text-4xl font-['Poppins'] font-semibold mb-2 -mt-5">MEET OUR AGENTS</h2>
@@ -39,7 +39,7 @@ export function Agents() {
         <p className="text-gray-600 font-['Poppins'] pt-5 text-md md:text-2xl">Work with a local expert backed by top brokerages to smoothly navigate your home <br /> journey from start to finish</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 place-items-center mt-20">
+      <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4 place-items-center mt-20">
         {dummyAgents.slice(0, visible).map((agent, i) => (
           <div key={i} onClick={() => navigate(`/agent/${i}`)} className="cursor-pointer w-[279px] bg-white rounded-[20px] shadow-md hover:shadow-2xl transition">
             <img src={agent.image} className="rounded-[20px] h-[323px] w-[279px] object-cover mb-4" />
