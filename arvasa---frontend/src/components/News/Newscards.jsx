@@ -2,282 +2,91 @@ import React from 'react'
 
 const Newscards = () => {
     return (
-        <div className="relative max-w-[1920px] m-[3rem] mt-[2rem]  rounded-lg ">
-            <div className="max-w-6xl mx-auto px-4">
-                <ul className="flex font-[poppins] justify-between items-center cursor-pointer text-black p-4 font-medium text-lg">
-                    {["All", "Infrastructure", "Commercial", "Home Loan", "Rented", "Investment", "Taxation"].map((item, idx) => (
-                        <li
-                            key={idx}
-                            className={`relative px-2 transition-transform duration-200 ease-in-out hover:scale-105 hover:text-[#6D1E3D] ${item === "All" ? "text-[#6D1E3D] after:absolute after:bottom-[-6px] after:left-0 after:right-0 after:h-[2px] after:bg-[#6D1E3D] after:content-['']" : ""
-                                }`}
-                        >
-                            {item}
-                        </li>
-                    ))}
+        <div className="relative max-w-[1920px] mx-auto px-2 sm:px-4 md:px-8 py-4 sm:py-8">
+            {/* Responsive Tabs */}
+            <div className="max-w-4xl mx-auto">
+                <ul className="flex overflow-x-auto scrollbar-hide font-[poppins] justify-start sm:justify-between items-center cursor-pointer text-black p-2 sm:p-4 font-medium text-sm sm:text-md gap-6 sm:gap-0 whitespace-nowrap">
+                    <li className="hover:text-[#6D1E3D] border-b-2 border-[#6D1E3D] pb-1 min-w-max">All</li>
+                    <li className="hover:text-[#6D1E3D] min-w-max">Infrastructure</li>
+                    <li className="hover:text-[#6D1E3D] min-w-max">Commercial</li>
+                    <li className="hover:text-[#6D1E3D] min-w-max">Home Loan</li>
+                    <li className="hover:text-[#6D1E3D] min-w-max">Rented</li>
+                    <li className="hover:text-[#6D1E3D] min-w-max">Investment</li>
+                    <li className="hover:text-[#6D1E3D] min-w-max">Taxation</li>
                 </ul>
-            </div>
-
-            <div className="flex flex-wrap gap-12 justify-between m-[4rem]">
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
+                {/* Search Bar */}
+                <div className="flex justify-center mt-2 mb-8">
+                    <div className="flex w-full max-w-xl items-center bg-gray-100 rounded-full px-2 sm:px-4 py-2 shadow-sm">
+                        <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            className="w-5 h-5 text-gray-400 mr-2"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                            stroke="currentColor"
+                            strokeWidth={2}
+                        >
+                            <path
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                d="M21 21l-4.35-4.35m0 0A7.5 7.5 0 104.5 4.5a7.5 7.5 0 0012.15 12.15z"
+                            />
+                        </svg>
+                        <input
+                            type="text"
+                            placeholder="Search for particular article"
+                            className="flex-1 bg-transparent outline-none text-base font-normal placeholder-gray-800 font-poppins"
+                        />
+                        <div className="flex items-center ml-2 text-gray-500 cursor-pointer select-none relative">
+                            <span className="text-lg mr-1">📍</span>
+                            <select className="bg-transparent outline-none text-sm text-gray-700 pr-6 pl-1 py-0.5 rounded focus:ring-0 appearance-none font-poppins">
+                                <option value="">Select city</option>
+                                <option value="mumbai">Mumbai</option>
+                                <option value="delhi">Delhi</option>
+                                <option value="bangalore">Bangalore</option>
+                                <option value="pune">Pune</option>
+                            </select>
+                            {/* Custom arrow */}
+                            <svg
+                                className="w-4 h-4 absolute right-1 top-1/2 transform -translate-y-1/2 pointer-events-none"
+                                fill="none"
+                                stroke="currentColor"
+                                viewBox="0 0 24 24"
+                            >
+                                <path d="M19 9l-7 7-7-7" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                            </svg>
+                        </div>
                     </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-                <div className="w-[30rem] h-[30rem] relative rounded-3xl">
-                    <div className="w-[30rem] h-[30rem] absolute inset-0 bg-white rounded-3xl shadow-[0px_2px_5px_rgba(0,0,0,0.20)]" />
-
-                    <img
-                        src="paper.png"
-                        className="w-[30rem] h-[18rem] absolute inset-x-0 top-0 rounded-3xl"
-                    />
-
-                    <div
-                        className="w-72 h-6 absolute left-[24px] top-[308px] text-black text-xl font-bold font-['Poppins'] leading-tight"
-                    >
-                        The Mumbai Property
-                    </div>
-
-                    <div
-                        className="w-[28rem] h-14 absolute left-[24px] top-[350px] text-neutral-700 text-lg leading-7"
-                        style={{ fontFamily: 'Lato, sans-serif' }}
-                    >
-                        Impact of Infrastructure Development — Mumbai’s property market has been heavily influenced by infrastructure development.
-                    </div>
-
-                    <div
-                        className="w-24 h-4 absolute left-[370px] top-[450px] text-center text-stone-600 text-sm font-['Lato']"
-                    >
-                        Mar 03, 2025
-                    </div>
-                </div>
-
-            </div>
-
-            <div className="flex mb-[4rem] items-center justify-center">
-                <div className="group w-56 h-16 px-8 py-6 rounded-3xl outline outline-2 outline-offset-[-1px] outline-[#6D1E3D] inline-flex justify-center items-center gap-2.5 transition-all duration-300 hover:bg-[#6D1E3D] hover:text-white hover:outline-[#6D1E3D]">
-                    <div className="text-[#6D1E3D] text-center justify-start text-2xl font-medium font-['Montserrat'] leading-none group-hover:text-white transition-colors duration-300">See more</div>
                 </div>
             </div>
 
+            {/* Cards Grid */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 m-2 sm:m-4">
+                {[...Array(9)].map((_, idx) => (
+                    <div key={idx} className="bg-white rounded-3xl shadow-md w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto h-[24rem] sm:h-[26rem] lg:h-[27rem] flex flex-col overflow-hidden">
+                        <img
+                            src="paper.png"
+                            className="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-t-3xl"
+                            alt="News"
+                        />
+                        <div className="flex-1 flex flex-col justify-between p-6 sm:p-6">
+                            <div>
+                                <h3 className="text-lg sm:text-xl font-bold font-poppins mb-2">The Mumbai Property</h3>
+                                <p className="text-neutral-700 text-base sm:text-lg font-normal leading-6 sm:leading-7 font-lato">
+                                    Impact of Infrastructure Development — Mumbai's property market has been heavily influenced by infrastructure development.
+                                </p>
+                            </div>
+                            <div className="text-right text-stone-600 text-xs sm:text-sm font-lato">Mar 03, 2025</div>
+                        </div>
+                    </div>
+                ))}
+            </div>
 
+            {/* See More Button */}
+            <div className="flex mb-8 items-center justify-center">
+                <div className="group w-40 sm:w-56 h-12 sm:h-15 px-4 sm:px-8 py-3 sm:py-6 rounded-3xl outline outline-2 outline-offset-[-1px] outline-[#6D1E3D] inline-flex justify-center items-center gap-2.5 transition-all duration-300 hover:bg-[#6D1E3D] hover:text-white hover:outline-[#6D1E3D]">
+                    <div className="text-[#6D1E3D] text-center justify-start text-lg sm:text-2xl font-medium font-['Montserrat'] leading-none group-hover:text-white transition-colors duration-300">See more</div>
+                </div>
+            </div>
         </div>
     )
 }

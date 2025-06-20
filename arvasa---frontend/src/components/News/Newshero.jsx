@@ -12,7 +12,7 @@ const Newshero = () => {
 
     return (
         <>
-            <div className="relative max-w-[1920px] m-[3rem] mt-[7rem] border-2 border-gray-200 rounded-lg overflow-hidden">
+            <div className="relative max-w-[1920px] m-[2rem] mt-[4rem] rounded-lg overflow-hidden">
                 <div className="relative h-[516px]">
                     <img
                         className="absolute h-full w-full rounded-[20px] object-center object-cover"
