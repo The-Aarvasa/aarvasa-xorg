@@ -44,7 +44,7 @@ export const Explore = () => {
     return (
         <div className="m-5 p-5 bg-white rounded-2xl shadow-md">
             <div className="flex items-center space-x-2 mb-5">
-                <img src="./explore.png" alt="Explore Icon" className="h-10 w-10" />
+                <img src="/explore.png" alt="Explore Icon" className="h-10 w-10" />
                 <h2 className="text-[32px] font-semibold">Explore</h2>
             </div>
 
@@ -70,15 +70,15 @@ export const Explore = () => {
 
                 <div className="flex justify-start space-x-5 -mb-5">
                     <button className="bg-gray-200 px-4 py-2 rounded-full flex items-center mb-2">
-                        <img src="./train.png" alt="Train Icon" className="h-6 w-6 mr-2" />
+                        <img src="/train.png" alt="Train Icon" className="h-6 w-6 mr-2" />
                         <span className="font-semibold pr-1">2km</span>Railway station
                     </button>
                     <button className="bg-gray-200 px-4 py-2 rounded-full flex items-center mb-2">
-                        <img src="./school.png" alt="School Icon" className="h-6 w-6 mr-2" />
+                        <img src="/school.png" alt="School Icon" className="h-6 w-6 mr-2" />
                         <span className="font-semibold pr-1">0.5km</span>Public school
                     </button>
                     <button className="bg-gray-200 px-4 py-2 rounded-full flex items-center mb-2">
-                        <img src="./plane.png" alt="Airplane Icon" className="h-6 w-6 mr-2" />
+                        <img src="/plane.png" alt="Airplane Icon" className="h-6 w-6 mr-2" />
                         <span className="font-semibold pr-1">4km</span>Air transit
                     </button>
                 </div>
@@ -91,7 +91,7 @@ export const Explore = () => {
             </div>
 
             <button className="mt-4 bg-gray-200 px-4 py-2 rounded-full flex items-center">
-                <img src="./location.png" alt="Nearby Icon" className="h-6 w-6 mr-2" /> 
+                <img src="/location.png" alt="Nearby Icon" className="h-6 w-6 mr-2" /> 
                 View places nearby
             </button>
         </div>

@@ -33,9 +33,9 @@ const Property = ({
     getData();
     }, [])
 
-    useEffect(() => {
-        console.log(data.length);
-    }, [data])
+    // useEffect(() => {
+    //     console.log(data.length);
+    // }, [data])
     return (
         <>
 
