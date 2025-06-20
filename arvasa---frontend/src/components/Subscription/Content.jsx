@@ -158,7 +158,7 @@ const Content = () => {
         const commKey = `${planKey}_commision`;
 
         return (
-            <div className="h-auto transition-all transition-delay-1000 ease-in-out p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)]">
+            <div className="h-auto transition-all ease-in-out p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)]">
                 <div className="self-stretch text-center justify-start text-stone-900 text-3xl font-semibold font-['Poppins']">{label}</div>
                 <div className="flex flex-col gap-4">
                     <select className="px-2 w-full font-[poppins] text-xl text-center outline outline-yellow-300 outline-2 rounded-lg bg-yellow-100">
@@ -227,7 +227,7 @@ const Content = () => {
     };
 
     return (
-        <motion.div className="font-[poppins] pt-[50px] pb-[100px] transition-all transition-delay-1000 ease-in-out">
+        <motion.div className="font-[poppins] pt-[50px] pb-[100px] transition-all ease-in-out">
             <div className="flex flex-col items-center gap-7 justify-center w-full">
                 <div className="justify-start text-stone-900 text-4xl font-semibold font-['Poppins']">The Perfect plan for your needs</div>
                 <div className="w-[1064px] text-center justify-start text-stone-900 text-xl font-normal font-['Poppins']">Our transparent pricing makes it easy to find a plan that work in your financial constrain</div>
@@ -236,7 +236,7 @@ const Content = () => {
                     <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black text-xl w-32 h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'rental' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('rental')}>Rental's</button>
                     <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black text-xl w-32 h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'agent' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('agent')}>Agent's</button>
                 </div>
-                <motion.div className="flex w-full transition-all transition-delay-1000 ease-in-out justify-center items-center gap-10">
+                <motion.div className="flex w-full transition-all ease-in-out justify-center items-center gap-10">
                     <AnimatePresence mode="wait">
   {planList.map((plan) => (
     selectedPlan === plan.key ? (

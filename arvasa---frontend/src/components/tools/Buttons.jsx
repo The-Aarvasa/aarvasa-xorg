@@ -30,7 +30,7 @@ const Buttons = () => {
         <div className="buttons w-full flex gap-6 flex-wrap items-center justify-center mt-8">
             {data.map((currElem) => {
                 return(
-                    <Link to={currElem.link} className='w-full sm:w-fit'><button className={`border w-full md:w-fit px-4 transition-all transition-delay-[900ms] border-1 border-gray-400 p-2 rounded-xl ${currElem.link === location.pathname ? 'border-none shadow-lg font-semibold bg-[#F3CADB] text-[#6C1E3C]' : 'text-gray-600'}`}>{currElem.title}</button></Link>
+                    <Link to={currElem.link} className='w-full sm:w-fit'><button className={`border w-full md:w-fit px-4 transition-all border-1 border-gray-400 p-2 rounded-xl ${currElem.link === location.pathname ? 'border-none shadow-lg font-semibold bg-[#F3CADB] text-[#6C1E3C]' : 'text-gray-600'}`}>{currElem.title}</button></Link>
                 )
             })}
         </div>
