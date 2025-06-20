@@ -34,6 +34,7 @@ import Area from './components/tools/Area';
 import InsideArticle from './components/News/InsideArticle';
 import LandingPageofAi from './components/Chatbot/LandingPageOfAi';
 import ContactedAgents from "./components/profile/ContactedAgents"
+import ApplicationStatus from './components/profile/ApplicationStatus';
 function AppLayout() {
   const location = useLocation();
   const hideNavAndFooter = location.pathname === '/otp';
@@ -71,8 +72,10 @@ function AppLayout() {
               <Guides />
             }
             />
-
-
+            <Route path="activity" element={
+              <ApplicationStatus />
+            }
+            />
             <Route path="transaction" element={
               <Transactions />
             } />
