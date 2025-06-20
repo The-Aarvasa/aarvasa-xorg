@@ -176,7 +176,7 @@ const NewsArticles = () => {
                                 <h1 className="text-md md:text-3xl font-semibold">
                                     <Counter end={2000000} /> +
                                 </h1>
-                                <p className="text-sm">user visits</p>
+                                <p className="text-sm">User visits</p>
                                 </motion.div>
                                 <motion.div variants={numberVariants}>
                                 <h1 className="text-md md:text-3xl font-semibold">
