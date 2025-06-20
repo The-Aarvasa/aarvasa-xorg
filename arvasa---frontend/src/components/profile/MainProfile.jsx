@@ -35,10 +35,11 @@ const MainProfile = () => {
             <hr className='w-[85%] mx-auto border border-1 border-b-gray-300' />
 
             <div className='boxes flex items-center justify-center lg:justify-start gap-5 mx-12 flex-wrap mt-8'>
+                <Link to={"/profile/activity"}>
                 <div className="activity min-w-[220px] cursor-pointer rounded-lg group hover:bg-[#8C2841] hover:transform hover:scale-[1.1] hover:rotate-[5deg] hover:text-white transition-all bg-[#F9EAF1] flex items-center justify-center gap-3 flex-col p-12">
                     <History size={32} className='text-gray-700 group-hover:text-white' />
                     <p>My Activity</p>
-                    </div>
+                    </div></Link>
 
                     <Link to={"/profile/transaction"}>
                       <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
@@ -47,10 +48,11 @@ const MainProfile = () => {
                     </div>
                     </Link>
 
+                     <Link to={"/profile/favourites"}>
                       <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
                     <Heart  size={32} className='text-gray-700 group-hover:text-white' />
                     <p>Favourite</p>
-                    </div>
+                    </div></Link>
 
                     <Link to={"/profile/contactagents"}>
                       <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
@@ -69,10 +71,11 @@ const MainProfile = () => {
                     <p>News / Articles</p>
                     </div></Link>
 
+                      <Link to={"/tools/budgetcalculator"}>
                       <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:rotate-[5deg] hover:text-white flex items-center justify-center flex-col p-12 gap-3">
                     <Calculator  size={32} className='text-gray-700 group-hover:text-white' />
                     <p>Tools</p>
-                    </div>
+                    </div></Link>
 
                     <Link to={"/subscription"}>
                     

@@ -150,7 +150,7 @@ const Team = () => {
                                 alt={member.name}
                                 className="w-full h-auto object-cover"
                             />
-                            <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-[700] left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
+                            <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
                                 <h4 className="text-base font-semibold">{member.name}</h4>
                                 <p className="text-xs">{member.role}</p>
                                 <div className="absolute bottom-4 right-4 flex items-center gap-2">
@@ -185,7 +185,7 @@ const Team = () => {
                                 alt={member.name}
                                 className="w-full h-auto object-cover"
                             />
-                            <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-[700] left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
+                            <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
                                 <h4 className="text-base font-semibold">{member.name}</h4>
                                 <p className="text-xs">{member.role}</p>
                                 <div className="absolute bottom-4 right-4 flex items-center gap-2">

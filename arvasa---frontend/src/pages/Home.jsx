@@ -14,7 +14,6 @@ import FAQSection from "../components/Home/FAQSection"
 import { Agents } from "./Agents"
 import NewsArticles from "../components/Home/NewsArticles"
 import { ServicesCards } from "../components/Home/ServicesCards"
-import Transactions from "./Transactions"
 
 
 export const Home = () => {
