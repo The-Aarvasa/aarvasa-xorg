@@ -12,9 +12,9 @@ import Page from '../components/listing/Page'
 import NavbarRaw from '../components/NavbarRaw'
 import Footer from '../components/Footer'
 const About = () => {
+    
   return (
     <>
-           <Navbar></Navbar>
 
         <div className='bg-orange-50 pt-[10px] mb-[20px]'>
 <Page></Page>
@@ -26,7 +26,6 @@ const About = () => {
         <CoPartners/>
         <ContactUs/>
         </div>
-        <Footer />
 
     </>
 

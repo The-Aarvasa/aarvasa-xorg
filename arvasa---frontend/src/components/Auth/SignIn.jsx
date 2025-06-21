@@ -10,7 +10,7 @@ export default function SignIn() {
     const [password, setPassword] = useState("");
     const navigate = useNavigate();
 
-    // 👇 Check for Google Auth tokens in URL on first render
+    //  Check for Google Auth tokens in URL on first render
     useEffect(() => {
         const params = new URLSearchParams(window.location.search);
         const accessToken = params.get("accessToken");
@@ -73,15 +73,17 @@ export default function SignIn() {
         }
     };
 
+    useEffect(() => {
+        console.log("Rendered");
+    }, [])
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="bg-[#ffffff] justify-center items-center"
-        >
-            <div className="flex items-center flex-row-reverse justify-between overflow-hidden">
+            className="bg-[#ffffff] justify-center items-center">
+            {/* Main Content Container (Flex to hold left and right sections) */}
+            <div className="flex items-center flex-row flex-row-reverse justify-between overflow-hidden">
+
+
+                {/* Left Section: Login Form */}
                 <div className="flex items-center h-[100vh] justify-center flex-col w-full p-4 md:w-[28%] mx-auto">
                     <a href="#" className='flex relative right-8 items-center'>
                         <img src="/images/logo_shape.png" className='w-32' alt="logo" />

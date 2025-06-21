@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 export const Error = () => {
   return (
     <div className="relative min-h-screen bg-[#8B1E3F] text-white p-6 overflow-hidden">
@@ -17,26 +18,22 @@ export const Error = () => {
                 Something Went Wrong
             </div>
           </div>
-          <p className="text-xl md:text-2xl mb-6 pt-10 pb-10">
+          <p className="text-xl md:text-xl mb-6 pt-10 pb-10">
             We couldn't log you in. Please check your email or password and try again.
           </p>
+          <Link to={"/"}>
           <button className="bg-yellow-500 text-rose-900 text-2xl font-semibold py-4 px-8 rounded-full mb-4 hover:bg-yellow-600 transition">
             Return to Home
-          </button>
-          <p className="text-2xl mb-6 pt-6">
-            Forgot your password?{' '}
-            <a href="#" className="underline hover:text-yellow-300">
-              Reset here
-            </a>
-          </p>
-          <div className="flex justify-center gap-[250px] pt-[200px]">
+          </button></Link>
+        
+          {/* <div className="flex justify-center gap-[250px] pt-[200px]">
             <button className="bg-yellow-500 text-rose-900 text-2xl font-semibold py-4 px-8 rounded-full mb-4 hover:bg-yellow-600 transition">
               Try Again
             </button>
             <button className="bg-yellow-500 text-rose-900 text-2xl font-semibold py-4 px-8 rounded-full mb-4 hover:bg-yellow-600 transition">
               Back to Login
             </button>
-          </div>
+          </div> */}
         </div>
       </div>
     </div>
