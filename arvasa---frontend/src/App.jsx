@@ -37,6 +37,8 @@ import ContactedAgents from "./components/profile/ContactedAgents"
 import ApplicationStatus from './components/profile/ApplicationStatus';
 import PropertyDetails from './pages/PropertyDetails';
 import Favourites from "./components/profile/Favourites";
+import BackToTopButton from './components/Home/BackToTopButton';
+
 function AppLayout() {
   const location = useLocation();
   const hideNavAndFooter = location.pathname === '/otp';
@@ -91,13 +93,13 @@ function AppLayout() {
             }
             />
 
-             <Route path="activity" element={<ApplicationStatus />}>
+            <Route path="activity" element={<ApplicationStatus />}>
+
+            </Route>
 
           </Route>
 
-          </Route>
 
-         
 
 
 
@@ -122,6 +124,7 @@ function AppLayout() {
 
         </Routes>
       </main>
+      <BackToTopButton />
     </div>
   );
 }
