@@ -194,7 +194,7 @@ const NewsArticles = () => {
                         </motion.div>
 
                         {/* Right Column (Swiper) */}
-                        <div className="right_col w-full md:w-[750px]">
+                        <div className="right_col w-full pt-20 md:w-[750px] md:pt-0">
                             <Testimonials />
                         </div>
                     </div>
