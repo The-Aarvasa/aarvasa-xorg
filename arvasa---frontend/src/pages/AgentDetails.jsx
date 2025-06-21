@@ -33,8 +33,7 @@ export default function AgentDetails() {
 
   return (
   <>
-  <NavbarRaw color={"white"}></NavbarRaw>
-   <div className='pt-[100px]'>
+   <div className=''>
     <Page></Page>
      <div className="mx-auto p-5">
       <div className="flex justify-center flex-col md:flex-row gap-12 mb-20">
@@ -47,7 +46,7 @@ export default function AgentDetails() {
             <p className='mb-4 max-w-[800px]'>These roles not only sharpened my leadership, operations, and customer service skills, but also deepened my understanding of building lasting relationships and creating memorable guest experiences. My ability to lead diverse teams, adapt quickly in fast-paced environments, and consistently exceed expectations became a hallmark of my professional journey. Whether overseeing day-to-day operations or orchestrating high-profile events, I developed a keen eye for detail, a deep appreciation for excellence, and a results-driven mindset. Today, I carry those values into every new challenge I take on—always striving to lead with integrity, deliver value, and make a meaningful impact.</p>
           )}
           <button className="border rounded-[14px] text-md px-5 py-2 mb-4 hover:bg-gray-100 transition" onClick={() => setSeeMore(!seeMore)}>{seeMore ? 'See less' : 'See more'}</button>
-          <div className="flex justify-between pt-5 space-x-8">
+          <div className="flex flex-wrap justify-between pt-5 md:space-x-8 space-y-9">
             <div className="flex flex-col gap-2">
                 <h3 className="text-[19px] font-medium text-center">EXPERIENCE</h3>
                 <p>20 years in Real estate</p>
@@ -129,7 +128,6 @@ export default function AgentDetails() {
       </div>
     </div>
    </div>
-        <Footer />
 
   </>
   );

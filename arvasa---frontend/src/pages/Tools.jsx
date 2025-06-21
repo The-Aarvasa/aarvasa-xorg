@@ -8,7 +8,6 @@ import { Outlet } from 'react-router-dom';
 const Tools = () => {
     return (
         <>
-            <Navbar></Navbar>
             <div className='bg-orange-50 mb-8 mb-[20px]'>
                 <Page></Page>
                 <div className='bg-white flex items-center justify-center gap-12 rounded-lg p-8 flex-col h-auto w-[100%] md:w-[95%] mx-auto shadow-lg'>
@@ -17,7 +16,6 @@ const Tools = () => {
 
                 </div>
             </div>
-            <Footer></Footer>
         </>
     )
 }

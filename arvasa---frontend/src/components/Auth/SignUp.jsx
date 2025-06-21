@@ -10,10 +10,7 @@ export default function SignUp() {
     const [cPass, setCpass] = useState("");
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
+
             className="bg-[#ffffff] justify-center items-center">
             {/* Main Content Container (Flex to hold left and right sections) */}
             <div className="flex items-center flex-row flex-row-reverse justify-between overflow-hidden">

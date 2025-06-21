@@ -10,7 +10,6 @@ const AddListings = () => {
       <Page></Page>
       <ListingProcess></ListingProcess>
     </div>
-    <Footer />
     </>
   )
 }

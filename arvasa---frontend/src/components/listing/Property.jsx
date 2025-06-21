@@ -23,15 +23,36 @@ const Property = ({
     location = "The Gardens Building, India"
 }) => {
 
-    const [data, setData] = useState([]);
+    const [data, setData] = useState([
+        {
+        route : "Home",
+        path : "/"
+       },
+       {
+        route : "About us",
+        path : "/about"
+       },
+       {
+        route : "Agents",
+        path : "/agents"
+       },
+       {
+        route : "Services",
+        path : "/services"
+       },
+       {
+        route : "Listings",
+        path : "/listing"
+       },
+]);
 
-    const getData = async () => {
-        const respsonse = await axios.get("http://localhost:3000/");
-        setData(respsonse.data.data);
-    }
-    useEffect(() => {
-    getData();
-    }, [])
+    // const getData = async () => {
+    //     const respsonse = await axios.get("http://localhost:3000/");
+    //     setData(respsonse.data.data);
+    // }
+    // useEffect(() => {
+    // getData();
+    // }, [])
 
     // useEffect(() => {
     //     console.log(data.length);
