@@ -146,55 +146,55 @@ const NewsArticles = () => {
                 </div>
 
                 {/* Row 2 */}
-                <div className="row_2 px-4">
-                    <div className="cols flex items-center flex-wrap justify-center lg:justify-between lg:space-y-20 md:space-y-10 px-2 md:px-20 w-full mx-auto">
+                <div className="row_2 px-4 sm:px-6 md:px-8">
+                    <div className="cols flex flex-col md:flex-row items-center justify-center md:justify-between gap-6 md:gap-8 lg:gap-12 max-w-[90%] sm:max-w-3xl md:max-w-5xl lg:max-w-7xl mx-auto">
                         {/* Left Column */}
                         <motion.div
                             ref={ref}
-                            className="left_col p-6"
+                            className="left_col p-4 sm:p-6 w-full md:w-1/2"
                             variants={containerVariants}
                             initial="hidden"
                             animate={isInView ? 'visible' : 'hidden'}
                         >
                             <motion.h1
-                                className="text-black font-semibold text-3xl"
+                                className="text-black font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl"
                                 variants={headingVariants}
                             >
                                 More than 10 Years of Experience
                             </motion.h1>
                             <motion.p
-                                className="text-[#181A20] text-sm font-normal pt-4 pb-10"
+                                className="text-[#181A20] text-xs sm:text-sm md:text-base font-normal pt-3 sm:pt-4 pb-6 sm:pb-8 md:pb-10"
                                 variants={textVariants}
                             >
-                                We’ve been helping individuals and families find their perfect home through trusted insights,<br /> expert support, and innovative tools.
+                                We’ve been helping individuals and families find their perfect home through trusted insights, expert support, and innovative tools.
                             </motion.p>
                             <motion.div
-                                className="numbers flex items-center gap-12 pt-2 -mb-10"
+                                className="numbers flex flex-wrap items-center gap-6 sm:gap-8 md:gap-12 pt-2 -mb-6 sm:-mb-8 md:-mb-10"
                                 variants={containerVariants}
                             >
                                 <motion.div variants={numberVariants}>
-                                <h1 className="text-md md:text-3xl font-semibold">
-                                    <Counter end={2000000} /> +
-                                </h1>
-                                <p className="text-sm">User visits</p>
+                                    <h1 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-semibold">
+                                        <Counter end={2000000} /> +
+                                    </h1>
+                                    <p className="text-xs sm:text-sm">User visits</p>
                                 </motion.div>
                                 <motion.div variants={numberVariants}>
-                                <h1 className="text-md md:text-3xl font-semibold">
-                                    <Counter end={999} /> +
-                                </h1>
-                                <p className="text-sm">Satisfied Customers</p>
+                                    <h1 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-semibold">
+                                        <Counter end={999} /> +
+                                    </h1>
+                                    <p className="text-xs sm:text-sm">Satisfied Customers</p>
                                 </motion.div>
                                 <motion.div variants={numberVariants}>
-                                <h1 className="text-md md:text-3xl font-semibold">
-                                    <Counter end={29000} /> +
-                                </h1>
-                                <p className="text-sm">Home ownership</p>
+                                    <h1 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-semibold">
+                                        <Counter end={29000} /> +
+                                    </h1>
+                                    <p className="text-xs sm:text-sm">Home ownership</p>
                                 </motion.div>
                             </motion.div>
                         </motion.div>
 
                         {/* Right Column (Swiper) */}
-                        <div className="right_col w-full md:w-[750px]">
+                        <div className="right_col w-full pt-8 sm:pt-10 md:pt-15 md:w-1/2">
                             <Testimonials />
                         </div>
                     </div>

@@ -1,9 +1,10 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import ansh from "../../assets/ansh.png"
+import ansh from "../../assets/Team Ansh.jpg"
 import uday from "../../assets/uday.png"
 import archit from "../../assets/archit.png"
-import anirudh from "../../assets/anirudh.png"
+import anirudh from "../../assets/Team Anirudh.jpg"
+import arjit from "../../assets/Team Arjit.jpg"
 import { Heading } from "../Utils/Heading";
 
 const teamMembers = [
@@ -13,7 +14,7 @@ const teamMembers = [
         image: uday,
         linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
         facebook: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/uday.sahu_10?igsh=MWVzNW85dTRydndpdg%3D%3D",
     },
     {
         name: "Ansh Dubey",
@@ -21,7 +22,7 @@ const teamMembers = [
         image: ansh,
         linkedin: "https://www.linkedin.com/in/ansh-dubey-526325273/",
         facebook: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/_ansh_.dubey/",
     },
     {
         name: "Archit Agarwal",
@@ -29,7 +30,7 @@ const teamMembers = [
         image: archit,
         linkedin: "https://www.linkedin.com/in/archit-agarwal03/",
         facebook: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/archit_agarwal1511?igsh=MWo0b3V0bHF0NW1vaA%3D%3D",
     },
     {
         name: "Anirudh Saxena",
@@ -40,12 +41,12 @@ const teamMembers = [
         instagram: "",
     },
     {
-        name: "Anirudh Saxena",
-        role: "Chief Technology Officer",
-        image: anirudh,
+        name: "Arjit Pandey",
+        role: "VP of Executive Operations",
+        image: arjit,
         linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
         facebook: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/_.arjit.pandey._?igsh=MWtiOGR6OXNoNWM1eg%3D%3D",
     },
 ];
 
@@ -71,7 +72,7 @@ const teamMembers = [
 //                                 alt={member.name}
 //                                 className="w-full cursor-pointer object-cover"
 //                             />
-//                             <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
+//                             <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-1000 left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
 //                                 <h4 className="text-sm font-semibold">{member.name}</h4>
 //                                 <p className="text-xs">{member.role}</p>
 //                                 <div className="absolute bottom-4 right-4 flex items-center gap-2">
@@ -102,7 +103,7 @@ const teamMembers = [
 //                                 alt={member.name}
 //                                 className="w-full cursor-pointer object-cover"
 //                             />
-//                             <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500 left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
+//                             <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-1000 left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
 //                                 <h4 className="text-sm font-semibold">{member.name}</h4>
 //                                 <p className="text-xs">{member.role}</p>
 //                                 <div className="absolute bottom-4 right-4 flex items-center gap-2">
