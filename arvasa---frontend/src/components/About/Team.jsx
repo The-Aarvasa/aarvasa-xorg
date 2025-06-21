@@ -1,9 +1,10 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import ansh from "../../assets/ansh.png"
+import ansh from "../../assets/Team Ansh.jpg"
 import uday from "../../assets/uday.png"
 import archit from "../../assets/archit.png"
-import anirudh from "../../assets/anirudh.png"
+import anirudh from "../../assets/Team Anirudh.jpg"
+import arjit from "../../assets/Team Arjit.jpg"
 import { Heading } from "../Utils/Heading";
 
 const teamMembers = [
@@ -21,7 +22,7 @@ const teamMembers = [
         image: ansh,
         linkedin: "https://www.linkedin.com/in/ansh-dubey-526325273/",
         facebook: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/_ansh_.dubey/",
     },
     {
         name: "Archit Agarwal",
@@ -41,11 +42,11 @@ const teamMembers = [
     },
     {
         name: "Arjit Pandey",
-        role: "Chief Technology Officer",
-        image: anirudh,
+        role: "VP of Executive Operations",
+        image: arjit,
         linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
         facebook: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/_.arjit.pandey._?igsh=MWtiOGR6OXNoNWM1eg%3D%3D",
     },
 ];
 
