@@ -27,17 +27,25 @@ export default function SignUp() {
                 password
             });
 
-            if (response.data.success || response.data.msg?.includes("OTP")) {
-                localStorage.setItem("signupEmail", email); // for OTP page use
+            const msg = response?.data?.message || "";
+
+            if (
+                response.status === 200 &&
+                (msg.toLowerCase().includes("otp") || msg.toLowerCase().includes("sent"))
+            ) {
+                localStorage.setItem("signupEmail", email);
                 localStorage.setItem("signupPassword", password);
                 navigate("/otp");
             } else {
-                alert("Failed to send OTP");
+                alert("Unexpected response from server.");
             }
         } catch (error) {
-            alert(error?.response?.data?.message || "Error occurred");
+            console.error("Signup error:", error);
+            alert(error?.response?.data?.message || "Signup failed. Please try again.");
+
         }
     };
+
 
     const handleGoogleLogin = () => {
         window.location.href = `${import.meta.env.VITE_BACKEND_URL}/api/auth/google`;

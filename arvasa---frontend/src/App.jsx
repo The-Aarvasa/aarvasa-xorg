@@ -34,6 +34,11 @@ import Area from './components/tools/Area';
 import InsideArticle from './components/News/InsideArticle';
 import LandingPageofAi from './components/Chatbot/LandingPageOfAi';
 import ContactedAgents from "./components/profile/ContactedAgents"
+import ApplicationStatus from './components/profile/ApplicationStatus';
+import PropertyDetails from './pages/PropertyDetails';
+import Favourites from "./components/profile/Favourites";
+import BackToTopButton from './components/Home/BackToTopButton';
+
 import ForgotPassword from './components/Auth/ForgotPassword';
 
 function AppLayout() {
@@ -60,7 +65,7 @@ function AppLayout() {
               </>
             } />
 
-            <Route path="propertydetails/:id" element={<PropertyBrief />} />
+            <Route path="propertydetails/:id" element={<PropertyDetails />} />
           </Route>
 
           <Route path="/signin" element={<SignIn />} />
@@ -73,8 +78,14 @@ function AppLayout() {
               <Guides />
             }
             />
-
-
+            <Route path="activity" element={
+              <ApplicationStatus />
+            }
+            />
+            <Route path="favourites" element={
+              <Favourites />
+            }
+            />
             <Route path="transaction" element={
               <Transactions />
             } />
@@ -83,7 +94,16 @@ function AppLayout() {
               <ContactedAgents />
             }
             />
+
+            <Route path="activity" element={<ApplicationStatus />}>
+
+            </Route>
+
           </Route>
+
+
+
+
 
           <Route path="/otp" element={<Otp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -108,6 +128,7 @@ function AppLayout() {
 
         </Routes>
       </main>
+      <BackToTopButton />
     </div>
   );
 }
