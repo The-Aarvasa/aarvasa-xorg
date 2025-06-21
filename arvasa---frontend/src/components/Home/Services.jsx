@@ -49,7 +49,7 @@ const Services = () => {
                          <Link to={"/chat"}>
                         <div className="bg-[#d3d3d3] p-4 rounded-[40px] shadow-md w-[180px] relative" >
                            
-                                <p className="text-sm text-gray-800 font-medium text-center">Need help finding your dream home?</p>
+                                <Link to={"/chat"}><p className="text-sm text-gray-800 font-medium text-center">Need help finding your dream home?</p></Link>
                             
 
 

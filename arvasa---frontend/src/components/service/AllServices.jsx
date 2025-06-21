@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+// src/components/AllServices.jsx
+import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import ServicesAI from "../../assets/ServicesAI.png";
 import ServicesAR from "../../assets/ServicesARVR.png";
@@ -11,32 +12,38 @@ import { Heading } from "../Utils/Heading";
 const services = [
   {
     title: "Comprehensive Consultancy Services",
-    description: "Comprehensive Consultancy Services refers to a broad range of advisory...",
+    description:
+      "Comprehensive Consultancy Services refers to a broad range of advisory and support services provided to businesses, organizations, or individuals. These services typically cover multiple domains such as strategy, operations, finance, technology, and human resources. Consultants analyze the client’s needs, challenges, and goals, and offer expert guidance, actionable solutions, and implementation support to enhance performance, solve problems, and achieve business objectives.",
     img: ServicesConsultancy,
   },
   {
     title: "AR/VR Property Tours",
-    description: "AR/VR Property Tours use Augmented Reality and Virtual Reality technologies...",
+    description:
+      "AR/VR Property Tours use Augmented Reality and Virtual Reality technologies to create immersive, interactive experiences for viewing properties. These tools are becoming increasingly popular in real estate as they allow potential buyers or renters to explore properties remotely, providing a realistic sense of space, layout, and design. This technology enhances decision-making, saves time, and improves customer satisfaction.",
     img: ServicesAR,
   },
   {
     title: "Flexible Payment Models",
-    description: "Flexible Payment Models refer to various payment structures...",
+    description:
+      "Flexible Payment Models refer to various payment structures that offer clients or customers the ability to pay for goods or services in ways that suit their financial situation or preferences. These models provide greater accessibility and convenience, including options like installment plans, subscription-based services, deferred payments, and usage-based pricing.",
     img: ServicesPayment,
   },
   {
     title: "AI Powered Personalization",
-    description: "AI-Powered Personalization refers to the use of artificial intelligence (AI)...",
+    description:
+      "AI-Powered Personalization refers to the use of artificial intelligence (AI) to tailor products, services, content, or experiences to individual users based on their preferences, behaviors, and interactions. AI analyzes large volumes of data to identify patterns and predict user needs, enabling businesses to deliver more relevant and engaging experiences, improve customer satisfaction, and increase conversions.",
     img: ServicesAI,
   },
   {
     title: "Blockchain-Backed Transactions",
-    description: "Blockchain-Backed Transactions refer to transactions that are recorded...",
+    description:
+      "Blockchain-Backed Transactions refer to transactions that are recorded, verified, and secured using blockchain technology. Blockchain is a decentralized, distributed ledger system that provides transparency, security, and immutability. In real estate, this ensures secure digital contracts, prevents fraud, streamlines property transfers, and builds trust among parties.",
     img: ServicesBlockchain,
   },
   {
     title: "Monetization of Existing Properties",
-    description: "Monetization of Existing Properties refers to the process of generating income...",
+    description:
+      "Monetization of Existing Properties refers to the process of generating income or financial value from assets or real estate that are already owned, rather than developing new ones. This can include renting out unused space, leveraging property for loans, repurposing assets for new revenue streams, or offering co-working and short-term stay options.",
     img: ServicesMonetization,
   },
 ];
@@ -79,8 +86,9 @@ const AllServices = () => {
                   transition: { duration: 0.6, ease: "easeOut" },
                 },
               }}
-              className={`flex w-[100%] md:w-[80%] mx-auto flex-col md:flex-row ${index % 2 !== 0 ? "md:flex-row-reverse" : ""
-                } items-center gap-12 md:gap-28`}
+              className={`flex w-[100%] md:w-[80%] mx-auto flex-col md:flex-row ${
+                index % 2 !== 0 ? "md:flex-row-reverse" : ""
+              } items-center gap-12 md:gap-28`}
             >
               <img
                 src={service.img}

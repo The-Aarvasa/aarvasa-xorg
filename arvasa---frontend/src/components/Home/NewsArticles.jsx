@@ -1,6 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Heading } from '../../components/Utils/Heading'
 import { MoveRight } from 'lucide-react'
+import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -133,13 +134,14 @@ const NewsArticles = () => {
                     <div className="cards flex flex-wrap justify-center gap-8 md:gap-20">
                         {data1.map((currElem) => {
                             return (
+                               <Link to={"/news"}>
                                 <div className="card" key={currElem.id}>
                                     <img className='w-[290px] rounded-lg' src={currElem.img} alt="" />
                                     <p className='w-full md:max-w-[270px] text-white mt-4 mb-4 text-sm'>{currElem.text}</p>
                                     <button className='flex justify-center items-center gap-1 text-white text-sm'>Read More
                                         <MoveRight></MoveRight>
                                     </button>
-                                </div>
+                                </div></Link>
                             )
                         })}
                     </div>
