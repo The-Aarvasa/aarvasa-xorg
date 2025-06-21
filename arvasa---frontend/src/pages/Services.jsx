@@ -12,7 +12,6 @@ const Services=()=>{
     return(
         <>
         <section className="bg-orange-50">
-          <Navbar></Navbar>
 
           <Page></Page>
             <WhoWeAre/>
@@ -21,7 +20,6 @@ const Services=()=>{
             <Slider></Slider>
             <ContactUs/>
         </section>
-        <Footer />
         </>
 
     );

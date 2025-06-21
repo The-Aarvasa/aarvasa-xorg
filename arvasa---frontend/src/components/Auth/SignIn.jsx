@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { MdPassword } from 'react-icons/md';
@@ -6,12 +6,11 @@ import { Link } from 'react-router-dom';
 export default function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    useEffect(() => {
+        console.log("Rendered");
+    }, [])
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
             className="bg-[#ffffff] justify-center items-center">
             {/* Main Content Container (Flex to hold left and right sections) */}
             <div className="flex items-center flex-row flex-row-reverse justify-between overflow-hidden">

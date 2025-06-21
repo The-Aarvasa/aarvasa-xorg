@@ -18,7 +18,6 @@ export const Listing = () => {
     return (
         <>
             <div className="bg-orange-50 mb-[20px]">
-                <Navbar color={"gray"}></Navbar>
 
                     <Page></Page>
 
@@ -39,7 +38,6 @@ export const Listing = () => {
                 <Outlet></Outlet>
             </div>
 
-        <Footer />
 
 
 
