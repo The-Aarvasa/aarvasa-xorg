@@ -14,6 +14,7 @@ import FAQSection from "../components/Home/FAQSection"
 import { Agents } from "./Agents"
 import NewsArticles from "../components/Home/NewsArticles"
 import { ServicesCards } from "../components/Home/ServicesCards"
+import BackToTopButton from "../components/Home/BackToTopButton"
 
 
 export const Home = () => {
@@ -21,20 +22,21 @@ export const Home = () => {
         <>
             <Navbar />
 
-        <div className="bg-orange-50 overflow-x-hidden">
-            <Landing />
-            <ViewAnimate />
-            <ServicesCards />
-            <Services />
-            <Preferred />
-            <FAQSection></FAQSection>
-            <NewsArticles />
-            <AdvicesTools />
-            <Map />
-            <Newsletter />
-        <Footer />
+            <div className="bg-orange-50 overflow-x-hidden">
+                <Landing />
+                <ViewAnimate />
+                <ServicesCards />
+                <Services />
+                <Preferred />
+                <FAQSection></FAQSection>
+                <NewsArticles />
+                <AdvicesTools />
+                <Map />
+                <Newsletter />
 
-        </div>
+                <Footer />
+
+            </div>
         </>
     )
 }
