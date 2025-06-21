@@ -42,7 +42,7 @@ import { Error } from './pages/Error';
 
 function AppLayout() {
   const location = useLocation();
-  const hideNavAndFooter = location.pathname === '/otp' || location.pathname === '/signin' || location.pathname === '/signup'
+  const hideNavAndFooter = location.pathname === '/otp' || location.pathname === '/signin' || location.pathname === '/signup' || location.pathname === '/chat'
 
   return (
     <div className="min-h-screen flex flex-col">
