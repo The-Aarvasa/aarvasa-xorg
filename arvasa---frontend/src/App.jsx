@@ -34,6 +34,8 @@ import Area from './components/tools/Area';
 import InsideArticle from './components/News/InsideArticle';
 import LandingPageofAi from './components/Chatbot/LandingPageOfAi';
 import ContactedAgents from "./components/profile/ContactedAgents"
+import ForgotPassword from './components/Auth/ForgotPassword';
+
 function AppLayout() {
   const location = useLocation();
   const hideNavAndFooter = location.pathname === '/otp';
@@ -84,6 +86,8 @@ function AppLayout() {
           </Route>
 
           <Route path="/otp" element={<Otp />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+
           <Route path="/chat" element={<ConversationPage />} />
           <Route path="/AddListing" element={<AddListings />} />
           <Route path="/subscription" element={<Subscription />} />
