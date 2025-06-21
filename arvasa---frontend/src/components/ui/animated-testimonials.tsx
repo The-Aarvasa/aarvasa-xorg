@@ -92,7 +92,7 @@ export const AnimatedTestimonials = ({
             </AnimatePresence>
           </div>
         </div>
-        <div className="flex flex-col justify-between py-4 sm:py-5">
+        <div className="flex flex-col justify-between py-5 sm:py-5">
           <motion.div
             key={active}
             initial={{
@@ -139,12 +139,12 @@ export const AnimatedTestimonials = ({
                   }}
                   className="inline-block"
                 >
-                  {word} 
+                  {word}&nbsp;
                 </motion.span>
               ))}
             </motion.p>
           </motion.div>
-          <div className="flex gap-3 sm:gap-4 pt-4 sm:pt-5 md:pt-0">
+          <div className="flex gap-3 sm:gap-4 pt-4 sm:pt-5 md:pt-5">
             <button
               onClick={handlePrev}
               className="group/button flex h-6 w-6 sm:h-7 sm:w-7 items-center justify-center rounded-full bg-gray-100 dark:bg-neutral-800"
