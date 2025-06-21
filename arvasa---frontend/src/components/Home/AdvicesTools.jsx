@@ -186,7 +186,7 @@ const AdvicesTools = () => {
             <div className="overflow-x-auto py-4 scrollbar-hide">
                 <div className="flex flex-nowrap px-5">
                     {tools.map((tool, index) => (
-                        <Link to={tool.path}>
+                        <Link to={tool.path} key={index}>
                             <ToolCard
                                 key={index}
                                 icon={tool.icon}

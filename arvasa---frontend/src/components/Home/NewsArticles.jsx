@@ -132,9 +132,9 @@ const NewsArticles = () => {
             <div className="rows flex flex-col gap-4">
                 <div className="main bg-gradient-to-br p-10 flex justify-center items-center rounded-2xl from-[#A82E4F] to-[#42121F]">
                     <div className="cards flex flex-wrap justify-center gap-8 md:gap-20">
-                        {data1.map((currElem) => {
+                        {data1.map((currElem, index) => {
                             return (
-                               <Link to={"/news"}>
+                               <Link to={"/news"} key={index}>
                                 <div className="card" key={currElem.id}>
                                     <img className='w-[290px] rounded-lg' src={currElem.img} alt="" />
                                     <p className='w-full md:max-w-[270px] text-white mt-4 mb-4 text-sm'>{currElem.text}</p>
