@@ -82,10 +82,10 @@ const Navbar = () => {
                 <div className="lg:mx-8 flex items-center justify-between mx-auto">
                     {/* Logo */}
                     <div className="logo relative z-[999]">
-                        <a href="#" className="flex items-center">
+                        <Link to={"/"} className="flex items-center">
                             <img src="/images/logo_shape.png" className="w-20 md:w-20" alt="logo-shape" />
                             <img src="/images/image.png" alt="logo-text" className="w-24 md:w-20" />
-                        </a>
+                        </Link>
                     </div>
 
                     {/* Navigation Links */}

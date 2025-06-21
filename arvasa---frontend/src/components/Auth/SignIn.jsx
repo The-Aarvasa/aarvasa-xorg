@@ -1,8 +1,8 @@
 import React, { useState , useEffect} from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
-import { MdPassword } from 'react-icons/md';
 import { Link } from 'react-router-dom';
+import { MdPassword } from 'react-icons/md';
 export default function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
@@ -67,9 +67,9 @@ export default function SignIn() {
                         </div>
 
                         {/* Forgot Password */}
-                        <a href="/forgot-password" className="text-blue-500 mt-2 mb-2 text-base font-normal block underline">
+                        <Link to={"/forgot-password"} className="text-blue-500 mt-2 mb-2 text-base font-normal block underline">
                             Forgot Password?
-                        </a>
+                        </Link>
 
 
                         {/* Sign In Button */}
