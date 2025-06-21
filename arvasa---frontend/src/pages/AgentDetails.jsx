@@ -37,19 +37,19 @@ export default function AgentDetails() {
    <div className='pt-[100px]'>
     <Page></Page>
      <div className="mx-auto p-5">
-      <div className="flex items-center justify-center flex-col md:flex-row gap-12 mb-20">
+      <div className="flex justify-center flex-col md:flex-row gap-12 mb-20">
         <img src="/src/assets/image.png" className="w-[347px] h-[417px] object-cover" />
         <div>
           <h2 className="text-4xl font-semibold font-['Poppins']">Sam Altman</h2>
           <p className="mb-4 text-md pt-2 font-['Poppins']">Licensed RE Salesperson</p>
           <p className="mb-4 pt-10 max-w-[800px]">I am a native New Yorker as well as a proud husband, father and sports enthusiast. After graduating Magna Cum Laude from the Honors Program of Iona College with a degree in Finance, I spent 15 years in the hospitality industry in South Florida and NYC. During this time, I held a variety of management positions serving clientele at some of the world's best known luxury brands.</p>
           {seeMore && (
-            <p className='mb-4 text-sm'>These roles not only sharpened my leadership, operations, and customer service skills, but also deepened my understanding of building lasting relationships and creating memorable guest experiences. My ability to lead diverse teams, adapt quickly in fast-paced environments, and consistently exceed expectations became a hallmark of my professional journey. Whether overseeing day-to-day operations or orchestrating high-profile events, I developed a keen eye for detail, a deep appreciation for excellence, and a results-driven mindset. Today, I carry those values into every new challenge I take on—always striving to lead with integrity, deliver value, and make a meaningful impact.</p>
+            <p className='mb-4 max-w-[800px]'>These roles not only sharpened my leadership, operations, and customer service skills, but also deepened my understanding of building lasting relationships and creating memorable guest experiences. My ability to lead diverse teams, adapt quickly in fast-paced environments, and consistently exceed expectations became a hallmark of my professional journey. Whether overseeing day-to-day operations or orchestrating high-profile events, I developed a keen eye for detail, a deep appreciation for excellence, and a results-driven mindset. Today, I carry those values into every new challenge I take on—always striving to lead with integrity, deliver value, and make a meaningful impact.</p>
           )}
           <button className="border rounded-[14px] text-md px-5 py-2 mb-4 hover:bg-gray-100 transition" onClick={() => setSeeMore(!seeMore)}>{seeMore ? 'See less' : 'See more'}</button>
           <div className="flex justify-between pt-5 space-x-8">
-            <div className="flex flex-col gap-4">
-                <h3 className="text-[19px] font-medium pb-2 text-center">EXPERIENCE</h3>
+            <div className="flex flex-col gap-2">
+                <h3 className="text-[19px] font-medium text-center">EXPERIENCE</h3>
                 <p>20 years in Real estate</p>
                 <p>25 years in Coaching</p>
             </div>
@@ -76,14 +76,14 @@ export default function AgentDetails() {
       </div>
 
       {activeTab < 2 ? (
-        <div className="flex items-center flex-wrap gap-16 justify-center">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 px-[150px] justify-items-center">
           {dummyProperties.slice(0, visible * 3).map((prop, i) => (
             <div key={i} className="w-[329px] cursor-pointer bg-white rounded-[20px] shadow-md justify-around">
               <img src='/house-agent.png' alt={prop.address} className="rounded-[20px] w-[329px] h-[299px] object-cover mb-3" />
-            <div className="flex justify-between pb-1 px-5">
-                <p className="text-xs text-gray-500">{prop.location}</p>
-                <p className="text-xs">{prop.rating} ★</p>
-            </div>
+              <div className="flex justify-between pb-1 px-5">
+                  <p className="text-xs text-gray-500">{prop.location}</p>
+                  <p className="text-xs">{prop.rating} ★</p>
+              </div>
               <h4 className="font-medium text-lg pb-1 px-5">{prop.address}</h4>
               <p className="text-sm pb-1 px-5">{prop.specs}</p>
               <p className="text-lg font-medium px-5 pb-2">{prop.price}</p>
