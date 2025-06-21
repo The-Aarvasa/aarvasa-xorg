@@ -1,46 +1,73 @@
-import { Search } from "lucide-react"
-import Graphs from "../components/listing/Graphs"
-import { Heading } from "../components/Utils/Heading"
-import NavbarRaw from '../components/NavbarRaw'
+// pages/Listing.jsx
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
+import Page from '../components/listing/Page';
+import ListingFilterBar from '../components/listing/ListingFilterBar';
+import Property from '../components/listing/Property';
 
-import { BrowserRouter as Router, Route, Outlet, Routes, Link } from 'react-router-dom';
-import { useState } from "react";
-import Property from "../components/listing/Property";
-import Page from "../components/listing/Page";
-import ListingFilterBar from "../components/listing/ListingFilterBar"
-import Footer from "../components/Footer";
-import Navbar from "../components/Navbar";
+const Listing = () => {
+    const [listings, setListings] = useState([]);
+    const [loading, setLoading] = useState(true);
 
+    const [filters, setFilters] = useState({
+        city: '',
+        propertyType: '',
+        budget: '',
+        transactionType: '',
+    });
 
+    useEffect(() => {
+        const fetchListings = async () => {
+            setLoading(true);
+            try {
+                const query = new URLSearchParams(filters).toString();
+                const res = await axios.get(`http://localhost:5000/api/listings?${query}`);
+                setListings(res.data);
+            } catch (err) {
+                console.error('Error fetching listings:', err);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchListings();
+    }, [filters]);
 
-export const Listing = () => {
-    const [page, setPage] = useState(1);
+    const handleFilterChange = (key, value) => {
+        setFilters((prev) => ({
+            ...prev,
+            [key]: value,
+        }));
+    };
+
+    const handleResetFilters = () => {
+        setFilters({
+            city: '',
+            propertyType: '',
+            budget: '',
+            transactionType: '',
+        });
+    };
+
     return (
-        <>
-            <div className="bg-orange-50 mb-[20px]">
+        <div className="bg-orange-50 mb-6">
+            <Page />
+            <ListingFilterBar filters={filters} onFilterChange={handleFilterChange} onReset={handleResetFilters} />
 
-                    <Page></Page>
-
-
-                {/* <div className="md:mx-8 md:px-8 mt-2 mb-2 rounded-full items-center justify-center flex flex-col p-2 gap-4">
-                    <div className="rounded-lg">
-                        <ul className="flex items-center gap-4 md:gap-8">
-                            <li><Link to={"/listings"}>Property</Link></li>
-                            <li><Link to={"/listings/ratestrends"}>Rates and trends</Link></li>
-                            <li><Link to={"/AddListing"}>Add Listing</Link></li>
-                        </ul>
+            <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">
+                {loading ? (
+                    <p className="text-center">Loading listings...</p>
+                ) : listings.length === 0 ? (
+                    <p className="text-center">No listings found.</p>
+                ) : (
+                    <div className="card flex flex-col gap-8">
+                        {listings.map((listing) => (
+                            <Property key={listing._id} listing={listing} />
+                        ))}
                     </div>
-
-                </div> */}
-
-
-
-                <Outlet></Outlet>
+                )}
             </div>
+        </div>
+    );
+};
 
-
-
-
-        </>
-    )
-}
+export default Listing;
