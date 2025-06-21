@@ -20,7 +20,6 @@ import BackToTopButton from "../components/Home/BackToTopButton"
 export const Home = () => {
     return (
         <>
-            <Navbar />
 
             <div className="bg-orange-50 overflow-x-hidden">
                 <Landing />
@@ -34,7 +33,6 @@ export const Home = () => {
                 <Map />
                 <Newsletter />
 
-                <Footer />
 
             </div>
         </>

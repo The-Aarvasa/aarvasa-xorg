@@ -80,7 +80,7 @@ const Landing = () => {
                         repeat: Infinity,  // infinite loop
                         ease: "easeInOut"
                     }}
-                    src="/images/hero.png" className='w-full md:hover:transform hover:scale-[1.1] transition-all relative z-[999]' alt="" />
+                    src="/images/hero.png"  className='w-full md:hover:transform hover:scale-[1.1] transition-all relative z-[999]' alt="" />
             </div>
         </div>
     )

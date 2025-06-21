@@ -53,13 +53,13 @@ export default function SignUp() {
 
     return (
         <motion.div
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeOut" }}
-            viewport={{ once: true }}
-            className="bg-[#ffffff] justify-center items-center"
-        >
-            <div className="flex items-center flex-row-reverse justify-between overflow-hidden">
+
+            className="bg-[#ffffff] justify-center items-center">
+            {/* Main Content Container (Flex to hold left and right sections) */}
+            <div className="flex items-center flex-row flex-row-reverse justify-between overflow-hidden">
+
+
+                {/* Left Section: Login Form */}
                 <div className="flex flex-col items-center justify-center w-full p-4 md:w-[28%] mx-auto h-[100vh]">
                     <a href="#" className='flex items-center relative right-8'>
                         <img src="/images/logo_shape.png" className='w-32' alt="" />

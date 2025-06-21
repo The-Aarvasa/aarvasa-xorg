@@ -38,21 +38,24 @@ import ApplicationStatus from './components/profile/ApplicationStatus';
 import PropertyDetails from './pages/PropertyDetails';
 import Favourites from "./components/profile/Favourites";
 import BackToTopButton from './components/Home/BackToTopButton';
+import { Error } from './pages/Error';
 
 import ForgotPassword from './components/Auth/ForgotPassword';
 
 function AppLayout() {
   const location = useLocation();
-  const hideNavAndFooter = location.pathname === '/otp';
+  const hideNavAndFooter = location.pathname === '/otp' || location.pathname === '/signin' || location.pathname === '/signup' || location.pathname === '/chat'
 
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
+       {!hideNavAndFooter &&  <Navbar></Navbar>}
         <Routes>
+          <Route path='*' element={<Error/>}></Route>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/agent" element={<Agents />} />
-          <Route path="/agent/:id" element={<AgentDetails />} />
+          <Route path="/agents" element={<Agents />} />
+          <Route path="/agents/:id" element={<AgentDetails />} />
           <Route path="/services" element={<Services />} />
 
 
@@ -70,6 +73,7 @@ function AppLayout() {
 
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+
           <Route path="/news" element={<News />} />
 
           <Route path="/profile" element={<Profile />}>
@@ -129,6 +133,7 @@ function AppLayout() {
         </Routes>
       </main>
       <BackToTopButton />
+      {!hideNavAndFooter && <Footer></Footer>}
     </div>
   );
 }

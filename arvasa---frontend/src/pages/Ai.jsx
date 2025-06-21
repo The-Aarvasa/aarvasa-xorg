@@ -5,9 +5,7 @@ import Footer from '../components/Footer'
 const Ai = () => {
     return (
         <div>
-            <NavbarRaw></NavbarRaw>
             <LandingPageOfAi></LandingPageOfAi>
-        <Footer />
 
         </div>
     )
