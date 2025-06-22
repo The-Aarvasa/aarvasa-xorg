@@ -1,13 +1,12 @@
 // pages/Listing.jsx
 import React, { useEffect, useState } from 'react';
-import { Outlet } from 'react-router-dom';
 import axios from 'axios';
-import Page from '../components/listing/Page';
-import ListingFilterBar from '../components/listing/ListingFilterBar';
-import Property from '../components/listing/Property';
-import Pagination from '../components/Utils/Pagination';
+import Page from '../../components/listing/Page';
+import ListingFilterBar from '../../components/listing/ListingFilterBar';
+import Property from '../../components/listing/Property';
+import Pagination from '../../components/Utils/Pagination';
 
-const Listing = () => {
+const PropertyMain = () => {
     const [listings, setListings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currProp, setCurrProp] = useState([]);
@@ -69,11 +68,9 @@ const Listing = () => {
 
 
     return (
-        <div className="bg-orange-50 pb-6 pt-[90px]">
-            <Page />
-            <ListingFilterBar filters={filters} onFilterChange={handleFilterChange} onReset={handleResetFilters} />
+        <div className="bg-orange-50 pb-6">
 
-            {/* <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">
+            <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">
                 {loading ? (
                     <p className="text-center">Loading listings...</p>
                 ) : listings.length === 0 ? (
@@ -90,12 +87,10 @@ const Listing = () => {
             <div className='mx-auto w-fit'>
                 <Pagination currentPage={currPage} totalPages={PlastPage}
   onPageChange={(page) => setCurrPage(page)}></Pagination>
-            </div> */}
-
-            <Outlet></Outlet>
+            </div>
 
         </div>
     );
 };
 
-export default Listing;
+export default PropertyMain;

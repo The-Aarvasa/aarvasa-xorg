@@ -41,6 +41,7 @@ import BackToTopButton from './components/Home/BackToTopButton';
 import { Error } from './pages/Error';
 
 import ForgotPassword from './components/Auth/ForgotPassword';
+import PropertyMain from './components/listing/PropertyMain';
 
 function AppLayout() {
   const location = useLocation();
@@ -60,7 +61,7 @@ function AppLayout() {
 
 
           <Route path="/listings" element={<Listing />}>
-            <Route index element={<Property />} />
+            <Route index element={<PropertyMain />} />
             <Route path="ratestrends" element={
               <>
                 <ShowTrends />
@@ -68,8 +69,13 @@ function AppLayout() {
               </>
             } />
 
-            <Route path="propertydetails/:id" element={<PropertyDetails />} />
+
           </Route>
+
+            <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
+
+
+
 
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
