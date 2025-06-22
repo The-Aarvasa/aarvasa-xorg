@@ -21,7 +21,7 @@ export const Home = () => {
     return (
         <>
 
-            <div className="bg-orange-50 overflow-x-hidden">
+            <div className="bg-orange-50 pt-[80px] overflow-x-hidden">
                 <Landing />
                 <ViewAnimate />
                 <ServicesCards />

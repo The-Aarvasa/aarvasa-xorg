@@ -49,7 +49,7 @@ const Listing = () => {
     };
 
     return (
-        <div className="bg-orange-50 mb-6">
+        <div className="bg-orange-50 mb-6 pt-[90px]">
             <Page />
             <ListingFilterBar filters={filters} onFilterChange={handleFilterChange} onReset={handleResetFilters} />
 

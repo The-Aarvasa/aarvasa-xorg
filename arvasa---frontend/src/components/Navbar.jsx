@@ -72,7 +72,7 @@ const Navbar = () => {
         <>
             <nav
                 ref={ref}
-                className="relative-nav transition-all duration-300 ease-in-out bg-orange-50 z-[9999] px-2 md:px-0 lg:px-2 py-4"
+                className={`relative-nav transition-all duration-300 ease-in-out z-[9999] px-2 md:px-0 lg:px-2 py-4 ${fixed ? 'bg-orange-50' : 'bg-transparent'}`}
             >
                 <div className="lg:mx-8 flex items-center justify-between mx-auto">
                     {/* Logo */}
@@ -87,9 +87,9 @@ const Navbar = () => {
                     <ul
                         ref={menu}
                         className={`
-                            md:flex md:static md:h-auto md:w-auto md:gap-8 lg:gap-14
+                            md:flex items-center md:static md:h-auto md:w-auto md:gap-8 lg:gap-14
                             ${MenuOpen ? "fixed top-0 left-0" : "fixed left-[-100%]"}
-                            transition-all bg-orange-50 h-[100vh] w-[80%] pt-[150px] px-12
+                            transition-all bg-orange-50 lg:bg-transparent h-[100vh] w-[80%] pt-[150px] px-12
                             space-y-8 md:space-y-0 md:pt-0 md:px-0 z-[10]
                         `}
                     >
@@ -101,8 +101,18 @@ const Navbar = () => {
                                     </p>
                                 </Link>
                                 <span className="absolute w-0 h-1 left-0 bottom-[-5px] rounded-full bg-[#6C1E3C] group-hover:w-full group-hover:opacity-75 transition-all duration-700"></span>
+                              
                             </li>
                         ))}
+                          <button
+                                    onClick={handleLogout}
+                                    className="text-[#8C2841] lg:hidden font-semibold px-4 py-2 rounded-full hover:scale-105 transition-transform"
+                                    style={{
+                                        background: "linear-gradient(to right, #F7A240, #F5C01A)",
+                                    }}
+                                >
+                                    Logout
+                                </button>
                     </ul>
 
                     {/* Profile/Logout/Login */}
@@ -114,7 +124,7 @@ const Navbar = () => {
                                 </Link>
                                 <button
                                     onClick={handleLogout}
-                                    className="text-[#8C2841] font-semibold px-4 py-2 rounded-full hover:scale-105 transition-transform"
+                                    className="text-[#8C2841] hidden lg:block font-semibold px-4 py-2 rounded-full hover:scale-105 transition-transform"
                                     style={{
                                         background: "linear-gradient(to right, #F7A240, #F5C01A)",
                                     }}
