@@ -5,7 +5,7 @@ import Services from './pages/Services';
 import Ai from './pages/Ai';
 import About from './pages/About';
 import Navbar from './components/Navbar';
-import { Listing } from './pages/Listing';
+import  Listing  from './pages/Listing';
 import Property from './components/listing/Property';
 import Graphs from './components/listing/Graphs';
 import SignIn from './components/Auth/SignIn';
