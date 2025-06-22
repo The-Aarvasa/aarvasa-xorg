@@ -1,13 +1,13 @@
 import { Link } from "react-router-dom";
 export const Error = () => {
   return (
-    <div className="relative min-h-screen bg-[#8B1E3F] text-white p-6 overflow-hidden">
+    <div className="relative min-h-screen bg-[#8B1E3F] pt-[100px] text-white p-6 overflow-hidden">
       <div className="absolute inset-0 bg-[url('/broken_house.png')] bg-cover bg-center opacity-50"></div>
       <div className="relative z-10 pt-5">
-        <div className="flex items-center mb-10">
+        {/* <div className="flex items-center mb-10">
           <img src="../images/logo_shape.png" alt="Logo" className="h-[58px] w-[112px]" />
           <img src="../images/logo_text.png" alt="Logo Text" className="h-[42px] w-[147px]" />
-        </div>
+        </div> */}
 
         <div className="text-center flex flex-col items-center justify-center space-y-6 font-['Poppins'] pt-10">
           <div className="text-6xl md:text-7xl font-semibold m-4">

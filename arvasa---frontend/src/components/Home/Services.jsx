@@ -44,12 +44,11 @@ const Services = () => {
                     <div className="absolute w-[280px] h-[10px] bg-black/30 rounded-full blur-sm xl:top-[585px] md:top-[845px] right-[145px] z-[997]"></div>
 
 
-                    <div className="absolute lg:top-[100px] xl:top-[-10px] md:top-[140px] right-[50px] z-[999]">
+                    <div className="absolute lg:top-[100px] xl:top-[-10px] md:top-[140px] right-[50px] z-[9999]">
                         {/* Main thought bubble */}
-                         <Link to={"/chat"}>
-                        <div className="bg-[#d3d3d3] p-4 rounded-[40px] shadow-md w-[180px] relative" >
+                        <div className="p-4 rounded-[40px] shadow-md w-[180px] relative" >
                            
-                              <p className="text-sm text-gray-800 font-medium text-center">Need help finding your dream home?</p>
+                          <Link to={"/chat"}> <p className="text-sm z-[9999] text-gray-800 font-medium text-center">Need help finding your dream home?</p></Link>
                             
 
 
@@ -58,7 +57,6 @@ const Services = () => {
                             <div className="absolute bottom-[-30px] left-[5px] w-[10px] h-[10px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
                             <div className="absolute bottom-[-40px] left-[-5px] w-[6px] h-[6px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
                         </div>
-                        </Link>
                     </div>
 
                     {/* Existing man image */}

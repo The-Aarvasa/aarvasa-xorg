@@ -73,7 +73,6 @@ const ConversationPage = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#B96A85] to-[#0C0C0C] text-white font-[poppins] relative px-16 pb-12">
-            <NavbarChatbot />
 
             {/* Sidebar */}
             <div
