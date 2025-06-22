@@ -13,6 +13,7 @@ const Property = ({ listing }) => {
         imageUrls,
         bedrooms,
         bathrooms,
+        coordinates,
         carpetArea,
         location,
         city,
@@ -38,10 +39,12 @@ const Property = ({ listing }) => {
                 <button className="absolute top-1/2 right-2 -translate-y-1/2 w-6 h-6 bg-[#FAF9F6] rounded-full flex items-center justify-center">
                     <FaChevronRight className="text-black" />
                 </button>
-                <button className="absolute bottom-1 left-[10px] px-4 py-2 bg-black/50 rounded text-white flex items-center gap-2">
+                <a target='_blank' rel="noopener noreferrer" href={`https://www.google.com/maps?q=${coordinates.lat},${coordinates.lng}`}>
+                    <button className="absolute bottom-1 left-[10px] px-4 py-2 bg-black/50 rounded text-white flex items-center gap-2">
                     <FaMapMarkerAlt />
                     View on Map
                 </button>
+                </a>
             </div>
 
             <div className="flex-1 px-4 lg:px-8">
