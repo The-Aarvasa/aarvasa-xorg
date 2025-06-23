@@ -1,10 +1,10 @@
 import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import ansh from "../../assets/Team Ansh.jpg"
-import uday from "../../assets/uday.png"
-import archit from "../../assets/archit.png"
-import anirudh from "../../assets/Team Anirudh.jpg"
-import arjit from "../../assets/Team Arjit.jpg"
+import ansh from "/assets/Team Ansh.jpg"
+import uday from "/assets/uday.png"
+import archit from "/assets/archit.png"
+import anirudh from "/assets/Team Anirudh.jpg"
+import arjit from "/assets/Team Arjit.jpg"
 import { Heading } from "../Utils/Heading";
 
 const teamMembers = [

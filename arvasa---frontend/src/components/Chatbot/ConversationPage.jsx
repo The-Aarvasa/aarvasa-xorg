@@ -42,7 +42,7 @@ const ConversationPage = () => {
                 }
             }
 
-            const res = await axios.post('http://localhost:8000/chat', {
+            const res = await axios.post('https://aarvasa-systemd-1.onrender.com/chat', {
                 message: input,
                 history: historyPairs
             });

@@ -36,9 +36,10 @@ export default function SignIn() {
                 password
             }, { withCredentials: true });
 
-            const { accessToken, refreshToken } = res.data;
+            const {username, accessToken, refreshToken } = res.data;
 
             if (accessToken && refreshToken) {
+                localStorage.setItem("username", username);
                 localStorage.setItem("accessToken", accessToken);
                 localStorage.setItem("refreshToken", refreshToken);
                 localStorage.setItem("userEmail", email);
