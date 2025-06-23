@@ -1,6 +1,6 @@
 import React from 'react'
 import { Heading } from '../Utils/Heading'
-import timeslotter from '../../assets/timeslotter.jpg'
+import timeslotter from '/assets/timeslotter.jpg'
 
 const CoPartners = () => {
     return (

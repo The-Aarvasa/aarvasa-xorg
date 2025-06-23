@@ -33,11 +33,11 @@ export default function AgentDetails() {
 
   return (
   <>
-   <div className=''>
+   <div className='pt-[90px]'>
     <Page></Page>
      <div className="mx-auto p-5">
       <div className="flex justify-center flex-col md:flex-row gap-12 mb-20">
-        <img src="/src/assets/image.png" className="w-[347px] h-[417px] object-cover" />
+        <img src="/assets/image.png" className="w-[347px] h-[417px] object-cover" />
         <div>
           <h2 className="text-4xl font-semibold font-['Poppins']">Sam Altman</h2>
           <p className="mb-4 text-md pt-2 font-['Poppins']">Licensed RE Salesperson</p>

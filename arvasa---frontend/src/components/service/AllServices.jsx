@@ -1,12 +1,12 @@
 // src/components/AllServices.jsx
 import React, { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import ServicesAI from "../../assets/ServicesAI.png";
-import ServicesAR from "../../assets/ServicesARVR.png";
-import ServicesBlockchain from "../../assets/ServicesBlockchain.png";
-import ServicesConsultancy from "../../assets/ServicesConsultancy.png";
-import ServicesMonetization from "../../assets/ServicesMonetization.png";
-import ServicesPayment from "../../assets/ServicesPayment.png";
+import ServicesAI from "/assets/ServicesAI.png";
+import ServicesAR from "/assets/ServicesARVR.png";
+import ServicesBlockchain from "/assets/ServicesBlockchain.png";
+import ServicesConsultancy from "/assets/ServicesConsultancy.png";
+import ServicesMonetization from "/assets/ServicesMonetization.png";
+import ServicesPayment from "/assets/ServicesPayment.png";
 import { Heading } from "../Utils/Heading";
 
 const services = [

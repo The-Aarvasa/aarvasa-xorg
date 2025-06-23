@@ -5,6 +5,7 @@ import Page from '../../components/listing/Page';
 import ListingFilterBar from '../../components/listing/ListingFilterBar';
 import Property from '../../components/listing/Property';
 import Pagination from '../../components/Utils/Pagination';
+import Loader from '../Loader';
 
 const PropertyMain = () => {
     const [listings, setListings] = useState([]);
@@ -26,7 +27,7 @@ const PropertyMain = () => {
             setLoading(true);
             try {
                 const query = new URLSearchParams(filters).toString();
-                const res = await axios.get(`http://localhost:5000/api/listings?${query}`);
+                const res = await axios.get(`https://aarvasa-systemd.onrender.com/api/listings?${query}`);
                 console.log(res.data);
                 setListings(res.data);
             } catch (err) {
@@ -72,7 +73,7 @@ const PropertyMain = () => {
 
             <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">
                 {loading ? (
-                    <p className="text-center">Loading listings...</p>
+                   <Loader></Loader>
                 ) : listings.length === 0 ? (
                     <p className="text-center">No listings found.</p>
                 ) : (

@@ -48,7 +48,7 @@ const Services = () => {
                         {/* Main thought bubble */}
                         <div className="p-4 rounded-[40px] shadow-md w-[180px] relative" >
                            
-                          <Link to={"/chat"}> <p className="text-sm z-[9999] text-gray-800 font-medium text-center">Need help finding your dream home?</p></Link>
+                          <Link to={"/chat"}> <p className="text-sm z-[999] text-gray-800 font-medium text-center">Need help finding your dream home?</p></Link>
                             
 
 

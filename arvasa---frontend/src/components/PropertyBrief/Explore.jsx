@@ -55,7 +55,7 @@ export const Explore = ({ data }) => {
                 </div>
 
                 {Array.isArray(data?.nearbyLandmarks) && data.nearbyLandmarks.length > 0 && (
-                    <div className="flex justify-start flex-wrap md:space-x-5 space-y-4 md:space-y-0">
+                    <div className="flex justify-start flex-wrap gap-4">
                         {data.nearbyLandmarks.map((currElem, index) => (
                             <button key={index} className="bg-gray-200 w-full md:w-fit px-4 py-2 rounded-full flex items-center mb-2 md:mb-0">
                                 <span className="font-semibold pr-1">📍 {currElem}</span>
