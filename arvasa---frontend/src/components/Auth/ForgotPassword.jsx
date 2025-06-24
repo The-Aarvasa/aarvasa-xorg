@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Loaders from '../Loaders';
 
 const ForgotPassword = () => {
     const inputRefs = useRef([]);
@@ -10,6 +11,7 @@ const ForgotPassword = () => {
     const [email, setEmail] = useState("");
     const [activeInput, setActiveInput] = useState(0);
     const navigate = useNavigate();
+    const [loader, setLoader] = useState(false);
 
     useEffect(() => {
         const storedEmail = localStorage.getItem("resetEmail");
@@ -54,6 +56,7 @@ const ForgotPassword = () => {
         }
 
         try {
+            setLoader(true);
             await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/reset-password`, {
                 email,
                 otp,
@@ -65,9 +68,14 @@ const ForgotPassword = () => {
         } catch (err) {
             alert(err.response?.data?.message || "Reset failed.");
         }
+        finally{
+            setLoader(false);
+        }
     };
 
     return (
+        <>
+       {loader ? <Loaders/> : null}
         <div className="bg-white h-[100vh] overflow-y-hidden">
             <div className="cols h-[90vh] sm:h-auto flex items-center m-2 justify-center sm:justify-between gap-[70px]">
                 <div className="left_col w-1/2 items-center justify-center hidden sm:flex">
@@ -128,6 +136,7 @@ const ForgotPassword = () => {
                 </div>
             </div>
         </div>
+       </>
     );
 };
 

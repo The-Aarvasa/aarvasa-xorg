@@ -90,19 +90,9 @@
 
 .spinner {
   font-size: 28px;
-  position: relative;
-  display: inline-block;
-  width: 1em;
-  height: 1em;
-}
-
-.spinner.center {
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
+  position: fixed;
+  top: 50%;
+  right: 50%;
 }
 
 .spinner .spinner-blade {

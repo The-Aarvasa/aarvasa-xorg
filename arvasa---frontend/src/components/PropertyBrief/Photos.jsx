@@ -13,8 +13,8 @@ const Photos = ({ data }) => {
 
     return (
         <div className="mx-2 md:m-5 md:p-8 relative">
-            <h1 className="text-3xl md:text-5xl font-bold text-[#3D3D3D] mb-8">{data?.propertyTitle}</h1>
-            <p className="text-lg md:text-md font-semibold text-[#3D3D3D] mt-8">{data?.detailedDescription}</p>
+            <h1 className="text-2xl md:text-5xl font-bold text-[#3D3D3D] mb-8">{data?.propertyTitle}</h1>
+            <p className="text-md max-w-[1000px] md:text-md font-semibold text-[#3D3D3D] mt-8">{data?.detailedDescription}</p>
 
             <div className="flex flex-col md:flex-row gap-4 mt-6 mb-6 w-full h-[280px] md:w-3/4 mx-auto">
                 {data?.imageUrls?.[0] && (

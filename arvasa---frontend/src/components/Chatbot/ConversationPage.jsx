@@ -72,7 +72,7 @@ const ConversationPage = () => {
     }, [isSidebarOpen]);
 
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#B96A85] to-[#0C0C0C] text-white font-[poppins] relative px-16 pb-12">
+        <div className="h-full text-white font-[poppins] relative px-3 pt-20 md:px-16 pb-12">
 
             {/* Sidebar */}
             <div
@@ -88,8 +88,8 @@ const ConversationPage = () => {
             </div>
 
             {/* Page Content */}
-            <div className="pt-24 md:pt-28">
-                {/* Top bar */}
+            <div className="md:pt-28">
+                {/* Top bar
                 <div className="flex justify-between items-center mb-4 gap-10 p-4">
                     <button onClick={() => setSidebarOpen(!isSidebarOpen)}>
                         <FaBars className="text-white text-2xl" />
@@ -99,7 +99,7 @@ const ConversationPage = () => {
                         alt="Profile"
                         className="w-10 h-10 rounded-full"
                     />
-                </div>
+                </div> */}
 
                 {/* Header */}
                 <div className="text-center mb-6">
@@ -108,7 +108,7 @@ const ConversationPage = () => {
                 </div>
 
                 {/* Message Area */}
-                <div className="flex flex-col space-y-8 mx-28 mb-10 px-2 sm:px-10">
+                <div className="flex flex-col space-y-8 md:mx-28 mb-10 px-2 sm:px-10">
                     {messages.map((msg, idx) => (
                         <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                             <div className={`rounded-3xl px-6 py-4 border border-[#613A4A] max-w-[80%] text-sm font-semibold
@@ -120,7 +120,7 @@ const ConversationPage = () => {
 
                     {typing && (
                         <div className="flex justify-start">
-                            <div className="rounded-3xl px-6 py-4 border border-[#613A4A] max-w-[80%] text-sm font-semibold bg-[#FFFFFF26] animate-pulse">
+                            <div className="rounded-3xl px-6 py-4 border border-[#613A4A] w-fit text-sm font-semibold bg-[#FFFFFF26] animate-pulse">
                                 <span className="dot-flash">Typing...</span>
                             </div>
                         </div>
@@ -128,7 +128,7 @@ const ConversationPage = () => {
                 </div>
 
                 {/* Input */}
-                <div className="flex items-center bg-[#FFFFFF26] mx-auto px-6 py-3 rounded-full w-[90%] max-w-3xl">
+                <div className="flex items-center justify-between bg-[#FFFFFF26] px-6 mx-auto md:px-6 flex-wrap py-3 rounded-full md:max-w-3xl">
                     <input
                         type="text"
                         value={input}
@@ -137,7 +137,7 @@ const ConversationPage = () => {
                         className="flex-grow bg-transparent text-white text-sm outline-none"
                         onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                     />
-                    <button onClick={handleSend} className="ml-4 text-white">
+                    <button onClick={handleSend} className="w-fit text-white">
                         <FaPaperPlane size={20} />
                     </button>
                 </div>

@@ -27,8 +27,7 @@ const Listing = () => {
             setLoading(true);
             try {
                 const query = new URLSearchParams(filters).toString();
-                const res = await axios.get(`http://localhost:5000/api/listings?${query}`);
-                console.log(res.data);
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings?${query}`);
                 setListings(res.data);
             } catch (err) {
                 console.error('Error fetching listings:', err);
