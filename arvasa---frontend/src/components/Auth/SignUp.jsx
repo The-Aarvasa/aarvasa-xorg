@@ -3,11 +3,13 @@ import { motion } from 'framer-motion';
 import { Mail, Lock } from 'lucide-react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from 'axios';
+import Loaders from '../Loaders';
 
 export default function SignUp() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [cPass, setCpass] = useState("");
+    const [loader ,setLoader] = useState(false);
     const navigate = useNavigate();
 
     const handleSignup = async () => {
@@ -22,6 +24,7 @@ export default function SignUp() {
         }
 
         try {
+            setLoader(true);
             const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/signup`, {
                 email,
                 password
@@ -44,6 +47,9 @@ export default function SignUp() {
             alert(error?.response?.data?.message || "Signup failed. Please try again.");
 
         }
+        finally{
+            setLoader(false);
+        }
     };
 
 
@@ -52,6 +58,8 @@ export default function SignUp() {
     };
 
     return (
+<>
+{loader ? <Loaders /> : null}
         <motion.div
 
             className="bg-[#ffffff] justify-center items-center">
@@ -165,5 +173,6 @@ export default function SignUp() {
                 </div>
             </div>
         </motion.div>
+</>
     );
 }

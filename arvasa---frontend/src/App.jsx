@@ -39,9 +39,9 @@ import PropertyDetails from './pages/PropertyDetails';
 import Favourites from "./components/profile/Favourites";
 import BackToTopButton from './components/Home/BackToTopButton';
 import { Error } from './pages/Error';
-
 import ForgotPassword from './components/Auth/ForgotPassword';
 import PropertyMain from './components/listing/PropertyMain';
+import Loaders from './components/Loaders';
 
 function AppLayout() {
   const location = useLocation();
@@ -118,7 +118,7 @@ function AppLayout() {
           <Route path="/otp" element={<Otp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
 
-          <Route path="/chat" element={<ConversationPage />} />
+          <Route path="/chat" element={<Ai />} />
           <Route path="/AddListing" element={<AddListings />} />
           <Route path="/subscription" element={<Subscription />} />
 
@@ -147,6 +147,7 @@ function AppLayout() {
 function App() {
   return (
     <Router>
+
       <AppLayout />
     </Router>
   );

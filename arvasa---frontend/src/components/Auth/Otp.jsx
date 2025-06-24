@@ -1,6 +1,8 @@
 import React, { useRef, useState, useEffect } from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { Loader } from 'lucide-react';
+import Loaders from '../Loaders';
 
 const Otp = () => {
     const inputRefs = useRef([]);
@@ -8,6 +10,7 @@ const Otp = () => {
     const [otpValues, setOtpValues] = useState(["", "", "", ""]);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [loader, setLoader] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -49,6 +52,7 @@ const Otp = () => {
   const enteredOtp = otpValues.join("");
 
   try {
+    setLoader(true);
     const res = await fetch(`${import.meta.env.VITE_BACKEND_URL}/api/auth/verify`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -68,10 +72,15 @@ const Otp = () => {
     console.error(err);
     alert("Verification failed");
   }
+  finally{
+    setLoader(false);
+  }
 };
 
 
     return (
+       <>
+       {loader ? <Loaders/> : null}
         <div className="bg-white h-[100vh] overflow-y-hidden">
             <div className="cols h-[90vh] sm:h-auto flex items-center m-2 justify-center sm:justify-between gap-[70px]">
                 <div className="left_col w-1/2 items-center justify-center hidden sm:flex">
@@ -118,6 +127,7 @@ const Otp = () => {
                 </div>
             </div>
         </div>
+       </>
     );
 };
 

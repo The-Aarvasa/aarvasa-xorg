@@ -29,8 +29,8 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
     };
 
     return (
-        <nav aria-label="Page navigation example">
-            <ul className="inline-flex -space-x-px text-base h-10">
+        <nav className="Page navigation mx-auto example w-[90%] flex items-center justify-center">
+            <ul className="inline-flex -space-x-px mx-auto text-base h-10">
                 {/* Previous Button */}
                 <li>
                     <button

@@ -5,8 +5,7 @@ import Page from '../../components/listing/Page';
 import ListingFilterBar from '../../components/listing/ListingFilterBar';
 import Property from '../../components/listing/Property';
 import Pagination from '../../components/Utils/Pagination';
-import Loader from '../Loader';
-
+import Loaders from '../Loaders';
 const PropertyMain = () => {
     const [listings, setListings] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -73,7 +72,7 @@ const PropertyMain = () => {
 
             <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">
                 {loading ? (
-                   <Loader></Loader>
+                   <Loaders></Loaders>
                 ) : listings.length === 0 ? (
                     <p className="text-center">No listings found.</p>
                 ) : (
@@ -85,10 +84,8 @@ const PropertyMain = () => {
                 )}
             </div>
 
-            <div className='mx-auto w-fit'>
                 <Pagination currentPage={currPage} totalPages={PlastPage}
   onPageChange={(page) => setCurrPage(page)}></Pagination>
-            </div>
 
         </div>
     );

@@ -6,7 +6,7 @@ const About = ({ data }) => {
     const handleSetVisibility = () => setVisibility(!visibility);
 
     return (
-        <div className="mx-2 mt-4 p-4 md:m-5 md:p-10 bg-white rounded-2xl shadow-md font-[poppins] flex flex-col justify-start gap-3">
+        <div className="mx-2 mt-4 p-2 md:p-4 md:m-5 md:p-10 bg-white rounded-2xl shadow-md font-[poppins] flex flex-col justify-start gap-3">
             <h1 className="font-semibold text-[32px]">About this property</h1>
 
             {data?.shortDescription && (
