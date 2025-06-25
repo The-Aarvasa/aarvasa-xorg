@@ -26,7 +26,8 @@ const PropertyMain = () => {
             setLoading(true);
             try {
                 const query = new URLSearchParams(filters).toString();
-                const res = await axios.get(`https://aarvasa-systemd.onrender.com/api/listings?${query}`);
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings?${query}`);
+                console.log(import.meta.env.VITE_BACKEND_URL + "URL");
                 console.log(res.data);
                 setListings(res.data);
             } catch (err) {

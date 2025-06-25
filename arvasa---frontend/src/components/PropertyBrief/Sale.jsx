@@ -17,7 +17,7 @@ const Sale = ({ address, price, unit, bed, bath, area, transactionType }) => {
 
     const Details = ({ address, price, unit, bed, bath, area, transactionType }) => {
         return (
-            <div className="flex w-full items-center md:items-start flex-col gap-8 font-[poppins] md:p-4">
+            <div className="flex w-full items-center md:items-start flex-col gap-8 md:gap-0 font-[poppins] md:p-4">
                 {address && (
                     <div className="text-gray-600 mt-4 text-lg md:text-2xl font-medium">
                         {address}
@@ -27,7 +27,7 @@ const Sale = ({ address, price, unit, bed, bath, area, transactionType }) => {
                 <div className="flex items-center gap-6 w-full justify-center md:justify-between flex-wrap md:mt-10">
                     {(price || unit) && (
                         <div className="flex flex-col gap-8">
-                            <div className="text-3xl md:text-5xl font-semibold">
+                            <div className="text-3xl md:text-5xl mt-6 font-semibold">
                                 {formatMoney(price)} <span className='text-lg md:text-xl relative bottom-1'> {transactionType === "Rent" ? "/Month" : null}</span>
                             </div>
                             {price && (
