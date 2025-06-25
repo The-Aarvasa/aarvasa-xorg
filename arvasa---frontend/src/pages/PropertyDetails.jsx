@@ -19,8 +19,9 @@ const PropertyDetails = () => {
     const getData = async () => {
       try {
         setLoader(true);
+        console.log(import.meta.env.VITE_BACKEND_URL);
         const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings/${id}`);
-        setData(res.data.data); // assuming API returns { status: true, data: [property] }
+        setData(res.data.data); 
       } catch (err) {
         console.error("Error fetching property:", err);
       }
