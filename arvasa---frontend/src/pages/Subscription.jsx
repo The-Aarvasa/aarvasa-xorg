@@ -7,12 +7,10 @@ import Page from '../components/listing/Page'
 const Subscription = () => {
   return (
     <>
-    <Navbar></Navbar>
-    <div className="bg-orange-50 mb-[20px]">
+    <div className="bg-orange-50 mb-[20px] pt-[90px]">
        <Page></Page>
         <Content />
     </div>
-    <Footer></Footer>
     </>
   )
 }

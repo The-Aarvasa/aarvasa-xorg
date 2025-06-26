@@ -1,5 +1,5 @@
 import React from "react";
-import whyImage from "../../assets/WhyAarvasapersonwithquestionmark.png"; // Combined image: question mark + person
+import whyImage from "/assets/WhyAarvasapersonwithquestionmark.png"; // Combined image: question mark + person
 
 const WhyAarvasa = () => {
   return (

@@ -6,11 +6,10 @@ import ListingProcess from '../components/AddListingPages/ListingProcess';
 const AddListings = () => {
   return (
     <>
-    <div className='bg-[#fffcf2] pt-[30px] mb-8'>
+    <div className='bg-[#fffcf2] pt-[90px] mb-8'>
       <Page></Page>
       <ListingProcess></ListingProcess>
     </div>
-    <Footer />
     </>
   )
 }

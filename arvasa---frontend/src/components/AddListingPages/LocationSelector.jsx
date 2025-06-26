@@ -1,8 +1,8 @@
 import React from 'react';
 import { IoClose } from 'react-icons/io5';
 import { FaMapMarkerAlt } from 'react-icons/fa';
-import Map from './AddListingMap'; // Import the Map component
 import { useNavigate } from 'react-router-dom';
+import Map from '../Home/Map';
 
 const LocationSelector = ({ onPrevious, onNext }) => {
     const navigate = useNavigate()
@@ -24,7 +24,7 @@ const LocationSelector = ({ onPrevious, onNext }) => {
                 </h1>
 
 
-                <div className="w-full md:w-[80%] h-[350px] mx-auto mb-6 md:mb-10">
+                <div className="w-full md:w-[80%] mx-auto mb-6 md:mb-10">
                     <Map />
                 </div>
 

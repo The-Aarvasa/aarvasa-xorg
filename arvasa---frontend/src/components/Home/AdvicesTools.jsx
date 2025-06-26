@@ -122,11 +122,11 @@
 
 
 import React from "react";
-import RatesTrendsIcon from "../../assets/AdvicesRatesandTrends.png";
-import EmiIcon from "../../assets/AdvicesEMI.png";
-import BudgetIcon from "../../assets/AdvicesBudget.png";
-import AreaIcon from "../../assets/AdvicesArea.png";
-import HomeLoanIcon from "../../assets/AdvicesHomeLoan.png";
+import RatesTrendsIcon from "/assets/AdvicesRatesandTrends.png";
+import EmiIcon from "/assets/AdvicesEMI.png";
+import BudgetIcon from "/assets/AdvicesBudget.png";
+import AreaIcon from "/assets/AdvicesArea.png";
+import HomeLoanIcon from "/assets/AdvicesHomeLoan.png";
 import { Heading } from "../Utils/Heading";
 import { Link } from "react-router-dom";
 
@@ -186,7 +186,7 @@ const AdvicesTools = () => {
             <div className="overflow-x-auto py-4 scrollbar-hide">
                 <div className="flex flex-nowrap px-5">
                     {tools.map((tool, index) => (
-                        <Link to={tool.path}>
+                        <Link to={tool.path} key={index}>
                             <ToolCard
                                 key={index}
                                 icon={tool.icon}

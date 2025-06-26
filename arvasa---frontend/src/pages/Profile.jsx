@@ -16,15 +16,13 @@ import Navbar from "../components/Navbar";
 const Profile = () => {
     return (
         <>
-            <Navbar></Navbar>
-            <div className="pb-8 bg-orange-50 mb-[20px]">
+            <div className="pb-8 bg-orange-50 pt-[90px] mb-[20px]">
 
                 <Page></Page>
 
                 <Outlet></Outlet>
             </div>
 
-            <Footer />
 
 
 
