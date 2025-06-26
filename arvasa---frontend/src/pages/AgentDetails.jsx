@@ -48,7 +48,7 @@ export default function AgentDetails() {
           <button className="border rounded-[14px] text-md px-5 py-2 mb-4 hover:bg-gray-100 transition" onClick={() => setSeeMore(!seeMore)}>{seeMore ? 'See less' : 'See more'}</button>
           <div className="flex flex-wrap justify-between pt-5 md:space-x-8 space-y-9">
             <div className="flex flex-col gap-2">
-                <h3 className="text-[19px] font-medium text-center">EXPERIENCE</h3>
+                <h3 className="text-[19px] font-medium text-center pt-[35px]">EXPERIENCE</h3>
                 <p>20 years in Real estate</p>
                 <p>25 years in Coaching</p>
             </div>
