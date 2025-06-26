@@ -9,7 +9,7 @@ const Landing = () => {
             <div className='content md:py-auto'>
                 <p className='text-[#692234] text-xl md:text-2xl'>Welcome to Aarvasa</p>
                 <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8'>Manage your <br></br> property</h1>
-                <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8'>Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
+                <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
                 <div className='bg-white w-auto mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
                     <div className="tags flex items-center gap-2 flex-wrap">
                         <button className="tag1 hover:bg-[#8C2841] hover:text-white transition-all hover:transform hover:scale-[1.1] hover:rotate-[5deg] text-sm text-gray-700 flex items-center gap-2 border border-2 p-1 px-3 rounded-lg border-gray-300 shadow-md">

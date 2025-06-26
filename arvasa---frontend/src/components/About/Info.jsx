@@ -36,10 +36,10 @@ const Info = () => {
                 <div className="lg:block hidden w-[900px] lg:relative top-0 left-0 mb-4 lg:mb-0">
                     <img className="w-full lg:relative" src="aspect.png" alt="Person" />
                 </div>
-                <div className="w-full bg-red-500 md:w-auto p-4 bg-gradient-to-l from-pink-900 to-pink-800 md:rounded-[20px] md:rounded-[32px] md:p-6 lg:p-12">
+                <div className="w-full md:w-auto p-4 bg-gradient-to-l from-pink-900 to-pink-800 md:rounded-[20px] h-full md:rounded-[32px] md:p-6 lg:p-12">
                     <p className="text-white text-xl leading-relaxed">
                         <span className="font-bold">So We Are Aarvasa, </span>
-                        <span className="font-normal text-lg">
+                        <span className="font-normal text-md">
                             we are more than just real estate professionals — we are your partners in creating a better future.
                             With a passion for helping individuals and families find their dream homes, we combine expertise,
                             integrity, and innovation to deliver exceptional results.
@@ -58,7 +58,7 @@ const Info = () => {
             </div>
 
             {/* Mission / Vision / Contact */}
-            <div className="flex h-auto md:h-[80vh] flex-wrap lg:flex-nowrap gap-4 lg:gap-[1.875rem] items-stretch mx-2 lg:mx-8">
+            <div className="flex h-auto xl:h-[80vh] flex-wrap lg:flex-nowrap gap-4 lg:gap-[1.875rem] items-stretch mx-2 lg:mx-8">
 
                 {/* LEFT SIDE */}
                 <div className="flex flex-col gap-4 w-full lg:w-1/2 h-full">
@@ -66,7 +66,7 @@ const Info = () => {
                         <div className="w-fit px-4 py-1 bg-amber-300 rounded-md text-pink-900 text-md md:text-xl font-medium">
                             Our Mission
                         </div>
-                        <div className="text-white text-lg md:text-xl font-medium font-['Poppins'] leading-8">
+                        <div className="text-white text-md font-medium font-['Poppins'] leading-8">
                             "To democratize real estate investments by offering innovative solutions like flexible payment plans, AR/VR property tours, and eco-conscious property insights, while providing a seamless experience for buyers, sellers, and renters to maximize their returns and achieve financial independence."
                         </div>
                     </div>
@@ -75,7 +75,7 @@ const Info = () => {
                         <div className="w-fit px-4 py-1 bg-amber-300 rounded-md text-pink-900 text-md md:text-xl font-medium">
                             Our Vision
                         </div>
-                        <div className="text-white text-lg md:text-xl  font-medium font-['Poppins'] leading-8">
+                        <div className="text-white text-md  font-medium font-['Poppins'] leading-8">
                             "To democratize real estate investments by offering innovative solutions like flexible payment plans, AR/VR property tours, and eco-conscious property insights, while providing a seamless experience for buyers, sellers, and renters to maximize their returns and achieve financial independence."
                         </div>
                     </div>
@@ -91,7 +91,7 @@ const Info = () => {
                 >
                     <div className="flex flex-col justify-start items-start gap-4">
                         <span className="text-white text-3xl font-extrabold leading-normal">Aarvasa</span>
-                        <span className="text-white text-lg md:text-xl tracking-wide font-medium font-['Poppins'] leading-normal">
+                        <span className="text-white text-md tracking-wide font-medium font-['Poppins'] leading-normal">
                             Simplifies Real Estate with Seamless Transactions, Investments, and Property Monetization
                         </span>
                         <button className="w-fit px-4 py-2 rounded-lg bg-gradient-to-l from-orange-400 to-amber-400 text-black text-xl capitalize cursor-pointer">

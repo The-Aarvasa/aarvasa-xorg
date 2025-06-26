@@ -1,81 +1,101 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
 import { ArrowRightLeft } from 'lucide-react';
-import { useState, useEffect } from 'react';
+
 const Area = () => {
-   const [income, setIncome] = useState(100);
-      const [emi, setEmi] = useState(10000);
-      const [loan, setLoan] = useState(2);
-      const [finalLoan, setFinalLoan] = useState(0);
-      const handleRange = (e) => {
-          const value = Number(e.target.value);
-          if (e.target.name === "income") {
-              console.log(e.target.value)
-              setIncome(value);
-          }
-          else if (e.target.name === "emi") {
-              console.log(e.target.value)
-              setEmi(value);
-          }
-          else if (e.target.name === "loan") {
-              setLoan(value);
-          }
-  
-  
-  
-      }
-  
-      useEffect(() => {
-          const eligibleEmi = income * 0.6 - emi;
-          const annualInterest = 0.075; // 7.5% annual
-          const r = annualInterest / 12; // Monthly interest rate
-          const n = loan * 12; // Loan tenure in months
-  
-          let eligibleLoan = 0;
-          if (eligibleEmi > 0) {
-              eligibleLoan = (eligibleEmi * (1 - Math.pow(1 + r, -n))) / r;
-              setFinalLoan(eligibleLoan);
-          }
-      }, [emi, loan, income])
+  const [states] = useState(["Tamil Nadu", "Karnataka", "Maharashtra"]);
+  const [fromUnit, setFromUnit] = useState("sqft");
+  const [toUnit, setToUnit] = useState("sqm");
+  const [area, setArea] = useState(0);
+  const [converted, setConverted] = useState(0);
+
+  const conversionRates = {
+    sqft: 1,
+    sqm: 10.7639,
+    acre: 43560,
+    hectare: 107639,
+  };
+
+  const handleConvert = () => {
+    if (area > 0 && fromUnit !== toUnit) {
+      // Convert from selected unit to sqft, then to target unit
+      const inSqft = area * conversionRates[fromUnit];
+      const result = inSqft / conversionRates[toUnit];
+      setConverted(result);
+    } else {
+      setConverted(area);
+    }
+  };
+
+  useEffect(() => {
+    handleConvert();
+  }, [area, fromUnit, toUnit]);
+
   return (
-     <div className='mt-3 flex flex-col gap-9 w-full md:w-[50%]'>
-                <div className='flex items-center flex-col gap-8 w-[98%] md:w-full'>
-                    <h1 className='text-xl md:text-4xl capitalize font-semibold'>Convert area into units</h1>
+    <div className='mt-3 flex flex-col gap-9 w-full md:w-[50%]'>
+      <div className='flex items-center flex-col gap-8 w-[98%] md:w-full'>
+        <h1 className='text-xl md:text-4xl capitalize font-semibold'>Convert Area into Units</h1>
 
-                <div className="input_bar w-full">
-                   <label htmlFor="">Select the state</label>
-                   <select name="" id="" className='bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'>
-                    <option value="State">State</option>
-                   </select>
-                </div>
+        <div className="input_bar w-full">
+          <label htmlFor="">Select the State</label>
+          <select className='bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'>
+            {states.map((state, i) => (
+              <option key={i} value={state}>{state}</option>
+            ))}
+          </select>
+        </div>
 
-                <div className="input_bar w-full">
-                     <div className="input_bar w-full">
-                   <label htmlFor="">Convert from</label>
-                   <select name="" id="" className='bg-gray-200 bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'>
-                    <option value="State">Sq.ft</option>
-                   </select>
-                </div>
-                </div>
+        <div className="input_bar w-full">
+          <label htmlFor="">Enter Area</label>
+          <input
+            type="number"
+            placeholder="Enter area value"
+            value={area}
+            onChange={(e) => setArea(Number(e.target.value))}
+            className='bg-gray-100 p-2 mt-2 w-full rounded-md border border-[#6C1E3C]'
+          />
+        </div>
 
-                <div className="input_bar w-full">
-                    <div className="input_bar w-full">
-                   <label htmlFor="">Convert to</label>
-                   <select name="" id="" className='bg-gray-200 bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'>
-                    <option value="State">Sq.m</option>
-                   </select>
-                </div>
-                </div>
+        <div className="input_bar w-full">
+          <label htmlFor="">Convert From</label>
+          <select
+            value={fromUnit}
+            onChange={(e) => setFromUnit(e.target.value)}
+            className='bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'
+          >
+            <option value="sqft">Sq.ft</option>
+            <option value="sqm">Sq.m</option>
+            <option value="acre">Acre</option>
+            <option value="hectare">Hectare</option>
+          </select>
+        </div>
 
-                <h1 className='text-2xl font-semibold'>Converted units* </h1> 
-                <div className='flex items-center gap-4'>
-                    <h1 className='text-xl'>999 sq.ft</h1>
-                    <ArrowRightLeft />
-                    <h1 className='text-xl'>999 sq.m</h1>
-                </div>
-                </div>
+        <div className="input_bar w-full">
+          <label htmlFor="">Convert To</label>
+          <select
+            value={toUnit}
+            onChange={(e) => setToUnit(e.target.value)}
+            className='bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'
+          >
+            <option value="sqft">Sq.ft</option>
+            <option value="sqm">Sq.m</option>
+            <option value="acre">Acre</option>
+            <option value="hectare">Hectare</option>
+          </select>
+        </div>
 
-            </div>
-  )
-}
+        <h1 className='text-2xl font-semibold'>Converted Units*</h1>
+        <div className='flex items-center gap-4'>
+          <h1 className='text-xl'>
+            {area} {fromUnit}
+          </h1>
+          <ArrowRightLeft />
+          <h1 className='text-xl'>
+            {converted.toFixed(4)} {toUnit}
+          </h1>
+        </div>
+      </div>
+    </div>
+  );
+};
 
-export default Area
+export default Area;

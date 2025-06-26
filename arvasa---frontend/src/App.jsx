@@ -5,7 +5,7 @@ import Services from './pages/Services';
 import Ai from './pages/Ai';
 import About from './pages/About';
 import Navbar from './components/Navbar';
-import { Listing } from './pages/Listing';
+import  Listing  from './pages/Listing';
 import Property from './components/listing/Property';
 import Graphs from './components/listing/Graphs';
 import SignIn from './components/Auth/SignIn';
@@ -37,23 +37,31 @@ import ContactedAgents from "./components/profile/ContactedAgents"
 import ApplicationStatus from './components/profile/ApplicationStatus';
 import PropertyDetails from './pages/PropertyDetails';
 import Favourites from "./components/profile/Favourites";
+import BackToTopButton from './components/Home/BackToTopButton';
+import { Error } from './pages/Error';
+import ForgotPassword from './components/Auth/ForgotPassword';
+import PropertyMain from './components/listing/PropertyMain';
+import Loaders from './components/Loaders';
+
 function AppLayout() {
   const location = useLocation();
-  const hideNavAndFooter = location.pathname === '/otp';
+  const hideNavAndFooter = location.pathname === '/otp' || location.pathname === '/signin' || location.pathname === '/signup' || location.pathname === '/signin'
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow">
+      <main className="flex-grow bg-orange-">
+       {!hideNavAndFooter &&  <Navbar></Navbar>}
         <Routes>
+          <Route path='*' element={<Error/>}></Route>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/agent" element={<Agents />} />
-          <Route path="/agent/:id" element={<AgentDetails />} />
+          <Route path="/agents" element={<Agents />} />
+          <Route path="/agents/:id" element={<AgentDetails />} />
           <Route path="/services" element={<Services />} />
 
 
           <Route path="/listings" element={<Listing />}>
-            <Route index element={<Property />} />
+            <Route index element={<PropertyMain />} />
             <Route path="ratestrends" element={
               <>
                 <ShowTrends />
@@ -61,11 +69,17 @@ function AppLayout() {
               </>
             } />
 
-            <Route path="propertydetails/:id" element={<PropertyDetails />} />
+
           </Route>
+
+            <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
+
+
+
 
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
+
           <Route path="/news" element={<News />} />
 
           <Route path="/profile" element={<Profile />}>
@@ -91,18 +105,20 @@ function AppLayout() {
             }
             />
 
-             <Route path="activity" element={<ApplicationStatus />}>
+            <Route path="activity" element={<ApplicationStatus />}>
+
+            </Route>
 
           </Route>
 
-          </Route>
 
-         
 
 
 
           <Route path="/otp" element={<Otp />} />
-          <Route path="/chat" element={<ConversationPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+
+          <Route path="/chat" element={<Ai />} />
           <Route path="/AddListing" element={<AddListings />} />
           <Route path="/subscription" element={<Subscription />} />
 
@@ -122,6 +138,8 @@ function AppLayout() {
 
         </Routes>
       </main>
+      <BackToTopButton />
+      {!hideNavAndFooter && <Footer></Footer>}
     </div>
   );
 }
@@ -129,6 +147,7 @@ function AppLayout() {
 function App() {
   return (
     <Router>
+
       <AppLayout />
     </Router>
   );

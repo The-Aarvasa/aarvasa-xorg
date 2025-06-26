@@ -16,7 +16,7 @@ const Footer = () => {
             <img src="/images/logo_text.png" className="w-32" alt="text logo" />
           </a>
           <p className="text-white font-semibold text-sm sm:text-base">
-            Revolutionize Scheduling with <br /> Aarvasa.
+            Empowering individuals to own, lease, and monetize real estate through innovation and transparency.
           </p>
         </div>
 
@@ -44,18 +44,20 @@ const Footer = () => {
         <div className="flex flex-col gap-4 relative">
           <h1 className="text-white font-bold text-lg">Contact us</h1>
           <span className="bg-[#D4AF37] w-1/3 h-[5px] absolute top-7"></span>
-          <p className="text-white text-sm">Technology Tower, VIT Vellore</p>
-          <p className="text-white text-sm">Room No. 004, Ground Floor</p>
-          <p className="text-white text-sm">Vellore, Tamil Nadu, 632014</p>
+          <p className="text-white text-sm">3 Flr, off Windsar Sq Opp,</p>
+          <p className="text-white text-sm">Vishal Megamart Kolar Rd, Kolar Road,</p>
+          <p className="text-white text-sm">Huzur, Bhopal- 462042, Madhya Pradesh.
+          </p>
           <a className="text-white text-sm hover:text-gray-300" href="#">theaarvasa@gmail.com</a>
         </div>
       </footer>
 
       {/* Bottom Bar */}
       <div className="flex flex-col md:flex-row flex-wrap justify-center gap-4 text-center text-white text-sm px-4">
-        <p>© TimeSlotter Technologies Pvt. Ltd. | All rights reserved</p>
+        <p>© Aarvasa Innovations Pvt. Ltd.
+          | All rights reserved</p>
         <p>GSTIN - 23AAKCT9224E1ZD</p>
-        <p>CIN - U63999MP2024PTCO70797</p>
+        <p>CIN - U68200MP2025PTC076282</p>
       </div>
     </div>
   );
