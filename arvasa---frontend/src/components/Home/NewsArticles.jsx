@@ -1,7 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Heading } from '../../components/Utils/Heading'
 import { MoveRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -79,29 +78,17 @@ const NewsArticles = () => {
         {
             id: 1,
             img: '/na-1.jpg',
-            text: 'Housing markets That Changed the most in this month',
-            name: "Alice Johnson",
-            image: "https://randomuser.me/api/portraits/men/32.jpg",
-            content: "Amazing insights into the housing market. Very helpful!",
-            stars: "★★★★★",
+            text: 'Housing markets That Changed the most in this month'
         },
         {
             id: 2,
             img: '/na-2.jpg',
-            text: 'Walkable cities where you can Live Affordably',
-            name: "Rahul Mehra",
-            image: "https://randomuser.me/api/portraits/women/68.jpg",
-            content: "Great tips on affordable cities, saved me a lot of time!",
-            stars: "★★★★☆",
+            text: 'Walkable cities where you can Live Affordably'
         },
         {
             id: 3,
             img: '/na-3.jpg',
-            text: 'Read Unveils the Best Cities for Biking',
-            name: "Emily Smith",
-            image: "https://randomuser.me/api/portraits/women/44.jpg",
-            content: "I found my dream city thanks to this article.",
-            stars: "★★★★★",
+            text: 'Read Unveils the Best Cities for Biking'
         }
     ]);
 
@@ -132,16 +119,15 @@ const NewsArticles = () => {
             <div className="rows flex flex-col gap-4">
                 <div className="main bg-gradient-to-br p-10 flex justify-center items-center rounded-2xl from-[#A82E4F] to-[#42121F]">
                     <div className="cards flex flex-wrap justify-center gap-8 md:gap-20">
-                        {data1.map((currElem, index) => {
+                        {data1.map((currElem) => {
                             return (
-                               <Link to={"/news"} key={index}>
                                 <div className="card" key={currElem.id}>
                                     <img className='w-[290px] rounded-lg' src={currElem.img} alt="" />
                                     <p className='w-full md:max-w-[270px] text-white mt-4 mb-4 text-sm'>{currElem.text}</p>
                                     <button className='flex justify-center items-center gap-1 text-white text-sm'>Read More
                                         <MoveRight></MoveRight>
                                     </button>
-                                </div></Link>
+                                </div>
                             )
                         })}
                     </div>
