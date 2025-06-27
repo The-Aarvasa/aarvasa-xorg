@@ -17,7 +17,7 @@ const ContactUs = () => {
                         />
                     </div>
                     <div className="xl:w-[50%] w-full">
-                        <form className="flex flex-col gap-6 p-6 rounded-xl">
+                        <form className="flex flex-col gap-6 rounded-xl">
                             <div className="flex flex-col gap-2">
                                 <label className="text-pink-900 text-md md:text-xl font-['Poppins']">Name</label>
                                 <input

@@ -33,7 +33,7 @@ const Transactions = () => {
   };
 
   return (
-    <div className="p-4 max-w-7xl mx-auto bg-white rounded-3xl shadow-lg mb-10 border-4 border-gray-200 mt-4">
+    <div className="p-4 max-w-7xl mx-auto bg-white rounded-3xl shadow-lg pb-[20px] border-4 border-gray-200 mt-4">
       <div className="flex justify-center gap-4 mb-4 p-5 -pb-5">
         <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">Rent</button>
         <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">Residential</button>
