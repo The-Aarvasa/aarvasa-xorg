@@ -38,7 +38,7 @@ const teamMembers = [
         image: anirudh,
         linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
         facebook: "",
-        instagram: "",
+        instagram: "https://www.instagram.com/_anirudh__.07?igsh=MTJocm1va3VtZDV0bw%3D%3D",
     },
     {
         name: "Arjit Pandey",

@@ -6,21 +6,44 @@ import Page from '../components/listing/Page';
 import Footer from '../components/Footer';
 import Navbar from '../components/Navbar';
 
-const dummyAgents = Array.from({ length: 12 }, (_, i) => ({
-  name: 'Sam Altman',
-  priceRange: '$12K - $3.9M',
-  sales: 382,
-  rating: 4.9,
-  image: `https://randomuser.me/api/portraits/men/${(i % 100)}.jpg`,
-}));
+const dummyAgents = [
+  {
+    name: 'Alice Johnson',
+    priceRange: '$20K - $2.5M',
+    sales: 278,
+    rating: 4.7,
+    image: `https://plus.unsplash.com/premium_photo-1669740215572-5e49b2d7eee0?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8d29tYW4lMjBwb3J0cmFpdHxlbnwwfHwwfHx8MA%3D%3D&ixlib=rb-4.1.0&q=60&w=3000`,
+  },
+  {
+    name: 'Michael Thompson',
+    priceRange: '$35K - $4.2M',
+    sales: 412,
+    rating: 4.8,
+    image: `https://plus.unsplash.com/premium_photo-1682096252599-e8536cd97d2b?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000`,
+  },
+  {
+    name: 'Priya Verma',
+    priceRange: '$15K - $1.8M',
+    sales: 199,
+    rating: 4.6,
+    image: `https://plus.unsplash.com/premium_photo-1687485794296-68f0d6e934bb?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8ZmVtYWxlJTIwcG9ydHJhaXR8ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000`,
+  },
+  {
+    name: 'Carlos Rivera',
+    priceRange: '$50K - $5.1M',
+    sales: 523,
+    rating: 4.9,
+    image: `https://plus.unsplash.com/premium_photo-1682144187125-b55e638cf286?fm=jpg&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cG9ydHJhaXQlMjBtYW58ZW58MHx8MHx8fDA%3D&ixlib=rb-4.1.0&q=60&w=3000`,
+  }
+];
 
-export function Agents() {
-  const [visible, setVisible] = useState(4);
+
+export function Agents() {;
   const navigate = useNavigate();
 
   return (
     <>
-   <div className='bg-orange-50 pt-[90px] pb-[40px]'>
+   <div className='bg-orange-50 pt-[90px] pb-[30px]'>
     <Page></Page>
 
 
@@ -38,8 +61,8 @@ export function Agents() {
         <p className="text-gray-600 font-['Poppins'] pt-5 text-md md:text-2xl">Work with a local expert backed by top brokerages to smoothly navigate your home <br /> journey from start to finish</p>
       </div>
 
-      <div className="flex items-center justify-center flex-wrap gap-12 mt-20 px-2">
-        {dummyAgents.slice(0, visible).map((agent, i) => (
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-[100px] justify-items-center">
+        {dummyAgents.map((agent, i) => (
           <div key={i} onClick={() => navigate(`/agents/${i}`)} className="cursor-pointer w-[279px] bg-white rounded-[20px] shadow-md hover:shadow-2xl transition">
             <img src={agent.image} className="rounded-[20px] h-[323px] w-[279px] object-cover mb-4" />
             <div className='flex justify-between items-center px-5 pb-3'>
@@ -52,13 +75,6 @@ export function Agents() {
         ))}
       </div>
 
-      {visible < dummyAgents.length && (
-        <div className="text-center">
-          <button onClick={() => setVisible((v) => v + 4)} className="border px-6 py-2 my-5 rounded-[14px] font-['Poppins'] hover:bg-gray-100 transition">
-            See more
-          </button>
-        </div>
-      )}
       </div>
     </div>
     </>
