@@ -72,7 +72,7 @@ const Navbar = () => {
         <>
             <nav
                 ref={ref}
-                className={`relative-nav transition-all duration-300 ease-in-out z-[99999] px-2 md:px-0 lg:px-2 py-4 ${fixed ? 'bg-orange-50' : 'bg-transparent'}`}
+                className={`relative-nav transition-all duration-300 ease-in-out z-[99999] px-2 md:px-0 lg:px-2 py-4 ${fixed ? 'bg-orange-50 bottom-0 md:bottom-auto' : 'bg-transparent'}`}
             >
                 <div className="lg:mx-8 flex items-center justify-between mx-auto">
                     {/* Logo */}
