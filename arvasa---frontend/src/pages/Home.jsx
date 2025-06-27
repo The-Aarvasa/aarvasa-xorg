@@ -7,7 +7,7 @@ import Landing from "../components/Home/Landing"
 import Features from "../components/Home/Features"
 import Preferred from "../components/Home/Preferred"
 import ViewAnimate from "../components/Home/ViewAnimate"
-import Map from "../components/Home/Map"
+// import Map from "../components/Home/Map"
 import Footer from "../components/Footer"
 import Services from "../components/Home/Services"
 import FAQSection from "../components/Home/FAQSection"
@@ -33,7 +33,7 @@ export const Home = () => {
                 <FAQSection></FAQSection>
                 <NewsArticles />
                 <AdvicesTools />
-                <Map />
+                {/* <Map /> */}
                 <Newsletter />
 
 
