@@ -22,7 +22,7 @@ const slideFromRight = {
 
 const Info = () => {
     return (
-        <div className="relative h-auto px-2 md:px-8 md:mx-8 font-[poppins]">
+        <div className="relative h-auto px-2 overflow-hidden md:px-8 md:mx-8 font-[poppins]">
             {/* Heading */}
             <div className="mb-8">
                 <div className="text-3xl font-[Poppins] font-medium pt-6 pb-4 text-black">
@@ -36,10 +36,10 @@ const Info = () => {
                 <div className="lg:block hidden w-[900px] lg:relative top-0 left-0 mb-4 lg:mb-0">
                     <img className="w-full lg:relative" src="aspect.png" alt="Person" />
                 </div>
-                <div className="w-full md:w-auto p-4 bg-gradient-to-l from-pink-900 to-pink-800 md:rounded-[20px] h-full md:rounded-[32px] md:p-6 lg:p-12">
+                <div className="w-full md:w-auto p-4 bg-gradient-to-l rounded-md from-pink-900 to-pink-800 md:rounded-[20px] h-full md:rounded-[32px] md:p-6 lg:p-12">
                     <p className="text-white text-xl leading-relaxed">
                         <span className="font-bold">So We Are Aarvasa, </span>
-                        <span className="font-normal text-md">
+                        <span className="font-normal text-sm md:text-md">
                             we are more than just real estate professionals — we are your partners in creating a better future.
                             With a passion for helping individuals and families find their dream homes, we combine expertise,
                             integrity, and innovation to deliver exceptional results.
