@@ -16,8 +16,8 @@ const Services = () => {
         text: "Flexible Payment Models"
     },
     {
-        img: "/s-4.jpg",
-        text: "Blockchain-Backed Transactions"
+        img: "/smartContract.png",
+        text: "Smart Contracts"
     }
     ])
     return (
@@ -28,8 +28,8 @@ const Services = () => {
                     {data.map((currElem, index) => {
                         return (
                             <Link to={"/services"} key={index}>
-                                <div key={index} className="w-full md:min-w-[450px] p-4 md:m-2 h-[130px] bg-[#D9D9D9] flex items-center justify-center gap-2">
-                                    <img className='w-20 rounded-lg' src={currElem.img} alt="" />
+                                <div key={index} className="w-full md:min-w-[500px] p-4 md:m-2 h-[130px] bg-[#D9D9D9] flex items-center justify-center gap-4 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:shadow-gray-700">
+                                    <img className='w-[100px] rounded-lg' src={currElem.img} alt="" />
                                     <h1>{currElem.text}</h1>
                                     <MoveRight></MoveRight>
                                 </div></Link>
