@@ -17,7 +17,7 @@ const Services = () => {
     },
     {
         img: "/s-4.jpg",
-        text: "Blockchain-Backed Transactions"
+        text: "Smart Contracts"
     }
     ])
     return (
@@ -28,7 +28,7 @@ const Services = () => {
                     {data.map((currElem, index) => {
                         return (
                             <Link to={"/services"} key={index}>
-                                <div key={index} className="w-full md:min-w-[450px] p-4 md:m-2 h-[130px] bg-[#D9D9D9] flex items-center justify-center gap-2">
+                                <div key={index} className="w-full md:min-w-[450px] p-4 md:m-2 h-[130px] bg-[#D9D9D9] flex items-center justify-start gap-2">
                                     <img className='w-20 rounded-lg' src={currElem.img} alt="" />
                                     <h1>{currElem.text}</h1>
                                     <MoveRight></MoveRight>
