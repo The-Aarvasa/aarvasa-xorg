@@ -35,7 +35,7 @@ const services = [
     img: ServicesAI,
   },
   {
-    title: "Smart Contracts",
+    title: "Blockchain Smart Contracts",
     description:
       "Smart Contracts are self-executing digital contracts with the agreement terms directly written into code. Once predefined conditions are met, the contract automatically enforces itself—without the need for third parties like brokers or legal intermediaries.These contracts are deployed on a secure, decentralized blockchain platform (like Ethereum), ensuring transparency, trust, and automation in every real estate transaction."
     ,
