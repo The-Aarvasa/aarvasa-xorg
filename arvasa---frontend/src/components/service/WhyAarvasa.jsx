@@ -15,18 +15,24 @@ const WhyAarvasa = () => {
             alt="Why Aarvasa"
             className="w-[900px] relative top-10 md:top-0 left-0 object-contain"
           />
-          <h2 className="top-0 absolute left-[100px] xl:left-52 top-[80px] text-2xl lg:text-5xl font-bold">
+          <h2 className=" absolute left-[100px] xl:left-92 top-[80px] text-2xl lg:text-5xl font-bold">
             Why Aarvasa
           </h2>
         </div>
 
         {/* Right: Bullet Points */}
         <div className="max-w-md space-y-4 text-xl leading-relaxed text-left">
+          <p>• Extensive property database</p>
+          <p>• Experienced consultants</p>
+          <p>• Personalized investment strategies</p>
+          <p>• Testimonials or client success stories</p>
+        </div>
+        <div className="max-w-md space-y-4 text-xl leading-relaxed text-left">
+          <p>• Automated secure real estate.</p>
+          <p>• Blockchain ensures transparent trust.</p>
+          <p>• Experienced team, tailored solutions.</p>
+          <p>• Innovation, integrity, property excellence.</p>
 
-          <p>Extensive property database</p>
-          <p>Experienced consultants</p>
-          <p>Personalized investment strategies</p>
-          <p>Testimonials or client success stories</p>
         </div>
       </div>
     </section>

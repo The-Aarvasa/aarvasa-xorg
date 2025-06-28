@@ -10,7 +10,7 @@ const Slider = () => {
             uname: "@rahul_s",
             content: "Aarvasa helped me find my dream home within my budget. The team was professional and responsive throughout the process.",
             stars: "★★★★★",
-            image: "https://randomuser.me/api/portraits/men/32.jpg",
+            image: "https://images.pexels.com/photos/14993982/pexels-photo-14993982.jpeg ",
             time: "2 weeks ago"
         },
         {
@@ -18,7 +18,7 @@ const Slider = () => {
             uname: "@priya2023",
             content: "The property insights provided by Aarvasa were incredibly detailed and helped me make an informed decision.",
             stars: "★★★★☆",
-            image: "https://randomuser.me/api/portraits/women/44.jpg",
+            image: "https://images.pexels.com/photos/32160999/pexels-photo-32160999.jpeg",
             time: "2 weeks ago"
         },
         {
@@ -26,7 +26,7 @@ const Slider = () => {
             uname: "@arjunK",
             content: "The property insights provided by Aarvasa were incredibly detailed and helped me make an informed decision.",
             stars: "★★★★★",
-            image: "https://randomuser.me/api/portraits/men/68.jpg",
+            image: "https://thumbs.dreamstime.com/z/young-indian-man-smiling-park-88123456.jpg",
             time: "2 weeks ago"
         }
     ];
