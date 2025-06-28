@@ -17,7 +17,7 @@ const Services = () => {
     },
     {
         img: "/s-4.jpg",
-        text: "Smart Contracts"
+        text: "Blockchain Smart Contracts"
     }
     ])
     return (
