@@ -148,7 +148,7 @@ const NewsArticles = () => {
                                 className="text-black font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl"
                                 variants={headingVariants}
                             >
-                                More than 10 Years of Experience
+                                More than 2 Years of Experience
                             </motion.h1>
                             <motion.p
                                 className="text-[#181A20] text-xs sm:text-sm md:text-base font-normal pt-3 sm:pt-4 pb-6 sm:pb-8 md:pb-10"
@@ -162,19 +162,19 @@ const NewsArticles = () => {
                             >
                                 <motion.div variants={numberVariants}>
                                     <h1 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-semibold">
-                                        <Counter end={2000000} /> +
+                                        <Counter end={200} /> k+
                                     </h1>
                                     <p className="text-xs sm:text-sm">User visits</p>
                                 </motion.div>
                                 <motion.div variants={numberVariants}>
                                     <h1 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-semibold">
-                                        <Counter end={999} /> +
+                                        <Counter end={499} /> +
                                     </h1>
                                     <p className="text-xs sm:text-sm">Satisfied Customers</p>
                                 </motion.div>
                                 <motion.div variants={numberVariants}>
                                     <h1 className="text-sm sm:text-md md:text-2xl lg:text-3xl font-semibold">
-                                        <Counter end={29000} /> +
+                                        <Counter end={2900} /> +
                                     </h1>
                                     <p className="text-xs sm:text-sm">Home ownership</p>
                                 </motion.div>
