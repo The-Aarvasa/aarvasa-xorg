@@ -4,6 +4,7 @@ import { MapPin, Search, Home, IndianRupee, Earth, KeyRound , Map , BedDouble , 
 import { useNavigate } from 'react-router-dom'
 import { FilterContext } from '../../context/FilterProvider'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 const Landing = () => {
     const options = [{
         title: "Buy",
@@ -35,6 +36,10 @@ const Landing = () => {
     const toggleSelected = (index) => {
         setSelected(prev => prev === index ? -1 : index);
     }
+
+    useEffect(() => {
+       toast.info("hii");
+    }, [])
 
     const handleChange = (key, value) => {
         setPrev((prev) => ({

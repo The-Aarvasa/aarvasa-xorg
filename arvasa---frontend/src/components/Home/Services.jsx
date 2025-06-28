@@ -46,9 +46,10 @@ const Services = () => {
 
                     <div className="absolute lg:top-[100px] xl:top-[-10px] md:top-[140px] right-[50px] z-[9999]">
                         {/* Main thought bubble */}
-                        <div className="p-4 rounded-[40px] shadow-md w-[180px] relative" >
+                        <Link to={"/chat"}> 
+                        <div className="p-4 rounded-[40px] shadow-md bg-[#d3d3d3] w-[180px] relative">
                            
-                          <Link to={"/chat"}> <p className="text-sm z-[999] text-gray-800 font-medium text-center">Need help finding your dream home?</p></Link>
+                          <p className="text-sm z-[99] text-gray-800 font-medium text-center">Need help finding your dream home?</p>
                             
 
 
@@ -57,10 +58,11 @@ const Services = () => {
                             <div className="absolute bottom-[-30px] left-[5px] w-[10px] h-[10px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
                             <div className="absolute bottom-[-40px] left-[-5px] w-[6px] h-[6px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
                         </div>
+                            </Link>
                     </div>
 
                     {/* Existing man image */}
-                    <img src="/man.svg" className='absolute w-[450px] md:top-[240px] right-[60px] xl:top-[-20px] z-[999]' alt="" />
+                    <img src="/man.svg" className='absolute w-[450px] md:top-[240px] right-[60px] xl:top-[-20px]' alt="" />
 
                     {/* <svg viewBox="0 0 180 180" className='absolute z-[99] transform rotate-[360deg] right-[90px] xl:top-[-40px] md:top-[120px] right-0 w-[300px]' xmlns="http://www.w3.org/2000/svg">
                         <defs>

@@ -45,6 +45,8 @@ import Loaders from './components/Loaders';
 import UnlockPremium from "./components/Subscription/UnlockPremium"
 import { FilterProvider } from './context/FilterProvider';
 import { useEffect, useState } from 'react';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 
 function AppLayout() {
   const [popup, setPop] = useState(false);
@@ -161,9 +163,21 @@ function AppLayout() {
 
 function App() {
   return (
-    <Router>
+     <Router>
       <FilterProvider>
         <AppLayout />
+        <ToastContainer
+          position="top-right"
+          autoClose={3000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="colored"
+          toastClassName="z-[99999] !fixed rounded-md shadow-lg"
+        />
       </FilterProvider>
     </Router>
   );
