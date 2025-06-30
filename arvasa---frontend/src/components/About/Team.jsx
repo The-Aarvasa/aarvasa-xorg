@@ -2,217 +2,171 @@ import React from "react";
 import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
 import ansh from "/assets/Team Ansh.jpg"
 import uday from "/assets/uday.png"
-import archit from "/assets/archit.png"
+// import archit from "/assets/archit.png"
 import anirudh from "/assets/Team Anirudh.jpg"
 import arjit from "/assets/Team Arjit.jpg"
+import sriaditya from "/assets/sriaditya.png"
 import { Heading } from "../Utils/Heading";
+import { motion } from "motion/react";
+import { useState } from "react";
 
 const teamMembers = [
-    {
-        name: "Uday Prakash Sahu",
-        role: "Founder & CEO",
-        image: uday,
-        linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
-        facebook: "",
-        instagram: "https://www.instagram.com/uday.sahu_10?igsh=MWVzNW85dTRydndpdg%3D%3D",
-    },
-    {
-        name: "Ansh Dubey",
-        role: "Co-Founder & COO",
-        image: ansh,
-        linkedin: "https://www.linkedin.com/in/ansh-dubey-526325273/",
-        facebook: "",
-        instagram: "https://www.instagram.com/_ansh_.dubey/",
-    },
-    {
-        name: "Archit Agarwal",
-        role: "Chief Marketing Officer",
-        image: archit,
-        linkedin: "https://www.linkedin.com/in/archit-agarwal03/",
-        facebook: "",
-        instagram: "https://www.instagram.com/archit_agarwal1511?igsh=MWo0b3V0bHF0NW1vaA%3D%3D",
-    },
-    {
-        name: "Anirudh Saxena",
-        role: "Chief Technology Officer",
-        image: anirudh,
-        linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
-        facebook: "",
-        instagram: "https://www.instagram.com/_anirudh__.07?igsh=MTJocm1va3VtZDV0bw%3D%3D",
-    },
-    {
-        name: "Arjit Pandey",
-        role: "VP of Executive Operations",
-        image: arjit,
-        linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
-        facebook: "",
-        instagram: "https://www.instagram.com/_.arjit.pandey._?igsh=MWtiOGR6OXNoNWM1eg%3D%3D",
-    },
+  {
+    name: "Uday Prakash Sahu",
+    role: "Founder & CEO",
+    image: uday,
+    tagline: "Expert in Networking & Sales | External Affairs Lead",
+    description: "Uday Sahu leads Aarvasa as CEO, driving growth, partnerships, and market expansion. With expertise in business networking and real estate sales, he strengthens stakeholder relations and positions Aarvasa as a key player in property investment.",
+    linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
+    facebook: "",
+    instagram: "https://www.instagram.com/uday.sahu_10?igsh=MWVzNW85dTRydndpdg%3D%3D",
+  },
+  {
+    name: "Ansh Dubey",
+    role: "Co-Founder & COO",
+    image: ansh,
+    tagline: "Operations Strategist | Product & Process Leader",
+    description: "Ansh Dubey, COO of Aarvasa, oversees operations, workflow optimization, and product delivery. Focused on efficiency, he ensures smooth platform functionality, from listings to customer experience, translating ideas into scalable, real-world execution.",
+    linkedin: "https://www.linkedin.com/in/ansh-dubey-526325273/",
+    facebook: "",
+    instagram: "https://www.instagram.com/_ansh_.dubey/",
+  },
+  // {
+  //     name: "Archit Agarwal",
+  //     role: "HOD R&D",
+  //     image: archit,
+  //     tagline: "",
+  //     description:"" ,
+  //     linkedin: "https://www.linkedin.com/in/archit-agarwal03/",
+  //     facebook: "",
+  //     instagram: "https://www.instagram.com/archit_agarwal1511?igsh=MWo0b3V0bHF0NW1vaA%3D%3D",
+  // },
+  {
+    name: "Anirudh Saxena",
+    role: "Co-Founder & CTO",
+    image: anirudh,
+    tagline: "Tech Architect | Innovation & Engineering Lead",
+    description: "Anirudh Saxena, CTO of Aarvasa, drives AI tools, smart contracts, and infrastructure development. He ensures a secure, scalable tech foundation, shaping the digital systems that power Aarvasa’s platform and future growth.",
+    linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
+    facebook: "",
+    instagram: "https://www.instagram.com/_anirudh__.07?igsh=MTJocm1va3VtZDV0bw%3D%3D",
+  },
+  {
+    name: "Arjit Pandey",
+    role: "Executive Administrator",
+    image: arjit,
+    tagline: "Operations Specialist | Organizational Strategist | Workflow Optimizer",
+    description: "Arjit Pandey ensures Aarvasa’s internal operations run smoothly. As Executive Administrator, he leads planning, coordination, and execution. Bridging people and processes, he drives structured, dependable outcomes that align with Aarvasa’s vision and support company performance at every level.",
+    linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
+    facebook: "",
+    instagram: "https://www.instagram.com/_.arjit.pandey._?igsh=MWtiOGR6OXNoNWM1eg%3D%3D",
+  },
+  {
+    name: "Sriaditya S",
+    role: "VP of IT Operations",
+    image: sriaditya,
+    tagline: "Technology Strategist | System Architect | Cybersecurity Advocate",
+    description: "Sriaditya S leads IT Operations at Aarvasa, managing the company’s digital infrastructure, cloud systems, and cybersecurity. He ensures platform stability, secure workflows, and drives Aarvasa’s tech innovations for scalable business growth.",
+    linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
+    facebook: "",
+    instagram: "https://www.instagram.com/_.arjit.pandey._?igsh=MWtiOGR6OXNoNWM1eg%3D%3D",
+  },
 ];
 
 
-// smaller teams component
+const TeamCard = ({ member }) => {
+  const [isHovered, setIsHovered] = useState(false);
+
+  return (
+    <motion.div
+      className="relative h-64 min-w-[16rem] md:min-w-[16rem] max-w-full rounded-xl shadow-lg overflow-hidden bg-[#6C1E3C] cursor-pointer flex"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      animate={{ width: isHovered ? "32rem" : "16rem" }}
+      transition={{ type: "spring", stiffness: 120, damping: 20 }}
+      layout
+    >
+      {/* Image Section */}
+      <motion.div
+        className="h-full"
+        animate={{ width: isHovered ? "50%" : "100%" }}
+        transition={{ type: "spring", stiffness: 120, damping: 20 }}
+        layout
+      >
+        <img
+          src={member.image}
+          alt={member.name}
+          className="h-full w-full object-cover rounded-l-xl"
+        />
+      </motion.div>
+
+      {/* Right Description Panel */}
+      {isHovered && (
+        <motion.div
+          className="h-full bg-[#6C1E3C] bg-opacity-90 text-white px-4 py-3 flex flex-col justify-between overflow-hidden rounded-r-xl"
+          animate={{ width: "50%", opacity: 1 }}
+          initial={{ width: 0, opacity: 0 }}
+          exit={{ width: 0, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 120, damping: 20 }}
+          layout
+        >
+          <div>
+            <div className="flex gap-6">
+              <div className="flex flex-col">
+                <h4 className="text-base font-semibold">{member.name}</h4>
+                <p className="text-xs text-gray-300">{member.role}</p>
+              </div>
+              <div className="flex items-center gap-3 mt-3">
+                {member.facebook && (
+                  <a href={member.facebook} target="_blank" rel="noopener noreferrer">
+                    <FaFacebookF className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                  </a>
+                )}
+                {member.linkedin && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                    <FaLinkedinIn className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                  </a>
+                )}
+                {member.instagram && (
+                  <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                    <FaInstagram className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                  </a>
+                )}
+              </div>
+            </div>
+            {member.tagline && (
+              <p className="text-[11px] italic text-gray-200 mt-1">{member.tagline}</p>
+            )}
+            {member.description && (
+              <p className="text-[11px] mt-2 text-gray-100">{member.description}</p>
+            )}
+          </div>
 
 
-// const Team = () => {
-//     return (
-//         <section className="md:px-6 md:py-10 mx-2 mx-8 font-[poppins]">
-//             <Heading label="Meet Our Team" />
-
-//             <div className="flex flex-col items-center gap-6 mb-6">
-//                 {/* First row with 3 members */}
-//                 <div className="flex justify-center flex-wrap gap-6 transition-all duration-500">
-//                     {teamMembers.slice(0, 3).map((member, index) => (
-//                         <div
-//                             key={index}
-//                             className={`relative group rounded-xl overflow-hidden shadow-md ${member.bgColor} w-64`}
-//                         >
-//                             <img
-//                                 src={member.image}
-//                                 alt={member.name}
-//                                 className="w-full cursor-pointer object-cover"
-//                             />
-//                             <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-1000 left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
-//                                 <h4 className="text-sm font-semibold">{member.name}</h4>
-//                                 <p className="text-xs">{member.role}</p>
-//                                 <div className="absolute bottom-4 right-4 flex items-center gap-2">
-//                                     <a href={member.facebook} target="_blank" rel="noopener noreferrer">
-//                                         <FaFacebookF className="text-white text-sm cursor-pointer hover:text-gray-400" />
-//                                     </a>
-//                                     <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-//                                         <FaLinkedinIn className="text-white text-sm cursor-pointer hover:text-gray-400" />
-//                                     </a>
-//                                     <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-//                                         <FaInstagram className="text-white text-sm cursor-pointer hover:text-gray-400" />
-//                                     </a>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     ))}
-//                 </div>
-
-//                 {/* Second row with 2 members */}
-//                 <div className="flex justify-center flex-wrap gap-6 transition-all duration-500">
-//                     {teamMembers.slice(3, 5).map((member, index) => (
-//                         <div
-//                             key={index + 3} // Adjust key to avoid duplication
-//                             className={`relative group rounded-xl overflow-hidden shadow-md ${member.bgColor} w-64`}
-//                         >
-//                             <img
-//                                 src={member.image}
-//                                 alt={member.name}
-//                                 className="w-full cursor-pointer object-cover"
-//                             />
-//                             <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all duration-500 delay-1000 left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
-//                                 <h4 className="text-sm font-semibold">{member.name}</h4>
-//                                 <p className="text-xs">{member.role}</p>
-//                                 <div className="absolute bottom-4 right-4 flex items-center gap-2">
-//                                     <a href={member.facebook} target="_blank" rel="noopener noreferrer">
-//                                         <FaFacebookF className="text-white text-sm cursor-pointer hover:text-gray-400" />
-//                                     </a>
-//                                     <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-//                                         <FaLinkedinIn className="text-white text-sm cursor-pointer hover:text-gray-400" />
-//                                     </a>
-//                                     <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-//                                         <FaInstagram className="text-white text-sm cursor-pointer hover:text-gray-400" />
-//                                     </a>
-//                                 </div>
-//                             </div>
-//                         </div>
-//                     ))}
-//                 </div>
-//             </div>
-
-//         </section>
-
-//     );
-// };
-
-
-
-
-
+        </motion.div>
+      )}
+    </motion.div>
+  );
+};
 
 const Team = () => {
-    return (
-        <section className="px-4 sm:px-6 py-10 font-[poppins]">
-            <Heading label="Meet Our Team" />
-
-            <div className="flex flex-col items-center gap-10 mb-6">
-                {/* First row with 3 members */}
-                <div className="flex justify-center flex-wrap gap-4 sm:gap-6 transition-all duration-500">
-                    {teamMembers.slice(0, 3).map((member, index) => (
-                        <div
-                            key={index}
-                            className={`relative group rounded-xl overflow-hidden shadow-lg w-72 sm:w-64 transition-transform hover:scale-105`}
-                        >
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-full h-auto object-cover"
-                            />
-                            <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
-                                <h4 className="text-base font-semibold">{member.name}</h4>
-                                <p className="text-xs">{member.role}</p>
-                                <div className="absolute bottom-4 right-4 flex items-center gap-2">
-                                    {member.facebook && (
-                                        <a href={member.facebook} target="_blank" rel="noopener noreferrer">
-                                            <FaFacebookF className="text-white text-sm hover:text-gray-400" />
-                                        </a>
-                                    )}
-                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                                        <FaLinkedinIn className="text-white text-sm hover:text-gray-400" />
-                                    </a>
-                                    {member.instagram && (
-                                        <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                                            <FaInstagram className="text-white text-sm hover:text-gray-400" />
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-
-                {/* Second row with 2 members */}
-                <div className="flex justify-center flex-wrap gap-4 sm:gap-6 transition-all duration-500">
-                    {teamMembers.slice(3, 5).map((member, index) => (
-                        <div
-                            key={index + 3}
-                            className={`relative group rounded-xl overflow-hidden shadow-lg w-72 sm:w-64 transition-transform hover:scale-105`}
-                        >
-                            <img
-                                src={member.image}
-                                alt={member.name}
-                                className="w-full h-auto object-cover"
-                            />
-                            <div className="absolute bottom-0 opacity-0 group-hover:opacity-100 transition-all left-0 right-0 bg-[#6C1E3C] bg-opacity-80 px-4 py-2 text-white">
-                                <h4 className="text-base font-semibold">{member.name}</h4>
-                                <p className="text-xs">{member.role}</p>
-                                <div className="absolute bottom-4 right-4 flex items-center gap-2">
-                                    {member.facebook && (
-                                        <a href={member.facebook} target="_blank" rel="noopener noreferrer">
-                                            <FaFacebookF className="text-white text-sm hover:text-gray-400" />
-                                        </a>
-                                    )}
-                                    <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                                        <FaLinkedinIn className="text-white text-sm hover:text-gray-400" />
-                                    </a>
-                                    {member.instagram && (
-                                        <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                                            <FaInstagram className="text-white text-sm hover:text-gray-400" />
-                                        </a>
-                                    )}
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-
-
-    );
+  return (
+    <section className="px-4 sm:px-6 py-10 font-[poppins]">
+      <Heading label="Meet Our Team" />
+      <div className="flex flex-col justify-center flex-wrap gap-6">
+        <div className="flex flex-wrap gap-6 justify-center items-start">
+          {teamMembers.slice(0,3).map((member, index) => (
+            <TeamCard key={index} member={member} />
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-6 justify-center items-start">
+          {teamMembers.slice(3,6).map((member, index) => (
+            <TeamCard key={index} member={member} />
+          ))}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Team;

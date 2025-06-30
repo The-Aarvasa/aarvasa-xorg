@@ -47,6 +47,7 @@ import { FilterProvider } from './context/FilterProvider';
 import { useEffect, useState } from 'react';
 import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer } from 'react-toastify';
+import AiButton from './components/Home/AiButton';
 
 function AppLayout() {
   const [popup, setPop] = useState(false);
@@ -65,17 +66,16 @@ function AppLayout() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
-      {/* {popup ? <UnlockPremium disablePrem={disablePrem}></UnlockPremium> : null} */}
+        {/* {popup ? <UnlockPremium disablePrem={disablePrem}></UnlockPremium> : null} */}
 
-       {!hideNavAndFooter &&  <Navbar></Navbar>}
+        {!hideNavAndFooter && <Navbar />}
         <Routes>
-          <Route path='*' element={<Error/>}></Route>
+          <Route path='*' element={<Error />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/agents" element={<Agents />} />
           <Route path="/agents/:id" element={<AgentDetails />} />
           <Route path="/services" element={<Services />} />
-
 
           <Route path="/listings" element={<Listing />}>
             <Route index element={<PropertyMain />} />
@@ -85,14 +85,9 @@ function AppLayout() {
                 <Graphs />
               </>
             } />
-
-
           </Route>
 
-            <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
-
-
-
+          <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
 
           <Route path="/signin" element={<SignIn />} />
           <Route path="/signup" element={<SignUp />} />
@@ -101,36 +96,13 @@ function AppLayout() {
 
           <Route path="/profile" element={<Profile />}>
             <Route index element={<MainProfile />} />
-            <Route path="guides" element={
-              <Guides />
-            }
-            />
-            <Route path="activity" element={
-              <ApplicationStatus />
-            }
-            />
-            <Route path="favourites" element={
-              <Favourites />
-            }
-            />
-            <Route path="transaction" element={
-              <Transactions />
-            } />
-
-            <Route path="Contactagents" element={
-              <ContactedAgents />
-            }
-            />
-
-            <Route path="activity" element={<ApplicationStatus />}>
-
-            </Route>
-
+            <Route path="guides" element={<Guides />} />
+            <Route path="activity" element={<ApplicationStatus />} />
+            <Route path="favourites" element={<Favourites />} />
+            <Route path="transaction" element={<Transactions />} />
+            <Route path="Contactagents" element={<ContactedAgents />} />
+            <Route path="activity" element={<ApplicationStatus />} />
           </Route>
-
-
-
-
 
           <Route path="/otp" element={<Otp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
@@ -139,13 +111,9 @@ function AppLayout() {
           <Route path="/AddListing" element={<AddListings />} />
           <Route path="/subscription" element={<Subscription />} />
 
-
           <Route path="/tools" element={<Tools />}>
             <Route path='budgetcalculator' index element={<Budget />} />
-            <Route path="EMIcalculator" element={
-              <Emi />
-            } />
-
+            <Route path="EMIcalculator" element={<Emi />} />
             <Route path="homeloaneligibility" element={<Loan />} />
             <Route path="areaconverter" element={<Area />} />
           </Route>
@@ -155,8 +123,9 @@ function AppLayout() {
 
         </Routes>
       </main>
+      {location.pathname !== "/chat" && <AiButton />}
       <BackToTopButton />
-      {!hideNavAndFooter && <Footer></Footer>}
+      {!hideNavAndFooter && <Footer />}
     </div>
   );
 }
