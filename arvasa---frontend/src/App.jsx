@@ -150,7 +150,7 @@ function AppLayout() {
             <Route path="areaconverter" element={<Area />} />
           </Route>
 
-          {/* <Route path="article" element={<InsideArticle />} /> */}
+          <Route path="/article" element={<InsideArticle />} />
 
 
         </Routes>

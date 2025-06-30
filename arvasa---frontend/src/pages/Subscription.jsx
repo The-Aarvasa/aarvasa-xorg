@@ -7,7 +7,7 @@ import Page from '../components/listing/Page'
 const Subscription = () => {
   return (
     <>
-    <div className="bg-orange-50 pb-[40px] pt-[90px]">
+    <div className="bg-orange-50 pb-[80px] pt-[100px]">
        <Page></Page>
         <Content />
     </div>

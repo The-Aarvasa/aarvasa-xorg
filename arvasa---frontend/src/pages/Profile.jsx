@@ -16,7 +16,7 @@ import Navbar from "../components/Navbar";
 const Profile = () => {
     return (
         <>
-            <div className="pb-8 bg-orange-50 pt-[90px] pb-[40px]">
+            <div className="pb-8 bg-orange-50 pt-[90px] pb-[100px]">
 
                 <Page></Page>
 

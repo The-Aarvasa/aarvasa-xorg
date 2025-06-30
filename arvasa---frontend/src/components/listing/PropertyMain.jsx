@@ -54,7 +54,7 @@ const PropertyMain = () => {
 
     return (
         <div className="bg-orange-50 pb-6">
-
+            <ListingFilterBar></ListingFilterBar>
             <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">
                 {loading ? (
                    <Loaders></Loaders>

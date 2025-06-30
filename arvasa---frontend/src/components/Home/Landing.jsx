@@ -37,9 +37,7 @@ const Landing = () => {
         setSelected(prev => prev === index ? -1 : index);
     }
 
-    useEffect(() => {
-       toast.info("hii");
-    }, [])
+
 
     const handleChange = (key, value) => {
         setPrev((prev) => ({
@@ -96,7 +94,6 @@ const Landing = () => {
                             <Earth />
                             <select name="" value={filters.propertyType} onChange={(e) => handleChange("propertyType", e.target.value)} id="" className='px-4 bg-white  w-full md:w-auto font-semibold '>
                                 <option value="Property type">Apartments</option>
-                                <option value="Property type">Home</option>
                             </select>
                         </div>
                         <div className="budget w-full flex items-center gap-2 hover:text-[#8C2841]">
