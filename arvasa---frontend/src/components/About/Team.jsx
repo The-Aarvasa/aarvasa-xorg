@@ -76,79 +76,80 @@ const teamMembers = [
 
 const TeamCard = ({ member }) => {
   const [isHovered, setIsHovered] = useState(false);
+
   return (
     <motion.div
-      className="relative flex h-64 w-64 rounded-xl shadow-lg overflow-hidden bg-[#6C1E3C] cursor-pointer"
+      className="relative h-64 min-w-[16rem] md:min-w-[16rem] max-w-full rounded-xl shadow-lg overflow-hidden bg-[#6C1E3C] cursor-pointer flex"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       animate={{ width: isHovered ? "32rem" : "16rem" }}
-      transition={{ type: "spring", stiffness: 100, damping: 25 }}
+      transition={{ type: "spring", stiffness: 120, damping: 20 }}
       layout
     >
       {/* Image Section */}
       <motion.div
         className="h-full"
         animate={{ width: isHovered ? "50%" : "100%" }}
-        transition={{ type: "spring", stiffness: 100, damping: 25 }}
+        transition={{ type: "spring", stiffness: 120, damping: 20 }}
         layout
       >
-        <img src={member.image} alt={member.name} className="h-full w-full object-cover rounded-l-xl" />
+        <img
+          src={member.image}
+          alt={member.name}
+          className="h-full w-full object-cover rounded-l-xl"
+        />
       </motion.div>
 
-      {/* Description Section */}
+      {/* Right Description Panel */}
       {isHovered && (
         <motion.div
-          className="h-full bg-[#6C1E3C] bg-opacity-90 text-white px-4 py-3 flex flex-col gap-2 overflow-hidden"
-          animate={{ width: isHovered ? "50%" : "0%", opacity: isHovered ? 1 : 0 }}
-          transition={{ type: "spring", stiffness: 100, damping: 25 }}
-          initial={{ opacity: 0 }}
+          className="h-full bg-[#6C1E3C] bg-opacity-90 text-white px-4 py-3 flex flex-col justify-between overflow-hidden rounded-r-xl"
+          animate={{ width: "50%", opacity: 1 }}
+          initial={{ width: 0, opacity: 0 }}
+          exit={{ width: 0, opacity: 0 }}
+          transition={{ type: "spring", stiffness: 120, damping: 20 }}
           layout
         >
-          {/* Name, Designation & Socials */}
-          <div className="flex justify-between items-center mb-2">
-            <div>
-              <h4 className="text-base font-semibold">{member.name}</h4>
-              <p className="text-xs">{member.role}</p>
-            </div>
-            <div className="flex items-center gap-2">
-              {member.facebook && (
-                <a href={member.facebook} target="_blank" rel="noopener noreferrer">
-                  <FaFacebookF className="text-white text-sm hover:text-gray-400" />
-                </a>
-              )}
-              {member.linkedin && (
-                <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                  <FaLinkedinIn className="text-white text-sm hover:text-gray-400" />
-                </a>
-              )}
-              {member.instagram && (
-                <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                  <FaInstagram className="text-white text-sm hover:text-gray-400" />
-                </a>
-              )}
-            </div>
+          <div>
+            <h4 className="text-base font-semibold">{member.name}</h4>
+            <p className="text-xs text-gray-300">{member.role}</p>
+            {member.tagline && (
+              <p className="text-[11px] italic text-gray-200 mt-1">{member.tagline}</p>
+            )}
+            {member.description && (
+              <p className="text-[11px] mt-2 text-gray-100">{member.description}</p>
+            )}
           </div>
-          {/* Tagline */}
-          {member.tagline && (
-            <p className="text-[11px] italic text-gray-200">{member.tagline}</p>
-          )}
-          {/* Description */}
-          {member.description && (
-            <p className="text-[11px]">{member.description}</p>
-          )}
+
+          <div className="flex items-center gap-3 mt-3">
+            {member.facebook && (
+              <a href={member.facebook} target="_blank" rel="noopener noreferrer">
+                <FaFacebookF className="text-white text-sm hover:text-gray-400" />
+              </a>
+            )}
+            {member.linkedin && (
+              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                <FaLinkedinIn className="text-white text-sm hover:text-gray-400" />
+              </a>
+            )}
+            {member.instagram && (
+              <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                <FaInstagram className="text-white text-sm hover:text-gray-400" />
+              </a>
+            )}
+          </div>
         </motion.div>
       )}
     </motion.div>
   );
 };
 
-
 const Team = () => {
   return (
     <section className="px-4 sm:px-6 py-10 font-[poppins]">
       <Heading label="Meet Our Team" />
       <div className="flex justify-center flex-wrap gap-6">
-        <div className="flex justify-center flex-wrap gap-6">
+        <div className="flex flex-wrap gap-6 justify-center items-start">
           {teamMembers.map((member, index) => (
             <TeamCard key={index} member={member} />
           ))}
