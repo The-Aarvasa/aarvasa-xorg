@@ -21,7 +21,7 @@ const Property = ({ listing }) => {
     } = listing;
 
     return (
-        <div className="w-full h-auto bg-white rounded-xl shadow-md flex flex-col lg:flex-row p-4">
+        <div className="w-full h-auto bg-white rounded-xl shadow-md flex flex-col gap-6 lg:gap-2 lg:flex-row p-4">
             <div className="relative w-full lg:w-[500px] h-[250px] lg:h-[269px] rounded-lg overflow-hidden mb-4 lg:mb-0">
                 <Link to={`/listings/propertydetails/${_id}`}>
                     <img
@@ -57,7 +57,7 @@ const Property = ({ listing }) => {
                 </div>
 
                 <h2 className="text-lg font-semibold text-[#3D3D3D] mb-2">{propertyTitle}</h2>
-                <p className="text-md font-semibold text-[#3D3D3D] mb-2">{priceD}</p>
+                <p className="text-md font-semibold text-[#3D3D3D] mb-2">₹ {priceD}</p>
 
                 <div className="flex flex-wrap gap-4 mb-2">
                     <div className="flex items-center gap-2"><FaBed /><span>{bedrooms}</span></div>
@@ -71,13 +71,13 @@ const Property = ({ listing }) => {
 
             <div className="w-full lg:w-[300px] space-y-3 lg:space-y-5 text-base border-t-2 lg:border-t-0 lg:border-l-2 border-[#000000] mt-4 lg:mt-0 pt-4 lg:pt-0 lg:pl-4">
                 <button className="w-full py-2.5 bg-white rounded-xl text-[#5A5A59]">Connect Owners</button>
-                <button className="w-full py-2.5 bg-white border rounded-xl flex items-center gap-2 text-sm">
+                <button className="w-full p-2 py-2.5 bg-white border rounded-xl flex items-center gap-2 text-sm">
                     <MdEmail /> Get Mail Id
                 </button>
-                <button className="w-full py-2.5 bg-white border rounded-xl flex items-center gap-2 text-sm">
+                <button className="w-full p-2 py-2.5 bg-white border rounded-xl flex items-center gap-2 text-sm">
                     <MdPhone /> Get Phone no
                 </button>
-                <button className="w-full py-2.5 bg-white border rounded-xl flex items-center gap-2 text-sm">
+                <button className="w-full p-2 py-2.5 bg-white border rounded-xl flex items-center gap-2 text-sm">
                     <FaWhatsapp className="text-[#00A000]" /> Get Whatsapp no
                 </button>
             </div>

@@ -19,8 +19,10 @@ const PropertyDetails = () => {
     const getData = async () => {
       try {
         setLoader(true);
+        console.log(import.meta.env.VITE_BACKEND_URL + " from details ");
         const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings/${id}`);
-        setData(res.data.data); // assuming API returns { status: true, data: [property] }
+        console.log(res.data);
+        setData(res.data.data); 
       } catch (err) {
         console.error("Error fetching property:", err);
       }
@@ -36,7 +38,7 @@ const PropertyDetails = () => {
 
   return (
     loader ? <Loaders></Loaders> :<>
-      <div className="bg-orange-50 pt-[120px] mb-[20px]">
+      <div className="bg-orange-50 pt-[120px] pb-[90px]">
         <Photos data={data} />
         <Sale
           address={data.location}

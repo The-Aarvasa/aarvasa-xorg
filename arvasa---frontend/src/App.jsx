@@ -42,14 +42,29 @@ import { Error } from './pages/Error';
 import ForgotPassword from './components/Auth/ForgotPassword';
 import PropertyMain from './components/listing/PropertyMain';
 import Loaders from './components/Loaders';
+import UnlockPremium from "./components/Subscription/UnlockPremium"
+import { FilterProvider } from './context/FilterProvider';
+import { useEffect, useState } from 'react';
 
 function AppLayout() {
+  const [popup, setPop] = useState(false);
   const location = useLocation();
   const hideNavAndFooter = location.pathname === '/otp' || location.pathname === '/signin' || location.pathname === '/signup' || location.pathname === '/signin'
+//   useEffect(() => {
+//     setTimeout(() => {
+// setPop(true);
+//     }, 5000);
+//   }, [])
+
+  // const disablePrem = () => {
+  //   setPop(false);
+  // }
 
   return (
     <div className="min-h-screen flex flex-col">
-      <main className="flex-grow bg-orange-">
+      <main className="flex-grow">
+      {/* {popup ? <UnlockPremium disablePrem={disablePrem}></UnlockPremium> : null} */}
+
        {!hideNavAndFooter &&  <Navbar></Navbar>}
         <Routes>
           <Route path='*' element={<Error/>}></Route>
@@ -147,8 +162,9 @@ function AppLayout() {
 function App() {
   return (
     <Router>
-
-      <AppLayout />
+      <FilterProvider>
+        <AppLayout />
+      </FilterProvider>
     </Router>
   );
 }

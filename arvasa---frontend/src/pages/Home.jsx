@@ -15,13 +15,16 @@ import { Agents } from "./Agents"
 import NewsArticles from "../components/Home/NewsArticles"
 import { ServicesCards } from "../components/Home/ServicesCards"
 import BackToTopButton from "../components/Home/BackToTopButton"
+import { FilterProvider } from "../context/FilterProvider"
+import { useNavigate } from "react-router-dom"
 
 
 export const Home = () => {
+    const navigate = useNavigate();
     return (
         <>
 
-            <div className="bg-orange-50 pt-[80px] overflow-x-hidden">
+            <div className="bg-orange-50 pt-[80px] pb-[20px] overflow-x-hidden">
                 <Landing />
                 <ViewAnimate />
                 <ServicesCards />
