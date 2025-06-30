@@ -11,7 +11,7 @@ import Navbar from "../components/Navbar";
 const Services=()=>{
     return(
         <>
-        <section className="bg-orange-50 pb-[40px] pt-[90px]">
+        <section className="bg-orange-50 pb-[80px] pt-[100px]">
 
           <Page></Page>
             <WhoWeAre/>

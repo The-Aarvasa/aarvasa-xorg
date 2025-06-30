@@ -16,7 +16,7 @@ const About = () => {
   return (
     <>
 
-        <div className='bg-orange-50 overfl pt-[80px] pb-[40px]'>
+        <div className='bg-orange-50 overfl pt-[80px] pb-[100px]'>
 <Page></Page>
           <Info/>
         <Milestones/>

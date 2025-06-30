@@ -24,7 +24,7 @@ export const Home = () => {
     return (
         <>
 
-            <div className="bg-orange-50 pt-[80px] pb-[20px] overflow-x-hidden">
+            <div className="bg-orange-50 pt-[80px] pb-[100px] overflow-x-hidden">
                 <Landing />
                 <ViewAnimate />
                 <ServicesCards />
