@@ -5,19 +5,17 @@ import Page from '../../components/listing/Page';
 import ListingFilterBar from '../../components/listing/ListingFilterBar';
 import Property from '../../components/listing/Property';
 import Pagination from '../../components/Utils/Pagination';
+import { FilterContext } from '../../context/FilterProvider';
+import { useContext } from 'react';
 import Loaders from '../Loaders';
 const PropertyMain = () => {
+    const { filters } = useContext(FilterContext);
     const [listings, setListings] = useState([]);
     const [loading, setLoading] = useState(true);
     const [currProp, setCurrProp] = useState([]);
     const [PlastPage, setLastPage] = useState(0);
 
-    const [filters, setFilters] = useState({
-        city: '',
-        propertyType: '',
-        budget: '',
-        transactionType: '',
-    });
+ 
     const [currPage, setCurrPage] = useState(1);
     const [maxItems, setMaxItems] = useState(10);
 
@@ -26,11 +24,10 @@ const PropertyMain = () => {
             setLoading(true);
             try {
                 const query = new URLSearchParams(filters).toString();
-                const res = await axios.get(`https://aarvasa-systemd.onrender.com/api/listings?${query}`);
-                console.log(res.data);
+                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings?${query}`);
                 setListings(res.data);
             } catch (err) {
-                console.error('Error fetching listings:', err);
+                console.error('Error fetching listings FROM MAIN:', err);
             } finally {
                 setLoading(false);
             }
@@ -38,21 +35,9 @@ const PropertyMain = () => {
         fetchListings();
     }, [filters]);
 
-    const handleFilterChange = (key, value) => {
-        setFilters((prev) => ({
-            ...prev,
-            [key]: value,
-        }));
-    };
 
-    const handleResetFilters = () => {
-        setFilters({
-            city: '',
-            propertyType: '',
-            budget: '',
-            transactionType: '',
-        });
-    };
+
+ 
 
     useEffect(() => {
         const pagination = () => {

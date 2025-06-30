@@ -8,7 +8,7 @@ import { Outlet } from 'react-router-dom';
 const Tools = () => {
     return (
         <>
-            <div className='bg-orange-50 pt-[90px] mb-8 mb-[20px]'>
+            <div className='bg-orange-50 pt-[90px] mb-8 pb-[40px]'>
                 <Page></Page>
                 <div className='bg-white flex items-center justify-center gap-12 rounded-lg p-8 flex-col h-auto w-[100%] md:w-[95%] mx-auto shadow-lg'>
                     <Buttons></Buttons>
