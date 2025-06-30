@@ -111,8 +111,29 @@ const TeamCard = ({ member }) => {
           layout
         >
           <div>
-            <h4 className="text-base font-semibold">{member.name}</h4>
-            <p className="text-xs text-gray-300">{member.role}</p>
+            <div className="flex gap-6">
+              <div className="flex flex-col">
+                <h4 className="text-base font-semibold">{member.name}</h4>
+                <p className="text-xs text-gray-300">{member.role}</p>
+              </div>
+              <div className="flex items-center gap-3 mt-3">
+                {member.facebook && (
+                  <a href={member.facebook} target="_blank" rel="noopener noreferrer">
+                    <FaFacebookF className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                  </a>
+                )}
+                {member.linkedin && (
+                  <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
+                    <FaLinkedinIn className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                  </a>
+                )}
+                {member.instagram && (
+                  <a href={member.instagram} target="_blank" rel="noopener noreferrer">
+                    <FaInstagram className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                  </a>
+                )}
+              </div>
+            </div>
             {member.tagline && (
               <p className="text-[11px] italic text-gray-200 mt-1">{member.tagline}</p>
             )}
@@ -121,23 +142,7 @@ const TeamCard = ({ member }) => {
             )}
           </div>
 
-          <div className="flex items-center gap-3 mt-3">
-            {member.facebook && (
-              <a href={member.facebook} target="_blank" rel="noopener noreferrer">
-                <FaFacebookF className="text-white text-sm hover:text-gray-400" />
-              </a>
-            )}
-            {member.linkedin && (
-              <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                <FaLinkedinIn className="text-white text-sm hover:text-gray-400" />
-              </a>
-            )}
-            {member.instagram && (
-              <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                <FaInstagram className="text-white text-sm hover:text-gray-400" />
-              </a>
-            )}
-          </div>
+
         </motion.div>
       )}
     </motion.div>
@@ -148,9 +153,14 @@ const Team = () => {
   return (
     <section className="px-4 sm:px-6 py-10 font-[poppins]">
       <Heading label="Meet Our Team" />
-      <div className="flex justify-center flex-wrap gap-6">
+      <div className="flex flex-col justify-center flex-wrap gap-6">
         <div className="flex flex-wrap gap-6 justify-center items-start">
-          {teamMembers.map((member, index) => (
+          {teamMembers.slice(0,3).map((member, index) => (
+            <TeamCard key={index} member={member} />
+          ))}
+        </div>
+        <div className="flex flex-wrap gap-6 justify-center items-start">
+          {teamMembers.slice(3,6).map((member, index) => (
             <TeamCard key={index} member={member} />
           ))}
         </div>
