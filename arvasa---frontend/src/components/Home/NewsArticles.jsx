@@ -9,6 +9,7 @@ import { Navigation, Pagination, Autoplay } from "swiper/modules";
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { Testimonials } from './Testimonials';
+import { Link } from 'react-router-dom';
 
 const containerVariants = {
   hidden: { opacity: 0 },
@@ -121,12 +122,13 @@ const NewsArticles = () => {
                     <div className="cards flex flex-wrap justify-center gap-8 md:gap-20">
                         {data1.map((currElem) => {
                             return (
-                                <div className="card" key={currElem.id}>
+                                <div className="card hover:bg-black/30 p-4 transition-all rounded-lg" key={currElem.id}>
                                     <img className='w-[290px] rounded-lg' src={currElem.img} alt="" />
                                     <p className='w-full md:max-w-[270px] text-white mt-4 mb-4 text-sm'>{currElem.text}</p>
+                                  <Link to={"/article"}>
                                     <button className='flex justify-center items-center gap-1 text-white text-sm'>Read More
                                         <MoveRight></MoveRight>
-                                    </button>
+                                    </button></Link>
                                 </div>
                             )
                         })}

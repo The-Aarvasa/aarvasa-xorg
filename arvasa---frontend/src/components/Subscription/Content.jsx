@@ -1,8 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import axios from "axios";
+import Loaders from "../Loaders";
 const Content = () => {
     const [type, setType] = useState("owner");
     const [selectedPlan, setSelectedPlan] = useState(null);
+    const [email, setEmail] = useState(null);
+    const [loader, setLoader] = useState(false);
+
+    useEffect(() => {
+        setEmail(localStorage.getItem("email"));
+    }, [])
 
     const owner_plans = {
         basic_price: 1199,
@@ -152,6 +160,49 @@ const Content = () => {
         { key: "premium_plus", label: "Premium+ Plan" },
     ];
 
+   const handlePay = async (e) => {
+    try {
+        setLoader(true);
+        // 1. Call backend to create Razorpay order
+        const res = await axios.post("http://localhost:5000/api/payment/create-order", {
+            amount: e.target.value // ₹10
+        });
+
+        const { orderId, amount, currency } = res.data;
+
+        // 2. Pass orderId into Razorpay options
+        const options = {
+            key: "rzp_test_1IEjJvq713YBdB", // Only in frontend
+            amount: amount,
+            currency: currency,
+            name: "Azhan's App",
+            description: "Test Payment",
+            order_id: orderId, // ✅ Must include this from backend
+            handler: function (response) {
+                console.log("✅ Payment Success", response);
+                // TODO: Send response.razorpay_payment_id etc. to backend for verification
+            },
+            prefill: {
+                name: "Azhan",
+                email: email ? email : "please login",
+                contact: "9677781266"
+            },
+            theme: {
+                color: "#3399cc"
+            }
+        };
+
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+    } catch (err) {
+        console.error("❌ Payment Failed:", err);
+    }
+    finally{
+        setLoader(false);
+    }
+};
+
+
 
     const PlanCard = ({ planKey, label, onTap }) => {
         const planData = getPlanData();
@@ -183,7 +234,7 @@ const Content = () => {
     };
 
 
-    const PlanDetail = ({ planKey, label, onClose }) => {
+    const PlanDetail = ({ planKey, label, onClose, value }) => {
         const planData = getPlanData();
         const featuresKey = `${planKey}_features`;
         const commKey = `${planKey}_commision`;
@@ -215,7 +266,12 @@ const Content = () => {
                         ))}
                     </ul>
                 </div>
-                <button className="w-[240px] h-[56px] px-6 py-3   text-white text-xl font-bold  leading-tight bg-[radial-gradient(ellipse_302.08%_123.50%_at_51.45%_-0.00%,_#6C1E3C_0%)] rounded-xl justify-center items-center gap-2.5">
+                <button style={
+                    {
+                        background: "linear-gradient(to right, #F9EAF1, #8C2841)",
+
+                    }
+                } onClick={(e) => {handlePay(e)}} value={planData[price]} className="w-[240px] h-[56px] px-6 py-3   text-white text-xl font-bold  leading-tight bg-[radial-gradient(ellipse_302.08%_123.50%_at_51.45%_-0.00%,_#6C1E3C_0%)] rounded-xl justify-center items-center gap-2.5">
                     Subscribe
                 </button>
                 <div className="justify-start text-black text-lg font-medium  leading-none">
@@ -228,6 +284,7 @@ const Content = () => {
 
     return (
         <motion.div className="font-[poppins] pt-[50px] pb-[100px] transition-all ease-in-out">
+            {loader ? <Loaders/> : null}
             <div className="flex flex-col items-center gap-7 justify-center w-full">
                 <div className="justify-start text-stone-900 text-4xl font-semibold font-['Poppins']">The Perfect plan for your needs</div>
                 <div className="w-[1064px] text-center justify-start text-stone-900 text-xl font-normal font-['Poppins']">Our transparent pricing makes it easy to find a plan that work in your financial constrain</div>
@@ -238,38 +295,38 @@ const Content = () => {
                 </div>
                 <motion.div className="flex w-full transition-all ease-in-out justify-center items-center gap-10">
                     <AnimatePresence mode="wait">
-  {planList.map((plan) => (
-    selectedPlan === plan.key ? (
-      <motion.div
-        key={plan.key}
-        initial={{ opacity: 0, scale: 0.95 }}
-        animate={{ opacity: 1, scale: 1 }}
-        exit={{ opacity: 0, scale: 0.95 }}
-        transition={{ duration: 0.3 }}
-      >
-        <PlanDetail
-          planKey={plan.key}
-          label={plan.label}
-          onClose={() => setSelectedPlan(null)}
-        />
-      </motion.div>
-    ) : (
-      <motion.div
-        key={plan.key}
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -30 }}
-        transition={{ duration: 0.3 }}
-      >
-        <PlanCard
-          planKey={plan.key}
-          label={plan.label}
-          onTap={() => setSelectedPlan(plan.key)}
-        />
-      </motion.div>
-    )
-  ))}
-</AnimatePresence>
+                        {planList.map((plan) => (
+                            selectedPlan === plan.key ? (
+                                <motion.div
+                                    key={plan.key}
+                                    initial={{ opacity: 0, scale: 0.95 }}
+                                    animate={{ opacity: 1, scale: 1 }}
+                                    exit={{ opacity: 0, scale: 0.95 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <PlanDetail
+                                        planKey={plan.key}
+                                        label={plan.label}
+                                        onClose={() => setSelectedPlan(null)}
+                                    />
+                                </motion.div>
+                            ) : (
+                                <motion.div
+                                    key={plan.key}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    exit={{ opacity: 0, y: -30 }}
+                                    transition={{ duration: 0.3 }}
+                                >
+                                    <PlanCard
+                                        planKey={plan.key}
+                                        label={plan.label}
+                                        onTap={() => setSelectedPlan(plan.key)}
+                                    />
+                                </motion.div>
+                            )
+                        ))}
+                    </AnimatePresence>
 
 
                 </motion.div>
