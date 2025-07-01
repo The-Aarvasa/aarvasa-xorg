@@ -1,15 +1,18 @@
 import { useState } from 'react';
 import axios from 'axios';
-
+import Loaders from '../Loaders';
+import { toast } from 'react-toastify';
 export function Newsletter() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState(''); // 'success' or 'error'
+  const [load, setLoad] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
+      setLoad(true);
       const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/subscribe`, { email });
       setMessage(res.data.message);
       setStatus('success');
@@ -18,10 +21,14 @@ export function Newsletter() {
       setMessage(err.response?.data?.message || 'Something went wrong');
       setStatus('error');
     }
+    finally{
+      setLoad(false);
+    }
   };
 
   return (
     <div className="mx-2 mt-8 mb-8 md:mx-4 relative">
+      {load ? <Loaders></Loaders> : null}
       <div className="bg-gradient-to-r rounded-md h-auto from-pink-500 to-rose-800 md:rounded-2xl p-5 sm:p-16 shadow-xl text-white relative overflow-hidden h-[457px]">
         <div className="absolute inset-0 bg-[url('/newsletter.png')] bg-cover bg-center opacity-30"></div>
         <div className="flex flex-col -mt-18 flex-wrap md:flex-row items-center justify-between">

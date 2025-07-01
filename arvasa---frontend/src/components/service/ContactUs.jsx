@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Heading } from '../Utils/Heading'
+import Loaders from '../Loaders';
 
 const ContactUs = () => {
   const [formData, setFormData] = useState({
@@ -7,6 +8,7 @@ const ContactUs = () => {
     email: '',
     date: ''
   });
+  const [loader, setLoader] = useState(false);
   const [status, setStatus] = useState('');
 
   const handleChange = (e) => {
@@ -20,6 +22,7 @@ const ContactUs = () => {
     e.preventDefault();
 
     try {
+      setLoader(true);
       const res = await fetch(`${import.meta.env.VITE_BACKEND_URL || ''}/api/contact`, {
         method: 'POST',
         headers: {
@@ -31,21 +34,25 @@ const ContactUs = () => {
       const data = await res.json();
 
       if (res.ok) {
-        setStatus('Submitted successfully!');
+        setStatus(true);
         setFormData({ name: '', email: '', date: '' });
       } else {
-        setStatus(data.msg || 'Submission failed.');
+        setStatus(false);
       }
     } catch (err) {
       console.error(err);
       setStatus('Something went wrong. Please try again later.');
     }
+    finally{
+      setLoader(false);
+    }
   };
 
   return (
     <div className="mx-2 mt-8 mb-8">
+      {loader ? <Loaders/> : null}
       <Heading label="Contact Us" />
-      <div className="flex items-center flex-wrap lg:flex-nowrap relative justify-center lg:justify-between w-full h-auto bg-gradient-to-b from-[#C9B391] to-[#A79475] rounded-2xl p-2 lg:gap-10">
+      <div className="flex md:px-28 items-center flex-wrap lg:flex-nowrap relative justify-center lg:justify-between w-full h-auto md:p-8 bg-gradient-to-b from-[#C9B391] to-[#A79475] rounded-2xl p-2 lg:gap-10">
         <div className="inline-block w-[769px] md:block">
           <img
             src="conhouse.png"
@@ -53,7 +60,7 @@ const ContactUs = () => {
             className="w-full lg:w-[700px] left-[-20px] lg:top-[-80px] xl:absolute animate-pulse duration-1000"
           />
         </div>
-        <div className="xl:w-[50%] w-full">
+        <div className="xl:w-[40%] w-full">
           <form className="flex flex-col gap-6 rounded-xl" onSubmit={handleSubmit}>
             <div className="flex flex-col gap-2">
               <label className="text-pink-900 text-md md:text-xl font-['Poppins']">Name</label>
@@ -97,12 +104,10 @@ const ContactUs = () => {
               type="submit"
               className="mt-4 h-14 bg-[#6C1E3C] rounded-lg text-white text-md font-semibold py-3 hover:opacity-90 transition-opacity"
             >
-              Schedule a Consultation
+              {status==='' ?"Schedule a Consultation" : status ? "Form submitted ✅" : "Submission failed"}
             </button>
 
-            {status && (
-              <p className="text-green-800 font-semibold text-sm mt-2">{status}</p>
-            )}
+            
           </form>
         </div>
       </div>

@@ -33,7 +33,7 @@ export default function AgentDetails() {
 
   return (
   <>
-   <div className='pt-[90px] pb-[40px]'>
+   <div className='pt-[90px] pb-[100px]'>
     <Page></Page>
      <div className="mx-auto p-5">
       <div className="flex justify-center flex-col md:flex-row gap-12 mb-20">

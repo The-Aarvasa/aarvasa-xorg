@@ -68,9 +68,8 @@ const Listing = () => {
 
 
     return (
-        <div className="bg-orange-50 pb-[40px] pt-[90px]">
+        <div className="bg-orange-50 pb-[100px] pt-[90px]">
             <Page />
-            <ListingFilterBar filters={filters} onFilterChange={handleFilterChange} onReset={handleResetFilters} />
 
             {/* <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">
                 {loading ? (
