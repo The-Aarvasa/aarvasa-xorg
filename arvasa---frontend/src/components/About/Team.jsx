@@ -47,7 +47,7 @@ const teamMembers = [
     image: anirudh,
     tagline: "Tech Architect | Innovation & Engineering Lead",
     description: "Anirudh Saxena, CTO of Aarvasa, drives AI tools, smart contracts, and infrastructure development. He ensures a secure, scalable tech foundation, shaping the digital systems that power Aarvasa’s platform and future growth.",
-    linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
+    linkedin: "https://www.linkedin.com/in/anirudh-saxena-481ba2245/",
     facebook: "",
     instagram: "https://www.instagram.com/_anirudh__.07?igsh=MTJocm1va3VtZDV0bw%3D%3D",
   },
@@ -57,7 +57,7 @@ const teamMembers = [
     image: arjit,
     tagline: "Operations Specialist | Organizational Strategist | Workflow Optimizer",
     description: "Arjit Pandey ensures Aarvasa’s internal operations run smoothly. As Executive Administrator, he leads planning, coordination, and execution. Bridging people and processes, he drives structured, dependable outcomes that align with Aarvasa’s vision and support company performance at every level.",
-    linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
+    linkedin: "https://www.linkedin.com/in/arjit-pandey-2b546a247/",
     facebook: "",
     instagram: "https://www.instagram.com/_.arjit.pandey._?igsh=MWtiOGR6OXNoNWM1eg%3D%3D",
   },
@@ -67,9 +67,9 @@ const teamMembers = [
     image: sriaditya,
     tagline: "Technology Strategist | System Architect | Cybersecurity Advocate",
     description: "Sriaditya S leads IT Operations at Aarvasa, managing the company’s digital infrastructure, cloud systems, and cybersecurity. He ensures platform stability, secure workflows, and drives Aarvasa’s tech innovations for scalable business growth.",
-    linkedin: "https://www.linkedin.com/in/udayprakashsahu/",
+    linkedin: "https://www.linkedin.com/in/sriadityas/",
     facebook: "",
-    instagram: "https://www.instagram.com/_.arjit.pandey._?igsh=MWtiOGR6OXNoNWM1eg%3D%3D",
+    instagram: "https://www.instagram.com/sriaditya_kamikaze?igsh=amdnbDR4MG82cDFh",
   },
 ];
 
@@ -113,32 +113,32 @@ const TeamCard = ({ member }) => {
           <div>
             <div className="flex gap-6">
               <div className="flex flex-col">
-                <h4 className="text-base font-semibold">{member.name}</h4>
-                <p className="text-xs text-gray-300">{member.role}</p>
+                <h4 className="text-base font-bold">{member.name}</h4>
+                <p className="text-xs text-gray-100 font-semibold">{member.role}</p>
               </div>
               <div className="flex items-center gap-3 mt-3">
                 {member.facebook && (
                   <a href={member.facebook} target="_blank" rel="noopener noreferrer">
-                    <FaFacebookF className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                    <FaFacebookF className="text-white text-sm hover:text-gray-400 scale-125 hover:scale-150" />
                   </a>
                 )}
                 {member.linkedin && (
                   <a href={member.linkedin} target="_blank" rel="noopener noreferrer">
-                    <FaLinkedinIn className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                    <FaLinkedinIn className="text-white text-sm hover:text-gray-400 scale-125 hover:scale-150" />
                   </a>
                 )}
                 {member.instagram && (
                   <a href={member.instagram} target="_blank" rel="noopener noreferrer">
-                    <FaInstagram className="text-white text-sm hover:text-gray-400 hover:scale-110" />
+                    <FaInstagram className="text-white text-sm hover:text-gray-400 scale-125 hover:scale-150" />
                   </a>
                 )}
               </div>
             </div>
             {member.tagline && (
-              <p className="text-[11px] italic text-gray-200 mt-1">{member.tagline}</p>
+              <p className="text-[11px] italic text-gray-200 mt-1 font-medium">{member.tagline}</p>
             )}
             {member.description && (
-              <p className="text-[11px] mt-2 text-gray-100">{member.description}</p>
+              <p className="text-[11px] mt-2 text-gray-100 font-medium">{member.description}</p>
             )}
           </div>
 
