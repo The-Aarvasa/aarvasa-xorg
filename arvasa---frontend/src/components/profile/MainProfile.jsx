@@ -30,7 +30,7 @@ const MainProfile = () => {
                 </div>
                 <div className="text text-center md:text-start">
                     <p>{localStorage.getItem("userEmail")}</p>
-                    <p className='text-sm mt-2 sm:mt-1'>Premium plus User</p>
+                    <p className='text-sm mt-2 sm:mt-1'>{localStorage.getItem("is_subscribed") === "true" ? localStorage.getItem("plan") + " Plan " : "Normal user"}</p>
                 </div>
                </div>
                <button className='w-full md:w-auto border border-4 border-[#8C2841] hover:bg-[#8C2841] hover:border-[#F7A240] shadow-xl hover:transform hover:scale-[1.1] hover:rotate-[5deg] hover:text-white transition-all px-8 p-1'>Edit</button>

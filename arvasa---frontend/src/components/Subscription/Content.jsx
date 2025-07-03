@@ -1,15 +1,17 @@
 import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 import Loaders from "../Loaders";
 const Content = () => {
     const [type, setType] = useState("owner");
     const [selectedPlan, setSelectedPlan] = useState(null);
     const [email, setEmail] = useState(null);
     const [loader, setLoader] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
-        setEmail(localStorage.getItem("email"));
+        setEmail(localStorage.getItem("userEmail"));
     }, [])
 
     const owner_plans = {
@@ -141,6 +143,9 @@ const Content = () => {
         premium_plus_commision: 0,
     };
 
+
+ 
+
     const getPlanData = () => {
         if (type === "owner") return owner_plans;
         if (type === "agent") return agent_plans;
@@ -160,32 +165,46 @@ const Content = () => {
         { key: "premium_plus", label: "Premium+ Plan" },
     ];
 
-   const handlePay = async (e) => {
+    const markSubscribed = async (p_id, plan) => {
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/payment/markUser`, {
+            email : localStorage.getItem("userEmail"),
+            payment_id : p_id,
+            subscription_type : plan ,
+            subscription_date : new Date(),
+            status : true
+        })
+    }
+
+
+   const handlePay = async (e, planKey) => {
+    if(!localStorage.getItem("userEmail")){
+        navigate("/signin")
+    }
     try {
         setLoader(true);
         // 1. Call backend to create Razorpay order
-        const res = await axios.post("http://localhost:5000/api/payment/create-order", {
-            amount: e.target.value // ₹10
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/payment/create-order`, {
+            amount: 1 // ₹10
         });
 
         const { orderId, amount, currency } = res.data;
 
         // 2. Pass orderId into Razorpay options
         const options = {
-            key: "rzp_test_1IEjJvq713YBdB", // Only in frontend
+            key: "rzp_live_EbMOOyVUCDMxKQ", // Only in frontend
             amount: amount,
             currency: currency,
-            name: "Azhan's App",
-            description: "Test Payment",
+            name: "Aarvasa",
+            description: "Aarvasa subscription",
             order_id: orderId, // ✅ Must include this from backend
             handler: function (response) {
+                markSubscribed(response.razorpay_payment_id, planKey)
                 console.log("✅ Payment Success", response);
-                // TODO: Send response.razorpay_payment_id etc. to backend for verification
             },
             prefill: {
                 name: "Azhan",
                 email: email ? email : "please login",
-                contact: "9677781266"
+                contact: "Enter mobile number"
             },
             theme: {
                 color: "#3399cc"
@@ -240,7 +259,7 @@ const Content = () => {
         const commKey = `${planKey}_commision`;
         const price = `${planKey}_price`;
         return (
-            <div className="px-4 py-11 relative bg-[radial-gradient(ellipse_132.89%_131.35%_at_55.00%_109.92%,_white_0%,_#EDCE74_100%)]  shadow-[0px_0px_45.900001525878906px_0px_rgba(0,0,0,0.25)]   w-[400px] h-[600px] p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl">
+            <div className="px-4 py-11 relative bg-[radial-gradient(ellipse_132.89%_131.35%_at_55.00%_109.92%,_white_0%,_#EDCE74_100%)]  shadow-[0px_0px_45.900001525878906px_0px_rgba(0,0,0,0.25)] md:w-[400px] h-[600px] p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl">
                 <div className="self-stretch text-center justify-center items-center gap-6 flex  ">
                     <div className="text-stone-900 text-2xl font-semibold font-['Poppins']">{label}</div>
                     <div className="text-stone-900 text-2xl font-semibold font-['Poppins']">{planData[price]}<span className="text-stone-700 text-xl font-semibold font-['Poppins']">/month</span></div>
@@ -271,7 +290,7 @@ const Content = () => {
                         background: "linear-gradient(to right, #F9EAF1, #8C2841)",
 
                     }
-                } onClick={(e) => {handlePay(e)}} value={planData[price]} className="w-[240px] h-[56px] px-6 py-3   text-white text-xl font-bold  leading-tight bg-[radial-gradient(ellipse_302.08%_123.50%_at_51.45%_-0.00%,_#6C1E3C_0%)] rounded-xl justify-center items-center gap-2.5">
+                } onClick={(e) => {handlePay(e, planKey)}} value={planData[price]} className="w-[240px] h-[56px] px-6 py-3   text-white text-xl font-bold  leading-tight bg-[radial-gradient(ellipse_302.08%_123.50%_at_51.45%_-0.00%,_#6C1E3C_0%)] rounded-xl justify-center items-center gap-2.5">
                     Subscribe
                 </button>
                 <div className="justify-start text-black text-lg font-medium  leading-none">
@@ -285,15 +304,15 @@ const Content = () => {
     return (
         <motion.div className="font-[poppins] pt-[50px] pb-[100px] transition-all ease-in-out">
             {loader ? <Loaders/> : null}
-            <div className="flex flex-col items-center gap-7 justify-center w-full">
-                <div className="justify-start text-stone-900 text-4xl font-semibold font-['Poppins']">The Perfect plan for your needs</div>
-                <div className="w-[1064px] text-center justify-start text-stone-900 text-xl font-normal font-['Poppins']">Our transparent pricing makes it easy to find a plan that work in your financial constrain</div>
-                <div className="flex gap-5">
-                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black text-xl w-32 h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'owner' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('owner')}>Owner's</button>
-                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black text-xl w-32 h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'rental' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('rental')}>Rental's</button>
-                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black text-xl w-32 h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'agent' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('agent')}>Agent's</button>
+            <div className="flex flex-col items-center mx-4 gap-7 justify-center">
+                <div className="justify-start text-stone-900 text-center text-4xl font-semibold font-['Poppins']">The Perfect plan for your needs</div>
+                <div className="lg:w-[1064px] text-center justify-start text-stone-900 md:text-xl font-normal font-['Poppins']">Our transparent pricing makes it easy to find a plan that work in your financial constrain</div>
+                <div className="flex gap-3 md:gap-5">
+                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'owner' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('owner')}>Owner's</button>
+                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'rental' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('rental')}>Rental's</button>
+                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'agent' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('agent')}>Agent's</button>
                 </div>
-                <motion.div className="flex w-full transition-all ease-in-out justify-center items-center gap-10">
+                <motion.div className="flex flex-wrap m-4 w-full transition-all ease-in-out justify-center items-center gap-10">
                     <AnimatePresence mode="wait">
                         {planList.map((plan) => (
                             selectedPlan === plan.key ? (

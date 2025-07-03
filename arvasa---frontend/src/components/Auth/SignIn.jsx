@@ -40,11 +40,13 @@ export default function SignIn() {
                 password
             }, { withCredentials: true });
 
-            const { username, accessToken, refreshToken } = res.data;
+            const { username, accessToken, refreshToken, is_subscribed, plan } = res.data;
 
             if (accessToken && refreshToken) {
                 localStorage.setItem("username", username);
+                localStorage.setItem("is_subscribed", is_subscribed);
                 localStorage.setItem("accessToken", accessToken);
+                localStorage.setItem("plan", plan)
                 localStorage.setItem("refreshToken", refreshToken);
                 localStorage.setItem("userEmail", email);
                 alert("Login successful!");
