@@ -46,7 +46,7 @@ const Pagination = ({ currentPage, totalPages, onPageChange }) => {
                 {getPageNumbers().map((num, index) => (
                     <li key={index}>
                         {num === "..." ? (
-                            <span className="flex items-center text-md md:text-lg justify-center p-1 md:px-4 h-10 leading-tight text-gray-400">
+                            <span className="flex items-center text-md md:text-lg justify-center p-3 md:px-4 h-10 leading-tight text-gray-400">
                                 ...
                             </span>
                         ) : (

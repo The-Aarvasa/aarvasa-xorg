@@ -128,7 +128,7 @@ const ConversationPage = () => {
                 </div>
 
                 {/* Input */}
-                <div className="flex items-center justify-between bg-[#FFFFFF26] px-6 mx-auto md:px-6 flex-wrap py-3 rounded-full md:max-w-3xl">
+                <div className="flex items-center justify-between bg-[#FFFFFF26] px-6 mx-auto md:px-6 py-3 rounded-full md:max-w-3xl">
                     <input
                         type="text"
                         value={input}
