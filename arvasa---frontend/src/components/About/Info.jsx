@@ -20,7 +20,7 @@ const slideFromRight = {
 
 
 
-const Info = () => {
+const Info = ({scrollToContact}) => {
     return (
         <div className="relative h-auto px-2 overflow-hidden md:px-8 md:mx-8 font-[poppins]">
             {/* Heading */}
@@ -94,7 +94,7 @@ const Info = () => {
                         <span className="text-white text-md tracking-wide font-medium font-['Poppins'] leading-normal">
                             Simplifies Real Estate with Seamless Transactions, Investments, and Property Monetization
                         </span>
-                        <button className="w-fit px-4 py-2 rounded-lg bg-gradient-to-l from-orange-400 to-amber-400 text-black text-xl capitalize cursor-pointer">
+                        <button onClick={() => scrollToContact()} className="w-fit z-[99999] px-4 py-2 rounded-lg bg-gradient-to-l from-orange-400 to-amber-400 text-black text-xl capitalize cursor-pointer">
                             Contact Us
                         </button>
                     </div>

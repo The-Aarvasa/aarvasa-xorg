@@ -11,21 +11,30 @@ import Slider from '../components/About/Slider'
 import Page from '../components/listing/Page'
 import NavbarRaw from '../components/NavbarRaw'
 import Footer from '../components/Footer'
+import { useRef } from 'react'
 const About = () => {
-    
+
+  const contactRef = useRef(null);
+
+  const scrollToContact = () => {
+    contactRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <>
 
-        <div className='bg-orange-50 overfl pt-[80px] pb-[100px]'>
-<Page></Page>
-          <Info/>
-        <Milestones/>
-        <Team/>
-        <Slider/>
+      <div className='bg-orange-50 overfl pt-[80px] pb-[100px]'>
+        <Page></Page>
+        <Info scrollToContact={scrollToContact} />
+        <Milestones />
+        <Team />
+        <Slider />
         <Map />
-        <CoPartners/>
-        <ContactUs/>
+        <CoPartners />
+        <div ref={contactRef}>
+          <ContactUs />
         </div>
+      </div>
 
     </>
 

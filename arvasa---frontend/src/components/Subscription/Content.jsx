@@ -184,7 +184,7 @@ const Content = () => {
         setLoader(true);
         // 1. Call backend to create Razorpay order
         const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/payment/create-order`, {
-            amount: 1 // ₹10
+            amount: e.target.value // ₹10
         });
 
         const { orderId, amount, currency } = res.data;
@@ -199,7 +199,6 @@ const Content = () => {
             order_id: orderId, // ✅ Must include this from backend
             handler: function (response) {
                 markSubscribed(response.razorpay_payment_id, planKey)
-                console.log("✅ Payment Success", response);
             },
             prefill: {
                 name: "Azhan",

@@ -8,7 +8,7 @@ const Footer = () => {
         background: 'linear-gradient(to right, #A82E4F, #8C2841)',
       }}
     >
-      <footer className="grid p-[50px] grid-cols-[repeat(auto-fit,_minmax(200px,_2fr))] place-items-center md:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl px-4">
+      <footer className="grid mx-auto p-[50px] grid-cols-[repeat(auto-fit,_minmax(200px,_2fr))] place-items-center md:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl px-4">
         {/* Logo & Text */}
         <div className="flex flex-col items-start gap-6">
           <a href="#" className="flex flex-col sm:flex-row items-center gap-2">
@@ -34,10 +34,10 @@ const Footer = () => {
         <div className="flex flex-col gap-4 relative">
           <h1 className="text-white font-bold text-lg">Privacy & terms</h1>
           <span className="bg-[#D4AF37] w-1/2 h-[5px] absolute top-7"></span>
-          <a className="text-white text-sm hover:text-gray-300" href="#">Terms and Conditions</a>
-          <a className="text-white text-sm hover:text-gray-300" href="#">Privacy Policy</a>
-          <a className="text-white text-sm hover:text-gray-300" href="#">Refund and Cancellation Policy</a>
-          <a className="text-white text-sm hover:text-gray-300" href="#">Security</a>
+          <Link to={"/termsandconditions"} className="text-white text-sm hover:text-gray-300">Terms and Conditions</Link>
+          <Link to={"/privacypolicy"} className="text-white text-sm hover:text-gray-300">Privacy Policy</Link>
+          <Link to={"/refundpolicy"} className="text-white text-sm hover:text-gray-300">Refund and Cancellation Policy</Link>
+          <Link to={"/securitypolicy"} className="text-white text-sm hover:text-gray-300">Security</Link>
         </div>
 
         {/* Contact */}

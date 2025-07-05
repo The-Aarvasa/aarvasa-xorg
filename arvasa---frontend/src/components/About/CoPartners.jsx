@@ -8,7 +8,7 @@ import softwave from '/assets/softwave logo.jpg'
 
 const CoPartners = () => {
     return (
-        <div className="relative md:px-8 h-auto md:py-10 mx-2 md:mx-8 font-[poppins]">
+        <div className="relative md:px-2 h-auto md:py-10 mx-2 md:mx-2 font-[poppins]">
             <Heading label="Company Partners" />
             <div className="relative w-auto font-[poppins] ">
                 <div className="flex flex-wrap flex-wrap py-4 justify-center space-y-8 lg:space-y-0 items-center gap-6 w-auto h-auto bg-gradient-to-br from-[#A82E4F] to-[#8C2841] shadow-xl transition-shadow duration-300 hover:shadow-2xl rounded-3xl" >

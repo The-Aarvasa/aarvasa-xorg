@@ -30,6 +30,8 @@ export default function SignUp() {
                 password
             });
 
+            console.log(response.data);
+
             const msg = response?.data?.message || "";
 
             if (
@@ -40,7 +42,7 @@ export default function SignUp() {
                 localStorage.setItem("signupPassword", password);
                 navigate("/otp");
             } else {
-                alert("Unexpected response from server.");
+                alert("Email already in use.");
             }
         } catch (error) {
             console.error("Signup error:", error);
