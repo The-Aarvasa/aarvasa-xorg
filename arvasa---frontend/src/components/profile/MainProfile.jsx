@@ -11,10 +11,10 @@ import { useContext } from 'react'
 const MainProfile = () => {
 
   const navigate = useNavigate();
-  const {user, fetchUser} = useContext(AuthContext);
+  const { user, fetchUser } = useContext(AuthContext);
 
   useEffect(() => {
-   fetchUser();
+    fetchUser();
   }, [])
 
   const today = new Date();
@@ -27,14 +27,19 @@ const MainProfile = () => {
 
         <div className='w-[85%] mx-auto'>
 
-          <h1 className='text-2xl font-semibold mt-8'>Welcome , {user.email}</h1>
+          <h1 className='text-2xl font-semibold mt-8'>Welcome , {user.name}</h1>
           <p className='mt-2'>{formattedDate} </p>
         </div>
         <div className='w-[85%] h-[70%] pb-8 mt-4 mx-auto h-full bg-white border border-2 rounded-lg transition-all hover:border-[#8C2841]'>
           <div className="text_content gap-8 md:gap-0 flex items-center justify-between flex-wrap px-12 py-4">
             <div className="left_section flex flex-wrap justify-center md:justify-start items-center gap-4">
               <div className="profile">
-                <img src="/images/profile.png" className='w-16 h-16 rounded-full' alt="" />
+                <img
+                  src={user?.photo || "/images/profile.png"}
+                  alt="Profile"
+                  className="w-16 h-16 rounded-full object-cover"
+                />
+
               </div>
               <div className="text text-center md:text-start">
                 <p>{user.email}</p>

@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
       return; 
     }
 
-      const res = await axios.get(`http://localhost:5000/api/auth/profile`, {
+      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/profile`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
