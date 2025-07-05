@@ -10,7 +10,7 @@ export const getAccessToken = async () => {
   // Try refreshing if access token is missing/expired
   try {
     const response = await axios.post(
-      `${import.meta.env.VITE_BACKEND_URL || 'http://localhost:5000'}/api/auth/refresh-token`,
+      `${import.meta.env.VITE_BACKEND_URL}/api/auth/refresh-token`,
       { refreshToken },
       { withCredentials: true }
     );

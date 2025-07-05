@@ -6,13 +6,18 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
+  const [loading, setLoading] = useState(true); // 🔥 NEW
 
   const fetchUser = async () => {
     try {
       const token = localStorage.getItem("accessToken");
-      if (!token) return;
+      if(!token){
+         setUser(null);
+          setLoading(false); 
+      return; 
+    }
 
-      const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/auth/me`, {
+      const res = await axios.get(`http://localhost:5000/api/auth/profile`, {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
@@ -20,7 +25,9 @@ export const AuthProvider = ({ children }) => {
       setUser(res.data.user);
     } catch (error) {
       console.error("Failed to fetch user:", error);
+      localStorage.removeItem("accessToken");
       setUser(null);
+      setLoading(false);
     }
   };
 
@@ -35,4 +42,4 @@ export const AuthProvider = ({ children }) => {
   );
 };
 
-export const useAuth = () => useContext(AuthContext);
+export default AuthContext;

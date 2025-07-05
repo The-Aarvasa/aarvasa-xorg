@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
-import { MapPin, Search, Home, IndianRupee, Earth, KeyRound , Map , BedDouble , Building2 , UploadCloud  } from 'lucide-react'
+import { MapPin, Search, Home, IndianRupee, Earth, KeyRound, Map, BedDouble, Building2, UploadCloud } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
 import { FilterContext } from '../../context/FilterProvider'
 import { Link } from 'react-router-dom'
@@ -8,29 +8,29 @@ import { toast } from 'react-toastify'
 const Landing = () => {
     const options = [{
         title: "Buy",
-        icon : <Home  size={22}></Home>,
+        icon: <Home size={22}></Home>,
         fn: () => {
             handleChange('transactionType', 'New Property')
         }
     },
     {
         title: "Rent",
-        icon : <KeyRound  size={22}></KeyRound>,
+        icon: <KeyRound size={22}></KeyRound>,
         fn: () => {
             handleChange('transactionType', 'Rent')
         }
     }, {
         title: "Plot",
-        icon : <Map  size={22}></Map>
+        icon: <Map size={22}></Map>
     }, {
         title: "PG",
-        icon : <BedDouble  size={22}></BedDouble>,
+        icon: <BedDouble size={22}></BedDouble>,
     }, {
         title: "Commercial",
-        icon : <Building2  size={22}></Building2>
+        icon: <Building2 size={22}></Building2>
     }];
     let [selected, setSelected] = useState(-1);
-    const [prevs, setPrev] = useState([]);
+    const [prevs, setPrev] = useState({});
     const { filters, setFilters } = useContext(FilterContext);
     const navigate = useNavigate();
     const toggleSelected = (index) => {
@@ -47,9 +47,13 @@ const Landing = () => {
     }
 
     const handleFilter = () => {
-        setFilters(prevs);
         navigate("/listings");
     }
+
+    useEffect(() => {
+        setFilters(prevs);
+
+    }, [prevs])
 
     return (
         <div className='overflow-x-hidden py-4 px-2 md:mx-8 overflow-hidden flex w-auto flex-wrap lg:flex-nowrap h-full items-center justify-center md:justify-between md:px-4 rounded-lg lg:h-[80vh]' style={{
@@ -76,13 +80,13 @@ const Landing = () => {
                                 {option.title}
                             </button>
                         ))}
-                       <Link to={"/AddListing"}>
-                        <button
-                            className={`text-sm flex items-center gap-2 border border-2 p-1 px-3 rounded-lg shadow-md transition-all hover:transform hover:scale-[1.1] hover:rotate-[5deg]`}
-                        >
-                            <UploadCloud  size={22} />
-                            Post a property
-                        </button></Link>
+                        <Link to={"/AddListing"}>
+                            <button
+                                className={`text-sm flex items-center gap-2 border border-2 p-1 px-3 rounded-lg shadow-md transition-all hover:transform hover:scale-[1.1] hover:rotate-[5deg]`}
+                            >
+                                <UploadCloud size={22} />
+                                Post a property
+                            </button></Link>
                     </div>
                     <hr className='mt-4 mb-4' />
                     <div className="searches flex items-center gap-8 flex-wrap lg:flex-nowrap">

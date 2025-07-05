@@ -43,12 +43,9 @@ export default function SignIn() {
             const { username, accessToken, refreshToken, is_subscribed, plan } = res.data;
 
             if (accessToken && refreshToken) {
-                localStorage.setItem("username", username);
-                localStorage.setItem("is_subscribed", is_subscribed);
                 localStorage.setItem("accessToken", accessToken);
-                localStorage.setItem("plan", plan)
                 localStorage.setItem("refreshToken", refreshToken);
-                localStorage.setItem("userEmail", email);
+                // localStorage.setItem("userEmail", email);
                 alert("Login successful!");
                 window.location.href = "/";
             } else {

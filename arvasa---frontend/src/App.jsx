@@ -47,10 +47,13 @@ import { FilterProvider } from './context/FilterProvider';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import AiButton from './components/Home/AiButton';
-import PrivateRoute from './utils/privateRoute';
+import PrivateRoute from './utils/PrivateRoute';
 import { AuthProvider } from './context/AuthContext'; // ✅ Importing AuthProvider
-
+import PrivacyPolicy from './pages/PrivacyPolicy';
 import { useState } from 'react';
+import Terms from './pages/Terms';
+import Refund from './pages/Refund';
+import Security from './pages/Security';
 
 function AppLayout() {
   const [popup, setPop] = useState(false);
@@ -71,10 +74,7 @@ function AppLayout() {
           <Route path="/signup" element={<SignUp />} />
           <Route path="/otp" element={<Otp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
-
-          {/* Protected Routes */}
-          <Route element={<PrivateRoute />}>
-            <Route path="/" element={<Home />} />
+          <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/agents" element={<Agents />} />
             <Route path="/agents/:id" element={<AgentDetails />} />
@@ -91,6 +91,10 @@ function AppLayout() {
             </Route>
 
             <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
+
+          {/* Protected Routes */}
+          <Route element={<PrivateRoute />}>
+            
             <Route path="/news" element={<News />} />
 
             <Route path="/profile" element={<Profile />}>
@@ -116,8 +120,14 @@ function AppLayout() {
             <Route path="/article" element={<InsideArticle />} />
           </Route>
 
-          {/* Fallback */}
           <Route path="*" element={<Error />} />
+          <Route path="/privacypolicy" element={<PrivacyPolicy />} />
+          <Route path="/termsandconditions" element={<Terms />} />
+          <Route path="/refundpolicy" element={<Refund />} />
+          <Route path="/securitypolicy" element={<Security />} />
+
+
+          {/* Fallback */}
         </Routes>
       </main>
 
@@ -131,12 +141,12 @@ function AppLayout() {
 function App() {
   return (
     <Router>
-      <AuthProvider> {/* ✅ Wrap everything in AuthProvider */}
+      <AuthProvider> 
         <FilterProvider>
           <AppLayout />
           <ToastContainer
             position="top-right"
-            autoClose={3000}
+            autoClose={9000}
             hideProgressBar={false}
             newestOnTop={false}
             closeOnClick
@@ -144,7 +154,8 @@ function App() {
             draggable
             pauseOnHover
             theme="colored"
-            toastClassName="z-[99999] !fixed rounded-md shadow-lg"
+            className="z-[99999999] mt-16 w-full p-8" 
+  toastClassName="rounded-md shadow-lg"
           />
         </FilterProvider>
       </AuthProvider>

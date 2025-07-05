@@ -1,20 +1,20 @@
 // utils/PrivateRoute.jsx
 import { useEffect, useState } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
+import AuthContext from '../context/AuthContext';
+import { useContext } from 'react';
 
 const PrivateRoute = () => {
-  const [checkingAuth, setCheckingAuth] = useState(true);
+  const {user, fetchUser, loading } = useContext(AuthContext);
   const [authenticated, setAuthenticated] = useState(false);
 
-  useEffect(() => {
-    const accessToken = localStorage.getItem('accessToken');
-    setAuthenticated(!!accessToken);
-    setCheckingAuth(false);
-  }, []);
+  if(loading){
+    return <h1>Loading</h1>
+  }
+   return user ? <Outlet /> : <Navigate to="/signin" />;
 
-  if (checkingAuth) return null; // or <div>Loading...</div>
 
-  return authenticated ? <Outlet /> : <Navigate to="/signin" />;
+
 };
 
 export default PrivateRoute;
