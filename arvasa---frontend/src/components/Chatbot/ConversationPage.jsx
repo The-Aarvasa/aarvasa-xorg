@@ -1,7 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { FaBars, FaPaperPlane } from 'react-icons/fa';
-import NavbarChatbot from './NavbarChatbot';
-import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
 
 const ConversationPage = () => {
     const [isSidebarOpen, setSidebarOpen] = useState(false);
@@ -12,6 +11,7 @@ const ConversationPage = () => {
     const [messages, setMessages] = useState([]);
     const [input, setInput] = useState('');
     const [typing, setTyping] = useState(false);
+    const controllerRef = useRef(null);
 
     useEffect(() => {
         const savedMessages = localStorage.getItem('chatMessages');
@@ -34,21 +34,43 @@ const ConversationPage = () => {
         setRecentSearches(prev => [input, ...prev.slice(0, 9)]);
         setInput('');
 
-        try {
-            const historyPairs = [];
-            for (let i = 0; i < updatedMessages.length - 1; i++) {
-                if (updatedMessages[i].sender === 'user' && updatedMessages[i + 1]?.sender === 'bot') {
-                    historyPairs.push([updatedMessages[i].message, updatedMessages[i + 1].message]);
-                }
+        const historyPairs = [];
+        for (let i = 0; i < updatedMessages.length - 1; i++) {
+            if (updatedMessages[i].sender === 'user' && updatedMessages[i + 1]?.sender === 'bot') {
+                historyPairs.push([updatedMessages[i].message, updatedMessages[i + 1].message]);
             }
+        }
 
-            const res = await axios.post('https://aarvasa-systemd-1.onrender.com/chat', {
-                message: input,
-                history: historyPairs
+        const botMessage = { sender: 'bot', message: '' };
+        setMessages(prev => [...prev, botMessage]);
+
+        controllerRef.current = new AbortController();
+
+        try {
+            const res = await fetch('http://localhost:8000/stream_chat', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ message: input, history: historyPairs }),
+                signal: controllerRef.current.signal
             });
 
-            const reply = res.data.response || "Sorry, I didn’t get that.";
-            setMessages(prev => [...prev, { sender: 'bot', message: reply }]);
+            const reader = res.body.getReader();
+            const decoder = new TextDecoder('utf-8');
+            let finalText = '';
+
+            while (true) {
+                const { done, value } = await reader.read();
+                if (done) break;
+                const chunk = decoder.decode(value, { stream: true });
+                finalText += chunk;
+                setMessages(prev => {
+                    const updated = [...prev];
+                    updated[updated.length - 1] = { sender: 'bot', message: finalText };
+                    return updated;
+                });
+            }
         } catch (err) {
             setMessages(prev => [...prev, {
                 sender: 'bot',
@@ -71,6 +93,30 @@ const ConversationPage = () => {
         };
     }, [isSidebarOpen]);
 
+    const renderMessage = (msg) => {
+        if (msg.sender === 'bot') {
+            return (
+                <div className="text-white text-sm">
+                    <ReactMarkdown
+                        components={{
+                            a: ({ children, href }) => (
+                                <a href={href} className="text-blue-400 underline" target="_blank" rel="noopener noreferrer">
+                                    {children}
+                                </a>
+                            ),
+                            li: ({ children }) => (
+                                <li className="list-disc ml-6">{children}</li>
+                            )
+                        }}
+                    >
+                        {msg.message}
+                    </ReactMarkdown>
+                </div>
+            );
+        }
+        return <div>{msg.message}</div>;
+    };
+
     return (
         <div className="h-full text-white font-[poppins] relative px-3 pt-20 md:px-16 pb-12">
 
@@ -89,17 +135,6 @@ const ConversationPage = () => {
 
             {/* Page Content */}
             <div className="md:pt-28">
-                {/* Top bar
-                <div className="flex justify-between items-center mb-4 gap-10 p-4">
-                    <button onClick={() => setSidebarOpen(!isSidebarOpen)}>
-                        <FaBars className="text-white text-2xl" />
-                    </button>
-                    <img
-                        src="https://storage.googleapis.com/tagjs-prod.appspot.com/v1/yCGvgijDKz/nxgk1imk_expires_30_days.png"
-                        alt="Profile"
-                        className="w-10 h-10 rounded-full"
-                    />
-                </div> */}
 
                 {/* Header */}
                 <div className="text-center mb-6">
@@ -113,7 +148,7 @@ const ConversationPage = () => {
                         <div key={idx} className={`flex ${msg.sender === 'user' ? 'justify-end' : 'justify-start'}`}>
                             <div className={`rounded-3xl px-6 py-4 border border-[#613A4A] max-w-[80%] text-sm font-semibold
                                 ${msg.sender === 'user' ? 'bg-[#551B32]' : 'bg-[#FFFFFF26]'}`}>
-                                {msg.message}
+                                {renderMessage(msg)}
                             </div>
                         </div>
                     ))}
