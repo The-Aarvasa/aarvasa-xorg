@@ -1,27 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
 import { useNavigate } from 'react-router-dom';
+import AuthContext from '../../context/AuthContext'; 
+
 const AddListing = ({ onNext, onPrevious }) => {
     const [listingType, setListingType] = useState('Rent');
     const [propertyCategory, setPropertyCategory] = useState('House');
     const navigate = useNavigate();
 
+    const { user, fetchUser } = useContext(AuthContext); 
+
+    useEffect(() => {
+        if (!user) fetchUser();
+    }, []);
+
     return (
         <div className="flex items-center justify-center p-4 font-poppins">
             <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-xl md:max-w-4xl relative border border-gray-300">
+
                 {/* Close Button */}
                 <button onClick={() => navigate("/listings")} className="absolute top-3 right-3 md:top-4 md:right-4 text-gray-500 hover:text-gray-700">
-                    <IoClose size={24} md:size={28} />
+                    <IoClose size={24} />
                 </button>
 
                 {/* Progress Bar */}
-                <div className="w-1/2 h-1.5 md:h-1.6 bg-gray-200 rounded-full mb-6 md:mb-10 mx-auto">
+                <div className="w-1/2 h-1.5 bg-gray-200 rounded-full mb-6 mx-auto">
                     <div className="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full" style={{ width: '25%' }}></div>
                 </div>
 
+                {/*  Username */}
                 <h1 className="text-xl md:text-3xl font-bold text-center text-[#3D3D3D] mb-6 md:mb-10">
-                    Hi kk, Fill details of your real estate
+                    Hi {user?.name || 'User'}, Fill details of your real estate
                 </h1>
 
                 {/* Input Field */}
