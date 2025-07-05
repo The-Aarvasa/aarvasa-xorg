@@ -20,7 +20,7 @@ const Navbar = () => {
     const ref = useRef(null);
     const menu = useRef(null);
     const [MenuOpen, setMenuOpen] = useState(false);
-    const {user, setUser, fetchUser} = useContext(AuthContext);
+    const { user, setUser, fetchUser } = useContext(AuthContext);
     const navigate = useNavigate();
 
     // Detect scroll to fix navbar
@@ -54,7 +54,7 @@ const Navbar = () => {
 
 
     // Detect token to set login status
- 
+
 
     // Close menu when clicking outside
     useEffect(() => {
@@ -107,19 +107,19 @@ const Navbar = () => {
                                     </p>
                                 </Link>
                                 <span className="absolute w-0 h-1 left-0 bottom-[-5px] rounded-full bg-[#6C1E3C] group-hover:w-full group-hover:opacity-75 transition-all duration-700"></span>
-                              
+
                             </li>
                         ))}
-                         {user ? 
-                          <button
-                                    onClick={handleLogout}
-                                    className="text-[#8C2841] lg:hidden font-semibold px-4 py-2 rounded-full hover:scale-105 transition-transform"
-                                    style={{
-                                        background: "linear-gradient(to right, #F7A240, #F5C01A)",
-                                    }}
-                                >
-                                    Logout
-                                </button> : null}
+                        {user ?
+                            <button
+                                onClick={handleLogout}
+                                className="text-[#8C2841] lg:hidden font-semibold px-4 py-2 rounded-full hover:scale-105 transition-transform"
+                                style={{
+                                    background: "linear-gradient(to right, #F7A240, #F5C01A)",
+                                }}
+                            >
+                                Logout
+                            </button> : null}
                     </ul>
 
                     {/* Profile/Logout/Login */}
@@ -127,7 +127,12 @@ const Navbar = () => {
                         {user ? (
                             <div className="flex items-center gap-3">
                                 <Link to="/profile">
-                                    <img src="/images/profile.png" className="w-10 h-10 rounded-full" alt="profile" />
+                                    <img
+                                        src={user?.photo || "/images/profile.png"}
+                                        className="w-10 h-10 rounded-full object-cover"
+                                        alt="profile"
+                                    />
+
                                 </Link>
                                 <button
                                     onClick={handleLogout}
