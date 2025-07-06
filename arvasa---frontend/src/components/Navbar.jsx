@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useEffect, useRef, useState } from "react";
 import { toast } from "react-toastify";
 import AuthContext from "../context/AuthContext";
+import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 
 const Navbar = () => {
@@ -20,12 +21,12 @@ const Navbar = () => {
     const ref = useRef(null);
     const menu = useRef(null);
     const [MenuOpen, setMenuOpen] = useState(false);
-    const {user, setUser, fetchUser} = useContext(AuthContext);
+    const { user, setUser, fetchUser } = useContext(AuthContext);
     const navigate = useNavigate();
+    const location = useLocation();
 
     // Detect scroll to fix navbar
     useEffect(() => {
-        fetchUser();
         const handleScroll = () => {
             if (!ref.current) return;
             const scrollTop = window.scrollY;
@@ -52,9 +53,8 @@ const Navbar = () => {
     }, []);
 
 
-
     // Detect token to set login status
- 
+
 
     // Close menu when clicking outside
     useEffect(() => {
@@ -68,8 +68,7 @@ const Navbar = () => {
 
     const handleLogout = () => {
         localStorage.removeItem("accessToken");
-        toast.info("You were successfully logged out of your account");
-        fetchUser();
+        setUser(null);
         navigate("/")
     };
 
@@ -107,19 +106,19 @@ const Navbar = () => {
                                     </p>
                                 </Link>
                                 <span className="absolute w-0 h-1 left-0 bottom-[-5px] rounded-full bg-[#6C1E3C] group-hover:w-full group-hover:opacity-75 transition-all duration-700"></span>
-                              
+
                             </li>
                         ))}
-                         {user ? 
-                          <button
-                                    onClick={handleLogout}
-                                    className="text-[#8C2841] lg:hidden font-semibold px-4 py-2 rounded-full hover:scale-105 transition-transform"
-                                    style={{
-                                        background: "linear-gradient(to right, #F7A240, #F5C01A)",
-                                    }}
-                                >
-                                    Logout
-                                </button> : null}
+                        {user ?
+                            <button
+                                onClick={handleLogout}
+                                className="text-[#8C2841] lg:hidden font-semibold px-4 py-2 rounded-full hover:scale-105 transition-transform"
+                                style={{
+                                    background: "linear-gradient(to right, #F7A240, #F5C01A)",
+                                }}
+                            >
+                                Logout
+                            </button> : null}
                     </ul>
 
                     {/* Profile/Logout/Login */}
