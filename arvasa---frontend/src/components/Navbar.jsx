@@ -126,7 +126,12 @@ const Navbar = () => {
                         {user ? (
                             <div className="flex items-center gap-3">
                                 <Link to="/profile">
-                                    <img src="/images/profile.png" className="w-10 h-10 rounded-full" alt="profile" />
+                                    <img
+                                        src={user?.photo || "/images/profile.png"}
+                                        className="w-10 h-10 rounded-full object-cover"
+                                        alt="profile"
+                                    />
+
                                 </Link>
                                 <button
                                     onClick={handleLogout}

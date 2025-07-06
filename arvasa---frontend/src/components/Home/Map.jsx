@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import { Heading } from "../Utils/Heading";
 import { Loader } from "@googlemaps/js-api-loader";
 
-const Map = () => {
+const Map = ({ onLocationSelect }) => {
     const mapRef = useRef(null);
-    const inputRef = useRef(null); // ✅ added this line
+    const inputRef = useRef(null);
     const [location, setLocation] = useState(null);
 
     useEffect(() => {
@@ -36,6 +36,13 @@ const Map = () => {
                         map,
                         position: loc,
                     });
+
+                    // ✅ Send selected location to parent
+                    onLocationSelect({
+                        address: place.formatted_address,
+                        lat: loc.lat(),
+                        lng: loc.lng()
+                    });
                 });
             }
         });
@@ -47,15 +54,14 @@ const Map = () => {
             <div className="flex flex-col items-center justify-center w-full gap-[30px]">
                 <div className="input w-full p-2 flex flex-wrap md:flex-nowrap justify-center gap-1">
                     <input
-                        ref={inputRef} // ✅ use ref instead of id
+                        ref={inputRef}
                         type="text"
                         placeholder="Search a location"
                         className="border w-full border-gray-200 outline-none rounded-lg"
                         style={{ padding: "10px", marginBottom: "10px" }}
                     />
-                    <button className="font-semibold w-full md:w-[20%] text-[#8C2841] mb-[10px] p-[10px] text-sm rounded-lg" style={{
-                        background: "linear-gradient(to right, #F7A240, #F5C01A)",
-                    }}>
+                    <button className="font-semibold w-full md:w-[20%] text-[#8C2841] mb-[10px] p-[10px] text-sm rounded-lg"
+                        style={{ background: "linear-gradient(to right, #F7A240, #F5C01A)" }}>
                         Search
                     </button>
                 </div>
