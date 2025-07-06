@@ -7,6 +7,7 @@ import Property from '../../components/listing/Property';
 import Pagination from '../../components/Utils/Pagination';
 import { FilterContext } from '../../context/FilterProvider';
 import { useContext } from 'react';
+import AuthContext from "../../context/AuthContext"
 import Loaders from '../Loaders';
 const PropertyMain = () => {
     const { filters } = useContext(FilterContext);
@@ -14,8 +15,7 @@ const PropertyMain = () => {
     const [loading, setLoading] = useState(true);
     const [currProp, setCurrProp] = useState([]);
     const [PlastPage, setLastPage] = useState(0);
-
- 
+    const { user, fetchUser } = useContext(AuthContext);
     const [currPage, setCurrPage] = useState(1);
     const [maxItems, setMaxItems] = useState(10);
 
@@ -50,6 +50,10 @@ const PropertyMain = () => {
         }
         pagination();
     }, [currPage, listings])
+
+     const handleLiking = async (prop_id) => {
+        
+    }
 
 
     return (

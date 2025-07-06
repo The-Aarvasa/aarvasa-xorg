@@ -20,6 +20,8 @@ const Property = ({ listing }) => {
         shortDescription
     } = listing;
 
+   
+
     return (
         <div className="w-full h-auto bg-white rounded-xl shadow-md flex flex-col gap-6 lg:gap-2 lg:flex-row p-4">
             <div className="relative w-full lg:w-[500px] h-[250px] lg:h-[269px] rounded-lg overflow-hidden mb-4 lg:mb-0">
@@ -30,7 +32,7 @@ const Property = ({ listing }) => {
                         className="h-full p-1 w-full border border-gray-300 rounded-lg object-contain"
                     />
                 </Link>
-                <button className="absolute top-4 right-4 p-2 bg-white/30 rounded-full">
+                <button onClick={handleLiking} className="absolute top-4 right-4 p-2 bg-white/30 rounded-full">
                     <FaHeart className="text-black/30" />
                 </button>
                 <button className="absolute top-1/2 left-2 -translate-y-1/2 w-6 h-6 bg-[#FAF9F6] rounded-full flex items-center justify-center">

@@ -108,7 +108,6 @@ function AppLayout() {
 
             <Route path="/chat" element={<Ai />} />
             <Route path="/AddListing" element={<AddListings />} />
-            <Route path="/subscription" element={<Subscription />} />
 
             <Route path="/tools" element={<Tools />}>
               <Route path="budgetcalculator" element={<Budget />} />
@@ -128,6 +127,8 @@ function AppLayout() {
 
 
           {/* Fallback */}
+            <Route path="/subscription" element={<Subscription />} />
+
         </Routes>
       </main>
 

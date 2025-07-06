@@ -14,8 +14,10 @@ const MainProfile = () => {
   const {user, fetchUser} = useContext(AuthContext);
 
   useEffect(() => {
-   fetchUser();
+    fetchUser();
   }, [])
+
+
 
   const today = new Date();
   // Format as "Friday, 31 Mar 2025"
@@ -23,7 +25,7 @@ const MainProfile = () => {
   const formattedDate = today.toLocaleDateString('en-IN', options);
   return (
     <>
-      <div className=' h-auto lg:h-[100vh] flex-col flex'>
+      {user ? <div className=' h-auto lg:h-[100vh] flex-col flex'>
 
         <div className='w-[85%] mx-auto'>
 
@@ -100,7 +102,7 @@ const MainProfile = () => {
           </div>
 
         </div>
-      </div>
+      </div> : null}
 
     </>
   )
