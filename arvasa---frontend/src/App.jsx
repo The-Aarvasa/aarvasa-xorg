@@ -27,6 +27,7 @@ import Guides from './components/profile/Guides';
 import Transactions from './pages/Transactions';
 import FilterPage from './components/Chatbot/FilterPage';
 import Tools from './pages/Tools';
+import Alert from './components/Utils/Alert';
 import Budget from './components/tools/Budget';
 import Emi from './components/tools/Emi';
 import Loan from './components/tools/Loan';
@@ -66,6 +67,7 @@ function AppLayout() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
+  
         {!hideNavAndFooter && <Navbar />}
 
         <Routes>

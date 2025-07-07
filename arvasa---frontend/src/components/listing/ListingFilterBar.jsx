@@ -121,7 +121,7 @@ const ListingFilterBar = () => {
             options={amount}
             value={amount.find(v => v.value === filters.budget) || null}
             onChange={(e) => onFilterChange("budget", e.value)}
-            className="w-full z-[999999] relative text-sm"
+            className="w-full z-[9999] relative text-sm"
             menuPortalTarget={document.body}
             styles={{
               menuPortal: base => ({ ...base, zIndex: 9999 }),
