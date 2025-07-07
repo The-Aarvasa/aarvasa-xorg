@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom'
 import { FilterContext } from '../../context/FilterProvider'
 import Select from 'react-select';
 import { Link } from 'react-router-dom'
+import Alert from '../Utils/Alert'
 import { toast } from 'react-toastify'
 const Landing = () => {
     const options = [{
@@ -70,6 +71,8 @@ const Landing = () => {
     ]
 
     return (
+           <>
+
         <div className='overflow-x-hidden py-4 px-2 md:mx-8 overflow-hidden flex w-auto flex-wrap lg:flex-nowrap h-full items-center justify-center md:justify-between md:px-4 rounded-lg lg:h-[80vh]' style={{
             background: "linear-gradient(to right, #F9EAF1, #8C2841)",
         }} >
@@ -203,6 +206,8 @@ const Landing = () => {
                     src="/images/hero.png" className='w-full md:hover:transform hover:scale-[1.1] transition-all relative z-[999]' alt="" />
             </div>
         </div>
+    
+           </>
     )
 }
 

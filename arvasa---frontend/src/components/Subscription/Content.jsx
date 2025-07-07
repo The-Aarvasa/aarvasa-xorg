@@ -184,7 +184,7 @@ const Content = () => {
         const token = localStorage.getItem("accessToken");
         setLoader(true);
         // 1. Call backend to create Razorpay order
-        const res = await axios.post(`http://localhost:5000/api/payment/create-order`, {
+        const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/payment/create-order`, {
             amount: e.target.value // ₹10,
             
         },{  headers: { Authorization: `Bearer ${token}` },
