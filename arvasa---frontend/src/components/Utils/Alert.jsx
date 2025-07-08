@@ -18,7 +18,7 @@ const Alert = ({ color = "blue", message = "" }) => {
 
   return (
    <div className='flex items-center justify-center'>
-     <div className={`fixed px-4 top-20 transform z-[999999] w-[95%] border mx-auto py-4 rounded shadow-md transition-all duration-300 ${selectedColor}`}>
+     <div className={` px-4 top-20 transform z-[999999] w-full border mx-auto py-4 rounded shadow-md transition-all duration-300 ${selectedColor}`}>
       <div className="flex justify-between items-center mx-auto">
         <span className="text-sm font-medium">{message}</span>
         <button onClick={() => setVisible(false)} className="text-lg font-bold leading-none">×</button>
