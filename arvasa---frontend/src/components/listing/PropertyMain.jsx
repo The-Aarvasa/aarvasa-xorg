@@ -77,7 +77,6 @@ const PropertyMain = () => {
 
     const handleLiking = async (prop_id) => {
     try {
-        setLoading(true);
         const token = localStorage.getItem("accessToken");
         const res = await axios.post(
             `${import.meta.env.VITE_BACKEND_URL}/api/listings/favourite`,
@@ -91,7 +90,6 @@ const PropertyMain = () => {
 
         // Update UI: toggle fav in state
         if (res.data.success) {
-            fetchFavourites()
             setFavourites((prev) =>
                 prev.includes(prop_id)
                     ? prev.filter((id) => id !== prop_id)
@@ -102,9 +100,7 @@ const PropertyMain = () => {
         console.error("Liking failed:", err);
         // alert("Please log in or try again.");
     }
-    finally{
-        setLoading(false);
-    }
+ 
 };
 
 

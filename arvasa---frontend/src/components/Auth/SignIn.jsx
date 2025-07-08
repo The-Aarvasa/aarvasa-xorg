@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Mail } from 'lucide-react';
 import { MdPassword } from 'react-icons/md';
+import { CheckCircle, XCircle, Info } from "lucide-react";
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Loaders from '../Loaders';
@@ -10,7 +11,15 @@ export default function SignIn() {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const [loader, setLoader] = useState(false);
+    const [alert, setAlert] = useState(false);
     const navigate = useNavigate();
+
+    const alertColorClasses = {
+        green: "bg-green-500",
+        red: "bg-red-500",
+        yellow: "bg-yellow-500"
+    };
+
 
     //  Check for Google Auth tokens in URL on first render
     useEffect(() => {
@@ -28,7 +37,11 @@ export default function SignIn() {
 
     const handleSignin = async () => {
         if (!email || !password) {
-            alert("Please enter both email and password.");
+            setAlert({
+                msg: "Please fill both the fields",
+                color: "yellow",
+                type: "info"
+            })
             return;
         }
 
@@ -46,14 +59,38 @@ export default function SignIn() {
                 localStorage.setItem("accessToken", accessToken);
                 localStorage.setItem("refreshToken", refreshToken);
                 // localStorage.setItem("userEmail", email);
-                alert("Login successful!");
-                window.location.href = "/";
+
+                setAlert({
+                    msg: "Login successful you will be redirected to home page .",
+                    color: "green",
+                    type: "success"
+                })
+                setTimeout(() => {
+                    window.location.href = "/";
+                }, 3000);
             } else {
-                alert("Tokens not received.");
+                setAlert({
+                    msg: "We are unable to log you in at the moment",
+                    color: "red",
+                    type: "failure"
+                })
             }
         } catch (err) {
             console.error("Login error:", err);
-            alert(err.response?.data?.message);
+            if (err.response.status === 401) {
+                setAlert({
+                    msg: err.response.data.message,
+                    color: "yellow",
+                    type: "info"
+                })
+            }
+            else{
+                setAlert({
+                    msg: "Something went wrong please try again later .",
+                    color: "yellow",
+                    type: "info"
+                })
+            }
         }
         finally {
             setLoader(false);
@@ -101,6 +138,23 @@ export default function SignIn() {
                             <img src="/images/logo_shape.png" className='w-32' alt="logo" />
                             <img src="/images/image.png" className='w-32' alt="text" />
                         </a>
+
+                        {alert ? <div className={`alert-box px-4 ${alertColorClasses[alert.color]} mt-8 w-full p-2 rounded-xl`}>
+                            {alert.type === "success" ?
+                                <div className="alert flex items-center gap-4">
+                                    <CheckCircle size={45} color='white'></CheckCircle>
+                                    <h1 className='text-white text-md font-semibold'>{alert.msg}</h1>
+                                </div> : alert.type === "failure" ?
+                                    <div className="alert flex items-center gap-4">
+                                        <XCircle size={30} color='white'></XCircle>
+                                        <h1 className='text-white text-md font-semibold'>{alert.msg}</h1>
+                                    </div> : alert.type === "info" ?
+                                        <div className="alert flex items-center gap-4">
+                                            <Info size={30} color='white'></Info>
+                                            <h1 className='text-white text-md font-semibold'>{alert.msg}</h1>
+                                        </div> : null}
+                        </div> : null}
+
 
                         <div className="flex flex-col gap-[25px] pt-6">
                             <div className="text-[#0C1421] text-[32px] mb-4 font-bold leading-8">Welcome Back</div>

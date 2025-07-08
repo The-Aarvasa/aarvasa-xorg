@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Download, CalendarCheck, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import Loaders from "../Loaders";
 import Property from "../listing/Property";
 
 const StatusCard = ({ title, statusText, icon }) => (
@@ -108,10 +109,10 @@ const ApplicationStatus = () => {
             </p>
           </>
         ) : (
-          <div className="w-full space-y-4">
+          <div className="w-full">
             <h2 className="text-xl font-semibold">Recently Viewed Properties</h2>
             {loading ? (
-              <p>Loading...</p>
+              <Loaders></Loaders>
             ) : recentlyViewed.length === 0 ? (
               <p className="text-gray-500">No recently viewed properties.</p>
             ) : (
