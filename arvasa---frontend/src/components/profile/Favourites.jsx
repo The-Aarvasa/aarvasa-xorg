@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import Loaders from '../Loaders';
 import Property from '../listing/Property';
 
 const Favourites = () => {
@@ -67,7 +68,7 @@ const Favourites = () => {
 
       <div className="grid w-full gap-4 sm:gap-6">
         {loading ? (
-          <p>Loading...</p>
+          <Loaders></Loaders>
         ) : favouriteProps.length === 0 ? (
           <p className='text-lg font-semibold'>You have currently no favourites .</p>
         ) : (
