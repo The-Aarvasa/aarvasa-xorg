@@ -68,7 +68,8 @@ return (
                         />
                         
                         <div className="flex gap-4">
-                            <input 
+                            <input
+                                value={image} 
                                 onChange={e => setImage(e.target.files[0])} 
                                 type="file" 
                                 accept="image/*" 
