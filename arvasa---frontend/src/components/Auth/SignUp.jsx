@@ -70,13 +70,13 @@ export default function SignUp() {
             if (error.respose && error.respose.status === 401) {
                 setAlert({
                     msg: error.response.data.msg,
-                    color: "red",
-                    type: "failure"
+                    color: "yellow",
+                    type: "info"
                 })
             }
             else {
-                setAlert({
-                    msg: "Something went wrong",
+               setAlert({
+                    msg: "Sign up failed . Bad gateway , please try again later .",
                     color: "red",
                     type: "failure"
                 })
