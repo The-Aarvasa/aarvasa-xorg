@@ -28,7 +28,7 @@ const Listing = () => {
             try {
                 const query = new URLSearchParams(filters).toString();
                 const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings?${query}`);
-                setListings(res.data);
+                setListings(res.data.listings);
             } catch (err) {
                 console.error('Error fetching listings:', err);
             } finally {

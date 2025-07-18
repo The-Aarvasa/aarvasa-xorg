@@ -30,7 +30,6 @@ export default function SignIn() {
         if (accessToken && refreshToken) {
             localStorage.setItem("accessToken", accessToken);
             localStorage.setItem("refreshToken", refreshToken);
-            alert("Google Login Successful!");
             navigate("/"); // Navigate to homepage
         }
     }, [navigate]);
@@ -58,7 +57,7 @@ export default function SignIn() {
             if (accessToken && refreshToken) {
                 localStorage.setItem("accessToken", accessToken);
                 localStorage.setItem("refreshToken", refreshToken);
-                // localStorage.setItem("userEmail", email);
+                localStorage.setItem("email", email);
 
                 setAlert({
                     msg: "Login successful you will be redirected to home page .",
@@ -86,9 +85,9 @@ export default function SignIn() {
             }
             else{
                 setAlert({
-                    msg: "Something went wrong please try again later .",
-                    color: "yellow",
-                    type: "info"
+                    msg: "Sign in failed . Bad gateway , please try again later .",
+                    color: "red",
+                    type: "failure"
                 })
             }
         }
@@ -196,7 +195,7 @@ export default function SignIn() {
                             </a>
 
                             <button
-                                onClick={handleSignin}
+                                onClick={handleSignin} type='submit'
                                 className="w-full h-[52px] bg-[#6C1E3C] rounded-xl flex items-center justify-center transition duration-300 ease-in-out hover:bg-[#7d2a48] hover:scale-105">
                                 <span className="text-white text-base font-bold">Sign in</span>
                             </button>
