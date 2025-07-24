@@ -26,7 +26,7 @@ const FAQItem = ({ faq, index, activeIndex, setActiveIndex }) => {
   return (
     <div className="mb-4 transition-all duration-300 ease-in-out">
       <button
-        className="w-full flex justify-between items-center p-4 bg-[#a13d52] text-white rounded-md focus:outline-none shadow-md transition-colors"
+        className="w-full flex justify-between items-center p-4 bg-[#a13d52] text-black rounded-md focus:outline-none shadow-md transition-colors"
         onClick={() => setActiveIndex(isOpen ? null : index)}
       >
         <div className="flex items-center gap-3">
@@ -42,7 +42,7 @@ const FAQItem = ({ faq, index, activeIndex, setActiveIndex }) => {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="ml-10 bg-[#f3e1e4] text-black text-sm p-4 rounded-md flex items-start gap-2 shadow">
+          <div className="ml-10 bg-gradient-to-r from-[#BCBCBC] to-[#999999] text-black text-sm p-4 rounded-md flex items-start gap-2 shadow">
             <FileText className="w-4 h-4 mt-1 text-[#8C2841]" />
             <p>{faq.answer}</p>
           </div>
@@ -56,12 +56,10 @@ const FAQSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ backgroundColor: '#8C2841' }} className="my-8 mx-2 mt-8 mb-8 md:mx-4 relative bg-rosewood max-w-[1840px] h-auto md:rounded-3xl flex flex-col justify-center items-center p-4 md:p-10">
-    <div style={{ backgroundColor: '#8C2841' }} className="my-8 mx-2 mt-8 mb-8 md:mx-4 relative bg-rosewood max-w-[1840px] h-auto md:rounded-3xl flex flex-col justify-center items-center p-4 md:p-10">
-
+    <div className="bg-gradient-to-r from-[#521827] to-[#8C2841] my-8 mx-2 mt-8 mb-8 md:mx-4 relative bg-rosewood max-w-[1840px] h-auto md:rounded-3xl flex flex-col justify-center items-center p-4 md:p-10">
       <div className="flex flex-wrap justify-between items-center w-[100%] md:w-[90%] mb-8">
         <h2 className="text-xl md:text-3xl font-semibold text-white">Frequently Asked Questions</h2>
-        <button className="px-4 mt-3 w-full md:w-auto py-2 text-black text-sm md:text-base font-semibold rounded-lg bg-gradient-to-r from-[#fbe174] to-[#d2a623] shadow-md" onClick={()=>navigate("/questions")}>
+        <button className="px-4 mt-3 w-full md:w-auto py-2 text-black text-sm md:text-base font-semibold rounded-lg bg-gradient-to-r from-[#DBB025] via-[#A38321] via-[#7F671E] via-[#5B4A1B] to-[#7c783f] shadow-md" onClick={()=>navigate("/questions")}>
           Post your question here?
         </button>
       </div>
@@ -77,7 +75,6 @@ const FAQSection = () => {
           />
         ))}
       </div>
-    </div>
     </div>
   );
 };

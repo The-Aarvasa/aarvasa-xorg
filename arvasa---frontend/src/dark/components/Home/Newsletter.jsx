@@ -29,7 +29,7 @@ export function Newsletter() {
   return (
     <div className="mx-2 mt-8 mb-8 md:mx-4 relative">
       {load ? <Loaders></Loaders> : null}
-      <div className="bg-gradient-to-r rounded-md h-auto from-pink-500 to-rose-800 md:rounded-2xl p-5 sm:p-16 shadow-xl text-white relative overflow-hidden h-[457px]">
+      <div className="bg-gradient-to-r rounded-md h-auto from-[#552032] to-[#6E1E32] md:rounded-2xl p-5 sm:p-16 shadow-xl text-white relative overflow-hidden h-[457px]">
         <div className="absolute inset-0 bg-[url('/newsletter.png')] bg-cover bg-center opacity-30"></div>
         <div className="flex flex-col -mt-18 flex-wrap md:flex-row items-center justify-between">
           <div className="flex-1">
@@ -42,12 +42,12 @@ export function Newsletter() {
 
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row items-center bg-white gap-2 md:gap-0 rounded-md md:rounded-full md:px-4 md:py-2 md:max-w-lg z-10"
+              className="flex flex-col sm:flex-row items-center bg-[#949494] gap-2 md:gap-0 rounded-md md:rounded-full md:px-4 md:py-2 md:max-w-lg z-10"
             >
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-1 w-full bg-transparent text-black placeholder:text-gray-400 outline-none px-2 py-2 z-10"
+                className="flex-1 w-full bg-transparent text-black placeholder:text-gray-900 outline-none px-2 py-2 z-10"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 required
