@@ -57,6 +57,8 @@ import Refund from './pages/Refund';
 import Security from './pages/Security';
 import Questions from './pages/Questions';
 
+import ServicesD from './dark/pages/ServicesD'; // Importing dark mode services page
+
 function AppLayout() {
   const [popup, setPop] = useState(false);
   const location = useLocation();
@@ -131,7 +133,10 @@ function AppLayout() {
 
           {/* Fallback */}
             <Route path="/subscription" element={<Subscription />} />
+          
 
+          {/*Dark*/}
+          <Route path="/servicespremium" element={<ServicesD />} />
         </Routes>
       </main>
 
