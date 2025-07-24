@@ -62,10 +62,11 @@ const Otp = () => {
 
         try {
             setLoader(true);
-            const res = await axios.post("http://localhost:5000/api/auth/verify", { email, otp: enteredOtp })
+            const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/verify`, { email, otp: enteredOtp })
 
             const data = await res.json();
-
+            localStorage.removeItem("signupEmail");
+            localStorage.removeItem("signupPassword");
             // alert("OTP Verified!");
             navigate("/signin"); // <-- Navigate using React Router
 

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sale = ({ address, price, unit, bed, bath, area, transactionType }) => {
+const Sale = ({ address, price, unit, bed, bath, area, transactionType, listingType }) => {
 
   const formatMoney = (amount) => {
   if (!amount) return "";
@@ -39,18 +39,7 @@ const Sale = ({ address, price, unit, bed, bath, area, transactionType }) => {
                     )}
 
                     <div className="flex mt-4 md:mt-0 gap-5 md:gap-20">
-                        {bed && (
-                            <div className="flex flex-col gap-4 items-center">
-                                <div className="md:text-2xl text-md font-semibold">{bed}</div>
-                                <div className="text-md md:text-xl font-semibold">Bed</div>
-                            </div>
-                        )}
-                        {bath && (
-                            <div className="flex flex-col gap-4 items-center">
-                                <div className="text-md md:text-2xl font-semibold">{bath}</div>
-                                <div className="text-md md:text-xl font-semibold">Bath</div>
-                            </div>
-                        )}
+                       
                         {area && (
                             <div className="flex flex-col gap-4 items-center">
                                 <div className="text-md md:text-2xl font-semibold">{area}</div>

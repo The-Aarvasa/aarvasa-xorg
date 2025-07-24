@@ -16,11 +16,17 @@ const Property = ({ listing, favourites, handleLiking }) => {
         bedrooms,
         bathrooms,
         coordinates,
+        listingType,
         carpetArea,
+        transactionType,
         location,
         city,
         shortDescription
     } = listing;
+
+    console.log(listing);
+
+ 
 
 
 
@@ -36,7 +42,7 @@ const Property = ({ listing, favourites, handleLiking }) => {
                     />
                 </Link>
                 <button
-                    onClick={() => handleLiking(_id)} 
+                    onClick={() => handleLiking(_id)}
                     className="absolute top-4 right-4 p-2 bg-white/30 rounded-full"
                 >
                     {favourites.includes(_id?.toString()) ? (
@@ -72,9 +78,15 @@ const Property = ({ listing, favourites, handleLiking }) => {
                 <p className="text-md font-semibold text-[#3D3D3D] mb-2">₹ {priceD}</p>
 
                 <div className="flex flex-wrap gap-4 mb-2">
-                    <div className="flex items-center gap-2"><FaBed /><span>{bedrooms}</span></div>
-                    <div className="flex items-center gap-2"><FaBath /><span>{bathrooms}</span></div>
-                    <div className="flex items-center gap-2"><FaRuler /><span>{carpetArea} sq.ft</span></div>
+                    {!(transactionType === "Plot") ? <div className='flex gap-4'>
+                        <div className="flex items-center gap-2"><FaBed /><span>{bedrooms}</span></div>
+                        <div className="flex items-center gap-2"><FaBath /><span>{bathrooms}</span></div>
+                        <div className="flex items-center gap-2"><FaRuler /><span>{carpetArea} sq.ft</span></div>
+
+                    </div> :
+                        <div className="flex items-center gap-2"><FaRuler /><span>{carpetArea} sq.ft</span></div>
+
+                    }
                 </div>
 
                 <p className="text-[#656565] mb-1">{shortDescription}</p>

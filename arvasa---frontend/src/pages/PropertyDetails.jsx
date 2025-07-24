@@ -19,31 +19,36 @@ const PropertyDetails = () => {
     const getData = async () => {
       try {
         setLoader(true);
-        const token = localStorage.getItem("accessToken");
         const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings/${id}`);
 
         // marking property to recntly viewed
-        const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/listings/postrecent`, {propertyId:id}, {
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                },
-            });
-        setData(res.data.data); 
+
+        setData(res.data.data);
       } catch (err) {
         console.error("Error fetching property:", err);
       }
-      finally{
+      finally {
         setLoader(false);
       }
     };
 
+    const markRecent = async (req, res) => {
+      const token = localStorage.getItem("accessToken");
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/listings/postrecent`, { propertyId: id }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+    }
+
     getData();
+    markRecent();
   }, [id]);
 
   if (!data) return <Loaders></Loaders>;
 
   return (
-    loader ? <Loaders></Loaders> :<>
+    loader ? <Loaders></Loaders> : <>
       <div className="bg-orange-50 pt-[120px] pb-[100px]">
         <Photos data={data} />
         <Sale
