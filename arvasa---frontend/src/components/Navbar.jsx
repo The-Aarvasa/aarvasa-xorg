@@ -100,7 +100,7 @@ const Navbar = () => {
                         className={`
                             md:flex items-center md:static md:h-auto md:w-auto md:gap-8 lg:gap-14
                             ${MenuOpen ? "fixed top-0 left-0" : "fixed left-[-100%]"}
-                            transition-all bg-orange-50 lg:bg-transparent h-[100vh] w-[80%] pt-[150px] px-12
+                            transition-all bg-orange-50 md:bg-transparent h-[100vh] w-[80%] pt-[150px] px-12
                             space-y-8 md:space-y-0 md:pt-0 md:px-0 z-[10]
                         `}
                     >
@@ -136,7 +136,7 @@ const Navbar = () => {
                                         src={user.photo
                                         }
                                         alt="Profile"
-                                        className="w-8 h-8 md:w-12 md:h-12 rounded-full object-cover"
+                                        className="w-8 h-8 md:w-8 md:h-8 rounded-full object-cover"
                                     /> :
                                         <div className="w-8 h-8 md:w-12 md:h-12 rounded-full bg-[#8C2841] text-white flex items-center justify-center text-xl font-bold">
                                             {user.email.charAt(0).toUpperCase()}

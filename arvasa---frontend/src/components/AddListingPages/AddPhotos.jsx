@@ -14,7 +14,7 @@ const AddPhotos = ({ onPrevious, onNext, listingData, setListingData }) => {
 
   const handleImageUpload = (event) => {
     const files = Array.from(event.target.files);
-    if (files.length === 0) return;
+    if (files.length === 0);
 
     const newImages = [...images];
     let filesAdded = 0;
@@ -75,13 +75,13 @@ const AddPhotos = ({ onPrevious, onNext, listingData, setListingData }) => {
 
   const handleNext = async () => {
     const hasImages = images.some((img) => img !== null);
-    if (!hasImages) {
-      alert("Please upload at least one image.");
-      return;
-    }
+    // if (!hasImages) {
+    //   alert("Please upload at least one image.");
+    //   return;
+    // }
 
     const uploadedUrls = await uploadImagesToCloudinary();
-    if (uploadedUrls.length > 0) {
+    if (true) {
       setListingData((prev) => ({ ...prev, photos: uploadedUrls }));
       onNext();
     }

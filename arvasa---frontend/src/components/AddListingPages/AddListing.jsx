@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import { FaMapMarkerAlt } from 'react-icons/fa';
 import { IoClose } from 'react-icons/io5';
+import Loaders from '../Loaders';
 import { useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 
@@ -13,10 +14,6 @@ const AddListing = ({ onNext, onPrevious, listingData, setListingData }) => {
   }, []);
 
   const handleNext = () => {
-    if (!listingData.title) {
-      alert("Please enter a property title.");
-      return;
-    }
 
     onNext();
   };
@@ -43,7 +40,7 @@ const AddListing = ({ onNext, onPrevious, listingData, setListingData }) => {
           Hi {user?.name || 'User'}, Fill details of your real estate
         </h1>
 
-        {/* Property Title Input */}
+        {/* Property Title Input
         <div className="mb-6 md:mb-10 w-full max-w-sm md:max-w-md mx-auto">
           <div className="relative w-[80%] border border-black rounded-xl flex items-center p-3 md:p-4 mx-auto">
             <input
@@ -57,7 +54,7 @@ const AddListing = ({ onNext, onPrevious, listingData, setListingData }) => {
             />
             <FaMapMarkerAlt className="text-gray-400 ml-2 md:ml-3" />
           </div>
-        </div>
+        </div> */}
 
         {/* Listing Type */}
         <div className="mb-6 md:mb-10 text-center">
@@ -90,8 +87,8 @@ const AddListing = ({ onNext, onPrevious, listingData, setListingData }) => {
           </h2>
           <div className="flex flex-col items-center gap-3 md:gap-4">
             {[
-              ['House', 'Apartment', 'Hotel'],
-              ['Villa', 'Cottage']
+              ['House', 'Apartment'],
+              ['Villa', 'Plot']
             ].map((row, i) => (
               <div key={i} className="flex flex-wrap gap-3 md:gap-6 justify-center">
                 {row.map((type) => (

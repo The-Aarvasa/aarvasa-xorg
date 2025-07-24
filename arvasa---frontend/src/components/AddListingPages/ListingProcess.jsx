@@ -19,11 +19,21 @@ const ListingProcess = () => {
         bedrooms: 0,
         bathrooms: 0,
         balcony: 0,
-        price: '',
-        priceD: '',
-        unit: 'Monthly',
-        facilities: []
+        price: '',          // Sell price (for "Rent")
+        priceD: '',         // Rent price (for "Buy")
+        unit: 'Monthly',    // Pricing unit: Monthly / Yearly
+        shortDescription: '',
+        detailedDescription: '',
+        carpetArea: '',
+        carpetAreaUnit: 'sq.ft',
+        floor: '',
+        facing: '',
+        ownershipType: '',
+        furnished: '',
+        plotSize: '',        // For plots
+        facilities: [],      // For residential
     });
+
 
     const goToNextPage = () => setCurrentPage(prev => prev + 1);
     const goToPreviousPage = () => setCurrentPage(prev => prev - 1);
@@ -48,7 +58,7 @@ const ListingProcess = () => {
             }
 
             const res = await axios.post(
-                `${import.meta.env.VITE_BACKEND_URL}/api/listings/create`,
+                `http://localhost:5000/api/listings/create`,
                 formData,
                 {
                     headers: {
@@ -63,7 +73,13 @@ const ListingProcess = () => {
         } catch (err) {
             console.error("Error submitting listing:", err);
         }
+
+
     };
+
+    useEffect(() => {
+        console.log(listingData);
+    }, [listingData])
 
 
     return (
