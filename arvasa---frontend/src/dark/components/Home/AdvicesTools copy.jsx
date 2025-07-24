@@ -134,9 +134,9 @@ import { Link } from "react-router-dom";
 const ToolCard = ({ icon, title, description }) => {
     return (
         <div
-            className="flex-shrink-0 flex flex-col justify-center p-5 rounded-xl border-[#8C2841] border-[4px] bg-gradient-to-b from-[#fff2bc] via-[#FADC64] to-[#F5BA22] shadow-md hover:scale-105 transition-transform duration-300 w-64 h-72 mr-6"
+            className="flex-shrink-0 flex flex-col justify-center p-5 rounded-xl border-[#5A5A59] border-[2px] bg-gradient-to-b from-[#DBB025] via-[#A38321] via-[#7F671E] via-[#5B4A1B] to-[#2b2b2b] shadow-md hover:scale-105 transition-transform duration-300 w-64 h-72 mr-6"
         >
-            <div>
+            <div >
                 <img src={icon} alt={title} className="w- h-12 mb-4" />
                 <h3 className="text-xl font-semibold text-[#8C2841] mb-2">{title}</h3>
                 <p className="text-sm text-black">{description}</p>
