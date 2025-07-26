@@ -1,7 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaLinkedinIn, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/fa';
-
 const Footer = () => {
   return (
     <div
@@ -20,20 +18,6 @@ const Footer = () => {
           <p className="text-white font-semibold text-sm sm:text-base">
             Empowering individuals to own, lease, and monetize real estate through innovation and transparency.
           </p>
-          <div className="flex gap-3 mt-2">
-            <a href="https://www.linkedin.com/company/aarvasa" target="_blank" rel="noopener noreferrer" className="bg-[#222] hover:bg-[#353935] transition-colors duration-200 rounded-full w-10 h-10 flex items-center justify-center">
-              <FaLinkedinIn className="text-white text-lg" />
-            </a>
-            <a href="https://twitter.com/aarvasa" target="_blank" rel="noopener noreferrer" className="bg-[#222] hover:bg-[#353935] transition-colors duration-200 rounded-full w-10 h-10 flex items-center justify-center">
-              <FaTwitter className="text-white text-lg" />
-            </a>
-            <a href="https://www.instagram.com/theaarvasa/" target="_blank" rel="noopener noreferrer" className="bg-[#222] hover:bg-[#353935] transition-colors duration-200 rounded-full w-10 h-10 flex items-center justify-center">
-              <FaInstagram className="text-white text-lg" />
-            </a>
-            <a href="https://facebook.com/aarvasa" target="_blank" rel="noopener noreferrer" className="bg-[#222] hover:bg-[#353935] transition-colors duration-200 rounded-full w-10 h-10 flex items-center justify-center">
-              <FaFacebookF className="text-white text-lg" />
-            </a>
-          </div>
         </div>
 
         {/* Quick Links */}
@@ -57,14 +41,14 @@ const Footer = () => {
         </div>
 
         {/* Contact */}
-        <div className="flex flex-col gap-5 relative">
+        <div className="flex flex-col gap-4 relative">
           <h1 className="text-white font-bold text-lg">Contact us</h1>
           <span className="bg-[#D4AF37] w-1/3 h-[5px] absolute top-7"></span>
-          <p className="text-white text-sm">3 Flr, off Windsar Sq Opp,Vishal Megamart Kolar Rd, Kolar Road,Huzur, Bhopal- 462042, Madhya Pradesh.</p>
-          {/* <p className="text-white text-sm">Vishal Megamart Kolar Rd, Kolar Road,</p> */}
-          {/* <p className="text-white text-sm">
-          </p> */}
-          <a className="text-white text-sm hover:text-gray-300 mb-6" href="#">theaarvasa@gmail.com</a>
+          <p className="text-white text-sm">3 Flr, off Windsar Sq Opp,</p>
+          <p className="text-white text-sm">Vishal Megamart Kolar Rd, Kolar Road,</p>
+          <p className="text-white text-sm">Huzur, Bhopal- 462042, Madhya Pradesh.
+          </p>
+          <a className="text-white text-sm hover:text-gray-300" href="#">theaarvasa@gmail.com</a>
         </div>
       </footer>
 
