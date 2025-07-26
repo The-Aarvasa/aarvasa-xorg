@@ -59,6 +59,9 @@ import Refund from './pages/Refund';
 import Security from './pages/Security';
 import Questions from './pages/Questions';
 
+import ServicesD from './dark/pages/ServicesD'; 
+import HomeD from './dark/pages/HomeD';
+
 function AppLayout() {
   const [popup, setPop] = useState(false);
   const location = useLocation();
@@ -133,6 +136,11 @@ function AppLayout() {
 
           {/* Fallback */}
             <Route path="/subscription" element={<Subscription />} />
+          
+
+          {/*Dark*/}
+          <Route path="/servicespremium" element={<ServicesD />} />
+          <Route path="/homepremium" element={<HomeD />} />
 
         </Routes>
       </main>
