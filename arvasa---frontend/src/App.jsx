@@ -5,6 +5,8 @@ import Services from './pages/Services';
 import Ai from './pages/Ai';
 import About from './pages/About';
 import Navbar from './components/Navbar';
+// import Navbar from '@/dark/components/Navbar.jsx';
+
 import Listing from './pages/Listing';
 import Property from './components/listing/Property';
 import Graphs from './components/listing/Graphs';
