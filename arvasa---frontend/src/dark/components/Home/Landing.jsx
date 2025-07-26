@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Search, Home, IndianRupee, Earth, KeyRound, Map, BedDouble, Building2, UploadCloud } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { FilterContext } from '../../context/FilterProvider'
+import { FilterContext } from '../../../context/FilterProvider'
 import Select from 'react-select';
 import { Link } from 'react-router-dom'
 import Alert from '../Utils/Alert'

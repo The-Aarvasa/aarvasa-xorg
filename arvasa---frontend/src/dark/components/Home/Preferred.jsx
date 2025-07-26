@@ -70,13 +70,13 @@ const Preferred = () => {
                     {[1, 2, 3].map((item, index) => (
                         <div
                             key={index}
-                            className="w-full sm:w-[45%] md:w-[26%] lg:w-[28%] cursor-pointer h-auto bg-white rounded-xl border border-2 border-[#FCDEAC] hover:scale-[1.02] duration-500"
+                            className="w-full sm:w-[45%] md:w-[26%] lg:w-[28%] cursor-pointer h-auto bg-black rounded-xl border border-2 border-[#F9BC61] hover:scale-[1.02] duration-500"
                         >
-                            <div className="w-full h-auto bg-[#FCDEAC] rounded-t-xl flex flex-wrap sm:flex-nowrap p-2 sm:p-3 justify-between items-center">
+                            <div className="w-full h-auto bg-gradient-to-r from-[#D99D3A] to-[#80602D] rounded-t-xl flex flex-wrap sm:flex-nowrap p-2 sm:p-3 justify-between items-center">
                                 <img className="w-14 sm:w-16 h-14 sm:h-16 rounded-md" src="vivek_kumar.png" />
                                 <div className="flex flex-col justify-end items-start ml-2 gap-1 mt-2 sm:mt-0">
                                     <div className="text-pink-900 text-sm sm:text-base font-bold">Av Preferred</div>
-                                    <div className="text-black text-base sm:text-lg font-bold">Vivek Kumar Mishra</div>
+                                    <div className="text-white text-base sm:text-lg font-bold">Vivek Kumar Mishra</div>
                                 </div>
                                 <img className="w-8 sm:w-10 h-7 sm:h-8 rounded-[6px] mt-2 sm:mt-0" src="pref.png" />
                             </div>
@@ -84,27 +84,27 @@ const Preferred = () => {
                             <div className="flex justify-between items-center mx-3 flex-wrap gap-2 sm:gap-4 p-2 sm:p-3 items-end">
                                 <img className="w-10 sm:w-12 h-10 sm:h-12 rounded-[2px]" src="mvprop.png" />
                                 <div className="flex flex-col items-start">
-                                    <div className="text-black text-sm sm:text-base font-semibold">Mv Properties</div>
-                                    <div className="text-black text-[10px] sm:text-xs font-medium">Operating Since</div>
-                                    <div className="text-black text-[10px] sm:text-xs font-medium">2006</div>
+                                    <div className="text-white text-sm sm:text-base font-semibold">Mv Properties</div>
+                                    <div className="text-white text-[10px] sm:text-xs font-medium">Operating Since</div>
+                                    <div className="text-white text-[10px] sm:text-xs font-medium">2006</div>
                                 </div>
-                                <div className="hidden sm:block w-[1px] h-7 bg-black"></div>
+                                <div className="hidden sm:block w-[1px] h-7 bg-white"></div>
                                 <div className="flex flex-col justify-between items-start">
-                                    <div className="text-black text-[10px] sm:text-xs font-medium">Buyers Served</div>
-                                    <div className="text-black text-[10px] sm:text-xs font-medium">2500+</div>
+                                    <div className="text-white text-[10px] sm:text-xs font-medium">Buyers Served</div>
+                                    <div className="text-white text-[10px] sm:text-xs font-medium">2500+</div>
                                 </div>
                             </div>
 
-                            <div className="w-full h-[0.5px] bg-black"></div>
+                            <div className="w-full h-[0.5px] bg-white"></div>
 
                             <div className="flex mx-3 justify-between items-center flex-wrap p-2 sm:p-3 items-start gap-2 sm:gap-4 mt-1">
                                 <div className="flex flex-col">
-                                    <div className="text-black text-sm sm:text-base font-semibold">45</div>
-                                    <div className="text-black text-[10px] sm:text-xs font-medium">Properties for Sale</div>
+                                    <div className="text-white text-sm sm:text-base font-semibold">45</div>
+                                    <div className="text-white text-[10px] sm:text-xs font-medium">Properties for Sale</div>
                                 </div>
                                 <div className="flex flex-col">
-                                    <div className="text-black text-sm sm:text-base font-semibold">3</div>
-                                    <div className="text-black text-[10px] sm:text-xs font-medium">Properties For Rent</div>
+                                    <div className="text-white text-sm sm:text-base font-semibold">3</div>
+                                    <div className="text-white text-[10px] sm:text-xs font-medium">Properties For Rent</div>
                                 </div>
                             </div>
                         </div>
@@ -142,7 +142,7 @@ const Preferred = () => {
                     >
                         {data.map((card) => (
                             <SwiperSlide key={card.id}>
-                                <div className="card p-2 h-[450px] bg-white shadow-lg rounded-lg">
+                                <div className="card p-2 h-[450px] bg-[#949494] shadow-lg rounded-lg">
                                     <img src={card.img} className='w-full max-h-[250px] min-h-[250px] object-cover' alt="" />
                                     <h1 className='text-lg m-2 font-semibold'>{card.title}</h1>
                                     <p className='max-w-[600px] m-2 font-[500] text-sm mt-4'>{card.desc}</p>
