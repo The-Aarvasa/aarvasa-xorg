@@ -7,7 +7,6 @@ import anirudh from "/assets/Team Anirudh.jpg"
 import arjit from "/assets/Team Arjit.jpg"
 import sriaditya from "/assets/sriaditya.png"
 import { Heading } from "../Utils/Heading";
-import { motion } from "motion/react";
 import { useState } from "react";
 
 const teamMembers = [
