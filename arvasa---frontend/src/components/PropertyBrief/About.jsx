@@ -13,13 +13,13 @@ const About = ({ data }) => {
                 <p className="text-gray-600 mt-2">{data.shortDescription}</p>
             )}
 
-            <div
+            {!(data.propertyType == "Plot") ? <div
                 className="text-[#F5C01A] font-medium text-lg flex gap-3 cursor-pointer"
                 onClick={handleSetVisibility}
             >
                 <h1>Show More</h1>
                 <img src="/downarrow.png" alt="down" className="w-[25px]" />
-            </div>
+            </div> : "Contact for more information to know about the features of the plot"}
 
             {visibility && (
                 <div className="mt-5 flex flex-col items-center justify-center gap-10">

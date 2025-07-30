@@ -70,8 +70,8 @@ const Navbar = () => {
     const handleLogout = () => {
         localStorage.removeItem("accessToken");
         setAlert({
-            message : "You were logged out !",
-            color : "blue"
+            message: "You were logged out !",
+            color: "red"
         })
         setUser(null);
         navigate("/")
@@ -81,7 +81,7 @@ const Navbar = () => {
     return (
         <>
             <nav
-        
+
                 ref={ref}
                 className={`relative-nav transition-all duration-300 ease-in-out z-[99999] px-2 md:px-0 lg:px-2 py-4 ${fixed ? 'bg-orange-50' : 'bg-transparent'}`}
             >
@@ -174,7 +174,9 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {alert ? <Alert message={alert.message} color={alert.color}></Alert> : null}
+            {alert && <div className="fixed top-[90px] left-0 transform z-[999999] w-full max-w-full px-4">
+                <Alert color={alert.color} message={alert.message} />
+            </div>}
 
             {/* Spacer for fixed navbar */}
             {fixed && <div style={{ height: `${navHeight}px` }} />}

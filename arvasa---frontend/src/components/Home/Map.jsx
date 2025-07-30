@@ -60,10 +60,7 @@ const Map = ({ onLocationSelect }) => {
                         className="border w-full border-gray-200 outline-none rounded-lg"
                         style={{ padding: "10px", marginBottom: "10px" }}
                     />
-                    <button className="font-semibold w-full md:w-[20%] text-[#8C2841] mb-[10px] p-[10px] text-sm rounded-lg"
-                        style={{ background: "linear-gradient(to right, #F7A240, #F5C01A)" }}>
-                        Search
-                    </button>
+                  
                 </div>
                 <div ref={mapRef} style={{ height: "500px", width: "100%", padding: 30 }}></div>
             </div>

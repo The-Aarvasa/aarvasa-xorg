@@ -2,11 +2,13 @@ import { useState } from 'react';
 import axios from 'axios';
 import Loaders from '../Loaders';
 import { toast } from 'react-toastify';
+import Alert from '../Utils/Alert';
 export function Newsletter() {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [status, setStatus] = useState(''); // 'success' or 'error'
   const [load, setLoad] = useState(false);
+  const [alert, setAlert] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -17,6 +19,7 @@ export function Newsletter() {
       setMessage(res.data.message);
       setStatus('success');
       setEmail('');
+      setAlert("You were subscribed ! you will get the latest information about aarvasa !");
     } catch (err) {
       setMessage(err.response?.data?.message || 'Something went wrong');
       setStatus('error');
@@ -28,6 +31,7 @@ export function Newsletter() {
 
   return (
     <div className="mx-2 mt-8 mb-8 md:mx-4 relative">
+     {alert &&  <Alert color={"green"} message={alert}></Alert>}
       {load ? <Loaders></Loaders> : null}
       <div className="bg-gradient-to-r rounded-md h-auto from-pink-500 to-rose-800 md:rounded-2xl p-5 sm:p-16 shadow-xl text-white relative overflow-hidden h-[457px]">
         <div className="absolute inset-0 bg-[url('/newsletter.png')] bg-cover bg-center opacity-30"></div>
@@ -60,15 +64,7 @@ export function Newsletter() {
               </button>
             </form>
 
-            {message && (
-              <p
-                className={`mt-4 z-10 ${
-                  status === 'success' ? 'text-green-200' : 'text-red-200'
-                }`}
-              >
-                {message}
-              </p>
-            )}
+        
           </div>
 
           <div className="z-10">

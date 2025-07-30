@@ -62,19 +62,19 @@ const AddListing = ({ onNext, onPrevious, listingData, setListingData }) => {
             Listing Type
           </h2>
           <div className="flex flex-wrap gap-3 md:gap-6 justify-center">
-            {['Rent', 'Sell'].map((type) => (
+            {['Rent', 'New Property'].map((type) => (
               <button
                 key={type}
                 className={`px-5 py-2 rounded-xl text-sm md:text-base font-medium transition-colors duration-200 ${
-                  listingData.listingType === type
+                  listingData.transactionType === type
                     ? 'bg-[#F5D5E2] text-[#6D1E3D] border border-[#6D1E3D]/50'
                     : 'bg-white border border-[#949494] text-[#5A5A59]'
                 }`}
                 onClick={() =>
-                  setListingData((prev) => ({ ...prev, listingType: type }))
+                  setListingData((prev) => ({ ...prev, transactionType: type }))
                 }
               >
-                {type}
+                {type === "New Property" ? "Sell" : type}
               </button>
             ))}
           </div>
@@ -95,14 +95,14 @@ const AddListing = ({ onNext, onPrevious, listingData, setListingData }) => {
                   <button
                     key={type}
                     className={`px-5 py-2 rounded-xl text-sm md:text-base font-medium transition-colors duration-200 ${
-                      listingData.propertyCategory === type
+                      listingData.propertyType === type
                         ? 'bg-[#F5D5E2] text-[#6D1E3D] border border-[#6D1E3D]/50'
                         : 'bg-white border border-[#949494] text-[#5A5A59]'
                     }`}
                     onClick={() =>
                       setListingData((prev) => ({
                         ...prev,
-                        propertyCategory: type
+                        propertyType: type
                       }))
                     }
                   >
