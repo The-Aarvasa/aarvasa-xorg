@@ -112,7 +112,7 @@ const PropertyMain = () => {
                 ) : listings.length === 0 ? (
                     <p className="text-center">No listings found.</p>
                 ) : (
-                    <div className="card flex flex-col gap-8">
+                    <div className="card flex flex-col gap-3">
                         {listings.map((listing) => (
                             <Property
                                 key={listing._id}

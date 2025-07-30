@@ -6,6 +6,10 @@ import Ai from './pages/Ai';
 import About from './pages/About';
 import Navbar from './components/Navbar';
 // import Navbar from '@/dark/components/Navbar.jsx';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 import Listing from './pages/Listing';
 import Property from './components/listing/Property';

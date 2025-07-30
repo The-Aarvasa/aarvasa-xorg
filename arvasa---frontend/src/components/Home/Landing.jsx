@@ -66,8 +66,10 @@ const Landing = () => {
     ];
 
     const propType = [
-        { value: 'Apartments', label: 'Apartments' },
+        { value: 'Apartment', label: 'Appartment' },
         { value: 'Villa', label: 'Villa' },
+        { value: 'Plot', label: 'Plots' },
+        { value: 'All', label: 'All' },
     ]
 
     return (
@@ -80,11 +82,8 @@ const Landing = () => {
                     <p className='text-[#692234] text-xl md:text-2xl'>Welcome to Aarvasa</p>
                     <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8'>Manage your <br></br> property</h1>
                     <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
-                    <button onClick={handleFilter} className='flex w-full md:w-fit items-center justify-center gap-3 p-2 px-4 bg-gradient-to-r from-[#F7A240] to-[#F5C01A] group-hover:transition-all group-hover:transition-delay-[7s]  group-hover:from-[#FFFDF3] font-bold group-hover:text-white group-hover:bg-[#8C2841] rounded-lg mb-4 ml-12' >
-                        <Search />
-                        Search
-                    </button>
-                    <div className=' w-auto mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
+
+                    <div className='w-auto bg-white flex flex-col mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
 
                         <div className="searches space-y-4 md:space-y-0 flex items-center gap-2 flex-wrap lg:flex-nowrap">
                             <div className="search_bar w-full flex items-center gap-2 hover:text-[#8C2841]">
@@ -166,7 +165,12 @@ const Landing = () => {
                                 />
 
                             </div>
+
                         </div>
+                        <button onClick={handleFilter} className='flex w-full items-center justify-center gap-3 p-2 px-4 bg-gradient-to-r from-[#F7A240] to-[#F5C01A] group-hover:transition-all group-hover:transition-delay-[7s]  group-hover:from-[#FFFDF3] font-bold group-hover:text-white group-hover:bg-[#8C2841] rounded-lg mb-4 mt-4' >
+                            <Search />
+                            Search
+                        </button>
                     </div>
                 </div>
                 <div className="image relative group w-[600px]">
