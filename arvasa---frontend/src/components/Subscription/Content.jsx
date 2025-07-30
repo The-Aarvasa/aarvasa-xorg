@@ -25,7 +25,6 @@ const Content = () => {
             "Email Support",
             "Verification Badge"
         ],
-        basic_commision: 2.5,
 
         standard_price: 2499,
         standard_range: "40",
@@ -35,7 +34,6 @@ const Content = () => {
             "Enhanced Visibility",
             "Verification Badge",
         ],
-        standard_commision: 2.0,
 
         premium_price: 4999,
         premium_range: "40-60",
@@ -46,7 +44,6 @@ const Content = () => {
             "Relationship Manager",
             "Verification Badge",
         ],
-        premium_commision: 1,
 
         premium_plus_price: 6499,
         premium_plus_range: "40-60",
@@ -56,7 +53,6 @@ const Content = () => {
             "Exclusive Marketing",
             "Verification Badge",
         ],
-        premium_plus_commision: 0,
     };
 
     const agent_plans = {
@@ -68,7 +64,6 @@ const Content = () => {
             "Email Support",
             "Verification Badge"
         ],
-        basic_commision: 2.5,
 
         standard_price: 1999,
         standard_range: "5000-15000",
@@ -78,7 +73,6 @@ const Content = () => {
             "Enhanced Visibility",
             "Verification Badge",
         ],
-        standard_commision: 2.0,
 
         premium_price: 2999,
         premium_range: "5000-15000",
@@ -89,7 +83,6 @@ const Content = () => {
             "Relationship Manager",
             "Verification Badge",
         ],
-        premium_commision: 1,
 
         premium_plus_price: 5999,
         premium_plus_range: "15000-40000",
@@ -99,7 +92,6 @@ const Content = () => {
             "Exclusive Marketing",
             "Verification Badge",
         ],
-        premium_plus_commision: 0,
     };
 
     const rental_plans = {
@@ -111,7 +103,6 @@ const Content = () => {
             "Email Support",
             "Verification Badge"
         ],
-        basic_commision: 2.5,
 
         standard_price: 1999,
         standard_range: "5000-15000",
@@ -121,7 +112,6 @@ const Content = () => {
             "Enhanced Visibility",
             "Verification Badge",
         ],
-        standard_commision: 2.0,
 
         premium_price: 2999,
         premium_range: "5000-15000",
@@ -132,7 +122,6 @@ const Content = () => {
             "Relationship Manager",
             "Verification Badge",
         ],
-        premium_commision: 1,
 
         premium_plus_price: 5999,
         premium_plus_range: "15000-40000",
@@ -142,7 +131,6 @@ const Content = () => {
             "Exclusive Marketing",
             "Verification Badge",
         ],
-        premium_plus_commision: 0,
     };
 
 
@@ -229,12 +217,10 @@ const Content = () => {
 
 
 
-    const PlanCard = ({ planKey, label, onTap }) => {
-        const planData = getPlanData();
-        const commKey = `${planKey}_commision`;
+    const PlanCard = ({ label, onTap }) => {
 
         return (
-            <div className="h-auto transition-all ease-in-out p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)]">
+            <div className="h-auto transition-all ease-in-out p-10 -mb-20 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)]">
                 <div className="self-stretch text-center justify-start text-stone-900 text-3xl font-semibold font-['Poppins']">{label}</div>
                 <div className="flex flex-col gap-4">
                     <select className="px-2 w-full font-[poppins] text-xl text-center outline outline-yellow-300 outline-2 rounded-lg bg-yellow-100">
@@ -248,9 +234,6 @@ const Content = () => {
                     </select>
                     <div className="self-stretch text-center justify-start text-stone-600 text-xl font-medium  leading-tight">{`<`} INR 40 Lakhs</div>
                 </div>
-                <div className="justify-start text-black text-lg font-medium  leading-none">
-                    Commission: {planData[commKey]}%
-                </div>
                 <div className="w-32 h-32 px-4 py-11 bg-[radial-gradient(ellipse_113.28%_113.26%_at_56.59%_113.25%,_white_0%,_#EDCE74_100%)] rounded-[65px] cursor-pointer shadow-[0px_0px_45.900001525878906px_0px_rgba(0,0,0,0.25)] outline outline-1 outline-offset-[-1px] outline-black/10 flex flex-col justify-center items-center gap-2.5" onClick={onTap}>
                     <div className="w-24 text-center justify-start"><span className="text-black text-2xl font-medium leading-normal">Tap</span><span className="text-black text-xl font-medium  leading-tight"> </span><span className="text-black text-base font-normal leading-none">for more detail</span></div>
                 </div>
@@ -262,7 +245,6 @@ const Content = () => {
     const PlanDetail = ({ planKey, label, onClose, value }) => {
         const planData = getPlanData();
         const featuresKey = `${planKey}_features`;
-        const commKey = `${planKey}_commision`;
         const price = `${planKey}_price`;
         return (
             <div className="px-4 py-11 relative bg-[radial-gradient(ellipse_132.89%_131.35%_at_55.00%_109.92%,_white_0%,_#EDCE74_100%)]  shadow-[0px_0px_45.900001525878906px_0px_rgba(0,0,0,0.25)] md:w-[400px] h-[600px] p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl">
@@ -299,9 +281,6 @@ const Content = () => {
                 } onClick={(e) => {handlePay(e, planKey)}} value={planData[price]} className="w-[240px] h-[56px] px-6 py-3   text-white text-xl font-bold  leading-tight bg-[radial-gradient(ellipse_302.08%_123.50%_at_51.45%_-0.00%,_#6C1E3C_0%)] rounded-xl justify-center items-center gap-2.5">
                     Subscribe
                 </button>
-                <div className="justify-start text-black text-lg font-medium  leading-none">
-                    Commission: {planData[commKey]}%
-                </div>
                 <button className="absolute top-4 right-4 text-xl bg-none rounded-full px-3 py-1" onClick={onClose}>×</button>
             </div>
         );
