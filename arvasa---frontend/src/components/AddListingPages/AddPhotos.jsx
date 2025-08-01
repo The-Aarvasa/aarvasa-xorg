@@ -87,6 +87,14 @@ const AddPhotos = ({ onPrevious, onNext, listingData, setListingData }) => {
     }
   };
 
+  const Spinner = () => (
+    <svg className="animate-spin h-5 w-5 text-white mr-2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+      <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+      <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v4l3.536-3.536A9.956 9.956 0 0012 2C6.477 2 2 6.477 2 12h2z"></path>
+    </svg>
+  );
+
+
   return (
     <div className="min-h-screen bg-[#fffcf2] flex items-center justify-center p-4 font-poppins">
       <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-xl md:max-w-4xl relative border border-gray-300">
@@ -137,7 +145,10 @@ const AddPhotos = ({ onPrevious, onNext, listingData, setListingData }) => {
             onClick={handleNext}
             disabled={uploading}
           >
-            {uploading ? "Uploading..." : "Next"}
+            {uploading ? <div className="flex items-center justify-center">
+              <Spinner />
+              Uploading...
+            </div> : "Next"}
           </button>
         </div>
       </div>
