@@ -61,6 +61,7 @@ import Questions from './pages/Questions';
 
 import ServicesD from './dark/pages/ServicesD'; 
 import HomeD from './dark/pages/HomeD';
+import AboutD from './dark/pages/AboutD'; 
 
 function AppLayout() {
   const [popup, setPop] = useState(false);
@@ -141,6 +142,7 @@ function AppLayout() {
           {/*Dark*/}
           <Route path="/servicespremium" element={<ServicesD />} />
           <Route path="/homepremium" element={<HomeD />} />
+          <Route path="/aboutpremium" element={<AboutD />} />
 
         </Routes>
       </main>
