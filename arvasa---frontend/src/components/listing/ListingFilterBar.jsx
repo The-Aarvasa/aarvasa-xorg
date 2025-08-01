@@ -51,14 +51,16 @@ const ListingFilterBar = () => {
   ];
 
   const propType = [
-    { value: 'Apartments', label: 'Apartments' },
+    { value: 'Apartment', label: 'Appartment' },
     { value: 'Villa', label: 'Villa' },
+    { value: 'Plot', label: 'Plots' },
+    { value: 'All', label: 'All' },
   ]
 
   const onReset = () => {
     setFilters({
       city: '',
-      propertyType: '',
+      propertyType: 'All',
       budget: '',
       rent: '',
       buy: ''
@@ -66,7 +68,7 @@ const ListingFilterBar = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 w-[90%] md:w-[60%] mx-auto font-poppins">
+    <div className="flex bg-white focus-within:scale-[0.9] transition-all shadow-lg rounded-lg p-4 flex-col items-center gap-4 w-[90%] md:w-[60%] mx-auto font-poppins">
       <div className="w-full flex flex-col sm:flex-row justify-center items-center gap-3 mb-4">
         <div className="flex items-center border border-gray-300 rounded-lg p-2 w-full sm:w-1/3 bg-white">
           <FaMapMarkerAlt className="mr-2 text-gray-500" />
@@ -157,7 +159,7 @@ const ListingFilterBar = () => {
         {buttons.map((currElem, index) => {
           return (
             <button key={index} onClick={currElem.fn
-            } className={`px-4 py-2 border border-[#949494] rounded-xl text-[#5A5A59] ${filters.transactionType  === currElem.value || curr === currElem.id   ? 'bg-[#F5D5E2]' : null}`}>{currElem.title}</button>
+            } className={`px-4 py-2 border border-[#949494] rounded-xl text-[#5A5A59] ${filters.transactionType  === currElem.value || propType === currElem.value  ? 'bg-[#F5D5E2]' : null}`}>{currElem.title}</button>
           )
         })}
         <button onClick={onReset} className="px-4 py-2 text-[#6D1E3D] font-semibold hover:text-[#5a1832]">Reset All Filters</button>

@@ -64,15 +64,18 @@ const Otp = () => {
             setLoader(true);
             const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/verify`, { email, otp: enteredOtp })
 
-            const data = await res.json();
+           if(res.status == 200){
+            console.log("tes");
             localStorage.removeItem("signupEmail");
             localStorage.removeItem("signupPassword");
             // alert("OTP Verified!");
             navigate("/signin"); // <-- Navigate using React Router
 
+           }
         } catch (err) {
 
-            if (err.response.status === 401) {
+            if (err.response && err.response.status === 401) {
+                console.log(err.response)
                 setAlert({
                     msg: err.response.data.msg,
                     color: "yellow",
@@ -95,70 +98,65 @@ const Otp = () => {
 
 
     return (
-        <>
-            {loader ? <Loaders /> : null}
-            <div className="bg-white h-[100vh] overflow-y-hidden">
-                <div className="cols h-[90vh] sm:h-auto flex items-center justify-center sm:justify-between gap-[70px]">
-                    <div className="left_col w-1/2 items-center justify-center hidden sm:flex">
-                        <img
-                            src="/otp_hero.jpg"
-                            className="h-[100vh] w-full object-cover"
-                            alt=""
-                        />
-                    </div>
+       <>
+  {loader && <Loaders />}
+  <div className="min-h-screen flex items-center justify-center">
+    <div className="flex flex-col-reverse md:flex-row bg-white bg-opacity-90 backdrop-blur-md shadow-2xl rounded-3xl overflow-hidden w-[95%] max-w-5xl">
+      
+      {/* Left Image */}
+      <div className="hidden md:flex w-1/2">
+        <img src="/otp_hero.jpg" alt="OTP" className="object-cover w-full h-full" />
+      </div>
 
-                    <div className="right_col w-1/2 flex flex-col items-center text-center justify-center gap-6">
-                        <img src="/images/logo.png" className="w-32" alt="" />
-                        {alert ? <div className={`alert-box px-4 ${alertColorClasses[alert.color]} mt-8 w-full md:w-[80%] p-2 rounded-xl`}>
-                            {alert.type === "success" ?
-                                <div className="alert flex items-center gap-4">
-                                    <CheckCircle size={45} color='white'></CheckCircle>
-                                    <h1 className='text-white text-md font-semibold'>{alert.msg}</h1>
-                                </div> : alert.type === "failure" ?
-                                    <div className="alert flex items-center gap-4">
-                                        <XCircle size={30} color='white'></XCircle>
-                                        <h1 className='text-white text-md font-semibold'>{alert.msg}</h1>
-                                    </div> : alert.type === "info" ?
-                                        <div className="alert flex items-center gap-4">
-                                            <Info size={30} color='white'></Info>
-                                            <h1 className='text-white text-md font-semibold'>{alert.msg}</h1>
-                                        </div> : null}
-                        </div> : null}
-                        <h1 className="font-semibold text-5xl">Account verification</h1>
-                        <p className="text-xl">
-                            Enter the OTP sent to <br />
-                            <span className="font-semibold text-md">{email || "your email"}</span>
-                        </p>
+      {/* Right Content */}
+      <div className="w-full md:w-1/2 p-8 md:p-12 flex flex-col justify-center items-center text-center space-y-6">
+        <img src="/images/logo.png" className="w-28 mb-2" alt="Logo" />
 
-                        <div className="input_boxes flex items-center justify-center gap-4">
-                            {[0, 1, 2, 3, 4, 5].map((_, index) => (
-                                <input
-                                    key={index}
-                                    ref={(el) => (inputRefs.current[index] = el)}
-                                    type="text"
-                                    maxLength={1}
-                                    value={otpValues[index]}
-                                    onFocus={() => setActiveInput(index)}
-                                    onChange={(e) => handleInput(e, index)}
-                                    onKeyDown={(e) => handleKeyDown(e, index)}
-                                    className={`bg-[#EFEFEF] w-[60px] text-center rounded-lg outline-none text-2xl h-[60px] border-2 transition-all ${activeInput === index
-                                        ? 'border-[#6D1E3D]'
-                                        : 'border-gray-300'
-                                        }`}
-                                />
-                            ))}
-                        </div>
+        {alert && (
+          <div className={`w-full px-4 py-3 rounded-lg flex items-center gap-3 text-white ${alertColorClasses[alert.color]}`}>
+            {alert.type === "success" && <CheckCircle />}
+            {alert.type === "failure" && <XCircle />}
+            {alert.type === "info" && <Info />}
+            <span className="text-md font-semibold">{alert.msg}</span>
+          </div>
+        )}
 
-                        <button
-                            onClick={handleVerify}
-                            className="bg-[#6D1E3D] outline-none transition-all rounded-full px-12 p-2 text-white hover:bg-white border border-4 hover:border-[#6D1E3D] hover:text-black"
-                        >
-                            Verify
-                        </button>
-                    </div>
-                </div>
-            </div>
-        </>
+        <h2 className="text-3xl font-bold text-gray-800">Verify Your Account</h2>
+        <p className="text-gray-600">
+          We've sent a 6-digit code to <br />
+          <span className="font-medium text-gray-900">{email || "your email"}</span>
+        </p>
+
+        {/* OTP Inputs */}
+        <div className="flex justify-center gap-3">
+          {[0, 1, 2, 3, 4, 5].map((_, index) => (
+            <input
+              key={index}
+              ref={(el) => (inputRefs.current[index] = el)}
+              type="text"
+              maxLength={1}
+              value={otpValues[index]}
+              onFocus={() => setActiveInput(index)}
+              onChange={(e) => handleInput(e, index)}
+              onKeyDown={(e) => handleKeyDown(e, index)}
+              className={`w-12 h-14 text-center text-xl font-bold border-2 rounded-lg transition-all duration-200 outline-none shadow-sm 
+                ${activeInput === index ? "border-yellow-500" : "border-gray-300"} focus:ring-2 focus:ring-yellow-400`}
+            />
+          ))}
+        </div>
+
+        {/* Verify Button */}
+        <button
+          onClick={handleVerify}
+          className="mt-4 w-full md:w-2/3 bg-yellow-500 hover:bg-yellow-600 text-white font-semibold py-3 rounded-full transition-all duration-200 shadow-lg"
+        >
+          Verify OTP
+        </button>
+      </div>
+    </div>
+  </div>
+</>
+
     );
 };
 

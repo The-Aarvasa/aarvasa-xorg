@@ -6,6 +6,10 @@ import Ai from './pages/Ai';
 import About from './pages/About';
 import Navbar from './components/Navbar';
 // import Navbar from '@/dark/components/Navbar.jsx';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 import Listing from './pages/Listing';
 import Property from './components/listing/Property';
@@ -74,7 +78,7 @@ function AppLayout() {
   return (
     <div className="min-h-screen flex flex-col">
       <main className="flex-grow">
-  
+
         {!hideNavAndFooter && <Navbar />}
 
         <Routes>
@@ -84,26 +88,26 @@ function AppLayout() {
           <Route path="/otp" element={<Otp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/agents" element={<Agents />} />
-            <Route path="/agents/:id" element={<AgentDetails />} />
-            <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/agents" element={<Agents />} />
+          <Route path="/agents/:id" element={<AgentDetails />} />
+          <Route path="/services" element={<Services />} />
 
-            <Route path="/listings" element={<Listing />}>
-              <Route index element={<PropertyMain />} />
-              <Route path="ratestrends" element={
-                <>
-                  <ShowTrends />
-                  <Graphs />
-                </>
-              } />
-            </Route>
+          <Route path="/listings" element={<Listing />}>
+            <Route index element={<PropertyMain />} />
+            <Route path="ratestrends" element={
+              <>
+                <ShowTrends />
+                <Graphs />
+              </>
+            } />
+          </Route>
 
-            <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
+          <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
 
           {/* Protected Routes */}
           <Route element={<PrivateRoute />}>
-            
+
             <Route path="/news" element={<News />} />
 
             <Route path="/profile" element={<Profile />}>
@@ -157,7 +161,7 @@ function AppLayout() {
 function App() {
   return (
     <Router>
-      <AuthProvider> 
+      <AuthProvider>
         <FilterProvider>
           <AppLayout />
           <ToastContainer
@@ -170,8 +174,8 @@ function App() {
             draggable
             pauseOnHover
             theme="colored"
-            className="z-[99999999] mt-16 w-full p-8" 
-  toastClassName="rounded-md shadow-lg"
+            className="z-[99999999] mt-16 w-full p-8"
+            toastClassName="rounded-md shadow-lg"
           />
         </FilterProvider>
       </AuthProvider>

@@ -59,14 +59,8 @@ export default function SignIn() {
                 localStorage.setItem("refreshToken", refreshToken);
                 localStorage.setItem("email", email);
 
-                setAlert({
-                    msg: "Login successful you will be redirected to home page .",
-                    color: "green",
-                    type: "success"
-                })
-                setTimeout(() => {
-                    window.location.href = "/";
-                }, 3000);
+
+                window.location.href = "/";
             } else {
                 setAlert({
                     msg: "We are unable to log you in at the moment",
@@ -83,7 +77,7 @@ export default function SignIn() {
                     type: "info"
                 })
             }
-            else{
+            else {
                 setAlert({
                     msg: "Sign in failed . Bad gateway , please try again later .",
                     color: "red",

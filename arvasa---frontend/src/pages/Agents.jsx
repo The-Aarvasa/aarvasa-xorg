@@ -61,19 +61,31 @@ export function Agents() {;
         <p className="text-gray-600 font-['Poppins'] pt-5 text-md md:text-2xl">Work with a local expert backed by top brokerages to smoothly navigate your home <br /> journey from start to finish</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-[100px] justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 sm:px-6 md:px-10 justify-items-center">
         {dummyAgents.map((agent, i) => (
-          <div key={i} onClick={() => navigate(`/agents/${i}`)} className="cursor-pointer w-[279px] bg-white rounded-[20px] shadow-md hover:shadow-2xl transition">
-            <img src={agent.image} className="rounded-[20px] h-[323px] w-[279px] object-cover mb-4" />
-            <div className='flex justify-between items-center px-5 pb-3'>
+          <div
+            key={i}
+            onClick={() => navigate(`/agents/${i}`)}
+            className="cursor-pointer w-full max-w-[279px] bg-white rounded-[20px] shadow-md hover:shadow-2xl transition"
+          >
+            <img
+              src={agent.image}
+              className="rounded-[20px] h-[323px] w-full object-cover mb-4"
+            />
+            <div className="flex justify-between items-center px-5 pb-3">
               <h3 className="font-semibold font-['Poppins'] text-base">{agent.name}</h3>
               <p className="text-xs font-semibold text-orange-500">{agent.rating} ★</p>
             </div>
-            <p className="text-sm px-5 pb-1 font-['Poppins']"><b>{agent.priceRange}</b> team price range</p>
-            <p className="text-sm px-5 pb-3 font-['Poppins']"><b>{agent.sales}</b> sales last 12 months</p>
+            <p className="text-sm px-5 pb-1 font-['Poppins']">
+              <b>{agent.priceRange}</b> team price range
+            </p>
+            <p className="text-sm px-5 pb-3 font-['Poppins']">
+              <b>{agent.sales}</b> sales last 12 months
+            </p>
           </div>
         ))}
       </div>
+
 
       </div>
     </div>
