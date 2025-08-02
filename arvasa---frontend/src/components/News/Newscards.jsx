@@ -81,12 +81,7 @@ const Newscards = () => {
                 ))}
             </div>
 
-            {/* See More Button */}
-            <div className="flex mb-8 items-center justify-center">
-                <div className="group w-40 sm:w-56 h-12 sm:h-15 px-4 sm:px-8 py-3 sm:py-6 rounded-3xl outline outline-2 outline-offset-[-1px] outline-[#6D1E3D] inline-flex justify-center items-center gap-2.5 transition-all duration-300 hover:bg-[#6D1E3D] hover:text-white hover:outline-[#6D1E3D]">
-                    <div className="text-[#6D1E3D] text-center justify-start text-lg sm:text-2xl font-medium font-['Montserrat'] leading-none group-hover:text-white transition-colors duration-300">See more</div>
-                </div>
-            </div>
+            
         </div>
     )
 }
