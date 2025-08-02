@@ -6,6 +6,7 @@ import uday from "/assets/uday.png"
 import anirudh from "/assets/Team Anirudh.jpg"
 import arjit from "/assets/Team Arjit.jpg"
 import sriaditya from "/assets/sriaditya.png"
+import { motion } from "framer-motion";
 import { Heading } from "../Utils/Heading";
 import { useState } from "react";
 
