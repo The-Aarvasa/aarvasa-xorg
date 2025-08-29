@@ -39,6 +39,9 @@ const Landing = () => {
         setSelected(prev => prev === index ? -1 : index);
     }
 
+    // document.documentElement.classList.add("dark");
+        
+
 
 
     const handleChange = (key, value) => {
@@ -75,9 +78,7 @@ const Landing = () => {
     return (
         <>
 
-            <div className='overflow-x-hidden py-4 px-2 md:mx-8 overflow-hidden flex w-auto flex-wrap lg:flex-nowrap h-full items-center justify-center md:justify-between md:px-4 rounded-lg lg:h-[80vh]' style={{
-                background: "linear-gradient(to right, #F9EAF1, #8C2841)",
-            }} >
+            <div className='overflow-x-hidden dark:bg-none bg-gradient-to-r from-[#F9EAF1] to-[#8C2841] dark:bg-black py-4 px-2 md:mx-8 overflow-hidden flex w-auto flex-wrap lg:flex-nowrap h-full items-center justify-center md:justify-between md:px-4 rounded-lg lg:h-[80vh]' >
                 <div className='content md:py-auto'>
                     <p className='text-[#692234] text-xl md:text-2xl'>Welcome to Aarvasa</p>
                     <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8'>Manage your <br></br> property</h1>
