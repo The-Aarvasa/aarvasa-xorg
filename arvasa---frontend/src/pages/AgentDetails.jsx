@@ -121,7 +121,15 @@ export default function AgentDetails() {
 
       )}
 
+<<<<<<< HEAD
       
+=======
+      <div className="text-center mt-4">
+        <button onClick={() => setVisible(v => v + 1)} className="border px-6 py-2 rounded-full hover:bg-gray-100 transition">
+          See more
+        </button>
+      </div>
+>>>>>>> 71a51e6e2ce77f81fb6f7f756a158280748d0451
     </div>
    </div>
 
