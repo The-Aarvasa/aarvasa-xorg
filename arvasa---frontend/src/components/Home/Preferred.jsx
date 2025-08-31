@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Heading } from '../Utils/Heading'
 import { Star } from 'lucide-react'
 import { motion, useInView } from 'framer-motion';
@@ -12,34 +13,35 @@ import "swiper/css/pagination";
 
 const Preferred = () => {
     const ref = useRef(null);
+    const navigate = useNavigate();
     const [data, setData] = useState([
         {
             id: 1,
             img: "/p-1.jpg",
-            title: "Sobha Hearland II Villas",
-            desc: "Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc",
+            title: "Greenwood Residency",
+            desc: "A modern gated community offering 2 & 3 BHK apartments with lush gardens, children’s play area, and 24/7 security.",
             ratings: 4.6
         },
         {
             id: 2,
             img: "/p-2.png",
-            title: "Sobha Hearland II Villas",
-            desc: "Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc",
+            title: "Silver Lake Villas",
+            desc: "Luxury villas overlooking a serene lake, equipped with private pools, smart home systems, and eco-friendly designs.",
             ratings: 4.6
         },
         {
             id: 3,
             img: "/p-3.png",
-            title: "Sobha Hearland II Villas",
-            desc: "Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc",
+            title: "Rosewood Heights",
+            desc: "Elegant bungalow offering comfort and luxury together. Crafted with premium finishes, it brings warmth and sophistication.",
             ratings: 4.6
         }
         ,
         {
             id: 4,
             img: "/p-1.jpg",
-            title: "Sobha Hearland II Villas",
-            desc: "Your will have everything nearby supermarket, buses , station, the carmen neighborhood, etc",
+            title: "Crystal Nest",
+            desc: "Modern architecture with stylish interiors and open spaces. Its minimalistic yet chic design makes it stand out in any neighborhood.",
             ratings: 4.6
         },
 
@@ -70,6 +72,7 @@ const Preferred = () => {
                     {[1, 2, 3].map((item, index) => (
                         <div
                             key={index}
+                            // onClick={() => navigate('/listings')}
                             className="w-full sm:w-[45%] md:w-[26%] lg:w-[28%] cursor-pointer h-auto bg-white rounded-xl border border-2 border-[#FCDEAC] hover:scale-[1.02] duration-500"
                         >
                             <div className="w-full h-auto bg-[#FCDEAC] rounded-t-xl flex flex-wrap sm:flex-nowrap p-2 sm:p-3 justify-between items-center">
@@ -121,15 +124,15 @@ const Preferred = () => {
                         }}
 
                         breakpoints={{
-                            640 : {
-                                slidesPerView : 2,
+                            640: {
+                                slidesPerView: 2,
                             },
-                            1080 : {
-                                slidesPerView : 3,
-                                spaceBetween : 20,
+                            1080: {
+                                slidesPerView: 3,
+                                spaceBetween: 20,
                             },
-                          
-                          
+
+
                         }}
 
                         navigation={{
@@ -142,7 +145,10 @@ const Preferred = () => {
                     >
                         {data.map((card) => (
                             <SwiperSlide key={card.id}>
-                                <div className="card p-2 h-[450px] bg-white shadow-lg rounded-lg">
+                                <div
+                                    onClick={() => navigate('/listings')}
+                                    className="card p-2 h-[450px] bg-white shadow-lg rounded-lg cursor-pointer hover:shadow-xl transition-shadow duration-300"
+                                >
                                     <img src={card.img} className='w-full max-h-[250px] min-h-[250px] object-cover' alt="" />
                                     <h1 className='text-lg m-2 font-semibold'>{card.title}</h1>
                                     <p className='max-w-[600px] m-2 font-[500] text-sm mt-4'>{card.desc}</p>
@@ -150,9 +156,9 @@ const Preferred = () => {
                                     <div className="details flex items-center gap-2 m-2">
                                         <div className="star flex items-center gap-2">
                                             {[1, 2, 3, 4, -1].map((currElem, index) => {
-                                                   return(
-                                                     <Star key={index} size={16} color='orange' fill={currElem > 0 ? 'orange' : 'white'}></Star>
-                                                   )
+                                                return (
+                                                    <Star key={index} size={16} color='orange' fill={currElem > 0 ? 'orange' : 'white'}></Star>
+                                                )
                                             })}
                                         </div>
                                         <div className="text">
