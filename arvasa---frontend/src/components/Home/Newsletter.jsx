@@ -46,7 +46,7 @@ export function Newsletter() {
 
             <form
               onSubmit={handleSubmit}
-              className="flex flex-col sm:flex-row items-center bg-white gap-2 md:gap-0 rounded-md md:rounded-full md:px-4 md:py-2 md:max-w-lg z-10"
+              className="flex flex-col dark:bg-gray-600 sm:flex-row items-center bg-white gap-2 md:gap-0 rounded-md md:rounded-full md:px-4 md:py-2 md:max-w-lg z-10"
             >
               <input
                 type="email"

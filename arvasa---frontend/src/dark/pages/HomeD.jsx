@@ -25,7 +25,7 @@ import { useNavigate } from "react-router-dom"
     return (
         <>
 
-            <div className="bg-[#000000] pb-[80px] pt-[100px] overflow-x-hidden">
+            <div className="pb-[80px] pt-[100px] dark:bg-black overflow-x-hidden">
                 <Landing />
                 <ViewAnimate />
                 <ServicesCards />

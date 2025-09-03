@@ -24,12 +24,12 @@ const FAQItem = ({ faq, index, activeIndex, setActiveIndex }) => {
   const isOpen = activeIndex === index;
 
   return (
-    <div className="mb-4 transition-all duration-300 ease-in-out">
+    <div className="mb-4 dark:text-black transition-all duration-300 ease-in-out">
       <button
         className="w-full flex justify-between items-center p-4 bg-[#a13d52] text-white rounded-md focus:outline-none shadow-md transition-colors"
         onClick={() => setActiveIndex(isOpen ? null : index)}
       >
-        <div className="flex items-center gap-3">
+        <div className="flex dark:text-black items-center gap-3">
           <MessageSquareText className="w-5 h-5" />
           <span className="font-semibold text-sm md:text-lg">{faq.question}</span>
         </div>
@@ -42,7 +42,7 @@ const FAQItem = ({ faq, index, activeIndex, setActiveIndex }) => {
         }`}
       >
         <div className="overflow-hidden">
-          <div className="ml-10 bg-[#f3e1e4] text-black text-sm p-4 rounded-md flex items-start gap-2 shadow">
+          <div className="ml-10 bg-[#f3e1e4] dark:bg-gray-400  text-black text-sm p-4 rounded-md flex items-start gap-2 shadow">
             <FileText className="w-4 h-4 mt-1 text-[#8C2841]" />
             <p>{faq.answer}</p>
           </div>

@@ -62,12 +62,14 @@ import Terms from './pages/Terms';
 import Refund from './pages/Refund';
 import Security from './pages/Security';
 import Questions from './pages/Questions';
-
+import { useContext } from "react";
+import { ThemeContext } from "./context/ThemeContext";
 import ServicesD from './dark/pages/ServicesD'; 
 import HomeD from './dark/pages/HomeD';
 import AboutD from './dark/pages/AboutD'; 
 
 function AppLayout() {
+   const { theme } = useContext(ThemeContext);
   const [popup, setPop] = useState(false);
   const location = useLocation();
   const hideNavAndFooter =
@@ -76,7 +78,11 @@ function AppLayout() {
     location.pathname === '/signup';
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div
+      className={`min-h-screen flex flex-col transition-colors duration-300 
+        ${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}
+      `}
+    >
       <main className="flex-grow">
 
         {!hideNavAndFooter && <Navbar />}

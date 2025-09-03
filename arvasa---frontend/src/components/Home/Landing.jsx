@@ -78,13 +78,27 @@ const Landing = () => {
     return (
         <>
 
-            <div className='overflow-x-hidden dark:bg-none bg-gradient-to-r from-[#F9EAF1] to-[#8C2841] dark:bg-black py-4 px-2 md:mx-8 overflow-hidden flex w-auto flex-wrap lg:flex-nowrap h-full items-center justify-center md:justify-between md:px-4 rounded-lg lg:h-[80vh]' >
-                <div className='content md:py-auto'>
-                    <p className='text-[#692234] text-xl md:text-2xl'>Welcome to Aarvasa</p>
-                    <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8'>Manage your <br></br> property</h1>
-                    <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
+            <div
+  className="
+    overflow-x-hidden
+    bg-gradient-to-r from-[#F9EAF1] to-[#8C2841]    /* Default: gradient */
+    dark:bg-gradient-to-r dark:from-[#1C080D] dark:to-[#8C2841] /* Dark mode: same gradient */
+    py-4 px-2
+    md:mx-8
+    overflow-hidden
+    flex w-auto flex-wrap lg:flex-nowrap
+    h-full items-center justify-center
+    md:justify-between md:px-4
+    rounded-lg lg:h-[80vh]
+  "
+>
 
-                    <div className='w-auto bg-white flex flex-col mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
+                <div className='content md:py-auto'>
+                    <p className='text-[#692234] text-xl md:text-2xl dark:text-white'>Welcome to Aarvasa</p>
+                    <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8 dark:text-white'>Manage your <br></br> property</h1>
+                    <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8 dark:text-white'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
+
+                    <div className='w-auto bg-white dark:bg-transparent flex flex-col mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
 
                         <div className="searches space-y-4 md:space-y-0 flex items-center gap-2 flex-wrap lg:flex-nowrap">
                             <div className="search_bar w-full flex items-center gap-2 hover:text-[#8C2841]">
@@ -188,6 +202,10 @@ const Landing = () => {
                         }}
                         src="/images/hero.png" className='w-full md:hover:transform hover:scale-[1.1] transition-all relative z-[999]' alt="" />
                 </div>
+            </div>
+
+            <div className="bg-red-500 tet-red-500 flex items-center justify-center">
+                
             </div>
 
         </>
