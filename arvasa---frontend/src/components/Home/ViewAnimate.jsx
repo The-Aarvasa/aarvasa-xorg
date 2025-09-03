@@ -88,14 +88,14 @@ const ViewAnimate = () => {
           </Link>
 
           {/* Main Property Card */}
-          <div className="relative p-5 border border-4 border-b-[#8C2841] border-l-[#8C2841] rounded-lg lg:w-[410px] p-1 bg-white shadow-lg min-h-[500px] z-[9]">
+          <div className="relative p-5 dark:bg-gray-800 border border-4 border-b-[#8C2841] border-l-[#8C2841] rounded-lg lg:w-[410px] p-1 bg-white shadow-lg min-h-[500px] z-[9]">
             <img
               src={currData.imageUrls?.[0]}
               className="w-full h-[290px] p-1 rounded-lg object-cover"
               alt="building"
             />
-            <h1 className="text-2xl font-bold mt-2 px-2">{currData.propertyType}</h1>
-            <p className="text-sm mt-2 px-2">
+            <h1 className="text-2xl font-bold dark:text-white mt-2 px-2">{currData.propertyType}</h1>
+            <p className="text-sm mt-2 px-2 dark:text-white">
               {currData?.shortDescription?.length > 250
                 ? `${currData.shortDescription.slice(0, 250)}... `
                 : currData?.shortDescription}
@@ -146,10 +146,10 @@ const ViewAnimate = () => {
                 handleButtonClick(i);
                 setactiveIndex(i);
               }}
-              className={`text-left border border-1 border-[#D75D87] ${
+              className={`text-left dark:bg-gray-800 border border-1 border-[#D75D87] ${
                 index === i
-                  ? "bg-[#8C2841] text-black border-4 rotate-[5deg] transform hover:scale-[1.1]"
-                  : ""
+                  ? "bg-[#8C2841] dark:bg-gray-800 text-black border-4 rotate-[5deg] transform hover:scale-[1.1]"
+                  : "dark:bg-gray-800"
               } hover:bg-[#8C2841] hover:text-white transition-all px-4 py-2 rounded-md bg-white relative ${
                 i === 1
                   ? "md:left-[30px]"
@@ -160,10 +160,10 @@ const ViewAnimate = () => {
                   : ""
               }`}
             >
-              <p className={`${index === i ? "text-[#D75D87] font-bold" : ""}`}>
+              <p className={`${index === i ? "text-[#D75D87] dark:text-white font-bold" : ""}`}>
                 {btn.propertyTitle}
               </p>
-              <p className={`${index === i ? "text-black" : ""}`}>{btn.subtitle}</p>
+              <p className={`dark:text-white ${index === i ? "text-black" : ""}`}>{btn.subtitle}</p>
             </button>
           ))}
         </div>

@@ -127,7 +127,11 @@ const Navbar = () => {
                                 }}
                             >
                                 Logout
-                            </button> : null}
+                            </button> : 
+                             <Link to="/signup" className="flex md:hidden items-center gap-2">
+                                <span>Signup</span>
+                                <LogIn />
+                            </Link>}
                     </ul>
 
                     {/* Profile/Logout/Login */}
@@ -157,7 +161,7 @@ const Navbar = () => {
                                 </button>
                             </div>
                         ) : (
-                            <Link to="/signup" className="flex items-center gap-2">
+                           <Link to="/signup" className="hidden md:flex items-center gap-2">
                                 <span>Signup</span>
                                 <LogIn />
                             </Link>
