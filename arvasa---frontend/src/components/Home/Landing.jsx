@@ -81,11 +81,11 @@ const Landing = () => {
                     <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8'>Manage your <br></br> property</h1>
                     <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
                     <button onClick={handleFilter} className='flex w-full md:w-fit items-center justify-center gap-3 p-2 px-4 bg-gradient-to-r from-[#F7A240] to-[#F5C01A] group-hover:transition-all group-hover:transition-delay-[7s]  group-hover:from-[#FFFDF3] font-bold group-hover:text-white group-hover:bg-[#8C2841] rounded-lg mb-4 ml-12' >
-                        <Search />
-                        Search
-                    </button>
+                                <Search />
+                                Search
+                            </button>
                     <div className=' w-auto mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
-
+                        
                         <div className="searches space-y-4 md:space-y-0 flex items-center gap-2 flex-wrap lg:flex-nowrap">
                             <div className="search_bar w-full flex items-center gap-2 hover:text-[#8C2841]">
                                 <MapPin></MapPin>
@@ -130,7 +130,7 @@ const Landing = () => {
 
                             </div>
                             <div className="budget w-full flex items-center gap-2 hover:text-[#8C2841]">
-                                <IndianRupee />
+                                <IndianRupee/>
                                 <Select
                                     options={amount}
                                     value={amount.find(v => v.value === filters.budget) || null}
