@@ -8,6 +8,7 @@ import arjit from "/assets/Team Arjit.jpg"
 import sriaditya from "/assets/sriaditya.png"
 import { Heading } from "../Utils/Heading";
 import { useState } from "react";
+import { motion } from "framer-motion";
 
 const teamMembers = [
   {

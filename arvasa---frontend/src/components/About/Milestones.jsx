@@ -47,8 +47,8 @@ const Milestones = () => {
 
 
                                 </div>
-                                <div className="text-center justify-start text-black text-3xl font-medium font-['Poppins'] leading- mt-3">{item.month}</div>
-                                <div className="w-56 justify-start text-black text-xl font-medium font-['Poppins'] break-words whitespace-normal leading-snug mt-3 flex gap-1">
+                                <div className="text-center justify-start text-black text-3xl font-medium font-['Poppins'] leading- mt-3 dark:text-white">{item.month}</div>
+                                <div className="w-56 justify-start text-black text-xl font-medium font-['Poppins'] break-words whitespace-normal leading-snug mt-3 flex gap-1 dark:text-white">
                                     <div>•</div>
                                     <div>
                                         <p className='text-sm font-semibold'>{item.content}</p>
