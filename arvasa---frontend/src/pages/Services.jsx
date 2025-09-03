@@ -22,7 +22,7 @@ const Services = () => {
     };
     return (
         <>
-            <section className="bg-orange-50 pb-[80px] pt-[100px]">
+            <section className="bg-orange-50 pb-[80px] pt-[100px] dark:bg-black">
 
                 <Page></Page>
                 <WhoWeAre scrollService={scrollService} scrollToContact={scrollToContact}/>

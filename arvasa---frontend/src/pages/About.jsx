@@ -23,7 +23,7 @@ const About = () => {
   return (
     <>
 
-      <div className='bg-orange-50 overfl pt-[80px] pb-[100px]'>
+      <div className='bg-orange-50 overfl pt-[80px] pb-[100px] dark:bg-black'>
         <Page></Page>
         <Info scrollToContact={scrollToContact} />
         <Milestones />
