@@ -55,7 +55,7 @@ const AllServices = ({ref}) => {
   return (
     <section ref={ref} className="px-2 py-10 mx- md:mx-8 font-[poppins] overflow-x-hidden">
       <Heading label="Your Real Estate Guide" />
-      <h2 className="font-semibold text-left text-md text-gray-600 mb-10 md:text-xl">
+      <h2 className="font-semibold text-left text-md text-gray-600 mb-10 md:text-xl dark:text-[#BCBCBC]">
         Aarvasa Simplifies Real Estate with Seamless Transactions, Investments, and
         Property Monetization
       </h2>
@@ -98,7 +98,7 @@ const AllServices = ({ref}) => {
               />
               <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left gap-3">
                 <h3 className="font-semibold text-3xl md:text-4xl">{service.title}:</h3>
-                <p className="text-sm md:text-lg text-left text-gray-800">{service.description}</p>
+                <p className="text-sm md:text-lg text-left text-gray-800 dark:text-[#BCBCBC]">{service.description}</p>
                 <div>
                   {/* <button className="mt-2 border border-[#82213a] px-4 text-sm py-2 rounded-md text-[#82213a] hover:bg-[#82213a] hover:text-white transition duration-300 md:text-xl">
                     Read More
