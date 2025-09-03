@@ -6,6 +6,7 @@ import { useNavigate } from 'react-router-dom';
 const FeatureCounter = ({ value, setValue }) => {
   const increment = () => setValue(prev => prev + 1);
   const decrement = () => setValue(prev => Math.max(0, prev - 1));
+
   return (
     <div className="flex items-center border border-gray-300 rounded-lg">
       <button className="w-8 h-8 flex items-center justify-center text-gray-700 hover:bg-gray-100 rounded-l-lg" onClick={decrement}>
@@ -24,10 +25,11 @@ const FeatureCounter = ({ value, setValue }) => {
 const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData }) => {
   const navigate = useNavigate();
 
+  const isPlot = listingData.propertyType === 'Plot';
+
   const [priceType, setPriceType] = useState(listingData.unit || 'Monthly');
   const [sellPrice, setSellPrice] = useState(listingData.price || '');
   const [rentPrice, setRentPrice] = useState(listingData.priceD || '');
-
   const [bedrooms, setBedrooms] = useState(listingData.bedrooms || 2);
   const [bathrooms, setBathrooms] = useState(listingData.bathrooms || 2);
   const [balcony, setBalcony] = useState(listingData.balcony || 1);
@@ -37,18 +39,17 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
   const [shortDesc, setShortDesc] = useState(listingData.shortDescription || '');
   const [detailedDescription, setDetailedDescription] = useState(listingData.detailedDescription || '');
   const [plotSize, setPlotSize] = useState(listingData.plotSize || '');
-
   const [carpetArea, setCarpetArea] = useState(listingData.carpetArea || '');
-  // const [carpetAreaUnit, setCarpetAreaUnit] = useState(listingData.carpetAreaUnit || 'sq.ft');
   const [floor, setFloor] = useState(listingData.floor || '');
   const [facing, setFacing] = useState(listingData.facing || '');
   const [ownershipType, setOwnershipType] = useState(listingData.ownershipType || '');
   const [furnished, setFurnished] = useState(listingData.furnished || '');
-  const [price, setPrice] = useState(0);
   const [totalPerSq, setTotalPerSq] = useState(0);
 
   const facilities = ['Parking Lot', 'Pet Allowed', 'Garden', 'Park'];
-  const isPlot = listingData.propertyCategory === 'Plot';
+  const [selectedLandmarks, setSelectedLandmarks] = useState(listingData.nearbyLandmarks || []);
+  const [landmarkInput, setLandmarkInput] = useState('');
+
 
   const handleFacilityToggle = (facility) => {
     setSelectedFacilities(prev =>
@@ -58,10 +59,11 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
 
   useEffect(() => {
     const numericPrice = parseFloat(sellPrice.toString().replace(/[^0-9.]/g, ''));
-    const numericPlot = parseFloat(plotSize.toString().replace(/[^0-9.]/g, ''));
-    const total = numericPrice * numericPlot;
+    const areaValue = isPlot ? carpetArea : plotSize;
+    const numericArea = parseFloat(areaValue.toString().replace(/[^0-9.]/g, ''));
+    const total = numericPrice * numericArea;
     setTotalPerSq(isNaN(total) ? 0 : total);
-  }, [sellPrice, plotSize]);
+  }, [sellPrice, carpetArea, plotSize, isPlot]);
 
   const handlePublish = () => {
     const numericSellPrice = parseFloat(sellPrice.toString().replace(/[^0-9.]/g, ''));
@@ -76,14 +78,16 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
       shortDescription: shortDesc,
       detailedDescription,
       carpetArea,
-      totalPerSq: totalPerSq,
+      totalPerSq,
       floor,
       facing,
       ownershipType,
+      nearbyLandmarks: selectedLandmarks,
       furnished,
       ...(isPlot
-        ? { plotSize }
+        ? { plotSize: carpetArea } // use carpetArea input as actual plotSize for plots
         : {
+          plotSize,
           bedrooms,
           bathrooms,
           balcony,
@@ -97,7 +101,7 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
 
   return (
     <div className="min-h-screen bg-[#fffcf2] flex items-center justify-center p-4 font-poppins">
-      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-xl md:max-w-4xl relative border border-gray-300">
+      <div className="bg-white rounded-2xl shadow-lg p-6 md:p-8 w-full max-w-4xl relative border border-gray-300">
         <button onClick={() => navigate('/listings')} className="absolute top-3 right-3 md:top-4 md:right-4 text-gray-500 hover:text-gray-700">
           <IoClose size={24} />
         </button>
@@ -108,10 +112,16 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
 
         <h1 className="text-xl md:text-3xl font-bold text-center text-[#3D3D3D] mb-6">Almost Finish, Complete the Listing</h1>
 
-        <div className="mb-6 gap-4 w-full max-w-xl mx-auto">
-          <p className="text-sm font-semibold text-[#3D3D3D] mb-1">{listingData.listingType} Price</p>
+        <div className="mb-6 w-full max-w-xl mx-auto">
+          <p className="text-sm font-semibold text-[#3D3D3D] mb-1">{listingData.listingType} {isPlot ? "Price (per sq.ft)" : "Price"}</p>
           <div className="relative">
-            <input type="text" placeholder="₹ 1800000" value={sellPrice} onChange={e => setSellPrice(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 text-sm pr-10 outline-none" />
+            <input
+              type="text"
+              placeholder="₹ 1800000"
+              value={sellPrice}
+              onChange={e => setSellPrice(e.target.value)}
+              className="w-full border border-gray-300 rounded-lg p-3 text-sm pr-10 outline-none"
+            />
             <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#3D3D3D]">₹</span>
           </div>
         </div>
@@ -133,28 +143,31 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
 
         {isPlot ? (
           <>
-            {/* Plot-specific fields */}
             <div className="mb-6 w-full max-w-xl mx-auto">
-              <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Plot size (sq.ft)</p>
-              <input type="text" placeholder="Plot size in Sq. Ft." value={carpetArea} onChange={e => setCarpetArea(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none" />
+              <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Plot Size (in sq.ft)</p>
+              <input
+                type="text"
+                placeholder="e.g. 4000"
+                value={carpetArea}
+                onChange={e => setCarpetArea(e.target.value)}
+                className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none"
+              />
             </div>
 
-            <div className="mb-6 gap-4 w-full max-w-xl mx-auto">
-              <p className="text-sm font-semibold text-[#3D3D3D] mb-1">{listingData.listingType} Price</p>
-              <div className="relative">
-                <input type="text" placeholder="₹ 1800000 (price per sq.ft)" value={sellPrice} onChange={e => setSellPrice(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 text-sm pr-10 outline-none" />
-                <span className="absolute right-3 top-1/2 -translate-y-1/2 text-[#3D3D3D]">₹</span>
-              </div>
-            </div>
+
 
             <div className="mb-6 w-full max-w-xl mx-auto">
-              <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Total cost for the plot</p>
-              <input type="text" placeholder="Estimated cost." value={totalPerSq} readOnly className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none" />
+              <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Total Cost</p>
+              <input
+                type="text"
+                value={`₹ ${totalPerSq.toLocaleString('en-IN')}`}
+                readOnly
+                className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none"
+              />
             </div>
           </>
         ) : (
           <>
-            {/* Apartment-specific fields */}
             <div className="mb-6 flex gap-4 justify-between max-w-xl mx-auto">
               <div className="flex flex-col items-start w-1/3">
                 <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Bedrooms</p>
@@ -170,18 +183,15 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
               </div>
             </div>
 
-            <div className="mb-6 flex gap-4 max-w-xl mx-auto">
-              <div className="w-full">
-                <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Carpet Area</p>
-                <input type="text" placeholder="e.g., 1100" value={plotSize} onChange={e => setPlotSize(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none" />
-              </div>
-              {/* <div className="w-1/2">
-                <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Unit</p>
-                <select value={carpetAreaUnit} onChange={e => setCarpetAreaUnit(e.target.value)} className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none">
-                  <option value="sq.ft">Sq.ft</option>
-                  <option value="sq.m">Sq.m</option>
-                </select>
-              </div> */}
+            <div className="mb-6 w-full max-w-xl mx-auto">
+              <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Carpet Area</p>
+              <input
+                type="text"
+                placeholder="e.g., 1100"
+                value={plotSize}
+                onChange={e => setPlotSize(e.target.value)}
+                className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none"
+              />
             </div>
 
             <div className="mb-6 max-w-xl mx-auto">
@@ -192,8 +202,8 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
                     key={i}
                     onClick={() => handleFacilityToggle(facility)}
                     className={`px-4 py-2 rounded-full border text-sm ${selectedFacilities.includes(facility)
-                        ? 'bg-[#6D1E3D] text-white'
-                        : 'bg-white text-[#3D3D3D] border-gray-300'
+                      ? 'bg-[#6D1E3D] text-white'
+                      : 'bg-white text-[#3D3D3D] border-gray-300'
                       }`}
                   >
                     {facility}
@@ -203,6 +213,51 @@ const CompleteListing = ({ onPrevious, onNext, listingData = {}, setListingData 
             </div>
           </>
         )}
+
+        <div className="mb-6 max-w-xl mx-auto">
+          <p className="text-sm font-semibold text-[#3D3D3D] mb-1">Nearby Landmarks</p>
+
+          {/* Tags Display */}
+          <div className="flex flex-wrap gap-2 mb-2">
+            {selectedLandmarks.map((landmark, index) => (
+              <span
+                key={index}
+                className="bg-gray-200 text-sm text-gray-800 px-3 py-1 rounded-full flex items-center gap-2"
+              >
+                {landmark}
+                <button
+                  type="button"
+                  onClick={() => {
+                    setSelectedLandmarks(prev => prev.filter((_, i) => i !== index));
+                  }}
+                  className="text-gray-600 hover:text-red-500 text-xs"
+                >
+                  <IoClose size={14} />
+                </button>
+              </span>
+            ))}
+          </div>
+
+          {/* Input Box */}
+          <input
+            type="text"
+            placeholder="Type a landmark and press Enter"
+            value={landmarkInput}
+            onChange={e => setLandmarkInput(e.target.value)}
+            onKeyDown={e => {
+              if ((e.key === 'Enter' || e.key === ',') && landmarkInput.trim()) {
+                e.preventDefault();
+                const newLandmark = landmarkInput.trim();
+                if (!selectedLandmarks.includes(newLandmark)) {
+                  setSelectedLandmarks(prev => [...prev, newLandmark]);
+                }
+                setLandmarkInput('');
+              }
+            }}
+            className="w-full border border-gray-300 rounded-lg p-3 text-sm outline-none"
+          />
+        </div>
+
 
 
         <div className="flex flex-col sm:flex-row justify-center px-4 gap-4">

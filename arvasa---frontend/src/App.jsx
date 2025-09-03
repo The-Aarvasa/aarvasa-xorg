@@ -6,6 +6,10 @@ import Ai from './pages/Ai';
 import About from './pages/About';
 import Navbar from './components/Navbar';
 // import Navbar from '@/dark/components/Navbar.jsx';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
+
 
 import Listing from './pages/Listing';
 import Property from './components/listing/Property';
@@ -58,11 +62,14 @@ import Terms from './pages/Terms';
 import Refund from './pages/Refund';
 import Security from './pages/Security';
 import Questions from './pages/Questions';
-
+import { useContext } from "react";
+import { ThemeContext } from "./context/ThemeContext";
 import ServicesD from './dark/pages/ServicesD'; 
 import HomeD from './dark/pages/HomeD';
+import AboutD from './dark/pages/AboutD'; 
 
 function AppLayout() {
+   const { theme } = useContext(ThemeContext);
   const [popup, setPop] = useState(false);
   const location = useLocation();
   const hideNavAndFooter =
@@ -71,9 +78,13 @@ function AppLayout() {
     location.pathname === '/signup';
 
   return (
-    <div className="min-h-screen flex flex-col">
+    <div
+      className={`min-h-screen flex flex-col transition-colors duration-300 
+        ${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}
+      `}
+    >
       <main className="flex-grow">
-  
+
         {!hideNavAndFooter && <Navbar />}
 
         <Routes>
@@ -83,26 +94,26 @@ function AppLayout() {
           <Route path="/otp" element={<Otp />} />
           <Route path="/forgot-password" element={<ForgotPassword />} />
           <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/agents" element={<Agents />} />
-            <Route path="/agents/:id" element={<AgentDetails />} />
-            <Route path="/services" element={<Services />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/agents" element={<Agents />} />
+          <Route path="/agents/:id" element={<AgentDetails />} />
+          <Route path="/services" element={<Services />} />
 
-            <Route path="/listings" element={<Listing />}>
-              <Route index element={<PropertyMain />} />
-              <Route path="ratestrends" element={
-                <>
-                  <ShowTrends />
-                  <Graphs />
-                </>
-              } />
-            </Route>
+          <Route path="/listings" element={<Listing />}>
+            <Route index element={<PropertyMain />} />
+            <Route path="ratestrends" element={
+              <>
+                <ShowTrends />
+                <Graphs />
+              </>
+            } />
+          </Route>
 
-            <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
+          <Route path="/listings/propertydetails/:id" element={<PropertyDetails />} />
 
           {/* Protected Routes */}
           <Route element={<PrivateRoute />}>
-            
+
             <Route path="/news" element={<News />} />
 
             <Route path="/profile" element={<Profile />}>
@@ -141,6 +152,7 @@ function AppLayout() {
           {/*Dark*/}
           <Route path="/servicespremium" element={<ServicesD />} />
           <Route path="/homepremium" element={<HomeD />} />
+          <Route path="/aboutpremium" element={<AboutD />} />
 
         </Routes>
       </main>
@@ -155,7 +167,7 @@ function AppLayout() {
 function App() {
   return (
     <Router>
-      <AuthProvider> 
+      <AuthProvider>
         <FilterProvider>
           <AppLayout />
           <ToastContainer
@@ -168,8 +180,8 @@ function App() {
             draggable
             pauseOnHover
             theme="colored"
-            className="z-[99999999] mt-16 w-full p-8" 
-  toastClassName="rounded-md shadow-lg"
+            className="z-[99999999] mt-16 w-full p-8"
+            toastClassName="rounded-md shadow-lg"
           />
         </FilterProvider>
       </AuthProvider>

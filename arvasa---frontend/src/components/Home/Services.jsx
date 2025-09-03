@@ -23,12 +23,13 @@ const Services = () => {
     return (
         <div className='mx-2 mt-8 mb-8 md:mx-4 relative'>
             <Heading label={"Services"}></Heading>
-            <div className="cols flex md:w-[98%] mx-auto flex-wrap items-center justify-center lg:justify-between">
-                <div className="left_col p-2 bg-red-500 xl:w-[70%] py-8 rounded-lg bg-gradient-to-br gap-8 from-[#3A3A3A] to-[#A0A0A0] grid grid-cols-1 sm:grid-cols-2">
+            <div className="cols
+ flex md:w-[98%] mx-auto flex-wrap items-center justify-center lg:justify-between">
+                <div className="left_col p-2 bg-red-500 xl:w-[70%] py-8 rounded-lg bg-gradient-to-br gap-8 from-[#3A3A3A] to-[#A0A0A0] dark:bg-gradient-to-t dark:from-[#ccc] dark:to-[#737373] grid grid-cols-1 sm:grid-cols-2">
                     {data.map((currElem, index) => {
                         return (
                             <Link to={"/services"} key={index}>
-                                <div key={index} className="flex gap-2 items-center md:min-w-[460px] justify-around p-4 md:m-2 h-[130px] bg-[#D9D9D9] ounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:shadow-gray-700">
+                                <div key={index} className="flex gap-2 dark:bg-gradient-to-r dark:from-[#DBB025] dark:to-[#5B4A1B] dark:text-black items-center md:min-w-[460px] justify-around p-4 md:m-2 h-[130px] bg-[#D9D9D9] ounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 hover:shadow-gray-700">
                                     <img className='w-[100px] rounded-lg' src={currElem.img} alt="" />
                                     <h1>{currElem.text}</h1>
                                     <MoveRight></MoveRight>
@@ -46,19 +47,19 @@ const Services = () => {
 
                     <div className="xl:absolute lg:top-[100px] xl:top-[-10px] md:top-[140px] right-[50px] z-[9999]">
                         {/* Main thought bubble */}
-                        <Link to={"/chat"}> 
-                        <div className="p-4 rounded-[40px] shadow-md bg-[#d3d3d3] w-[180px] relative">
-                           
-                          <p className="text-sm z-[99] text-gray-800 font-medium text-center">Need help finding your dream home?</p>
-                            
+                        <Link to={"/chat"}>
+                            <div className="p-4 rounded-[40px] shadow-md bg-[#d3d3d3] w-[180px] relative">
+
+                                <p className="text-sm z-[99] text-gray-800 font-medium text-center">Need help finding your dream home?</p>
 
 
-                            {/* Thought bubble circles */}
-                            <div className="absolute bottom-[-15px] left-[15px] w-[15px] h-[15px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
-                            <div className="absolute bottom-[-30px] left-[5px] w-[10px] h-[10px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
-                            <div className="absolute bottom-[-40px] left-[-5px] w-[6px] h-[6px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
-                        </div>
-                            </Link>
+
+                                {/* Thought bubble circles */}
+                                <div className="absolute bottom-[-15px] left-[15px] w-[15px] h-[15px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
+                                <div className="absolute bottom-[-30px] left-[5px] w-[10px] h-[10px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
+                                <div className="absolute bottom-[-40px] left-[-5px] w-[6px] h-[6px] rounded-full bg-[#d3d3d3]  shadow-sm"></div>
+                            </div>
+                        </Link>
                     </div>
 
                     {/* Existing man image */}

@@ -12,7 +12,7 @@ import Page from '../components/listing/Page'
 import NavbarRaw from '../components/NavbarRaw'
 import Footer from '../components/Footer'
 import { useRef } from 'react'
-const About = () => {
+const AboutD = () => {
 
   const contactRef = useRef(null);
 
@@ -41,4 +41,4 @@ const About = () => {
   )
 }
 
-export default About
+export default AboutD

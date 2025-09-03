@@ -27,7 +27,7 @@ export const ServicesCards = () => {
     return (
     <div className="px-6 mt-4">
         <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-[30px]">
-        <div className="bg-pink-800 text-white p-6 rounded-lg flex flex-col items-center justify-center text-center">
+        <div className="bg-pink-800 dark:bg-gradient-to-r dark:from-[#DBB025] dark:to-[#5B4A1B] dark:text-black text-white p-6 rounded-lg flex flex-col items-center justify-center text-center">
             <div className="">
                 <img src="./buyHome.png" alt="List Icon" className="h-[150px] w-[150px]" />
             </div>
@@ -38,7 +38,7 @@ export const ServicesCards = () => {
                 Buy a home
             </button>
         </div>
-        <div className="bg-pink-800 text-white p-6 rounded-lg flex flex-col items-center justify-center text-center">
+        <div className="bg-pink-800 dark:bg-gradient-to-r dark:from-[#DBB025] dark:to-[#5B4A1B] dark:text-black text-white p-6 rounded-lg flex flex-col items-center justify-center text-center">
             <div className="-mt-14">
                 <img src="./listProperty.png" alt="List Icon" className="h-[250px] w-[250px]" />
             </div>
@@ -51,7 +51,7 @@ export const ServicesCards = () => {
             </button>
             </Link>
         </div>
-        <div className="bg-pink-800 text-white p-6 rounded-lg flex flex-col items-center justify-center text-center">
+        <div className="bg-pink-800 dark:bg-gradient-to-r dark:from-[#DBB025] dark:to-[#5B4A1B] dark:text-black text-white p-6 rounded-lg flex flex-col items-center justify-center text-center">
             <div className="-mb-8 -mt-10">
                 <img src="./rentHome.png" alt="Rent Icon" className="h-[250px] w-[280px]" />
             </div>

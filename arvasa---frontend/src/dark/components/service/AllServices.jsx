@@ -99,11 +99,6 @@ const AllServices = ({ref}) => {
               <div className="flex flex-col justify-center md:w-1/2 text-center md:text-left gap-3">
                 <h3 className="font-semibold text-xl md:text-3xl text-[#FFFFFF]">{service.title}:</h3>
                 <p className="text-sm md:text-md text-left text-[#BCBCBC]">{service.description}</p>
-                <div>
-                  <button className="mt-2 border border-[#F5D5E2] px-4 text-sm py-2 rounded-md text-[#82213a] hover:bg-[#82213a] hover:text-white transition duration-300 md:text-xl">
-                    Read More
-                  </button>
-                </div>
               </div>
             </motion.div>
           );

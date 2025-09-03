@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import FilterBar from '../components/Agent/FilterBar';
 import NavbarRaw from '../components/NavbarRaw';
@@ -43,11 +42,9 @@ export function Agents() {;
 
   return (
     <>
-   <div className='bg-orange-50 pt-[90px] pb-[100px]'>
+   <div className='bg-orange-50 dark:bg-black pt-[90px] pb-[100px]'>
     <Page></Page>
-
-
-      <div className="mx-auto md:px-[30px]">
+    <div className="mx-auto md:px-[30px]">
       <section className="rounded-xl overflow-hidden mb-12">
         <div className="h-[800px] bg-cover bg-center bg-[url('/agentPage.png')] flex flex-col justify-center items-center text-white text-center">
           <h2 className="text-2xl md:text-4xl font-['Poppins'] font-semibold mb-2 -mt-5">MEET OUR AGENTS</h2>
@@ -57,24 +54,34 @@ export function Agents() {;
       </section>
 
       <div className="text-center mb-8 mt-20">
-        <h2 className="text-2xl md:text-4xl font-['Poppins'] font-semibold">MEET OUR AGENTS</h2>
-        <p className="text-gray-600 font-['Poppins'] pt-5 text-md md:text-2xl">Work with a local expert backed by top brokerages to smoothly navigate your home <br /> journey from start to finish</p>
+        <h2 className="text-2xl md:text-4xl font-['Poppins'] font-semibold dark:bg-gradient-to-r dark:from-yellow-500 dark:to-yellow-800 dark:bg-clip-text dark:text-transparent">MEET OUR AGENTS</h2>
+        <p className="text-gray-600 dark:text-white font-['Poppins'] pt-5 text-md md:text-2xl">Work with a local expert backed by top brokerages to smoothly navigate your home <br /> journey from start to finish</p>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10 px-[100px] justify-items-center">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 sm:px-6 md:px-10 justify-items-center">
         {dummyAgents.map((agent, i) => (
-          <div key={i} onClick={() => navigate(`/agents/${i}`)} className="cursor-pointer w-[279px] bg-white rounded-[20px] shadow-md hover:shadow-2xl transition">
-            <img src={agent.image} className="rounded-[20px] h-[323px] w-[279px] object-cover mb-4" />
-            <div className='flex justify-between items-center px-5 pb-3'>
-              <h3 className="font-semibold font-['Poppins'] text-base">{agent.name}</h3>
-              <p className="text-xs font-semibold text-orange-500">{agent.rating} ★</p>
+          <div
+            key={i}
+            onClick={() => navigate(`/agents/${i}`)}
+            className="cursor-pointer w-full max-w-[279px] bg-white dark:bg-pink-900 rounded-[20px] shadow-md hover:shadow-2xl transition"
+          >
+            <img
+              src={agent.image}
+              className="rounded-[20px] h-[323px] w-full object-cover mb-4"
+            />
+            <div className="flex justify-between items-center px-5 pb-3">
+              <h3 className="font-semibold font-['Poppins'] text-base dark:text-white">{agent.name}</h3>
+              <p className="text-xs font-semibold text-orange-500 dark:text-white">{agent.rating} ★</p>
             </div>
-            <p className="text-sm px-5 pb-1 font-['Poppins']"><b>{agent.priceRange}</b> team price range</p>
-            <p className="text-sm px-5 pb-3 font-['Poppins']"><b>{agent.sales}</b> sales last 12 months</p>
+            <p className="text-sm px-5 pb-1 font-['Poppins'] dark:text-white">
+              <b>{agent.priceRange}</b> team price range
+            </p>
+            <p className="text-sm px-5 pb-3 font-['Poppins'] dark:text-white">
+              <b>{agent.sales}</b> sales last 12 months
+            </p>
           </div>
         ))}
       </div>
-
       </div>
     </div>
     </>

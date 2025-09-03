@@ -5,14 +5,17 @@ import AddPhotos from './AddPhotos';
 import CompleteListing from './CompleteListing';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
-
+import Loaders from '../Loaders';
 const ListingProcess = () => {
     const navigate = useNavigate();
     const [currentPage, setCurrentPage] = useState(1);
+    const [load, setLoad] = useState(false);
     const [listingData, setListingData] = useState({
         listingType: '',
         propertyCategory: '',
         propertyTitle: '',
+        propertyType : '',
+        transactionType : '',
         location: '',
         coordinates: { lat: 0, lng: 0 },
         imageFiles: [],
@@ -43,6 +46,7 @@ const ListingProcess = () => {
     }, [currentPage]);
 
     const handleSubmit = async () => {
+        setLoad(true);
         try {
             const formData = new FormData();
             const token = localStorage.getItem("accessToken");
@@ -63,7 +67,7 @@ const ListingProcess = () => {
                 {
                     headers: {
                         'Content-Type': 'multipart/form-data',
-                        Authorization: `Bearer ${token}`, // ✅ FIXED
+                        Authorization: `Bearer ${token}`,
                     },
                 }
             );
@@ -73,16 +77,21 @@ const ListingProcess = () => {
         } catch (err) {
             console.error("Error submitting listing:", err);
         }
+        finally{
+        setLoad(false);
+
+        }
 
 
     };
 
-    useEffect(() => {
-        console.log(listingData);
-    }, [listingData])
+    // useEffect(() => {
+    //     console.log(listingData);
+    // }, [listingData])
 
 
     return (
+        load ? <Loaders/> : 
         <div>
             {currentPage === 1 && <AddListing onNext={goToNextPage} onPrevious={goToPreviousPage} listingData={listingData} setListingData={setListingData} />}
             {currentPage === 2 && <LocationSelector onPrevious={goToPreviousPage} onNext={goToNextPage} listingData={listingData} setListingData={setListingData} />}

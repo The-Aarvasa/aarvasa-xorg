@@ -43,7 +43,7 @@ export const AnimatedTestimonials = ({
     return Math.floor(Math.random() * 21) - 10;
   };
   return (
-    <div className="mx-auto antialiased max-w-[90%] sm:max-w-3xl md:max-w-4xl lg:max-w-5xl px-4 sm:px-6 md:px-8 lg:px-12">
+    <div className="mx-auto antialiased max-w-[90%] dark:text-white sm:max-w-3xl md:max-w-4xl lg:max-w-5xl px-4 sm:px-6 md:px-8 lg:px-12">
       <div className="relative grid grid-cols-1 gap-4 sm:gap-6 md:grid-cols-2 md:gap-8">
         <div className="flex justify-center md:justify-start">
           <div className="relative h-[120px] w-[120px] sm:h-[150px] sm:w-[150px] md:h-[180px] md:w-[180px] lg:h-[250px] lg:w-[250px]">
@@ -112,7 +112,7 @@ export const AnimatedTestimonials = ({
               ease: "easeInOut",
             }}
           >
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-black dark:text-white">
+            <h3 className="text-xl dark:text-white sm:text-2xl md:text-3xl font-bold text-black dark:text-white">
               {testimonials[active].name}
             </h3>
             <p className="text-xs sm:text-sm md:text-base text-gray-500 dark:text-neutral-500">
