@@ -37,10 +37,10 @@ export const Explore = ({ data }) => {
   }, []);
 
   return (
-    <div className="mx-2 mt-4 md:m-5 p-5 bg-white rounded-2xl shadow-md">
+    <div className="mx-2 mt-4 md:m-5 p-5 bg-white dark:bg-[#692234] rounded-2xl shadow-md">
       <div className="flex items-center space-x-2 mb-5">
         <img src="/explore.png" alt="Explore Icon" className="h-10 w-10" />
-        <h2 className="text-[32px] font-semibold">Explore</h2>
+        <h2 className="text-[32px] font-semibold dark:text-white">Explore</h2>
       </div>
 
       <div className="flex flex-col justify-center w-full gap-[30px]">
@@ -49,7 +49,7 @@ export const Explore = ({ data }) => {
             ref={inputRef}
             type="text"
             placeholder="Search a location"
-            className="border border-gray-200 outline-none rounded-lg w-full"
+            className="border border-gray-200 dark:border-gray-600 dark:bg-gray-800 dark:text-white outline-none rounded-lg w-full"
             style={{ padding: "10px", marginBottom: "10px" }}
           />
           <button
@@ -62,19 +62,19 @@ export const Explore = ({ data }) => {
         </div>
 
         {Array.isArray(data?.nearbyLandmarks) && data.nearbyLandmarks.length > 0 && (
-           <>
-            <h1 className="text-xl font-semibold">Nearby landmarks</h1>
-          <div className="flex justify-start flex-wrap gap-4">
-            {data.nearbyLandmarks.map((currElem, index) => (
-              <button
-                key={index}
-                className="bg-gray-200 w-full md:w-fit px-4 py-2 rounded-full flex items-center mb-2 md:mb-0"
-              >
-                <span className="font-semibold pr-1">📍 {currElem}</span>
-              </button>
-            ))}
-          </div>
-           </>
+          <>
+            <h1 className="text-xl font-semibold dark:text-white">Nearby landmarks</h1>
+            <div className="flex justify-start flex-wrap gap-4">
+              {data.nearbyLandmarks.map((currElem, index) => (
+                <button
+                  key={index}
+                  className="bg-gray-200 dark:bg-gray-700 w-full md:w-fit px-4 py-2 rounded-full flex items-center mb-2 md:mb-0"
+                >
+                  <span className="font-semibold pr-1 dark:text-white">📍 {currElem}</span>
+                </button>
+              ))}
+            </div>
+          </>
         )}
 
         <div
@@ -84,9 +84,9 @@ export const Explore = ({ data }) => {
         ></div>
       </div>
 
-      <button className="mt-4 w-full md:w-fit bg-gray-200 px-4 py-2 rounded-full flex items-center">
+      <button className="mt-4 w-full md:w-fit bg-gray-200 dark:bg-gray-700 px-4 py-2 rounded-full flex items-center">
         <img src="/location.png" alt="Nearby Icon" className="h-6 w-6 mr-2" />
-        View places nearby
+        <span className="dark:text-white">View places nearby</span>
       </button>
     </div>
   );

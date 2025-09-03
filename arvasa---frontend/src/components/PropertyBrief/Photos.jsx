@@ -25,8 +25,8 @@ const Photos = ({ data }) => {
     return (
         <div className="mx-4 md:mx-10 lg:mx-24 my-10">
             {/* Title & Description */}
-            <h1 className="text-3xl md:text-5xl font-bold text-[#2B2B2B] mb-6">{data?.propertyTitle}</h1>
-            <p className="text-base md:text-lg text-[#444] max-w-4xl leading-relaxed font-medium">
+            <h1 className="text-3xl md:text-5xl font-bold text-[#2B2B2B] dark:text-white mb-6">{data?.propertyTitle}</h1>
+            <p className="text-base md:text-lg text-[#444] dark:text-gray-300 max-w-4xl leading-relaxed font-medium">
                 {data?.detailedDescription}
             </p>
 
