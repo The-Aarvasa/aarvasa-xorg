@@ -87,6 +87,7 @@ const Premium = () => {
     w-full
     rounded-lg 
     pt-44
+    p-8
     relative
     bottom-[100px]
   " style={{
@@ -99,9 +100,9 @@ const Premium = () => {
             >
 
                 <div className='content md:py-auto text-center'>
-                    <p className='text-[#692234] text-lg md:text-3xl dark:text-white'>Welcome to Aarvasa</p>
-                    <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8 dark:text-white'>Manage your <br></br> property</h1>
-                    <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8 dark:text-white'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
+                    <p className='text-[#692234] text-lg md:text-3xl text-white dark:text-white'>Welcome to Aarvasa</p>
+                    <h1 className='text-[#692234] text-5xl lg:text-8xl text-white font-bold mt-4 mb-8 dark:text-white'>Manage your <br></br> property</h1>
+                    <p className='text-[#692234] text-white text-sm md:text-lg mt-4 mb-8 dark:text-white'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
 
                     <div className='w-auto bg-white dark:bg-transparent flex flex-col mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
                         <div className="searches space-y-4 md:space-y-0 flex items-center gap-2 flex-wrap lg:flex-nowrap">

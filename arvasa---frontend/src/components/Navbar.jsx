@@ -113,7 +113,7 @@ const Navbar = () => {
                     <ul
                         ref={menu}
                         className={`
-                            md:flex items-center bg-gray-900 dark:text-white md:bg-transparent md:static md:h-auto md:w-auto md:gap-8 lg:gap-14
+                            md:flex items-center dark:bg-gray-900 dark:text-white md:bg-transparent md:static md:h-auto md:w-auto md:gap-8 lg:gap-14
                             ${MenuOpen ? "fixed top-0 left-0" : "fixed left-[-100%]"}
                             transition-all bg-orange-50 md:bg-transparent h-[100vh] w-[80%] pt-[150px] px-12
                             space-y-8 md:space-y-0 md:pt-0 md:px-0 z-[10]
