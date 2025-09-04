@@ -17,15 +17,27 @@ import { ServicesCards } from "../components/Home/ServicesCards"
 import BackToTopButton from "../components/Home/BackToTopButton"
 import { FilterProvider } from "../context/FilterProvider"
 import { useNavigate } from "react-router-dom"
-
-
+import Premium from "./Premium"
+import AuthContext from "../context/AuthContext"
+import { useContext, useEffect, useState } from "react"
 export const Home = () => {
     const navigate = useNavigate();
+    const {user, setUser} = useContext(AuthContext);
+    const [premium, setPremium] = useState(false);
+   useEffect(() => {
+  const isSubscribed = user?.user?.is_subscribed || user?.is_subscribed;
+  if (isSubscribed) {
+    setPremium(true);
+  }
+}, [user]);
     return (
         <>
 
             <div className="bg-orange-50 dark:bg-black pt-[80px] pb-[100px] overflow-x-hidden">
-                <Landing />
+                {premium ? 
+                <Premium /> :
+                <Landing></Landing>
+                }
                 <ViewAnimate />
                 <ServicesCards />
                 <Services />

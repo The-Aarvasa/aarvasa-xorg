@@ -84,8 +84,7 @@ function AppLayout() {
       `}
     >
       <main className="flex-grow">
-
-        {!hideNavAndFooter && <Navbar />}
+          <Navbar />
 
         <Routes>
           {/* Public Routes */}

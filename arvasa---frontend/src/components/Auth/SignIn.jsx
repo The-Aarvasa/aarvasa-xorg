@@ -120,7 +120,7 @@ export default function SignIn() {
         <>
             {loader ? <Loaders /> : null}
             <motion.div
-                className="bg-[#ffffff] justify-center items-center">
+                className="bg-[#ffffff] dark:bg-black justify-center items-center">
                 {/* Main Content Container (Flex to hold left and right sections) */}
                 <div className="flex items-center flex-row flex-row-reverse justify-between overflow-hidden">
 
@@ -150,7 +150,7 @@ export default function SignIn() {
 
 
                         <div className="flex flex-col gap-[25px] pt-6">
-                            <div className="text-[#0C1421] text-[32px] mb-4 font-bold leading-8">Welcome Back</div>
+                            <div className="text-[#0C1421] dark:text-white text-[32px] mb-4 font-bold leading-8">Welcome Back</div>
                         </div>
 
                         <div className="flex flex-col gap-4 w-full">
@@ -165,7 +165,7 @@ export default function SignIn() {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full z-[999] h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
+                                    className="w-full dark:bg-gray-700 z-[999] h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
                                 />
                             </div>
 
@@ -180,7 +180,7 @@ export default function SignIn() {
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
+                                    className="w-full dark:bg-gray-700 dark:text-white h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
                                 />
                             </div>
 

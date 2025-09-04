@@ -49,7 +49,7 @@ const PropertyDetails = () => {
 
   return (
     loader ? <Loaders></Loaders> : <>
-      <div className="bg-orange-50 pt-[120px] pb-[100px]">
+      <div className="bg-orange-50 dark:bg-black pt-[120px] pb-[100px]">
         <Photos data={data} />
         <Sale
           address={data.location}

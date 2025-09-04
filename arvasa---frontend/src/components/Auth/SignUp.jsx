@@ -104,13 +104,13 @@ export default function SignUp() {
             {loader ? <Loaders /> : null}
             <motion.div
 
-                className="bg-[#ffffff] justify-center items-center">
+                className="bg-[#ffffff] dark:bg-black justify-center items-center">
                 {/* Main Content Container (Flex to hold left and right sections) */}
                 <div className="flex items-center flex-row flex-row-reverse justify-between overflow-hidden">
 
 
                     {/* Left Section: Login Form */}
-                    <div className="flex flex-col items-center justify-center w-full p-4 md:w-[28%] mx-auto h-[100vh]">
+                    <div className="flex flex-col dark:bg-black items-center justify-center w-full p-4 md:w-[30%] mx-auto h-[100vh]">
                         <a href="#" className='flex items-center relative right-8'>
                             <img src="/images/logo_shape.png" className='w-32' alt="" />
                             <img src="/images/image.png" className='w-32' alt="" />
@@ -133,11 +133,11 @@ export default function SignUp() {
                         </div> : null}
 
                         <div className="flex flex-col gap-[25px] pt-6">
-                            <div className="text-[#0C1421] text-[32px] mb-4 font-bold leading-8">Get Started</div>
+                            <div className="text-[#0C1421] text-[32px] dark:text-white mb-4 font-bold leading-8">Get Started</div>
                         </div>
 
-                        <div className="flex flex-col gap-4 w-full">
-                            <div className="w-full h-12 relative">
+                            <div className="flex flex-col w-full gap-4">
+                            <div className="w-full h-12 relative dark:text-white">
                                 {email.length === 0 && (
                                     <span className="absolute z-[1] top-3 px-4 flex items-center text-gray-400 gap-4 pointer-events-none">
                                         <Mail />
@@ -148,7 +148,7 @@ export default function SignUp() {
                                     type="email"
                                     value={email}
                                     onChange={(e) => setEmail(e.target.value)}
-                                    className="w-full z-[999] h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
+                                    className="w-full z-[999] dark:bg-gray-700 dark:text-white h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
                                 />
                             </div>
 
@@ -163,7 +163,7 @@ export default function SignUp() {
                                     type="password"
                                     value={password}
                                     onChange={(e) => setPassword(e.target.value)}
-                                    className="w-full h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
+                                    className="w-full h-full dark:bg-gray-700 dark:text-white px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
                                 />
                             </div>
 
@@ -178,7 +178,7 @@ export default function SignUp() {
                                     type="password"
                                     value={cPass}
                                     onChange={(e) => setCpass(e.target.value)}
-                                    className="w-full h-full px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
+                                    className="w-full h-full dark:bg-gray-700 dark:text-white px-4 rounded-xl border border-[#6C1E3C] bg-[#F7FAFF] placeholder-[#8898A8] focus:outline-none focus:border-[#A82E4F]"
                                 />
                             </div>
 
