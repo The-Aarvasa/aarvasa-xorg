@@ -63,51 +63,86 @@ const Preferred = () => {
         once: true,
     });
 
+    // Agent data with individual profile pics and stats
+    const agents = [
+        {
+            agentName: "Rohit Sharma",
+            propertyName: "Urban Nest Realty",
+            profilePic: "https://randomuser.me/api/portraits/men/32.jpg",
+            operatingSince: "2006",
+            buyersServed: "2500+",
+            propertiesForSale: "45",
+            propertiesForRent: "3"
+        },
+        {
+            agentName: "Priya Singh",
+            propertyName: "Elite Estates",
+            profilePic: "https://randomuser.me/api/portraits/women/44.jpg",
+            operatingSince: "2010",
+            buyersServed: "1800+",
+            propertiesForSale: "32",
+            propertiesForRent: "5"
+        },
+        {
+            agentName: "Amit Verma",
+            propertyName: "Prime Dwellings",
+            profilePic: "https://randomuser.me/api/portraits/men/65.jpg",
+            operatingSince: "2012",
+            buyersServed: "2100+",
+            propertiesForSale: "27",
+            propertiesForRent: "2"
+        },
+    ];
+
     return (
         <motion.div
-            className="mx-2 mt-8 mb-8 md:mx-4 relative">
+            className="mx-2 mt-8 mb-8 md:mx-4 relative"
+            ref={ref}
+            variants={fadeVariants}
+            initial="hidden"
+            animate={isInView ? "visible" : "hidden"}
+        >
             <Heading label="Aarvasa Preferred Agents in New Delhi" />
             <div className="rows flex flex-col gap-20">
                 <div className="flex flex-wrap justify-center gap-6 mt-12">
-                    {[1, 2, 3].map((item, index) => (
+                    {agents.map((item, index) => (
                         <div
                             key={index}
-                            // onClick={() => navigate('/listings')}
-                            className="w-full dark:border-2 dark:border:yellow-[#F9BC61] sm:w-[45%] dark:bg-black md:w-[26%] lg:w-[28%] cursor-pointer h-auto bg-white rounded-xl border border-2 border-[#FCDEAC] hover:scale-[1.02] duration-500"
+                            onClick={() => navigate('/agents')}
+                            className="w-full dark:border-2 dark:border:yellow-[#F9BC61] sm:w-[45%] dark:bg-black md:w-[26%] lg:w-[28%] cursor-pointer h-auto bg-white rounded-xl border-2 border-[#FCDEAC] hover:scale-[1.02] duration-500"
                         >
                             <div className="w-full dark:bg-gradient-to-r dark:from-[#DBB025] dark:to-[#5B4A1B] dark:text-black h-auto bg-[#FCDEAC] rounded-t-xl flex flex-wrap sm:flex-nowrap p-2 sm:p-3 justify-between items-center">
-                                <img className="w-14 sm:w-16 h-14 sm:h-16 rounded-md" src="vivek_kumar.png" />
+                                <img className="w-14 sm:w-16 h-14 sm:h-16 rounded-md" src={item.profilePic} alt={item.agentName} />
                                 <div className="flex flex-col justify-end items-start ml-2 gap-1 mt-2 sm:mt-0">
                                     <div className="text-pink-900 text-sm sm:text-base font-bold">Av Preferred</div>
-                                    <div className="text-black text-base sm:text-lg font-bold">Vivek Kumar Mishra</div>
+                                    <div className="text-black text-base sm:text-lg font-bold">{item.agentName}</div>
                                 </div>
-                                <img className="w-8 sm:w-10 h-7 sm:h-8 rounded-[6px] mt-2 sm:mt-0" src="pref.png" />
+                                <img className="w-8 sm:w-10 h-7 sm:h-8 rounded-[6px] mt-2 sm:mt-0" src="pref.png" alt="Preferred" />
                             </div>
 
-                            <div className="flex dark:bg-black justify-between items-center mx-3 flex-wrap gap-2 sm:gap-4 p-2 sm:p-3 items-end">
-                                <img className="w-10 sm:w-12 h-10 sm:h-12 rounded-[2px]" src="mvprop.png" />
+                            <div className="flex dark:bg-black justify-between mx-3 flex-wrap gap-2 sm:gap-4 p-2 sm:p-3 items-end">
+                                <img className="w-10 sm:w-12 h-10 sm:h-12 rounded-[2px]" src="mvprop.png" alt={item.propertyName} />
                                 <div className="flex text-black dark:text-white flex-col items-start">
-                                    <div className="text-sm sm:text-base font-semibold">Mv Properties</div>
+                                    <div className="text-sm sm:text-base font-semibold">{item.propertyName}</div>
                                     <div className="text-[10px] sm:text-xs font-medium">Operating Since</div>
-                                    <div className="text-[10px] sm:text-xs font-medium">2006</div>
+                                    <div className="text-[10px] sm:text-xs font-medium">{item.operatingSince}</div>
                                 </div>
                                 <div className="hidden sm:block w-[1px] h-7 bg-black dark:bg-white"></div>
                                 <div className="flex text-black dark:text-white flex-col justify-between items-start">
                                     <div className="text-[10px] sm:text-xs font-medium">Buyers Served</div>
-                                    <div className="text-[10px] sm:text-xs font-medium">2500+</div>
+                                    <div className="text-[10px] sm:text-xs font-medium">{item.buyersServed}</div>
                                 </div>
                             </div>
 
-                            <div className="w-full h-[0.5px] bg-black dark:dark:bg-gradient-to-r dark:from-[#DBB025] dark:to-[#7F671E]
-"></div>
+                            <div className="w-full h-[0.5px] bg-black dark:bg-gradient-to-r dark:from-[#DBB025] dark:to-[#7F671E]"></div>
 
-                            <div className="text-black dark:text-white flex mx-3 justify-between items-center flex-wrap p-2 sm:p-3 items-start gap-2 sm:gap-4 mt-1">
+                            <div className="text-black dark:text-white flex mx-3 justify-between flex-wrap p-2 sm:p-3 gap-2 sm:gap-4 mt-1">
                                 <div className="flex flex-col">
-                                    <div className="text-sm sm:text-base font-semibold">45</div>
+                                    <div className="text-sm sm:text-base font-semibold">{item.propertiesForSale}</div>
                                     <div className="text-[10px] sm:text-xs font-medium">Properties for Sale</div>
                                 </div>
                                 <div className="flex flex-col">
-                                    <div className="text-sm sm:text-base font-semibold">3</div>
+                                    <div className="text-sm sm:text-base font-semibold">{item.propertiesForRent}</div>
                                     <div className="text-[10px] sm:text-xs font-medium">Properties For Rent</div>
                                 </div>
                             </div>
@@ -123,7 +158,6 @@ const Preferred = () => {
                             delay: 4000,
                             disableOnInteraction: false,
                         }}
-
                         breakpoints={{
                             640: {
                                 slidesPerView: 2,
@@ -132,10 +166,7 @@ const Preferred = () => {
                                 slidesPerView: 3,
                                 spaceBetween: 20,
                             },
-
-
                         }}
-
                         navigation={{
                             nextEl: ".custom-next",
                             prevEl: ".custom-prev",
@@ -163,19 +194,13 @@ const Preferred = () => {
                                             })}
                                         </div>
                                         <div className="text">
-                                            <span>{card.ratings} / 5</span>
+                                            {card.ratings}
                                         </div>
                                     </div>
                                 </div>
-
-                                <div className="custom-pagination mt-12 flex justify-center"></div>
-
                             </SwiperSlide>
                         ))}
                     </Swiper>
-
-
-
                 </div>
             </div>
         </motion.div>
