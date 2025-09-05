@@ -94,7 +94,6 @@ const Landing = () => {
 >
 
                 <div className='content md:py-auto'>
-<<<<<<< HEAD
                     <p className='text-[#692234] text-xl md:text-2xl'>Welcome to Aarvasa</p>
                     <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8'>Manage your <br></br> property</h1>
                     <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
@@ -104,14 +103,6 @@ const Landing = () => {
                             </button>
                     <div className=' w-auto mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
                         
-=======
-                    <p className='text-[#692234] text-xl md:text-2xl dark:text-white'>Welcome to Aarvasa</p>
-                    <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8 dark:text-white'>Manage your <br></br> property</h1>
-                    <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8 dark:text-white'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
-
-                    <div className='w-auto bg-white dark:bg-transparent flex flex-col mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
-
->>>>>>> f203cd8211cc1cfb4a3d315faeb47fa49a3bba13
                         <div className="searches space-y-4 md:space-y-0 flex items-center gap-2 flex-wrap lg:flex-nowrap">
                             <div className="search_bar w-full flex items-center gap-2 hover:text-[#8C2841]">
                                 <MapPin></MapPin>
