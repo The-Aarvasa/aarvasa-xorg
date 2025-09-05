@@ -80,7 +80,7 @@ function AppLayout() {
   return (
     <div
       className={`min-h-screen flex flex-col transition-colors duration-300 
-        ${theme === "dark" ? "bg-black text-white" : "bg-white text-black"}
+        ${theme === "" ? "bg-black text-white" : "bg-white text-black"}
       `}
     >
       <main className="flex-grow">
