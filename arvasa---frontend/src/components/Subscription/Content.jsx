@@ -220,10 +220,10 @@ const Content = () => {
     const PlanCard = ({ label, onTap }) => {
 
         return (
-            <div className="h-auto transition-all ease-in-out p-10 -mb-20 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)]">
+            <div className="h-auto transition-all ease-in-out p-10 -mb-20 gap-8 flex flex-col items-center dark:bg-[#797979]  justify-center bg-white rounded-3xl shadow-[0px_0px_4px_0px_rgba(0,0,0,0.25)]">
                 <div className="self-stretch text-center justify-start text-stone-900 text-3xl font-semibold font-['Poppins']">{label}</div>
                 <div className="flex flex-col gap-4">
-                    <select className="px-2 w-full font-[poppins] text-xl text-center outline outline-yellow-300 outline-2 rounded-lg bg-yellow-100">
+                    <select className="px-2 w-full font-[poppins] text-xl text-center outline dark:outline-[#7F671E] outline-yellow-300 outline-2 rounded-lg dark:bg-[#D4AF37] bg-yellow-100">
                         <option value="default" >Select Price Range</option>
                         <option value="10">10,00,000</option>
                         <option value="15">15,00,000</option>
@@ -232,7 +232,7 @@ const Content = () => {
                         <option value="30">30,00,000</option>
                         <option value="35">35,00,000</option>
                     </select>
-                    <div className="self-stretch text-center justify-start text-stone-600 text-xl font-medium  leading-tight">{`<`} INR 40 Lakhs</div>
+                    <div className="self-stretch text-center justify-start text-stone-600 text-xl font-medium dark:text-[#d9d9d9] leading-tight">{`<`} INR 40 Lakhs</div>
                 </div>
                 <div className="w-32 h-32 px-4 py-11 bg-[radial-gradient(ellipse_113.28%_113.26%_at_56.59%_113.25%,_white_0%,_#EDCE74_100%)] rounded-[65px] cursor-pointer shadow-[0px_0px_45.900001525878906px_0px_rgba(0,0,0,0.25)] outline outline-1 outline-offset-[-1px] outline-black/10 flex flex-col justify-center items-center gap-2.5" onClick={onTap}>
                     <div className="w-24 text-center justify-start"><span className="text-black text-2xl font-medium leading-normal">Tap</span><span className="text-black text-xl font-medium  leading-tight"> </span><span className="text-black text-base font-normal leading-none">for more detail</span></div>
@@ -247,7 +247,7 @@ const Content = () => {
         const featuresKey = `${planKey}_features`;
         const price = `${planKey}_price`;
         return (
-            <div className="px-4 py-11 relative bg-[radial-gradient(ellipse_132.89%_131.35%_at_55.00%_109.92%,_white_0%,_#EDCE74_100%)]  shadow-[0px_0px_45.900001525878906px_0px_rgba(0,0,0,0.25)] md:w-[400px] h-[600px] p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl">
+            <div className="px-4 py-11 dark:bg-gradient-to-b dark:from-[#DBB025] dark:via-[#A38321] dark:to-[#5B4A1B]  relative bg-[radial-gradient(ellipse_132.89%_131.35%_at_55.00%_109.92%,_white_0%,_#EDCE74_100%)]  shadow-[0px_0px_45.900001525878906px_0px_rgba(0,0,0,0.25)] md:w-[400px] h-[600px] p-10 gap-8 flex flex-col items-center justify-center bg-white rounded-3xl">
                 <div className="self-stretch text-center justify-center items-center gap-6 flex  ">
                     <div className="text-stone-900 text-2xl font-semibold font-['Poppins']">{label}</div>
                     <div className="text-stone-900 text-2xl font-semibold font-['Poppins']">{planData[price]}<span className="text-stone-700 text-xl font-semibold font-['Poppins']">/month</span></div>
@@ -278,7 +278,7 @@ const Content = () => {
                         background: "linear-gradient(to right, #F9EAF1, #8C2841)",
 
                     }
-                } onClick={(e) => {handlePay(e, planKey)}} value={planData[price]} className="w-[240px] h-[56px] px-6 py-3   text-white text-xl font-bold  leading-tight bg-[radial-gradient(ellipse_302.08%_123.50%_at_51.45%_-0.00%,_#6C1E3C_0%)] rounded-xl justify-center items-center gap-2.5">
+                } onClick={(e) => {handlePay(e, planKey)}} value={planData[price]} className="w-[240px] h-[56px] px-6 py-3 text-white text-xl font-bold  leading-tight bg-[radial-gradient(ellipse_302.08%_123.50%_at_51.45%_-0.00%,_#6C1E3C_0%)] rounded-xl justify-center items-center gap-2.5">
                     Subscribe
                 </button>
                 <button className="absolute top-4 right-4 text-xl bg-none rounded-full px-3 py-1" onClick={onClose}>×</button>
@@ -290,12 +290,12 @@ const Content = () => {
         <motion.div className="font-[poppins] pt-[50px] pb-[100px] transition-all ease-in-out">
             {loader ? <Loaders/> : null}
             <div className="flex flex-col items-center mx-4 gap-7 justify-center">
-                <div className="justify-start text-stone-900 text-center text-4xl font-semibold font-['Poppins']">The Perfect plan for your needs</div>
-                <div className="lg:w-[1064px] text-center justify-start text-stone-900 md:text-xl font-normal font-['Poppins']">Our transparent pricing makes it easy to find a plan that work in your financial constrain</div>
+                <div className="justify-start text-stone-900 text-center text-4xl dark:text-white font-semibold font-['Poppins']">The Perfect plan for your needs</div>
+                <div className="lg:w-[1064px] text-center justify-start dark:text-white text-stone-900 md:text-xl font-normal font-['Poppins']">Our transparent pricing makes it easy to find a plan that work in your financial constrain</div>
                 <div className="flex gap-3 md:gap-5">
-                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'owner' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('owner')}>Owner's</button>
-                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'rental' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('rental')}>Rental's</button>
-                    <button className={`transform transition-all duration-500ms ease-in hover:text-pink-900 bg-none outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'agent' ? 'outline outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('agent')}>Agent's</button>
+                    <button className={`transform transition-all duration-500ms ease-in dark:hover:text-pink-900 dark:bg-none hover:text-pink-900 bg-none dark:outline-white dark:text-white outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'owner' ? 'outline dark:outline-pink-900/50 dark:bg-pink-200 dark:text-pink-900 outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('owner')}>Owner's</button>
+                    <button className={`transform transition-all duration-500ms ease-in dark:hover:text-pink-900 dark:bg-none hover:text-pink-900 bg-none dark:outline-white dark:text-white outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'rental' ? 'outline dark:outline-pink-900/50 dark:bg-pink-200 dark:text-pink-900 outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('rental')}>Rental's</button>
+                    <button className={`transform transition-all duration-500ms ease-in dark:hover:text-pink-900 dark:bg-none hover:text-pink-900 bg-none dark:outline-white dark:text-white outline-black text-black md:text-xl md:w-32 md:h-10 px-3 py-[5px] hover:bg-pink-200 rounded-xl outline outline-1 outline-offset-[-1.16px] hover:outline-pink-900/50  justify-center items-center gap-2.5 font-normal leading-tight ${type === 'agent' ? 'outline dark:outline-pink-900/50 dark:bg-pink-200 dark:text-pink-900 outline-pink-900/50 bg-pink-200 text-pink-900' : 'outline-black text-black bg-none'}`} onClick={() => handleTypeSelect('agent')}>Agent's</button>
                 </div>
                 <motion.div className="flex flex-wrap m-4 w-full transition-all ease-in-out justify-center items-center gap-10">
                     <AnimatePresence mode="wait">

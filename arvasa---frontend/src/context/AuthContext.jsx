@@ -23,7 +23,7 @@ export const AuthProvider = ({ children }) => {
         headers: { Authorization: `Bearer ${token}` },
         withCredentials: true,
       });
-
+      console.log(res.data);
 
       setUser(res.data.user);
     } catch (error) {

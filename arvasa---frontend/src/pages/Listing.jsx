@@ -23,19 +23,19 @@ const Listing = () => {
     const [maxItems, setMaxItems] = useState(10);
 
     useEffect(() => {
-        const fetchListings = async () => {
-            setLoading(true);
-            try {
-                const query = new URLSearchParams(filters).toString();
-                const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings?${query}`);
-                setListings(res.data.listings);
-            } catch (err) {
-                console.error('Error fetching listings:', err);
-            } finally {
-                setLoading(false);
-            }
-        };
-        fetchListings();
+        // const fetchListings = async () => {
+        //     setLoading(true);
+        //     try {
+        //         const query = new URLSearchParams(filters).toString();
+        //         const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings?${query}`);
+        //         setListings(res.data.listings);
+        //     } catch (err) {
+        //         console.error('Error fetching listings:', err);
+        //     } finally {
+        //         setLoading(false);
+        //     }
+        // };
+        // fetchListings();
     }, [filters]);
 
     const handleFilterChange = (key, value) => {
@@ -56,12 +56,12 @@ const Listing = () => {
 
     useEffect(() => {
         const pagination = () => {
-            const lastIndex = currPage*maxItems;
-    const firstIndex = lastIndex-maxItems;
-    const properties = listings.slice(firstIndex, lastIndex);
-    setCurrProp(properties);
-    const lastPage = Math.ceil(listings.length / maxItems);
-    setLastPage(lastPage);
+            const lastIndex = currPage * maxItems;
+            const firstIndex = lastIndex - maxItems;
+            const properties = listings.slice(firstIndex, lastIndex);
+            setCurrProp(properties);
+            const lastPage = Math.ceil(listings.length / maxItems);
+            setLastPage(lastPage);
         }
         pagination();
     }, [currPage, listings])

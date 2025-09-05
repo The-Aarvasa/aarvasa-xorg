@@ -2,12 +2,12 @@ import React, { useContext, useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { MapPin, Search, Home, IndianRupee, Earth, KeyRound, Map, BedDouble, Building2, UploadCloud } from 'lucide-react'
 import { useNavigate } from 'react-router-dom'
-import { FilterContext } from '../../context/FilterProvider'
+import { FilterContext } from '../context/FilterProvider'
 import Select from 'react-select';
 import { Link } from 'react-router-dom'
-import Alert from '../Utils/Alert'
+import Alert from '../components/Utils/Alert'
 import { toast } from 'react-toastify'
-const Landing = () => {
+const Premium = () => {
     const options = [{
         title: "Buy",
         icon: <Home size={22}></Home>,
@@ -81,22 +81,28 @@ const Landing = () => {
             <div
                 className="
     overflow-x-hidden
-    bg-gradient-to-r from-[#F9EAF1] to-[#8C2841]    /* Default: gradient */
-    dark:bg-gradient-to-r dark:from-[#1C080D] dark:to-[#8C2841] /* Dark mode: same gradient */
-    py-4 px-2
-    md:mx-8
     overflow-hidden
-    flex w-auto flex-wrap lg:flex-nowrap
+    flex flex-wrap lg:flex-nowrap
     h-full items-center justify-center
-    md:justify-between md:px-4
-    rounded-lg lg:h-[80vh]
-  "
+    w-full
+    rounded-lg 
+    pt-44
+    p-8
+    relative
+    bottom-[100px]
+  " style={{
+                    backgroundImage: "linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('/premium.jpg')",
+                    backgroundRepeat: "no-repeat",
+                    backgroundSize: "cover",
+                    backgroundPosition: "center",
+                    width: "100vw",
+                }}
             >
 
-                <div className='content md:py-auto'>
-                    <p className='text-[#692234] text-xl md:text-2xl dark:text-white'>Welcome to Aarvasa</p>
-                    <h1 className='text-[#692234] text-5xl lg:text-8xl font-bold mt-4 mb-8 dark:text-white'>Manage your <br></br> property</h1>
-                    <p className='text-[#692234] text-sm md:text-lg mt-4 mb-8 dark:text-white'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
+                <div className='content md:py-auto text-center'>
+                    <p className='text-[#692234] text-lg md:text-3xl text-white dark:text-white'>Welcome to Aarvasa</p>
+                    <h1 className='text-[#692234] text-5xl lg:text-8xl text-white font-bold mt-4 mb-8 dark:text-white'>Manage your <br></br> property</h1>
+                    <p className='text-[#692234] text-white text-sm md:text-lg mt-4 mb-8 dark:text-white'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
 
                     <div className='w-auto bg-white dark:bg-transparent flex flex-col mx-2 p-4 group hover:transform md:hover:scale-[1.03] transition-all flex flex-col rounded-lg z-[999] relative'>
                         <div className="searches space-y-4 md:space-y-0 flex items-center gap-2 flex-wrap lg:flex-nowrap">
@@ -187,20 +193,7 @@ const Landing = () => {
                         </button>
                     </div>
                 </div>
-                <div className="image relative group w-[600px]">
-                    <img src="/images/shape1.png" className='absolute hidden md:block top-12 left-4 w-[200px]' alt="" />
-                    <img src="/images/shape2.png" className='absolute hidden md:block right-8 top-8  transform rotate-180 w-[210px]' alt="" />
-                    <img src="/images/shape3.png" className='absolute hidden md:block left-16 bottom-16 w-[210px]' alt="" />
-                    <img src="/images/shape4.png" className='absolute hidden md:block right-0 bottom-28 w-[210px]' alt="" />
-                    <motion.img
-                        animate={{ opacity: [0.8, 1, 0.8] }}
-                        transition={{
-                            duration: 2,       // total duration of one flicker cycle
-                            repeat: Infinity,  // infinite loop
-                            ease: "easeInOut"
-                        }}
-                        src="/images/hero.png" className='w-full md:hover:transform hover:scale-[1.1] transition-all relative z-[999]' alt="" />
-                </div>
+
             </div>
 
             <div className="bg-red-500 tet-red-500 flex items-center justify-center">
@@ -211,4 +204,4 @@ const Landing = () => {
     )
 }
 
-export default Landing
+export default Premium

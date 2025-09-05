@@ -32,6 +32,7 @@ const PropertyMain = () => {
             }).toString();
 
             const res = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings?${query}`);
+            console.log(res.data.listings);
             setListings(res.data.listings);
             setTotalPages(res.data.totalPages);
             setCurrPage(res.data.currentPage);
