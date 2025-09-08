@@ -41,7 +41,7 @@ const AgentCard = ({ agent, onClick }) => (
 
 // --------------------- Agent Detail Card ---------------------
 const AgentDetailCard = ({ agent }) => (
-  <div className="w-full max-w-full md:max-w-md bg-[#8C2841] text-white rounded-xl p-6 md:p-10 space-y-4 shadow-lg flex flex-col justify-center">
+  <div className="w-full max-w-full md:max-w-md bg-[#8C2841] dark:bg-[#6D1E3D] text-white rounded-xl p-6 md:p-10 space-y-4 shadow-lg flex flex-col justify-center">
     <h3 className="font-bold text-lg text-center md:text-left">{agent.name}</h3>
 
     <div className="space-y-4">
@@ -103,10 +103,10 @@ const ContactedAgents = () => {
 
     return (
         <section>
-            <div className="max-w-[1200px] mt-8 mx-auto font-[poppins] bg-white rounded-3xl shadow-lg p-8 md:p-10 flex flex-col items-center gap-6">
+            <div className="max-w-[1200px] mt-8 mx-auto font-[poppins] bg-white dark:bg-rose-950 rounded-3xl shadow-lg p-8 md:p-10 flex flex-col items-center gap-6">
                 {/* Search Bar */}
                 <AgentSearchBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-
+ 
                 {/* Filter Buttons */}
                 <div className="flex flex-wrap justify-center gap-3 text-sm font-medium">
                     {filters.map((filter) => (
@@ -114,19 +114,19 @@ const ContactedAgents = () => {
                             key={filter}
                             className={`px-4 py-1 rounded-full border transition ${activeFilter === filter
                                     ? "bg-[#F8C6D7] text-[#8C2841]"
-                                    : "border-gray-300 text-gray-600 hover:bg-[#fce9ee] hover:text-[#8C2841]"
+                                    : "border-gray-300 dark:border-neutral-400 text-gray-600 dark:text-white hover:bg-[#fce9ee] hover:text-[#8C2841]"
                                 } active:scale-95`}
                             onClick={() => handleFilterClick(filter)}
                         >
                             {filter}
                         </button>
                     ))}
-                    <button className="flex items-center gap-2 border border-gray-300 px-4 py-1 rounded-full hover:bg-gray-100 active:scale-95 transition">
+                    <button className="flex items-center gap-2 border border-gray-300 dark:border-neutral-400 px-4 py-1 rounded-full hover:bg-gray-100 dark:hover:bg-rose-200 active:scale-95 transition">
                         <SlidersHorizontal className="w-4 h-4" />
                         All Filters
                     </button>
                     <button
-                        className="text-[#8C2841] hover:underline active:opacity-70 transition"
+                        className="text-[#8C2841] dark:text-rose-300 hover:underline active:opacity-70 transition"
                         onClick={() => {
                             setActiveFilter("Recent");
                             setSearchTerm("");
