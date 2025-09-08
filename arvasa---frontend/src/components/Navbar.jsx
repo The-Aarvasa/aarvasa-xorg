@@ -16,7 +16,7 @@ const Navbar = () => {
         { route: "Listings", path: "listings" },
     ]);
 
-    const {theme, toggleTheme} = useContext(ThemeContext)
+    const { theme, toggleTheme } = useContext(ThemeContext)
 
     const [logged_in, setLoggedin] = useState(false);
     const [fixed, setFixed] = useState(false);
@@ -99,14 +99,14 @@ const Navbar = () => {
                         <Link to="/" className="flex items-center">
                             <img src="/images/logo_shape.png" className="w-20 md:w-20" alt="logo-shape" />
                             <img src="/images/image.png" alt="logo-text" className="w-24 md:w-20" />
-                            
+
                         </Link>
-                        {(path == '/signin' || path == '/signup') ?  <Link to={'/'}>
-                                    <p className="text-md lg:text-lg font-[500] group-hover:text-[#6C1E3C]">
-                                        Home
-                                    </p>
-                                </Link> : null }
-                       
+                        {(path == '/signin' || path == '/signup') ? <Link to={'/'}>
+                            <p className="text-md lg:text-lg font-[500] group-hover:text-[#6C1E3C]">
+                                Home
+                            </p>
+                        </Link> : null}
+
                     </div>
 
                     {/* Navigation Links */}
@@ -119,18 +119,18 @@ const Navbar = () => {
                             space-y-8 md:space-y-0 md:pt-0 md:px-0 z-[10]
                         `}
                     >
-                        {(path !== "/signin" && path !== "/signup" && path !== "/otp") ? 
-                        data.map((item, i) => (
-                            <li className="relative group w-fit" key={i}>
-                                <Link to={`/${item.path}`}>
-                                    <p className="text-md lg:text-lg font-[500] group-hover:text-[#6C1E3C]">
-                                        {item.route}
-                                    </p>
-                                </Link>
-                                <span className="absolute w-0 h-1 left-0 bottom-[-5px] rounded-full bg-[#6C1E3C] group-hover:w-full group-hover:opacity-75 transition-all duration-700"></span>
+                        {(path !== "/signin" && path !== "/signup" && path !== "/otp") ?
+                            data.map((item, i) => (
+                                <li className="relative group w-fit" key={i}>
+                                    <Link to={`/${item.path}`}>
+                                        <p className="text-md lg:text-lg font-[500] group-hover:text-[#6C1E3C]">
+                                            {item.route}
+                                        </p>
+                                    </Link>
+                                    <span className="absolute w-0 h-1 left-0 bottom-[-5px] rounded-full bg-[#6C1E3C] group-hover:w-full group-hover:opacity-75 transition-all duration-700"></span>
 
-                            </li>
-                        )) : null}
+                                </li>
+                            )) : null}
                         {user ?
                             <button
                                 onClick={handleLogout}
@@ -140,8 +140,8 @@ const Navbar = () => {
                                 }}
                             >
                                 Logout
-                            </button> : 
-                             <Link to="/signup" className="flex md:hidden items-center gap-2">
+                            </button> :
+                            <Link to="/signup" className="flex md:hidden items-center gap-2">
                                 <span>Signup</span>
                                 <LogIn />
                             </Link>}
@@ -174,7 +174,7 @@ const Navbar = () => {
                                 </button>
                             </div>
                         ) : (
-                          (path !== '/signin' && path !== '/signup' && path !== '/otp') ?  <Link to="/signup" className="hidden md:flex items-center gap-2">
+                            (path !== '/signin' && path !== '/signup' && path !== '/otp') ? <Link to="/signup" className="hidden md:flex items-center gap-2">
                                 <span>Signup</span>
                                 <LogIn />
                             </Link> : null

@@ -63,13 +63,13 @@ import Refund from './pages/Refund';
 import Security from './pages/Security';
 import Questions from './pages/Questions';
 import { useContext } from "react";
-import { ThemeContext } from "./context/ThemeContext";
-import ServicesD from './dark/pages/ServicesD'; 
+import { ThemeContext, ThemeProvider } from "./context/ThemeContext";
+import ServicesD from './dark/pages/ServicesD';
 import HomeD from './dark/pages/HomeD';
-import AboutD from './dark/pages/AboutD'; 
+import AboutD from './dark/pages/AboutD';
 
 function AppLayout() {
-   const { theme } = useContext(ThemeContext);
+  const { theme } = useContext(ThemeContext);
   const [popup, setPop] = useState(false);
   const location = useLocation();
   const hideNavAndFooter =
@@ -79,12 +79,10 @@ function AppLayout() {
 
   return (
     <div
-      className={`min-h-screen flex flex-col transition-colors duration-300 
-        ${theme === "" ? "bg-black text-white" : "bg-white text-black"}
-      `}
+      className={"min-h-screen flex flex-col transition-colors duration-300 bg-white text-black dark:bg-black dark:text-white"}
     >
       <main className="flex-grow">
-          <Navbar />
+        <Navbar />
 
         <Routes>
           {/* Public Routes */}
@@ -145,8 +143,8 @@ function AppLayout() {
 
 
           {/* Fallback */}
-            <Route path="/subscription" element={<Subscription />} />
-          
+          <Route path="/subscription" element={<Subscription />} />
+
 
           {/*Dark*/}
           <Route path="/servicespremium" element={<ServicesD />} />
@@ -168,7 +166,9 @@ function App() {
     <Router>
       <AuthProvider>
         <FilterProvider>
-          <AppLayout />
+          <ThemeProvider>
+            <AppLayout />
+          </ThemeProvider>
           <ToastContainer
             position="top-right"
             autoClose={9000}
