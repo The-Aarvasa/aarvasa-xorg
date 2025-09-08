@@ -44,18 +44,18 @@ const Transactions = () => {
   }, [allTransactions])
 
   return (
-    <div className="p-4 max-w-7xl mx-auto bg-white rounded-3xl shadow-lg pb-[20px] border-4 border-gray-200 mt-4">
+    <div className="p-4 max-w-7xl mx-auto bg-white rounded-3xl shadow-lg pb-[20px] border-4 border-gray-200 mt-4 dark:bg-gradient-to-t from-[#51421A] to-[#D8AE25] dark:border-[#DCDCDC]">
       <div className="flex justify-center gap-4 mb-4 p-5 -pb-5">
-        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">Rent</button>
-        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">Residential</button>
-        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">Price</button>
-        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">Recent</button>
-        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">Area</button>
-        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100">All Filters</button>
-        <button className="px-4 py-2 text-pink-900 hover:underline">Reset All Filters</button>
+        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100 dark:bg-[#D1A824] dark:text-black dark:border-black dark:hover:bg-[#F5D5E2] dark:hover:text-[#681F33] dark:hover:border-[#681F33]">Rent</button>
+        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100 dark:bg-[#D1A824] dark:text-black dark:border-black dark:hover:bg-[#F5D5E2] dark:hover:text-[#681F33] dark:hover:border-[#681F33]">Residential</button>
+        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100 dark:bg-[#D1A824] dark:text-black dark:border-black dark:hover:bg-[#F5D5E2] dark:hover:text-[#681F33] dark:hover:border-[#681F33]">Price</button>
+        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100 dark:bg-[#D1A824] dark:text-black dark:border-black dark:hover:bg-[#F5D5E2] dark:hover:text-[#681F33] dark:hover:border-[#681F33]">Recent</button>
+        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100 dark:bg-[#D1A824] dark:text-black dark:border-black dark:hover:bg-[#F5D5E2] dark:hover:text-[#681F33] dark:hover:border-[#681F33]">Area</button>
+        <button className="px-4 py-2 border border-neutral-400 rounded-xl text-neutral-600 hover:bg-gray-100 dark:bg-[#D1A824] dark:text-black dark:border-black dark:hover:bg-[#F5D5E2] dark:hover:text-[#681F33] dark:hover:border-[#681F33]">All Filters</button>
+        <button className="px-4 py-2 text-pink-900 hover:underline dark:text-[#681C31]">Reset All Filters</button>
       </div>
 
-      <div className="bg-[#FFFCF2] rounded-3xl shadow-lg p-10 mx-10 -mt-4">
+      <div className="bg-[#FFFCF2] rounded-3xl shadow-lg p-10 mx-10 -mt-4 dark:bg-[#CABFAC]">
 
         <div className="text-lg mb-4 flex">
           <span className="mr-2 text-3xl text-gray-500">⟳</span>
@@ -76,7 +76,7 @@ const Transactions = () => {
             <tbody>
               {allTransactions.length === 0 ? null :
                 currentTransactions.map((transaction, index) => (
-                  <tr key={index} className="border-b hover:bg-yellow-100">
+                  <tr key={index} className="border-b hover:bg-yellow-100 dark:hover:bg-[#FFF6E4]">
                     <td className="p-2 ">{transaction.date}</td>
                     <td className="p-2">{transaction.location}</td>
                     <td className="p-2">{transaction.type}</td>
