@@ -29,10 +29,10 @@ const Property = ({ listing, favourites, handleLiking }) => {
     shortDescription
   } = listing;
 
-const formatMoney = (amount) => {
-  if (!amount) return "";
-  return `₹${amount.toLocaleString("en-IN")}`;
-}
+  const formatMoney = (amount) => {
+    if (!amount) return "";
+    return `₹${amount.toLocaleString("en-IN")}`;
+  }
 
   const [isExpanded, setIsExpanded] = useState(false);
   const maxLength = 100;
