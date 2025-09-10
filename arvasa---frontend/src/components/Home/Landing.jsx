@@ -61,11 +61,12 @@ const Landing = () => {
     }, [prevs])
 
     const amount = [
-        { value: 500000, label: 'Up to ₹5L' },
-        { value: 1000000, label: 'Up to ₹10L' },
-        { value: 2000000, label: 'Up to ₹20L' },
-        { value: 5000000, label: 'Up to ₹50L' },
-        { value: 100000000, label: 'Up to ₹1Cr' }
+        { value: 3000000, label: 'Up to ₹30L' },
+        { value: 6000000, label: 'Up to ₹60L' },
+        { value: 9000000, label: 'Up to ₹90L' },
+        { value: 100000000, label: 'Up to ₹1Cr' },
+        { value: 500000000, label: 'Up to ₹5Cr' },
+        { value: 1000000000, label: 'Up to ₹10Cr' }
     ];
 
     const propType = [

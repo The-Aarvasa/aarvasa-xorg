@@ -8,6 +8,8 @@ import { useEffect } from 'react'
 import axios from 'axios'
 import AuthContext from '../../context/AuthContext'
 import { useContext } from 'react'
+import { MdOutlineWorkspacePremium } from "react-icons/md";
+
 const MainProfile = () => {
 
   const navigate = useNavigate();
@@ -27,12 +29,12 @@ const MainProfile = () => {
     <>
       {user ? <div className=' h-auto lg:h-[100vh] flex-col flex'>
 
-        <div className='w-[85%] mx-auto'>
+        <div className='w-[85%] dark:bg-gray-900 p-2 dark:rounded-lg mx-auto'>
 
           <h1 className='text-2xl font-semibold mt-8'>Welcome , {user.email}</h1>
           <p className='mt-2'>{formattedDate} </p>
         </div>
-        <div className='w-[85%] h-[70%] pb-8 mt-4 mx-auto h-full bg-white border border-2 rounded-lg transition-all hover:border-[#8C2841]'>
+        <div className='w-[85%] dark:bg-gray-900 h-[70%] pb-8 mt-4 mx-auto h-full bg-white border border-2 rounded-lg transition-all hover:border-[#8C2841]'>
           <div className="text_content gap-8 md:gap-0 flex items-center justify-between flex-wrap px-12 py-4">
             <div className="left_section flex flex-wrap justify-center md:justify-start items-center gap-4">
               <div className="profile">
@@ -60,51 +62,52 @@ const MainProfile = () => {
 
           <div className='boxes flex items-center justify-center lg:justify-start gap-5 mx-12 flex-wrap mt-8'>
             <Link to={"/profile/activity"}>
-              <div className="activity min-w-[220px] cursor-pointer rounded-lg group hover:bg-[#8C2841] hover:transform hover:scale-[1.1]  hover:text-white transition-all bg-[#F9EAF1] flex items-center justify-center gap-3 flex-col p-12">
-                <History size={32} className='text-gray-700 group-hover:text-white' />
+              <div className="activity dark:bg-gray-800 min-w-[220px] cursor-pointer rounded-lg group hover:bg-[#8C2841] hover:transform hover:scale-[1.1]  hover:text-white transition-all bg-[#F9EAF1] flex items-center justify-center gap-3 flex-col p-12">
+                <History size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
                 <p>My Activity</p>
               </div></Link>
 
             <Link to={"/profile/transaction"}>
-              <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
-                <BadgeIndianRupee size={32} className='text-gray-700 group-hover:text-white' />
+              <div className="activity min-w-[220px]  dark:bg-gray-800 cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
+                <BadgeIndianRupee size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
                 <p>Transactions</p>
               </div>
             </Link>
 
             <Link to={"/profile/favourites"}>
-              <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:text-white flex items-center justify-center flex-col p-12 gap-3">
-                <Heart size={32} className='text-gray-700 group-hover:text-white' />
+              <div className="activity min-w-[220px]  dark:bg-gray-800 cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all  hover:text-white flex items-center justify-center flex-col p-12 gap-3">
+                <Heart size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
                 <p>Favourite</p>
               </div></Link>
 
             <Link to={"/profile/contactagents"}>
-              <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
-                <Mic size={32} className='text-gray-700 group-hover:text-white' />
+              <div className="activity min-w-[220px]  dark:bg-gray-800 cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
+                <Mic size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
                 <p>Agents</p>
               </div></Link>
 
-            <Link to={"/profile/guides"}> <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
-              <Book size={32} className='text-gray-700 group-hover:text-white' />
+            <Link to={"/profile/guides"}> <div className="activity  dark:bg-gray-800 min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
+              <Book size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
               <p>Guides</p>
             </div> </Link>
 
             <Link to={"/news"}>
-              <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
-                <FileText size={32} className='text-gray-700 group-hover:text-white' />
+              <div className="activity  dark:bg-gray-800 min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
+                <FileText size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
                 <p>News / Articles</p>
               </div></Link>
 
             <Link to={"/tools/budgetcalculator"}>
-              <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
-                <Calculator size={32} className='text-gray-700 group-hover:text-white' />
+              <div className="activity min-w-[220px] cursor-pointer  dark:bg-gray-800 rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
+                <Calculator size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
                 <p>Tools</p>
               </div></Link>
 
             <Link to={"/subscription"}>
 
-              <div className="activity min-w-[220px] cursor-pointer rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
-                <Plus size={32} className='text-gray-700 group-hover:text-white' />
+              <div className="activity min-w-[220px] cursor-pointer  dark:bg-gray-800 rounded-lg group bg-[#F9EAF1] hover:bg-[#8C2841] hover:transform hover:scale-[1.1] transition-all hover:text-white flex items-center justify-center flex-col p-12 gap-3">
+                <MdOutlineWorkspacePremium size={32} className='text-gray-700 dark:text-white group-hover:text-white' />
+                
                 <p>Subscribe</p>
               </div>
             </Link>

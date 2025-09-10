@@ -40,7 +40,7 @@ const Budget = () => {
     }, [income, emi, loan]);
 
     return (
-        <div className='mt-3 flex flex-col gap-9 w-full md:w-[50%]'>
+        <div className='mt-3 dark:bg-gray-800 flex flex-col gap-9 w-full md:w-[50%]'>
             <div className='flex items-center flex-col gap-8 w-full'>
                 <h1 className='text-xl md:text-3xl capitalize font-semibold text-center'>
                     Check your Home Buying Budget

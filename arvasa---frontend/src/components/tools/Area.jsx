@@ -37,21 +37,21 @@ const Area = () => {
 
         <div className="input_bar w-full">
           <label htmlFor="">Select the State</label>
-          <select className='bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'>
+          <select className='bg-gray-200 border dark:bg-black dark:text-gray-300 border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'>
             {states.map((state, i) => (
               <option key={i} value={state}>{state}</option>
             ))}
           </select>
         </div>
 
-        <div className="input_bar w-full">
+        <div className="input_bar  w-full">
           <label htmlFor="">Enter Area</label>
           <input
             type="number"
             placeholder="Enter area value"
             value={area}
             onChange={(e) => setArea(Number(e.target.value))}
-            className='bg-gray-100 p-2 mt-2 w-full rounded-md border border-[#6C1E3C]'
+            className='bg-gray-100 dark:bg-black dark:text-gray-300 p-2 mt-2 w-full rounded-md border border-[#6C1E3C]'
           />
         </div>
 
@@ -60,7 +60,7 @@ const Area = () => {
           <select
             value={fromUnit}
             onChange={(e) => setFromUnit(e.target.value)}
-            className='bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'
+            className='bg-gray-200 dark:bg-black dark:text-gray-300 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'
           >
             <option value="sqft">Sq.ft</option>
             <option value="sqm">Sq.m</option>
@@ -74,7 +74,7 @@ const Area = () => {
           <select
             value={toUnit}
             onChange={(e) => setToUnit(e.target.value)}
-            className='bg-gray-200 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'
+            className='bg-gray-200 dark:bg-black dark:text-gray-300 border border-4 border-[#6C1E3C] px-2 rounded-md p-2 w-full mt-2'
           >
             <option value="sqft">Sq.ft</option>
             <option value="sqm">Sq.m</option>

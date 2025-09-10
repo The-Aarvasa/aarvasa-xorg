@@ -5,7 +5,7 @@ const Newscards = () => {
         <div className="relative max-w-[1920px] mx-auto px-2 sm:px-4 md:px-8 py-4 sm:py-8">
             {/* Responsive Tabs */}
             <div className="max-w-4xl mx-auto">
-                <ul className="flex font-[poppins] justify-start sm:justify-between items-center cursor-pointer text-black p-2 sm:p-4 font-medium text-sm sm:text-md gap-6 sm:gap-14 whitespace-nowrap">
+                <ul className="flex font-[poppins] dark:text-white justify-start sm:justify-between items-center cursor-pointer text-black p-2 sm:p-4 font-medium text-sm sm:text-md gap-6 sm:gap-14 whitespace-nowrap">
                     <li className="hover:text-[#6D1E3D] text-xl border-b-2 border-[#6D1E3D] pb-1 min-w-max">All</li>
                     <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Infrastructure</li>
                     <li className="hover:text-[#6D1E3D] text-xl  min-w-max">Commercial</li>
@@ -62,31 +62,31 @@ const Newscards = () => {
             {/* Cards Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 m-2 sm:m-4">
                 {[...Array(9)].map((_, idx) => (
-                    <div key={idx} className="bg-white rounded-3xl shadow-md w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto h-[24rem] sm:h-[26rem] lg:h-[27rem] flex flex-col overflow-hidden">
+                    <div key={idx} className="bg-white dark:bg-gray-800 rounded-3xl shadow-md w-full max-w-xs sm:max-w-sm lg:max-w-md mx-auto h-[24rem] sm:h-[26rem] lg:h-[27rem] flex flex-col overflow-hidden">
                         <img
                             src="paper.png"
                             className="w-full h-40 sm:h-44 lg:h-48 object-cover rounded-t-3xl"
                             alt="News"
                         />
                         <div className="flex-1 flex flex-col justify-between p-6 sm:p-6">
-                            <div>
+                            <div className='dark:text-white'>
                                 <h3 className="text-lg sm:text-xl font-bold font-poppins mb-2">The Mumbai Property</h3>
-                                <p className="text-neutral-700 text-sm font-normal leading-6 sm:leading-7 ">
+                                <p className="text-neutral-700 dark:text-white text-sm font-normal leading-6 sm:leading-7 ">
                                     Impact of Infrastructure Development — Mumbai's property market has been heavily influenced by infrastructure development.
                                 </p>
                             </div>
-                            <div className="text-right text-stone-600 text-xs sm:text-sm font-lato">Mar 03, 2025</div>
+                            <div className="text-right text-stone-600 text-xs dark:text-white sm:text-sm font-lato">Mar 03, 2025</div>
                         </div>
                     </div>
                 ))}
             </div>
 
             {/* See More Button */}
-            <div className="flex mb-8 items-center justify-center">
+            {/* <div className="flex mb-8 items-center justify-center">
                 <div className="group w-40 sm:w-56 h-12 sm:h-15 px-4 sm:px-8 py-3 sm:py-6 rounded-3xl outline outline-2 outline-offset-[-1px] outline-[#6D1E3D] inline-flex justify-center items-center gap-2.5 transition-all duration-300 hover:bg-[#6D1E3D] hover:text-white hover:outline-[#6D1E3D]">
-                    <div className="text-[#6D1E3D] text-center justify-start text-lg sm:text-2xl font-medium font-['Montserrat'] leading-none group-hover:text-white transition-colors duration-300">See more</div>
+                    <button className="text-[#6D1E3D] text-center justify-start text-lg sm:text-2xl font-medium font-['Montserrat'] leading-none group-hover:text-white transition-colors duration-300">See more</button>
                 </div>
-            </div>
+            </div> */}
         </div>
     )
 }

@@ -5,12 +5,12 @@ import { FaLinkedinIn, FaTwitter, FaInstagram, FaFacebookF } from 'react-icons/f
 const Footer = () => {
   return (
     <div
-      className="hidden md:block w-full px-4 pb-12 flex flex-col gap-12 items-center"
+      className="hidden md:block  w-full px-4 pb-12 flex flex-col gap-12 items-center"
       style={{
         background: 'linear-gradient(to right, #A82E4F, #8C2841)',
       }}
     >
-      <footer className="grid mx-auto p-[50px] grid-cols-[repeat(auto-fit,_minmax(200px,_2fr))] place-items-center md:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl px-4">
+      <footer className="grid  mx-auto p-[50px] grid-cols-[repeat(auto-fit,_minmax(200px,_2fr))] place-items-center md:grid-cols-2 lg:grid-cols-4 gap-10 w-full max-w-7xl px-4">
         {/* Logo & Text */}
         <div className="flex flex-col items-start gap-6">
           <a href="#" className="flex flex-col sm:flex-row items-center gap-2">

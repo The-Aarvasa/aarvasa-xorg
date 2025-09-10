@@ -6,6 +6,9 @@ import AuthContext from "../context/AuthContext";
 import { useLocation } from "react-router-dom";
 import { useContext } from "react";
 import { ThemeContext } from "../context/ThemeContext";
+import { CiLight } from "react-icons/ci";
+import { MdDarkMode } from "react-icons/md";
+
 import Alert from "./Utils/Alert";
 const Navbar = () => {
     const [data] = useState([
@@ -113,7 +116,7 @@ const Navbar = () => {
                     <ul
                         ref={menu}
                         className={`
-                            md:flex items-center dark:bg-gray-900 dark:text-white md:bg-transparent md:static md:h-auto md:w-auto md:gap-8 lg:gap-14
+                            md:flex items-center dark:bg-gray-900 dark:text-white md:dark:bg-transparent md:static md:h-auto md:w-auto md:gap-8 lg:gap-14
                             ${MenuOpen ? "fixed top-0 left-0" : "fixed left-[-100%]"}
                             transition-all bg-orange-50 md:bg-transparent h-[100vh] w-[80%] pt-[150px] px-12
                             space-y-8 md:space-y-0 md:pt-0 md:px-0 z-[10]
@@ -180,9 +183,10 @@ const Navbar = () => {
                             </Link> : null
                         )}
 
-                        <svg onClick={toggleTheme} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="size-10 dark:text-black cursor-pointer bg-white rounded-full p-2">
-                            <path d="M12 2.25a.75.75 0 0 1 .75.75v2.25a.75.75 0 0 1-1.5 0V3a.75.75 0 0 1 .75-.75ZM7.5 12a4.5 4.5 0 1 1 9 0 4.5 4.5 0 0 1-9 0ZM18.894 6.166a.75.75 0 0 0-1.06-1.06l-1.591 1.59a.75.75 0 1 0 1.06 1.061l1.591-1.59ZM21.75 12a.75.75 0 0 1-.75.75h-2.25a.75.75 0 0 1 0-1.5H21a.75.75 0 0 1 .75.75ZM17.834 18.894a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 1 0-1.061 1.06l1.59 1.591ZM12 18a.75.75 0 0 1 .75.75V21a.75.75 0 0 1-1.5 0v-2.25A.75.75 0 0 1 12 18ZM7.758 17.303a.75.75 0 0 0-1.061-1.06l-1.591 1.59a.75.75 0 0 0 1.06 1.061l1.591-1.59ZM6 12a.75.75 0 0 1-.75.75H3a.75.75 0 0 1 0-1.5h2.25A.75.75 0 0 1 6 12ZM6.697 7.757a.75.75 0 0 0 1.06-1.06l-1.59-1.591a.75.75 0 0 0-1.061 1.06l1.59 1.591Z" />
-                        </svg>
+                       
+
+                        {theme === "dark" ? <MdDarkMode className="size-10 dark:text-black cursor-pointer bg-white rounded-full p-2" onClick={toggleTheme} />
+ : <CiLight className="size-10 text-white font-semibold cursor-pointer bg-black rounded-full p-2" onClick={toggleTheme} />}
 
 
                         {/* Mobile menu toggle */}

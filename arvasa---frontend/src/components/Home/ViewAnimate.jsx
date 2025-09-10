@@ -71,9 +71,9 @@ const ViewAnimate = () => {
   return (
     currData ?     <div
       ref={ref}
-      className="md:mx-8 mt-20 pt-8 mb-20 h-auto"
+      className="md:mx-8 md:mt-20 md:pt-8 md:mb-20 h-auto"
     >
-      <div className="flex items-center flex-col-reverse justify-center space-y-8 mx-auto gap-8 md:gap-[20%] flex-col lg:flex-row">
+      <div className="flex items-center flex-col-reverse justify-center md:space-y-8 mx-auto gap-8 md:gap-[20%] flex-col lg:flex-row">
         {/* Left Image & Circle */}
         <div
           ref={circleContainerRef}
@@ -146,9 +146,9 @@ const ViewAnimate = () => {
                 handleButtonClick(i);
                 setactiveIndex(i);
               }}
-              className={`text-left dark:bg-gray-800 border border-1 border-[#D75D87] ${
+              className={`text-left transform hover:scale-[1.1] dark:bg-gray-800 border border-1 border-[#D75D87] ${
                 index === i
-                  ? "bg-[#8C2841] dark:bg-gray-800 text-black border-4 rotate-[5deg] transform hover:scale-[1.1]"
+                  ? "bg-[#8C2841] dark:bg-gray-800 text-black border-4"
                   : "dark:bg-gray-800"
               } hover:bg-[#8C2841] hover:text-white transition-all px-4 py-2 rounded-md bg-white relative ${
                 i === 1

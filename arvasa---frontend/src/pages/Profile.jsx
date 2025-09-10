@@ -17,7 +17,7 @@ const Profile = () => {
    
     return ( 
         <>
-            <div className="pb-8 bg-orange-50 pt-[90px] pb-[100px]">
+            <div className="pb-8 dark:bg-black dark:text-white bg-orange-50 pt-[90px] pb-[100px]">
 
                 <Page></Page>
 

@@ -26,7 +26,7 @@ const FAQItem = ({ faq, index, activeIndex, setActiveIndex }) => {
   return (
     <div className="mb-4 dark:text-black transition-all duration-300 ease-in-out">
       <button
-        className="w-full flex justify-between items-center p-4 bg-[#a13d52] text-white rounded-md focus:outline-none shadow-md transition-colors"
+        className="w-full flex justify-between items-center p-2 md:p-4 bg-[#a13d52] text-white rounded-md focus:outline-none shadow-md transition-colors"
         onClick={() => setActiveIndex(isOpen ? null : index)}
       >
         <div className="flex dark:text-black items-center gap-3">
@@ -56,8 +56,8 @@ const FAQSection = () => {
   const navigate = useNavigate();
 
   return (
-    <div style={{ backgroundColor: '#8C2841' }} className="my-8 mx-2 mt-8 mb-8 md:mx-4 relative bg-rosewood max-w-[1840px] h-auto md:rounded-3xl flex flex-col justify-center items-center p-4 md:p-10">
-    <div style={{ backgroundColor: '#8C2841' }} className="my-8 mx-2 mt-8 mb-8 md:mx-4 relative bg-rosewood max-w-[1840px] h-auto md:rounded-3xl flex flex-col justify-center items-center p-4 md:p-10">
+    <div style={{ backgroundColor: '#8C2841' }} className="my-8 mx-2 mt-8 mb-8 md:mx-4 relative bg-rosewood w-full md:max-w-[1840px] h-auto md:rounded-3xl flex flex-col justify-center items-center p-4 md:p-10">
+    <div style={{ backgroundColor: '#8C2841' }} className="my-8 mx-2 mt-8 mb-8 md:mx-4 relative bg-rosewood w-full md:max-w-[1840px] h-auto md:rounded-3xl flex flex-col justify-center items-center p-4 md:p-10">
 
       <div className="flex flex-wrap justify-between items-center w-[100%] md:w-[90%] mb-8">
         <h2 className="text-xl md:text-3xl font-semibold text-white">Frequently Asked Questions</h2>

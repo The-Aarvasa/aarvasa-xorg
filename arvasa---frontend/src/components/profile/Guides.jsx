@@ -32,16 +32,16 @@ const steps = [
 const Guides = () => {
     return (
         <section>
-            <div className="max-w-[1200px] mt-8 mx-auto font-[poppins] bg-white rounded-3xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center">
+            <div className="max-w-[1200px] dark:bg-gray-800 mt-8 mx-auto font-[poppins] bg-white rounded-3xl shadow-lg p-6 md:p-10 flex flex-col md:flex-row gap-8 items-center">
 
                 {/* Left Section */}
                 <div className="bg-[#FFE7E7] rounded-2xl p-6 md:p-10 flex-1 flex justify-between text-center items-center">
                     <div className="flex flex-col justify-start items-start text-left gap-4">
-                        <h2 className="text-2xl md:text-3xl font-semibold mb-2">
-                            A <span className="text-[#FBAA5B] font-bold">simple Guide</span> to post your property
+                        <h2 className="text-2xl dark:text-black md:text-3xl font-semibold mb-2">
+                            A <span className="text-[#FBAA5B] font-bold dark:text-black">simple Guide</span> to post your property
                         </h2>
                         <p className="text-gray-600 mb-6">Own/rent your property with low price and discounts!</p>
-                        <button className="bg-[#6C1E3C] text-white px-6 py-2 rounded-lg font-semibold hover:scale-105 transition">
+                        <button disabled className="bg-[#6C1E3C] text-white px-6 py-2 rounded-lg font-semibold hover:scale-105 transition">
                             Steps to guide ↗
                         </button>
                     </div>
@@ -59,7 +59,7 @@ const Guides = () => {
                                 {/* Left-aligned text content */}
                                 <div>
                                     <div className="text-2xl font-bold text-[#8C2841]">{step.id}</div>
-                                    <h3 className="font-semibold mt-3">{step.title}</h3>
+                                    <h3 className="font-semibold mt-3 dark:text-black">{step.title}</h3>
                                     <p className="text-sm text-gray-500 mt-1">{step.desc}</p>
                                 </div>
 
