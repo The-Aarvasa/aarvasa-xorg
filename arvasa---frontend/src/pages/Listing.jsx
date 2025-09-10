@@ -68,7 +68,7 @@ const Listing = () => {
 
 
     return (
-        <div className="bg-orange-50 pb-[100px] pt-[90px]">
+        <div className="bg-orange-50 pb-[100px] pt-[90px] dark:bg-black dark:text-white">
             <Page />
 
             {/* <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">

@@ -104,7 +104,7 @@ const PropertyMain = () => {
     };
 
     return (
-        <div className="bg-orange-50 pb-6">
+        <div className="bg-orange-50 dark:bg-black dark:text-white pb-6">
             <ListingFilterBar />
 
             <div className="w-[98%] min-h-[300px] mx-auto mt-4 mb-8">

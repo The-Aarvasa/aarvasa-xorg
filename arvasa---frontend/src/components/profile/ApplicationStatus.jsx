@@ -10,7 +10,7 @@ const StatusCard = ({ title, statusText, icon }) => (
     <div className="bg-[#8C2841] text-white font-semibold flex items-center justify-start px-5 py-4 sm:w-1/2 w-full">
       {title}
     </div>
-    <div className="bg-gradient-to-r from-[#FADC64] to-[#F5BA22] bg-opacity-70 flex items-center justify-between px-5 py-4 sm:w-1/2 w-full">
+    <div className="bg-gradient-to-r from-[#FADC64] to-[#F5BA22] bg-opacity-70 flex items-center justify-between px-5 py-4 sm:w-1/2 w-full dark:from-[#D9D8D8] dark:to-[#7F7F7F]">
       <div className="flex items-center gap-2">
         {icon}
         <span className="text-sm font-medium">{statusText}</span>
@@ -72,14 +72,17 @@ const ApplicationStatus = () => {
 
   return (
     <section>
-      <div className="mt-8 mx-auto font-[poppins] bg-white rounded-3xl shadow-lg p-4 md:p-10 lg:p-20 flex flex-col items-center gap-6">
+      <div className={`mt-8 mx-auto max-w-7xl font-[poppins] bg-white rounded-3xl shadow-lg p-4 md:p-10 lg:p-20 flex flex-col items-center gap-6 ${activeTab === "recent"
+        ? "dark:bg-gradient-to-t from-[#28150B] to-[#571E2A]"
+        : "dark:bg-gradient-to-t from-[#52431A] to-[#D8AE24]"
+        }`}>
 
         {/* Tabs */}
         <div className="flex flex-wrap justify-center gap-4 w-full">
           <button
             className={`px-4 py-2 rounded-xl text-sm font-medium transition ${activeTab === "recent"
-              ? "bg-[#F8C6D7] text-[#8C2841]"
-              : "border border-gray-300 text-gray-700"
+                ? "bg-[#F8C6D7] text-[#8C2841] dark:bg-gradient-to-r from-[#FFEA99] to-[#654619]"
+              : "border border-gray-300 text-gray-700 dark:border-black dark:text-black"
               }`}
             onClick={() => setActiveTab("recent")}
           >
@@ -88,7 +91,7 @@ const ApplicationStatus = () => {
           <button
             className={`px-4 py-2 rounded-xl text-sm font-medium transition ${activeTab === "application"
               ? "bg-[#F8C6D7] text-[#8C2841]"
-              : "border border-gray-300 text-gray-700"
+              : "border border-gray-300 text-gray-700 dark:text-white dark:border-white"
               }`}
             onClick={() => setActiveTab("application")}
           >
@@ -110,7 +113,7 @@ const ApplicationStatus = () => {
           </>
         ) : (
           <div className="w-full">
-            <h2 className="text-xl font-semibold">Recently Viewed Properties</h2>
+            <h2 className="text-xl font-semibold dark:text-white">Recently Viewed Properties</h2>
             {loading ? (
               <Loaders></Loaders>
             ) : recentlyViewed.length === 0 ? (

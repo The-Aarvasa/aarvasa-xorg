@@ -12,7 +12,6 @@ const Favourites = () => {
     try {
       const token = localStorage.getItem("accessToken");
 
-      // Step 1: Get list of favourite property IDs
       const { data } = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/listings/getfavourite`, {
         headers: {
           Authorization: `Bearer ${token}`,
@@ -20,9 +19,8 @@ const Favourites = () => {
       });
 
       const favouriteIds = data.property_ids;
-      setFavourites(favouriteIds); // save current liked IDs
+      setFavourites(favouriteIds);
 
-      // Step 2: Get full property details by IDs
       const res = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/listings/by-ids`, {
         ids: favouriteIds,
       });
@@ -49,7 +47,7 @@ const Favourites = () => {
         }
       );
 
-        fetchFavouriteProperties(); // re-fetch to show updated property
+        fetchFavouriteProperties();
     } catch (err) {
       console.error("Liking failed:", err);
     }
@@ -60,17 +58,17 @@ const Favourites = () => {
   }, []);
 
   return (
-    <div className="bg-white p-4 sm:p-8 rounded-lg shadow-md max-w-full sm:max-w-screen-xl mx-auto my-4 sm:my-8">
-      <div className="flex items-center text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-gray-800">
+    <div className="bg-white dark:bg-gradient-to-br dark:from-[#380F1F] dark:to-[#601835] p-4 sm:p-8 rounded-lg shadow-md max-w-full sm:max-w-screen-xl mx-auto my-4 sm:my-8">
+      <div className="flex items-center text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-gray-800 dark:text-white">
         <span className="text-yellow-500 mr-1 sm:mr-2">⭐</span>
-        Your Favourites <span className="ml-1 sm:ml-2 text-gray-400 text-xs sm:text-sm">›</span>
+        Your Favourites <span className="ml-1 sm:ml-2 text-gray-400 dark:text-white text-xs sm:text-sm">›</span>
       </div>
 
       <div className="grid w-full gap-4 sm:gap-6">
         {loading ? (
           <Loaders></Loaders>
         ) : favouriteProps.length === 0 ? (
-          <p className='text-lg font-semibold'>You have currently no favourites .</p>
+          <p className='text-lg font-semibold'>You have currently no favourites.</p>
         ) : (
           favouriteProps.map((currElem) => (
             <Property
