@@ -123,7 +123,7 @@ const formatMoney = (amount) => {
         <a
           target="_blank"
           rel="noopener noreferrer"
-          href={`https://www.google.com/maps?q=${coordinates.lat},${coordinates.lng}`}
+          href={`https://www.google.com/maps?q=${coordinates?.lat},${coordinates?.lng}`}
         >
           <button className="absolute bottom-1 z-[999] left-[10px] px-4 py-2 bg-black/50 rounded text-white flex items-center gap-2">
             <FaMapMarkerAlt />

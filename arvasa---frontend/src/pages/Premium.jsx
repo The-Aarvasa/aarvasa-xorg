@@ -100,7 +100,7 @@ const Premium = () => {
             >
 
                 <div className='content md:py-auto text-center'>
-                    <p className='text-[#692234] text-lg md:text-3xl text-white dark:text-white'>Welcome to Aarvasa</p>
+                    <p className='text-[#692234] texct-lg md:text-3xl text-white dark:text-white'>Welcome to Aarvasa</p>
                     <h1 className='text-[#692234] text-5xl lg:text-8xl text-white font-bold mt-4 mb-8 dark:text-white'>Manage your <br></br> property</h1>
                     <p className='text-[#692234] text-white text-sm md:text-lg mt-4 mb-8 dark:text-white'>You will have everything nearby supermarket, buses , station, the carmen neighborhood, etc</p>
 
