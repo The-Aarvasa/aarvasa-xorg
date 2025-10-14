@@ -50,6 +50,7 @@ const Refund = () => {
             <li>If package activation is delayed by the user beyond 2 days post-payment, it's considered consumed — no refund.</li>
             <li>No cancellation/refund is allowed once a package goes live on the platform.</li>
             <li>Refunds, if any, are solely at the company’s discretion and are final.</li>
+            <li className='lowercase'>ONCE THE REFUND IS APPROVED , AMOUNT WILL BE CREDITED BACK TO THE ORIGINAL PAYMENT METHOD WITHIN 3-5 WORKING DAYS .</li>
           </ul>
         </div>
       </div>

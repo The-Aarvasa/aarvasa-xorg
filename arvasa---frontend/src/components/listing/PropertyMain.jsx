@@ -73,6 +73,7 @@ const PropertyMain = () => {
 
     // ❤️ Toggle Like
     const handleLiking = async (prop_id) => {
+        setLoading(true);
         try {
             const token = localStorage.getItem("accessToken");
             if (!token) {
@@ -96,10 +97,14 @@ const PropertyMain = () => {
                 );
             }
         } catch (err) {
+            setLoading(false);
             if (err.response.status === 401) {
                 navigate("/signin");
             }
             console.error("Liking failed:", err);
+        }
+        finally{
+            setLoading(false);
         }
     };
 

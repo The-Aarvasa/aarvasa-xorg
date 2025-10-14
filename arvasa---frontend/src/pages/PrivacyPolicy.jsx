@@ -72,9 +72,8 @@ const PrivacyPolicy = () => {
                     <h2 className='text-2xl font-semibold'>10. Grievance Redressal</h2>
                     <p>Data Protection Officer (DPO):</p>
                     <ul className='list-disc ml-6'>
-                        <li>Email: dpo@aarvasa.com</li>
-                        <li>Mailing Address: Aarvasa Innovations Pvt. Ltd., [Insert Registered Office Address], Noida, UP – 201301</li>
-                        <li>EU contact: [Insert Article 27 Representative details]</li>
+                        <li>Mailing Address: Aarvasa Innovations Pvt. Ltd., 3 Flr, off Windsar Sq Opp,Vishal Megamart Kolar Rd, Kolar Road,Huzur, Bhopal- 462042, Madhya Pradesh.
+, Noida, UP – 201301</li>
                     </ul>
 
                     <h2 className='text-2xl font-semibold'>11. Jurisdiction-Specific Disclosures</h2>

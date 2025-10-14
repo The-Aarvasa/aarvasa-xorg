@@ -338,7 +338,8 @@ const Terms = () => {
                             Platform. You agree to the changes if you keep using the Platform after receiving this notice. </li><br />
                         <li> 12.7. Whole Agreement: This agreement replaces all previous agreements on the subject matter and
                             represents the parties' final, comprehensive understanding.</li><br />
-                        <li>Aarvasa Innovations Pvt. Ltd. [Insert Complete Company Address, Bhopal, Madhya Pradesh, India] is
+                        <li>Aarvasa Innovations Pvt. Ltd. 3 Flr, off Windsar Sq Opp,Vishal Megamart Kolar Rd, Kolar Road,Huzur, Bhopal- 462042, Madhya Pradesh.
+ is
                             the contact information.
                         </li><br />
                         <li><Link to="/chat">Contact@aarvasa.com for general inquiries </Link>
