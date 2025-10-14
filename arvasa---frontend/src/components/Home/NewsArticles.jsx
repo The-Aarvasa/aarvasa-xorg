@@ -143,13 +143,13 @@ const NewsArticles = () => {
                             animate={isInView ? 'visible' : 'hidden'}
                         >
                             <motion.h1
-                                className="text-black font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl"
+                                className="text-black dark:text-white font-semibold text-xl sm:text-2xl md:text-3xl lg:text-4xl"
                                 variants={headingVariants}
                             >
                                 More than 2 Years of Experience
                             </motion.h1>
                             <motion.p
-                                className="text-[#181A20] text-xs sm:text-sm md:text-base font-normal pt-3 sm:pt-4 pb-6 sm:pb-8 md:pb-10"
+                                className="text-[#181A20] dark:text-gray-300 text-xs sm:text-sm md:text-base font-normal pt-3 sm:pt-4 pb-6 sm:pb-8 md:pb-10"
                                 variants={textVariants}
                             >
                                 We’ve been helping individuals and families find their perfect home through trusted insights, expert support, and innovative tools.
