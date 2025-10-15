@@ -304,9 +304,8 @@ const Terms = () => {
                     <ul typeof='none' className='text-lg md:text-md font-light'>
                         <li>11.1. Officer for Grievances: The name and contact information of the Grievance Officer are listed
                             below in compliance with the Information Technology Act of 2000 and its regulations: </li><br />
-                        <li>Name: [Insert Grievance Officer's Name]</li><br />
-                        <li>Position: Aarvasa Innovations Pvt. Ltd. Grievance Officer; Address: [Insert Complete Company
-                            Address, Bhopal] </li><br />
+                        <li>Name: Ansh Dubey</li><br />
+                        <li>Position: Aarvasa Innovations Pvt. Ltd. Grievance Officer; Address: 3 Flr, off Windsar Sq Opp,Vishal Megamart Kolar Rd, Kolar Road,Huzur, Bhopal- 462042, Madhya Pradesh. </li><br />
                         <li>Email address: grievance.officer@aarvasa.com</li><br />
                         <li>After receiving the complaint, the grievance officer has 24 hours to acknowledge it and 15 days to
                             resolve it. </li><br />
