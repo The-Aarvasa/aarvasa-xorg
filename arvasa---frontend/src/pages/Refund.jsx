@@ -12,8 +12,8 @@ const Refund = () => {
         <div className='mt-12 space-y-6'>
           <h2 className='text-2xl md:text-3xl font-semibold'>Moneyback Packages</h2>
           <ul className='list-disc pl-6'>
-            <li>For Resale: A service charge of Rs. ( ) will be deducted.</li>
-            <li>For Rental: A service charge of Rs. ( ) will be deducted.</li>
+            <li>For Resale: A non-refundable service and processing fee, equivalent to 25% of the total package price, will be deducted.</li>
+            <li>For Rental: A non-refundable service and processing fee, equivalent to 25% of the total package price, will be deducted.</li>
             <li>GST on service charges is non-refundable.</li>
             <li>The property must remain unsold or unleased for a refund to be eligible.</li>
             <li>Refund request must be submitted within 7 days of package expiry.</li>
